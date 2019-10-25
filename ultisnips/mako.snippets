@@ -1,0 +1,65 @@
+snippet %
+<% ${1} %>$0
+endsnippet
+
+snippet <
+<% ${1} %>$0
+endsnippet
+
+snippet $
+\$\{${1}\}$0
+endsnippet
+
+snippet {
+\$\{${1}\}$0
+endsnippet
+
+snippet if "if " b!
+% if ${1:condition}:
+	${2:}
+% endif
+endsnippet
+
+snippet for "for " b!
+% for ${1:item} in ${2:items}:
+	${3}
+% endfor
+endsnippet
+
+snippet else "if/else" b
+% if ${1:condition}:
+	${2}
+% else:
+	${3}
+% endif
+endsnippet
+
+snippet elif "if/elif/else" b
+% if ${1:condition}:
+	${2}
+% elif:
+	${3}
+% else:
+	${4}
+% endif
+endsnippet
+
+snippet def
+<%def name="${1:name}(${2:args})">
+	${3}
+</%def>
+endsnippet
+
+snippet call
+<%call expr="${1:name}(${2:args})">
+	${3}
+</%call>
+endsnippet
+
+snippet namespace
+<%namespace name="${1:name}" file="${2}"/>
+endsnippet
+
+snippet _
+\$\{_(u'${1}', '${2}')\}$0
+endsnippet

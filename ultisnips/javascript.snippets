@@ -1,0 +1,90 @@
+snippet log "console.log()"
+console.log(${VISUAL}$0);
+endsnippet
+
+snippet logs "console.log('')"
+console.log(${VISUAL}'$0');
+endsnippet
+
+snippet each "jquery each"
+$(${1:this}).each(function(i, ${2:object}) {
+    $0;
+});
+endsnippet
+
+snippet for "for (...) {...}" !
+for (var ${2:i}=0; $2 < ${1:list}.length; $2++) {
+    ${3:$1[$2]}${VISUAL}$0
+};
+endsnippet
+
+snippet each "underscore each"
+_.each(${1:obj}, function(${2:item}${3:, ${4:key}}) {
+    $0;
+});
+endsnippet
+
+snippet anonfn "anonymous function"
+(function(${1:object}) {
+    'use strict';
+
+    $0
+}($1));
+endsnippet
+
+snippet scopefn "anngular scope function"
+$scope.${1:name} = function (${2:object}) {
+    $0
+};
+endsnippet
+
+snippet fn "function"
+${1:var }${2:name} = function (${3:object}) {
+    $0
+};
+endsnippet
+
+snippet module
+angular.module('${1:name}', []);
+endsnippet
+
+snippet .
+$scope.$0
+endsnippet
+
+snippet /dir(ective)?/ "directive" r
+app.directive('${1:name}', function () {
+    return {
+        restrict: '${2:A}',
+        template: '',
+        templateUrl: '.html',
+        link: function (scope) {
+        }
+    };
+});
+endsnippet
+
+snippet routing
+app.config(function ($routeProvider) {
+    $routeProvider.when('/${1:route}', {templateUrl: '${2:template}.html', controller: '${3:controller}Ctrl'});
+});
+endsnippet
+
+snippet route
+$routeProvider.when('/${1:route}', {templateUrl: '${2:template}.html', controller: '${3:controller}Ctrl'});
+endsnippet
+
+snippet ctrl
+app.controller('${1:Name}Ctrl', function ($scope, $route, $window, $http, flash) {
+    $scope.flash = {};
+
+    $scope.${2:function} = function () {
+        return ;
+    };
+});
+endsnippet
+
+snippet caller
+console.log("caller is " + arguments.callee.caller.toString());
+endsnippet
+

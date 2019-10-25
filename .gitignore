@@ -1,0 +1,10 @@
+*.pyc
+.cache
+.tags*
+sessions
+spell
+.netrwhist
+bundle
+black
+autoload/plug.vim
+autoload/plug.vim.old
