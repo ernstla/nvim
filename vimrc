@@ -123,10 +123,10 @@ if has('unix')
     colorscheme newernst-transparent
 endif
 
-let g:python_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python27/python2.exe'
-let g:python3_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python38/python.exe'
 if has('windows')
-    colorscheme evening
+    let g:python_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python27/python2.exe'
+    let g:python3_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python38/python.exe'
+    colorscheme newernst
     " set clipboard=unnamed
 endif
 
