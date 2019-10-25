@@ -2,22 +2,14 @@
 " Plugins
 "
 
-" Python
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
-
-"
-let g:gutentags_ctags_tagfile = '.tags'
-let g:gutentags_ctags_exclude = ['*node_modules/*']
-
 " BufExplorer
 let g:bufExploreryhowUnlisted = 0
 let g:bufExplorerShowRelativePath = 1
 
 
 " Colorizer
- let g:colorizer_nomap = 1
- let g:colorizer_startup = 0
+let g:colorizer_nomap = 1
+let g:colorizer_startup = 0
 
 
 " Nerd Tree

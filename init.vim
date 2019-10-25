@@ -121,12 +121,14 @@ let html_no_rendering = 1
 
 if has('unix')
     colorscheme newernst-transparent
+    let g:python_host_prog = '/usr/bin/python2'
+    let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 if has('windows')
-    let g:python_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python27/python2.exe'
-    let g:python3_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python38/python.exe'
     colorscheme newernst
+    let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
+    let g:python3_host_prog = '~/AppData/Local/Programs/Python/Python38/python.exe'
     " set clipboard=unnamed
 endif
 

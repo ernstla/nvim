@@ -11,7 +11,7 @@ if has('unix')
 
     call plug#begin('~/.config/nvim/bundle')
 else
-    call plug#begin('~\vimfiles\bundle')
+    call plug#begin('~\AppData\Local\nvim\bundle')
 endif
 
 
