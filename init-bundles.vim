@@ -11,7 +11,7 @@ if has('unix')
 
     call plug#begin('~/.config/nvim/bundle')
 else
-    call plug#begin('~\vimfiles\bundle')
+    call plug#begin('~\AppData\Local\nvim\bundle')
 endif
 
 
@@ -63,6 +63,9 @@ Plug 'zah/nim.vim', {'for': 'nim'}
 
 if !exists("$VSCODE")
     Plug 'w0rp/ale'
+endif
+
+if !exists("$VSCODE") && !has("windows")
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}

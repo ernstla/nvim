@@ -1,4 +1,4 @@
-if !exists("$VSCODE")
+if !exists("$VSCODE") && !has("windows")
     " You will have bad experience for diagnostic messages when it's default 4000.
     set updatetime=300
 
@@ -81,5 +81,4 @@ if !exists("$VSCODE")
 
     " use `:OR` for organize import of current buffer
     command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 endif

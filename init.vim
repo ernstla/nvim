@@ -121,8 +121,13 @@ let html_no_rendering = 1
 
 if has('unix')
     colorscheme newernst-transparent
-else
-    set clipboard=unnamed
+endif
+
+let g:python_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python27/python2.exe'
+let g:python3_host_prog = 'C:/Users/Ernst/AppData/Local/Programs/Python/Python38/python.exe'
+if has('windows')
+    colorscheme evening
+    " set clipboard=unnamed
 endif
 
 if has('autocmd')               " Otherwise the settings don't work
