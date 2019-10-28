@@ -125,7 +125,7 @@ if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
 endif
 
-if has('windows')
+if has('win32')
     colorscheme newernst
     let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
     let g:python3_host_prog = '~/AppData/Local/Programs/Python/Python38/python.exe'
