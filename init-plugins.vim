@@ -116,6 +116,7 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'html': [],
+\   'rust': ['cargo', 'rls'],
 \}
 let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {

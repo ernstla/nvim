@@ -1,4 +1,4 @@
-if !exists("$VSCODE") && !has("windows")
+if !exists("$VSCODE") && !has("win32")
     " You will have bad experience for diagnostic messages when it's default 4000.
     set updatetime=300
 
