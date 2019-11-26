@@ -19,7 +19,7 @@ autocmd BufRead,BufNewFile *.boot set filetype=clojure
 autocmd BufRead,BufNewFile *.pxi set filetype=clojure
 autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile *.msql set filetype=pgsql
-autocmd BufRead,BufNewFile *.vue set filetype=vue.javascript.html
+"autocmd BufRead,BufNewFile *.vue set filetype=vue.javascript.html
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 

@@ -16,6 +16,7 @@ endif
 
 
 " original repos on github
+Plug 'Sirver/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'guns/xterm-color-table.vim', {'on': 'XtermColorTable'}
 Plug 'jeetsukumaran/vim-filebeagle'
@@ -29,21 +30,20 @@ Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'lilydjwg/colorizer', {'on': 'ColorToggle'}
 Plug 'luochen1990/rainbow'
-Plug 'mattn/emmet-vim'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-signify'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'Sirver/ultisnips'
+Plug 'rhysd/git-messenger.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
-Plug 'rhysd/git-messenger.vim'
-Plug 'troydm/zoomwintab.vim'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'troydm/zoomwintab.vim'
 Plug 'wellle/targets.vim' " extend and improve text objects
 
 

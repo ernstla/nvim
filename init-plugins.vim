@@ -12,7 +12,7 @@ let g:colorizer_nomap = 1
 let g:colorizer_startup = 0
 
 
-" Nerd Tree
+" NERDTree
 let g:NERDTreeIgnore = ['\.pyc$', '\~$', '\.swp$', '\.gif$', '\.png$', '\.jpg$', '\.trc', 'PYSMELLTAGS', '__pycache__', '.*\.egg-info$', '^\.[[dir]]']  " the last one means all hidden dirs
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeQuitOnOpen = 1
@@ -24,6 +24,44 @@ let g:NERDTreeWinSize = 23
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 
+"
+" NERDCommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+let g:nerd_ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:nerd_ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+
+function! NERDCommenter_after()
+  if g:nerd_ft == 'vue'
+    setf vue
+    let g:nerd_ft = ''
+  endif
+endfunction
 
 " Session
 let g:session_autosave = 'yes'
@@ -100,6 +138,9 @@ let g:rustfmt_autosave = 1
 
 " JSX
 let g:jsx_ext_required = 1
+
+" vim-vue
+let g:vue_pre_processors = ['scss']
 
 
 " Ale

@@ -194,9 +194,11 @@ noremap <silent> <Leader>gb <Esc>:Gblame<CR>
 noremap <silent> <Leader>gd <Esc>:Gvdiff<CR>
 noremap <silent> <Leader>gm <Esc><Plug>(git-messenger)
 
-" vim-commentary
-nnoremap gm :Commentary<CR>
-vnoremap gm :Commentary<CR>
+" NERDCommenter
+nnoremap gm :call NERDComment("n", "Comment")<CR>
+vnoremap gm :call NERDComment("v", "Comment")<CR>
+nnoremap gs :call NERDComment("n", "Invert")<CR>
+vnoremap gs :call NERDComment("v", "Invert")<CR>
 
 " Neovim specific
 if has("nvim")

@@ -75,6 +75,7 @@ function! SetActiveStatusLine()
     " setlocal statusline+=\ %{StatuslineGit()}
     " setlocal statusline+=\ 
     setlocal statusline+=\ %f
+    setlocal statusline+=\ %m\ 
     setlocal statusline+=%=
     setlocal statusline+=%y\ 
     setlocal statusline+=%#ErnstSLHighFG#
@@ -106,6 +107,7 @@ function! SetInactiveStatusLine()
     setlocal statusline+=%#ErnstSLInactiveFG#
     setlocal statusline+=
     setlocal statusline+=\ %f
+    setlocal statusline+=\ %m\ 
     setlocal statusline+=%=
     setlocal statusline+=%y\ 
     setlocal statusline+=🌍 
