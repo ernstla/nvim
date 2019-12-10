@@ -54,8 +54,8 @@ function! StatuslineAle() abort
    let l:counts = ale#statusline#Count(bufnr(''))
    let l:all_errors = l:counts.error + l:counts.style_error
    let l:all_non_errors = l:counts.total - l:all_errors
-   return l:counts.total == 0 ? '⛧  ' : printf(
-   \ '🔥%d  💀%d ',
+   return l:counts.total == 0 ? '  ' : printf(
+   \ '☣️ %d  💀%d ',
    \ l:all_non_errors,
    \ l:all_errors
    \)
@@ -79,15 +79,15 @@ function! SetActiveStatusLine()
     setlocal statusline+=%=
     setlocal statusline+=%y\ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=🌍 
+    setlocal statusline+=\ 
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=%{&fileencoding?&fileencoding:&encoding}\ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=⚒\   
+    setlocal statusline+=\ ⚒\ 
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=\%{&fileformat}\ \ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=⇅
+    setlocal statusline+=
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=\ %p%%\ 
     setlocal statusline+=%#ErnstSLHighFG#
