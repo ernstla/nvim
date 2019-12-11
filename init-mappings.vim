@@ -200,6 +200,15 @@ vnoremap gm :call NERDComment("v", "Comment")<CR>
 nnoremap gs :call NERDComment("n", "Invert")<CR>
 vnoremap gs :call NERDComment("v", "Invert")<CR>
 
+" FOR WSL ONLY
+let s:clip = '/mnt/c/Windows/System32/clip.exe' 
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+    augroup END
+end
+
 " Neovim specific
 if has("nvim")
     " Open terminal and run bpython
