@@ -59,6 +59,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-haml'
+Plug 'evanleck/vim-svelte'
 Plug 'zah/nim.vim', {'for': 'nim'}
 
 if !exists("$VSCODE")
@@ -76,6 +77,7 @@ if !exists("$VSCODE") && !has("win32")
     Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
 endif
 
 call plug#end()

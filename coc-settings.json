@@ -54,5 +54,6 @@
         "snippet": "⚽",
         "typeParameter": "➔",
         "default": "☩"
-    }
+    },
+    "svelte.plugin.typescript.enable": false
 }
