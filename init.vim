@@ -17,78 +17,83 @@ set completeopt-=preview
 set cursorline
 set diffopt=vertical,filler
 set encoding=utf-8
-set equalalways
 set exrc
 set expandtab
 set fileformat=unix
 set fileformats=unix,dos
-set foldcolumn=1
-set foldlevelstart=99           " Do not automatically fold
-set formatoptions=qrn1
-set formatoptions+=j            " Delete comment character when joining commented lines
-set hidden 			            " Avoid asking to save before hiding
 set history=1000
 set ignorecase
 set incsearch 		            " Search all instances
-set lazyredraw
 set linebreak                   " Word wrap if wrapping is enabled
-set listchars=nbsp:·,tab:›\ ,eol:¬,trail:·,extends:…,precedes:…
 set matchpairs=(:),{:},[:],<:>
-set modeline 			        " Respect modeline of the file (the famous "vi:noai:sw=3 ts=6" on the beginning of the files)
-set mouse=a                     " allow mouse in console
 set nobackup
 set nocursorcolumn
-set noequalalways               " Don't automatically resize windows after splitting or closing windows
 set noerrorbells visualbell t_vb= " No beeps
 set nohlsearch 		            " Don't highlight matched regexp by default
 set nojoinspaces
 set nosmartindent
-set nosplitbelow
-set nostartofline 		        " Keep the cursor in the current column when moving between lines (if possible)
-set noswapfile
-set nowinfixwidth
-set nowrap
-set nowritebackup
-set number
-set numberwidth=1
-set path+=**                    " Search through sub-directories when looking up a file
-set previewheight=25
-set ruler
-set scroll=5
-set scrolljump=1
-set scrolloff=0
-set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,globals
-set shiftround
-set shiftwidth=4
-set showbreak=╰
-set showcmd                     " Show number of selected chars/lines
-set showmatch
-set showtabline=2               " Always show tabline
-set sidescroll=1
-set sidescrolloff=5
-set smartcase 		            " Don't ignore case if the search term contains uppercase
-set smarttab
-set softtabstop=4
-set splitright                  " Open new splits to the right
-" set synmaxcol=300               " Only highlight the first 300 cols. Should make movement in large files faster
-set tabstop=4
-set tags=./.tags,./tags;
-set termguicolors
-set textwidth=0
-set timeout
-set timeoutlen=500
-set title
-set titlestring=%f%(\ [%M]%) 	" Show file name at the title
-set ttimeout
-set ttimeoutlen=50
-set ttyfast
-set undolevels=2000
-set virtualedit=block           " Allow block mode after end of line
-set wildignore=*.o,*.obj,*.pyc,*.swc,*.DS_STORE,*.bkp
-set wildmenu
-set wildmode=full
-set winminheight=0
-set wrapmargin=0
+    set nostartofline 		        " Keep the cursor in the current column when moving between lines (if possible)
+    set nowinfixwidth
+    set nowrap
+    set shiftround
+    set shiftwidth=4
+    set smartcase 		            " Don't ignore case if the search term contains uppercase
+    set smarttab
+    set softtabstop=4
+    set tabstop=4
+    set virtualedit=block           " Allow block mode after end of line
+
+if exists('g:vscode')
+    set nonumber
+    set signcolumn=no
+else
+    set number
+    set numberwidth=1
+    set equalalways
+    set foldcolumn=1
+    set foldlevelstart=99           " Do not automatically fold
+    set formatoptions=qrn1
+    set formatoptions+=j            " Delete comment character when joining commented lines
+    set hidden 			            " Avoid asking to save before hiding
+    set lazyredraw
+    set listchars=nbsp:·,tab:›\ ,eol:¬,trail:·,extends:…,precedes:…
+    set modeline 			        " Respect modeline of the file (the famous "vi:noai:sw=3 ts=6" on the beginning of the files)
+    set mouse=a                     " allow mouse in console
+    set nosplitbelow
+    set noswapfile
+    set nowritebackup
+    set path+=**                    " Search through sub-directories when looking up a file
+    set previewheight=25
+    set ruler
+    set scroll=5
+    set scrolljump=1
+    set scrolloff=0
+    set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,globals
+    set showbreak=╰
+    set showcmd                     " Show number of selected chars/lines
+    set showmatch
+    set showtabline=2               " Always show tabline
+    set sidescroll=1
+    set sidescrolloff=5
+    set splitright                  " Open new splits to the right
+    " set synmaxcol=300               " Only highlight the first 300 cols. Should make movement in large files faster
+    set tags=./.tags,./tags;
+    set termguicolors
+    set textwidth=0
+    set timeout
+    set timeoutlen=500
+    set title
+    set titlestring=%f%(\ [%M]%) 	" Show file name at the title
+    set ttimeout
+    set ttimeoutlen=50
+    set ttyfast
+    set undolevels=2000
+    set wildignore=*.o,*.obj,*.pyc,*.swc,*.DS_STORE,*.bkp
+    set wildmenu
+    set wildmode=full
+    set winminheight=0
+    set wrapmargin=0
+endif
 
 if version > 702
     set undodir=~/.undo
@@ -127,8 +132,8 @@ endif
 
 if has('win32')
     colorscheme newernst
-    let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
-    let g:python3_host_prog = '~/AppData/Local/Programs/Python/Python38/python.exe'
+"   let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
+    let g:python3_host_prog = 'C:\Users\Ernst\scoop\apps\python\current\python.exe'
     " set clipboard=unnamed
 endif
 
