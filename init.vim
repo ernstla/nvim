@@ -121,14 +121,13 @@ let python_highlight_all = 1
 " HTML syntax settings
 let html_no_rendering = 1
 
+colorscheme newernst-transparent
 if has('unix')
-    colorscheme newernst-transparent
     let g:python_host_prog = '/usr/bin/python2'
     let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 if has('win32')
-    colorscheme newernst
 "   let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
     let g:python3_host_prog = 'C:\Users\Ernst\scoop\apps\python\current\python.exe'
     " set clipboard=unnamed
