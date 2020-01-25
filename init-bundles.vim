@@ -52,10 +52,10 @@ Plug 'wellle/targets.vim' " extend and improve text objects
 
 
 " Languages
-Plug 'Glench/Vim-Jinja2-Syntax', {'for': 'html'}
+" Plug 'Glench/Vim-Jinja2-Syntax', {'for': 'html'}
 Plug 'cespare/vim-toml'
-Plug 'elmcast/elm-vim'
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+" Plug 'elmcast/elm-vim'
+" Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'lifepillar/pgsql.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'

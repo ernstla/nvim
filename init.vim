@@ -129,7 +129,7 @@ endif
 
 if has('win32')
 "   let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
-    let g:python3_host_prog = 'C:\Users\Ernst\scoop\apps\python\current\python.exe'
+    let g:python3_host_prog = '~\AppData\Local\Programs\Python\Python37\python.exe'
     " set clipboard=unnamed
 endif
 

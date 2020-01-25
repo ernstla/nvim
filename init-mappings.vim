@@ -219,8 +219,4 @@ if has("nvim")
     nmap <buffer> <Leader>e ^v%y<C-w>wpi<CR><C-\><C-n><C-w>p
     " Evaluate buffer"
     nmap <buffer> <Leader>b ggVGy<C-w>wpi<CR><C-\><C-n><C-w>p
-
-    " Fix C-h
-    " not working on Arch
-    nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
