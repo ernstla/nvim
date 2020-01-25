@@ -198,24 +198,27 @@ highlight rstEmphasis guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE
 highlight rstStrongEmphasis guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
 
 " - JavaScript -
+"
 highlight jsString guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
-highlight jsStorageClass guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsConditional guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsRepeat guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsExtendsKeyword guifg=#ff8787 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsClassKeyword guifg=#ff8787 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsStorageClass guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsConditional guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsRepeat guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight jsString guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 highlight jsOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight jsTernaryIfOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight jsReturn guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsExport guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsExportDefault guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsImport guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsTry guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsCatch guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsFrom guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsDo guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsFunction guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsLabel guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight jsClassMethodType guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsReturn guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsExport guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsExportDefault guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsImport guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsTry guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsCatch guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsFrom guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsDo guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsFunction guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsLabel guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight jsClassMethodType guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight jsThis guifg=#7adffd guibg=NONE gui=NONE ctermfg=50 ctermbg=NONE cterm=NONE
 highlight jsFuncName guifg=#dfafff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight jsObjectFuncName guifg=#dfafff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
@@ -234,9 +237,13 @@ highlight jsNull guifg=#ef9090 guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm
 " - Vue.js -
 highlight vueTemplateTag guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight vueStyleTag guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight vueScriptTag guifg=#c491c4 guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
-highlight vueDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
-highlight vueEvent guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight vueScriptTag guifg=#df87df guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
+highlight vueDirective guifg=#df87df guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
+highlight vueEvent guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+
+" - Svelte.js -
+highlight svelteConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight svelteRepeat guifg=#df87df guibg=NONE gui=NONE ctermfg=176 cterm=NONE
 
 " - TypeScript -
 highlight typeScriptAjaxObjects guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
@@ -307,7 +314,7 @@ highlight rustUnsafeKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermb
 
 " - AngularJS -
 " in HTML
-highlight angularMarker guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight angularMarker guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight angularDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 highlight angularUIDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 highlight angularVariable guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
@@ -434,7 +441,7 @@ highlight djangoArgument guifg=#bbffff guibg=NONE gui=NONE ctermfg=159 ctermbg=N
 highlight bladeConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight bladeKeyword guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight bladeEchoDelim guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight bladeAngularDelim guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight bladeAngularDelim guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 
 " - PHP -
 highlight phpBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
@@ -590,7 +597,7 @@ highlight sassInclude guifg=#669933 guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE 
 highlight sassVariable guifg=#d5dbb6 guibg=NONE gui=NONE ctermfg=193 ctermbg=NONE cterm=NONE
 
 " - Toml -
-highlight tomlTable guifg=#fc5d8d guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight tomlTable guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight tomlTableArray guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight tomlInteger guifg=#f2592a guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
 highlight tomlFloat guifg=#f2592a guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE

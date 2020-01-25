@@ -70,7 +70,7 @@ if !exists("$VSCODE") && !exists('g:vscode')
     Plug 'w0rp/ale'
 endif
 
-if !exists("$VSCODE") && !exists("g:vscode") && !has("win32")
+if !exists("$VSCODE") && !exists("g:vscode")
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
