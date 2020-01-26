@@ -58,3 +58,9 @@ autocmd FileChangedShell * echohl echoError | echo "------------------------- Wa
 
 autocmd QuickFixCmdPost [^l]* botright cwindow
 autocmd QuickFixCmdPost l*    botright lwindow
+
+" Terminal
+if has('nvim')
+    autocmd TermOpen * setlocal nonumber norelativenumber
+    " autocmd TermOpen term://* startinsert
+endif

@@ -75,7 +75,7 @@ else
     set showbreak=╰
     set showcmd                     " Show number of selected chars/lines
     set showmatch
-    set showtabline=2               " Always show tabline
+    set showtabline=1               " Always show tabline
     set sidescroll=1
     set sidescrolloff=5
     set splitright                  " Open new splits to the right
@@ -128,9 +128,22 @@ if has('unix')
 endif
 
 if has('win32')
-"   let g:python_host_prog = '~/AppData/Local/Programs/Python/Python27/python.exe'
-    let g:python3_host_prog = '~\AppData\Local\Programs\Python\Python37\python.exe'
-    " set clipboard=unnamed
+    if executable('~\AppData\Local\Programs\Python\Python37\python.exe')
+        let g:python3_host_prog = '~\AppData\Local\Programs\Python\Python37\python.exe'
+    endif
+    if executable('~\AppData\Local\Programs\Python\Python38\python.exe')
+        let g:python3_host_prog = '~\AppData\Local\Programs\Python\Python38\python.exe'
+    endif
+    if executable('~\AppData\Local\Programs\Python\Python27\python.exe')
+        let g:python_host_prog = '~\AppData\Local\Programs\Python\Python27\python.exe'
+    endif
+
+    set shell=powershell.exe
+    set shellquote=( 
+    set shellpipe=\| 
+    set shellxquote=
+    set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+    set shellredir=\|\ Out-File\ -Encoding\ UTF8
 endif
 
 if has('autocmd')               " Otherwise the settings don't work
@@ -141,6 +154,8 @@ set t_Co=256
 
 runtime macros/matchit.vim
 
+set langmenu=en_US.UTF-8        " sets the language of the menu (gvim)
+language en                     " sets the language of the messages / ui (vim)
 setlocal nospell spelllang=en   " Spell checking
 
 " netRW settings
@@ -166,6 +181,5 @@ runtime init-mappings.vim
 runtime init-bundles.vim
 runtime init-plugins.vim
 runtime init-headertoggle.vim
-runtime init-coc.vim
 
 set secure " don't allow usafe commands in project .vimrc files

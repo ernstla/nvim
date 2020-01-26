@@ -38,7 +38,7 @@ nnoremap _ ^vg_
 vnoremap <leader>R "ay:%s/<C-R>a//g<Left><Left>
 
 " Tabs
-nnoremap <Leader>t <esc>:tabnew<cr>
+nnoremap <Leader>tt <esc>:tabnew<cr>
 nnoremap <Leader>j <esc>gt
 nnoremap <Leader>k <esc>gT
 nnoremap <M-1> 1gt
@@ -151,11 +151,18 @@ if has('nvim')
     tnoremap <C-k> <C-\><C-N><C-w>k
     tnoremap <C-l> <C-\><C-N><C-w>l
 
-    " I like relative numbering when in normal mode.
-    autocmd TermOpen * setlocal conceallevel=0 colorcolumn=0
+    nnoremap <Leader>v :vsplit<bar>terminal<cr><c-w>L<cr>i
+    nnoremap <Leader>s :split<bar>terminal<cr><c-w>J<cr>i
+    nnoremap <Leader>x :terminal<cr>i
 
-    " Prefer Neovim terminal insert mode to normal mode.
-    autocmd BufEnter term://* startinsert
+    " Open terminal and run ptpython
+    nmap <Leader>py <C-w>v:terminal<CR>ptpython<CR><C-\><C-n><C-w>p
+    " Evaluate anything from the visual mode in the next window
+    vmap <buffer> <Leader>e y<C-w>wpi<CR><C-\><C-n><C-w>p
+    " Evaluate outer most form
+    nmap <buffer> <Leader>e ^v%y<C-w>wpi<CR><C-\><C-n><C-w>p
+    " Evaluate buffer"
+    nmap <buffer> <Leader>b ggVGy<C-w>wpi<CR><C-\><C-n><C-w>p
 endif
 
 " Format json
@@ -208,15 +215,3 @@ if executable(s:clip)
         autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
     augroup END
 end
-
-" Neovim specific
-if has("nvim")
-    " Open terminal and run bpython
-    nmap <Leader>py <C-w>v:terminal<CR>bpython<CR><C-\><C-n><C-w>p
-    " Evaluate anything from the visual mode in the next window
-    vmap <buffer> <Leader>e y<C-w>wpi<CR><C-\><C-n><C-w>p
-    " Evaluate outer most form
-    nmap <buffer> <Leader>e ^v%y<C-w>wpi<CR><C-\><C-n><C-w>p
-    " Evaluate buffer"
-    nmap <buffer> <Leader>b ggVGy<C-w>wpi<CR><C-\><C-n><C-w>p
-endif

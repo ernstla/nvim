@@ -2,16 +2,20 @@
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver1-iCursor
 set guicursor+=n-v-c:blinkon0-Cursor
-colorscheme newernst
+colorscheme newernst-transparent
 
-if has('win32')
-    set guifont=Consolas:h10:cANSI
-	set linespace=-1
+GuiLinespace -1
+GuiTabline 0
+GuiPopupmenu 0
+GuiFont! Roboto\ Mono\ for\ Powerline:h11
 
-else
-    set guifont=Roboto\ Mono\ for\ Powerline\ 11
-    set linespace=0
-endif
+" Use shift+insert for paste inside neovim-qt,
+" see https://github.com/equalsraf/neovim-qt/issues/327#issuecomment-325660764
+inoremap <silent> <S-Insert>  <C-R>+
+cnoremap <silent> <S-Insert> <C-R>+
+
+" For Windows, Ctrl-6 does not work. So we use this mapping instead.
+nnoremap <silent> <C-6> <C-^>
 
 " Don't show toolbar and scrollbars
 set guioptions-=T to
@@ -27,4 +31,4 @@ highlight SpellBad term=underline gui=undercurl guisp=Red
 " Set size and position
 set lines=50
 set columns=126 
-winpos 250 40
+
