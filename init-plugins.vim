@@ -150,10 +150,12 @@ let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⇉'
 let g:ale_statusline_format = ['✖ %d', '⇉ %d', '✔ ok']
 " let g:ale_lint_on_text_changed = 'never'
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],
 \   'typescript': ['tslint'],
 \   'javascript': ['eslint'],
+\   'svelte': ['stylelint', 'eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'html': [],
@@ -163,6 +165,7 @@ let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier', 'eslint'],
+\   'svelte': ['eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \}

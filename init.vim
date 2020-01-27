@@ -46,6 +46,9 @@ set undofile                    " Persistent undo
 set undoreload=10000
 set virtualedit=block           " Allow block mode after end of line
 
+setlocal nospell 
+setlocal spelllang=en           " Spell checking
+
 if exists('g:vscode')
     set nonumber
     set signcolumn=no
@@ -144,6 +147,9 @@ if has('win32')
     set shellxquote=
     set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
     set shellredir=\|\ Out-File\ -Encoding\ UTF8
+
+    set langmenu=en_US.UTF-8        " sets the language of the menu (gvim)
+    language en                     " sets the language of the messages / ui (vim)
 endif
 
 if has('autocmd')               " Otherwise the settings don't work
@@ -153,10 +159,6 @@ endif
 set t_Co=256
 
 runtime macros/matchit.vim
-
-set langmenu=en_US.UTF-8        " sets the language of the menu (gvim)
-language en                     " sets the language of the messages / ui (vim)
-setlocal nospell spelllang=en   " Spell checking
 
 " netRW settings
 " let g:netrw_liststyle = 3
