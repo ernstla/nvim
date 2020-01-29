@@ -13,9 +13,9 @@ highlight StatusLineNC guifg=#ffffff guibg=#0a0e1a gui=NONE ctermfg=15 ctermbg=2
 highlight StatusLine guifg=#ffffff guibg=#4a4e5a gui=NONE ctermfg=15 ctermbg=240 cterm=NONE
 highlight ErnstSLHighBG guifg=#000000 guibg=#ffaf00
 highlight ErnstSLInactiveBG guifg=#000000 guibg=#1f424f
-highlight ErnstSLInactiveFG guifg=#1f424f
-highlight ErnstSLHighFG guifg=#ffaf00 guibg=NONE
-highlight ErnstSLNormalFG guifg=#4f727f guibg=NONE
+highlight ErnstSLInactiveFG guifg=#1f424f guibg=#131313
+highlight ErnstSLHighFG guifg=#ffaf00 guibg=#131313
+highlight ErnstSLNormalFG guifg=#4f727f guibg=#131313
 
 function! StatuslineGit()
     let git = fugitive#head()

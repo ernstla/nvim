@@ -7,7 +7,7 @@ colorscheme newernst-transparent
 GuiLinespace -1
 GuiTabline 0
 GuiPopupmenu 0
-GuiFont! Roboto\ Mono\ for\ Powerline:h11
+GuiFont! Roboto\ Mono\ for\ Powerline:h10
 
 " Use shift+insert for paste inside neovim-qt,
 " see https://github.com/equalsraf/neovim-qt/issues/327#issuecomment-325660764

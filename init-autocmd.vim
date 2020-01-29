@@ -62,5 +62,19 @@ autocmd QuickFixCmdPost l*    botright lwindow
 " Terminal
 if has('nvim')
     autocmd TermOpen * setlocal nonumber norelativenumber
-    " autocmd TermOpen term://* startinsert
+    autocmd TermOpen term://* startinsert
+
+    augroup terminal_settings
+        autocmd!
+
+        autocmd BufWinEnter,WinEnter term://* startinsert
+        autocmd BufLeave term://* stopinsert
+
+        " Ignore various filetypes as those will close terminal automatically
+        " Ignore fzf, ranger, coc
+        autocmd TermClose term://*
+            \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc") |
+            \   call nvim_input('<CR>')  |
+            \ endif
+    augroup END
 endif

@@ -22,6 +22,7 @@ endif
 
 Plug 'Sirver/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'guns/xterm-color-table.vim', {'on': 'XtermColorTable'}
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'jlanzarotta/bufexplorer'
@@ -69,20 +70,5 @@ Plug 'zah/nim.vim', {'for': 'nim'}
 if !exists("$VSCODE") && !exists('g:vscode')
     Plug 'w0rp/ale'
 endif
-
-" if !exists("$VSCODE") && !exists("g:vscode")
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'coc-extensions/coc-svelte', {'do': 'yarn install --frozen-lockfile'}
-" endif
 
 call plug#end()

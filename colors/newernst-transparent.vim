@@ -20,7 +20,7 @@ highlight FoldColumn guifg=#586e75 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE
 highlight VertSplit guifg=#1a152a guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
 highlight CursorLineNr guifg=#ceecee guibg=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=NONE
 highlight NonText guifg=#1f323f guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE " Empty line's tilde character
-highlight StatusLine guifg=#ffffff guibg=#090909 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+highlight StatusLine guifg=#ffffff guibg=#070713 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight TabLineFill guifg=NONE guibg=NONE gui=NONE ctermfg=0 ctermbg=NONE cterm=NONE
 highlight TabLine guifg=#586e75 guibg=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 highlight TabLineSel guifg=#ceecee guibg=NONE gui=bold ctermfg=106 ctermbg=NONE cterm=NONE

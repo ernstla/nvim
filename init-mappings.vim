@@ -151,9 +151,9 @@ if has('nvim')
     tnoremap <C-k> <C-\><C-N><C-w>k
     tnoremap <C-l> <C-\><C-N><C-w>l
 
-    nnoremap <Leader>v :vsplit<bar>terminal<cr><c-w>L<cr>i
-    nnoremap <Leader>s :split<bar>terminal<cr><c-w>J<cr>i
-    nnoremap <Leader>x :terminal<cr>i
+    nnoremap <Leader>v :vsplit<bar>terminal<CR>
+    nnoremap <Leader>s :split<bar>terminal<CR>
+    nnoremap <Leader>x :terminal<CR>
 
     " Open terminal and run ptpython
     nmap <Leader>py <C-w>v:terminal<CR>ptpython<CR><C-\><C-n><C-w>p

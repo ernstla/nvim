@@ -165,7 +165,7 @@ let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier', 'eslint'],
-\   'svelte': ['eslint'],
+\   'svelte': ['eslint', 'prettier', 'prettier_standard'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \}
