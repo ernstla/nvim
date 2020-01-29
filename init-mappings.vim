@@ -19,7 +19,7 @@ nnoremap gh g^
 " Identify the syntax highlighting group used at the cursor
 nnoremap <Leader>p :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 " Use Y like C and D
 nnoremap Y y$
@@ -53,16 +53,16 @@ nnoremap <M-9> 9gt
 nnoremap <M-0> 10gt
 "
 " Toggle hlsearch
-nnoremap <silent> <Leader>h <esc>:set hlsearch!<CR>
+nnoremap <silent> <Leader>h <esc>:set hlsearch!<cr>
 
 " Toggle relativenumber
-nnoremap <silent> <Leader>r <esc>:set relativenumber!<CR>
+nnoremap <silent> <Leader>r <esc>:set relativenumber!<cr>
 
 " Toggle wrapping
 nnoremap <Leader>w <esc>:set wrap! wrap?<cr>
 
 " Toggle invisibles
-noremap <Leader>i :set list!<CR>
+noremap <Leader>i :set list!<cr>
 
 " sudo save
 command W w !sudo tee % > /dev/null
@@ -73,10 +73,10 @@ command SpellGerman set spell spelllang=de
 command SpellOff set nospell
 
 " Change size of windows
-noremap <Leader>>  20<C-W>>
-noremap <Leader><  20<C-W><
-noremap <Leader>+  5<C-W>+
-noremap <Leader>-  5<C-W>-
+noremap <Leader>>  20<C-w>>
+noremap <Leader><  20<C-w><
+noremap <Leader>+  5<C-w>+
+noremap <Leader>-  5<C-w>-
 
 " Center search matches
 nnoremap n nzz
@@ -87,32 +87,32 @@ noremap <C-O> <C-O>zz
 noremap <C-I> <C-I>zz
 
 " Easy navigation in Quickfix window
-nnoremap <F3> :cnext<CR>
-nnoremap <M-F3> :botright cope 15<CR>
+nnoremap <F3> :cnext<cr>
+nnoremap <M-F3> :botright cope 15<cr>
 if has("gui_running")
-    nnoremap <S-F3> :cprevious<CR>
+    nnoremap <S-F3> :cprevious<cr>
 else
-    nnoremap <F15> :cprevious<CR>
+    nnoremap <F15> :cprevious<cr>
 endif
 
 " Easy navigation in Location List
-nnoremap <F4> :lnext<CR>zz
-nnoremap <M-F4> :botright lopen 15<CR>
+nnoremap <F4> :lnext<cr>zz
+nnoremap <M-F4> :botright lopen 15<cr>
 if has("gui_running")
-    nnoremap <S-F4> :lprevious<CR>zz
+    nnoremap <S-F4> :lprevious<cr>zz
 else
-    nnoremap <F16> :lprevious<CR>zz
+    nnoremap <F16> :lprevious<cr>zz
 endif
 
 " Run last macro
 nnoremap Q @@
 
 " Double the number of leading spaces
-nnoremap <Leader>ds :%s/^\s*/&&<CR>
-vnoremap <Leader>ds :s/^\s*/&&<CR>
+nnoremap <Leader>ds :%s/^\s*/&&<cr>
+vnoremap <Leader>ds :s/^\s*/&&<cr>
 
 " Execute macros over visual range
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<cr>
 
 function! ExecuteMacroOverVisualRange()
     echo "@".getcmdline()
@@ -126,7 +126,7 @@ nnoremap <Leader>o <esc>:Picon<cr><cr>
 
 " Navigate with + and - between changes and center change on screen
 " Catch the transition to diff mode
-au FilterWritePre * if &diff | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<CR>' | endif
+au FilterWritePre * if &diff | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<cr>' | endif
 au FilterWritePre * if &diff |  exe 'execute "normal zR"' | endif
 " au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000' | exe 'execute "normal \<c-w>\<c-w>"' | endif
 
@@ -139,6 +139,23 @@ command! -nargs=* -complete=file Grep call Grp(<q-args>)
 command! -nargs=* -complete=file Ag call Grp(<q-args>)
 command! -nargs=* -complete=file Rg call Grp(<q-args>)
 
+if has('win32')
+    nnoremap <silent> <C-h> <C-w>h
+    nnoremap <silent> <C-j> <C-w>j
+    nnoremap <silent> <C-k> <C-w>k
+    nnoremap <silent> <C-l> <C-w>l
+    nnoremap <silent> <M-h> <C-w>h
+    nnoremap <silent> <M-j> <C-w>j
+    nnoremap <silent> <M-k> <C-w>k
+    nnoremap <silent> <M-l> <C-w>l
+else
+    nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+    nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+    nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
+endif
+
 " Neovim
 if has('nvim')
     " Make escape work in the Neovim terminal.
@@ -146,23 +163,29 @@ if has('nvim')
 
     " CONFLICTS with fzf
     " Make navigation into and out of Neovim terminal splits nicer.
-    tnoremap <C-h> <C-\><C-N><C-w>h
-    tnoremap <C-j> <C-\><C-N><C-w>j
-    tnoremap <C-k> <C-\><C-N><C-w>k
-    tnoremap <C-l> <C-\><C-N><C-w>l
+    if has('unix')
+        tnoremap <C-h> <C-\><C-n><C-w>h
+    endif
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+    tnoremap <M-h> <C-\><C-n><C-w>h
+    tnoremap <M-j> <C-\><C-n><C-w>j
+    tnoremap <M-k> <C-\><C-n><C-w>k
+    tnoremap <M-l> <C-\><C-n><C-w>l
 
-    nnoremap <Leader>v :vsplit<bar>terminal<CR>
-    nnoremap <Leader>s :split<bar>terminal<CR>
-    nnoremap <Leader>x :terminal<CR>
+    nnoremap <Leader>v :vsplit<bar>terminal<cr>
+    nnoremap <Leader>s :split<bar>terminal<cr>
+    nnoremap <Leader>x :terminal<cr>
 
     " Open terminal and run ptpython
-    nmap <Leader>py <C-w>v:terminal<CR>ptpython<CR><C-\><C-n><C-w>p
+    nmap <Leader>py <C-w>v:terminal<cr>ptpython<cr><C-\><C-n><C-w>p
     " Evaluate anything from the visual mode in the next window
-    vmap <buffer> <Leader>e y<C-w>wpi<CR><C-\><C-n><C-w>p
+    vmap <buffer> <Leader>e y<C-w>wpi<cr><C-\><C-n><C-w>p
     " Evaluate outer most form
-    nmap <buffer> <Leader>e ^v%y<C-w>wpi<CR><C-\><C-n><C-w>p
+    nmap <buffer> <Leader>e ^v%y<C-w>wpi<cr><C-\><C-n><C-w>p
     " Evaluate buffer"
-    nmap <buffer> <Leader>b ggVGy<C-w>wpi<CR><C-\><C-n><C-w>p
+    nmap <buffer> <Leader>b ggVGy<C-w>wpi<cr><C-\><C-n><C-w>p
 endif
 
 " Format json
@@ -170,48 +193,48 @@ command Jsonify   %!python -m json.tool
 command Tidy      !tidy -mi -html -wrap 0 %
 
 " UndoTree
-noremap <F5> :UndotreeToggle<CR>
+noremap <F5> :UndotreeToggle<cr>
 
 " signify
-noremap <silent> <F6> <Esc>:SignifyToggle<CR>
+noremap <silent> <F6> <Esc>:SignifyToggle<cr>
 
 " Rainbow Paranthesis
-noremap <silent> <F7> :RainbowToggle<CR>
+noremap <silent> <F7> :RainbowToggle<cr>
 
 " Nerd Tree
-noremap <silent> <F8> :NERDTreeToggle<CR>
+noremap <silent> <F8> :NERDTreeToggle<cr>
 
 " BufExplorer
-noremap <silent> <F9>  :BufExplorer<CR>
+noremap <silent> <F9>  :BufExplorer<cr>
 
 " TagBar
-noremap <silent> <F10> <Esc>:TagbarToggle<CR>
+noremap <silent> <F10> <Esc>:TagbarToggle<cr>
 
 " FZF
-nnoremap <silent> <M-a> <Esc>:FZRg<CR>
-nnoremap <silent> <M-c> <Esc>:FZCommit<CR>
-nnoremap <silent> <M-t> <Esc>:FZTags<CR>
-nnoremap <silent> <M-p> <Esc>:FZF<CR>
-nnoremap <silent> <C-p> <Esc>:FZGitFiles<CR>
+nnoremap <silent> <M-a> <Esc>:FZRg<cr>
+nnoremap <silent> <M-c> <Esc>:FZCommit<cr>
+nnoremap <silent> <M-t> <Esc>:FZTags<cr>
+nnoremap <silent> <M-p> <Esc>:FZF<cr>
+nnoremap <silent> <C-p> <Esc>:FZGitFiles<cr>
 
 " Git: fugitive / git-messenger
-nmap <silent> <Leader>gs <Esc>:Gstatus<CR>gg<C-n>
-noremap <silent> <Leader>gp <Esc>:Gpush<CR>
-noremap <silent> <Leader>gb <Esc>:Gblame<CR>
-noremap <silent> <Leader>gd <Esc>:Gvdiff<CR>
+nmap <silent> <Leader>gs <Esc>:Gstatus<cr>gg<C-n>
+noremap <silent> <Leader>gp <Esc>:Gpush<cr>
+noremap <silent> <Leader>gb <Esc>:Gblame<cr>
+noremap <silent> <Leader>gd <Esc>:Gvdiff<cr>
 noremap <silent> <Leader>gm <Esc><Plug>(git-messenger)
 
 " NERDCommenter
-nnoremap gm :call NERDComment("n", "Comment")<CR>
-vnoremap gm :call NERDComment("v", "Comment")<CR>
-nnoremap gs :call NERDComment("n", "Invert")<CR>
-vnoremap gs :call NERDComment("v", "Invert")<CR>
+nnoremap gm :call NERDComment("n", "Comment")<cr>
+vnoremap gm :call NERDComment("v", "Comment")<cr>
+nnoremap gs :call NERDComment("n", "Invert")<cr>
+vnoremap gs :call NERDComment("v", "Invert")<cr>
 
 " FOR WSL ONLY
 let s:clip = '/mnt/c/Windows/System32/clip.exe' 
 if executable(s:clip)
     augroup WSLYank
         autocmd!
-        autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+        autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<cr>")).' | '.s:clip)
     augroup END
 end

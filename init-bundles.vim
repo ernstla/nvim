@@ -21,7 +21,6 @@ endif
 
 
 Plug 'Sirver/ultisnips'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'guns/xterm-color-table.vim', {'on': 'XtermColorTable'}
 Plug 'jeetsukumaran/vim-filebeagle'
@@ -53,10 +52,7 @@ Plug 'wellle/targets.vim' " extend and improve text objects
 
 
 " Languages
-" Plug 'Glench/Vim-Jinja2-Syntax', {'for': 'html'}
 Plug 'cespare/vim-toml'
-" Plug 'elmcast/elm-vim'
-" Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'lifepillar/pgsql.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -69,6 +65,10 @@ Plug 'zah/nim.vim', {'for': 'nim'}
 
 if !exists("$VSCODE") && !exists('g:vscode')
     Plug 'w0rp/ale'
+endif
+
+if has("unix")
+    Plug 'christoomey/vim-tmux-navigator'
 endif
 
 call plug#end()

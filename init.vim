@@ -179,9 +179,9 @@ endif
 runtime init-statusline.vim
 runtime init-autocmd.vim
 runtime init-tabline.vim
-runtime init-mappings.vim
 runtime init-bundles.vim
 runtime init-plugins.vim
 runtime init-headertoggle.vim
+runtime init-mappings.vim
 
 set secure " don't allow usafe commands in project .vimrc files
