@@ -211,11 +211,16 @@ noremap <silent> <F9>  :BufExplorer<cr>
 noremap <silent> <F10> <Esc>:TagbarToggle<cr>
 
 " FZF
+":
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir GitFiles
+    \ call fzf#vim#gitfiles(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
 nnoremap <silent> <M-a> <Esc>:FZRg<cr>
 nnoremap <silent> <M-c> <Esc>:FZCommit<cr>
 nnoremap <silent> <M-t> <Esc>:FZTags<cr>
-nnoremap <silent> <M-p> <Esc>:FZF<cr>
-nnoremap <silent> <C-p> <Esc>:FZGitFiles<cr>
+nnoremap <silent> <M-p> <Esc>:Files<cr>
+nnoremap <silent> <C-p> <Esc>:GitFiles<cr>
 
 " Git: fugitive / git-messenger
 nmap <silent> <Leader>gs <Esc>:Gstatus<cr>gg<C-n>

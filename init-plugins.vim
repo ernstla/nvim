@@ -118,7 +118,26 @@ let g:fzf_colors =
 \   'marker':  ['fg', 'Keyword'],
 \   'spinner': ['fg', 'Label'],
 \   'header':  ['fg', 'Keyword'] }
+if has('nvim')
+    " Using floating windows of Neovim to start fzf
+    let $FZF_DEFAULT_OPTS .= '--color=bg:#131313 --border --layout=reverse'
+    function! FloatingFZF()
+        let width = float2nr(&columns * 0.4)
+        let height = float2nr(&lines * 0.3)
+        let opts = { 'relative': 'editor',
+        \ 'row': (&lines - height) / 3.5,
+        \ 'col': (&columns - width) / 2,
+        \ 'width': width,
+        \ 'height': height,
+        \ 'style': 'minimal'
+        \}
 
+        let win = nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+        call setwinvar(win, '&winhighlight', 'NormalFloat:TabLine')
+    endfunction
+
+    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+endif
 
 " Elm
 let g:elm_jump_to_error = 0
@@ -146,6 +165,7 @@ let g:vue_pre_processors = ['scss']
 " Ale
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
+let g:ale_completion_enabled = 1
 if has("win32")
     let g:ale_sign_error = '⛔️'
     let g:ale_sign_warning = '💡'
@@ -158,6 +178,7 @@ let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],
 \   'typescript': ['tslint'],
 \   'javascript': ['eslint'],
+\   'json': ['jsonlint'],
 \   'svelte': ['stylelint', 'eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
@@ -168,17 +189,23 @@ let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier', 'eslint'],
 \   'svelte': ['eslint', 'prettier', 'prettier_standard'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'rust': ['rustfmt'],
 \}
-let g:ale_pattern_options = {
-\   'Workspace/neorent.*\.py$': {'ale_fixers': ['isort']},
-\}
 let g:ale_python_black_options = '--line-length 88 --skip-string-normalization'
 let g:ale_python_isort_options = '--multi-line 3 --trailing-comma'
-let g:ale_javascript_prettier_options = '--print-with 88 --tab-with 4 --single-quote --trailing-comma "all"'
+" let g:ale_javascript_prettier_options = '--print-with 88 --tab-with 4 --single-quote --trailing-comma "all"'
+let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_rust_rls_executable = '/home/ernst/.cargo/bin/rls'
+let g:ale_rust_rls_options = '--cli'
+let g:ale_pattern_options = {
+\   'Workspace/neorent.*\.py$': {'ale_fixers': ['isort']},
+\   'Workspace/neorent.*\.js$': {'ale_fixers': []},
+\   '/mnt/c/Users/Ernst/Workspace.*\.rs$': {'ale_rust_rls_executable': '/mnt/c/Users/Ernst/.cargo/bin/rls.exe'},
+\}
 
 
 " UndoTree
