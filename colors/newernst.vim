@@ -128,10 +128,10 @@ highlight netrwDir guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cte
 highlight netrwClassify guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 
 " - Neomake/Ale -
-highlight NeomakeErrorSign guifg=#cb4b16 guibg=#061926 gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight NeomakeErrorSign guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
 highlight NeomakeWarningSign guifg=#ffbb29 guibg=#061926 gui=NONE ctermfg=214 ctermbg=235 cterm=NONE
-highlight AleErrorSign guifg=#cb4b16 guibg=#061926 gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
-highlight AleWarningSign guifg=#ffbb29 guibg=#061926 gui=NONE ctermfg=214 ctermbg=235 cterm=NONE
+highlight AleErrorSign guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
+highlight AleWarningSign guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 
 " - Signify -
 highlight SignifyLineAdd guifg=#8fbe00 guibg=#0a0e1a gui=NONE ctermfg=106 ctermbg=235 cterm=NONE

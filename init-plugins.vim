@@ -146,9 +146,9 @@ let g:vue_pre_processors = ['scss']
 " Ale
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⇉'
-let g:ale_statusline_format = ['✖ %d', '⇉ %d', '✔ ok']
+let g:ale_sign_error = '❌ '
+let g:ale_sign_warning = '💡'
+let g:ale_statusline_format = ['❌%d', '💡%d', '✓ ok']
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {
@@ -159,7 +159,7 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'html': [],
-\   'rust': ['cargo', 'rls'],
+\   'rust': ['rls'],
 \}
 let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
@@ -168,10 +168,10 @@ let g:ale_fixers = {
 \   'svelte': ['eslint', 'prettier', 'prettier_standard'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
+\   'rust': ['rustfmt'],
 \}
 let g:ale_pattern_options = {
 \   'Workspace/neorent.*\.py$': {'ale_fixers': ['isort']},
-\   'Workspace/neorent.*\.js$': {'ale_fixers': []},
 \}
 let g:ale_python_black_options = '--line-length 88 --skip-string-normalization'
 let g:ale_python_isort_options = '--multi-line 3 --trailing-comma'
