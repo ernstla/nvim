@@ -280,36 +280,39 @@ highlight typeScriptType guifg=#fd971f guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 
 " - Rust -
 highlight rustArrowCharacter guifg=#f5f5f5 guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
+highlight rustAssert guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight rustAttribute guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight rustBoolean guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight rustCharacter guifg=#9fce10 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight rustBoolean guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight rustCharacter guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight rustCommentLineDoc guifg=#586e75 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-highlight rustConditional guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight rustConditional guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight rustDerive guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight rustDeriveTrait guifg=#fdca49 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight rustDeriveTrait guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight rustDynKeyword guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight rustEnumVariant guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight rustEscape guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
-highlight rustFuncCall guifg=#c7cadf guibg=NONE gui=NONE ctermfg=253 ctermbg=NONE cterm=NONE
-highlight rustFuncName guifg=#c7cadf guibg=NONE gui=NONE ctermfg=253 ctermbg=NONE cterm=NONE
+highlight rustEscape guifg=#f9990d guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight rustFuncCall guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
+highlight rustFuncName guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 highlight rustIdentifier guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
-highlight rustKeyword guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustMacro guifg=#feee55 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
-highlight rustMacroVariable guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight rustKeyword guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight rustMacro guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight rustMacroVariable guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight rustModPath guifg=#f0f0f0 guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 highlight rustModPathSep guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
-highlight rustNumber guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight rustNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight rustOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
-highlight rustQuestionMark guifg=#fc580c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustRepeat guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustSelf guifg=#aaffff guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
-highlight rustSigil guifg=#fdca49 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight rustStorage guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustString guifg=#9fce10 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight rustStructure guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustTrait guifg=#c7cadf guibg=NONE gui=NONE ctermfg=253 ctermbg=NONE cterm=NONE
-highlight rustType guifg=#fdca49 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight rustTypedef guifg=#11b8d6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight rustUnsafeKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE cterm=NONE
+highlight rustQuestionMark guifg=#f2592a guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight rustRepeat guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight rustSelf guifg=#79eef3 guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
+highlight rustSigil guifg=#f2592a guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight rustStorage guifg=#fab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight rustString guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight rustStringDelimiter guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight rustStructure guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight rustTrait guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight rustType guifg=#f9990d guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight rustTypedef guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight rustUnsafeKeyword guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 
 
 " - AngularJS -

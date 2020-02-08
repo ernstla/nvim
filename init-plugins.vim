@@ -122,7 +122,7 @@ if has('nvim')
     " Using floating windows of Neovim to start fzf
     let $FZF_DEFAULT_OPTS .= '--color=bg:#131313 --border --layout=reverse'
     function! FloatingFZF()
-        let width = float2nr(&columns * 0.4)
+        let width = float2nr(&columns * 0.6)
         let height = float2nr(&lines * 0.3)
         let opts = { 'relative': 'editor',
         \ 'row': (&lines - height) / 3.5,
@@ -183,7 +183,7 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'html': [],
-\   'rust': ['rls'],
+\   'rust': ['cargo'],
 \}
 let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
