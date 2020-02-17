@@ -53,6 +53,7 @@ Plug 'wellle/targets.vim' " extend and improve text objects
 
 " Languages
 Plug 'cespare/vim-toml'
+Plug 'ElmCast/elm-vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'

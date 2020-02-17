@@ -6,20 +6,15 @@
 autocmd BufRead,BufNewFile *.h set filetype=c
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=css
-autocmd BufRead,BufNewFile *.jinja2 set filetype=jinja.html
-autocmd BufRead,BufNewFile *.html set filetype=htmldjango.html.javascript
 autocmd BufRead,BufNewFile *.wsgi set filetype=python
 autocmd BufRead,BufNewFile *.scss set filetype=scss
 autocmd BufRead,BufNewFile *.nim set filetype=nim
-autocmd BufRead,BufNewFile *.mako set filetype=mako.html
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
-autocmd BufRead,BufNewFile *.php set filetype=php.html
 autocmd BufRead,BufNewFile *.ini.tmpl set filetype=dosini
 autocmd BufRead,BufNewFile *.boot set filetype=clojure
 autocmd BufRead,BufNewFile *.pxi set filetype=clojure
 autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile *.msql set filetype=pgsql
-"autocmd BufRead,BufNewFile *.vue set filetype=vue.javascript.html
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 

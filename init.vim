@@ -31,13 +31,13 @@ set nocursorcolumn
 set noerrorbells visualbell t_vb= " No beeps
 set nohlsearch 		            " Don't highlight matched regexp by default
 set nojoinspaces
-set nosmartindent
 set nostartofline 		        " Keep the cursor in the current column when moving between lines (if possible)
 set nowinfixwidth
 set nowrap
 set shiftround
 set shiftwidth=4
 set smartcase 		            " Don't ignore case if the search term contains uppercase
+set smartindent
 set smarttab
 set softtabstop=4
 set tabstop=4
