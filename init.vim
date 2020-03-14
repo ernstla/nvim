@@ -57,7 +57,7 @@ else
     set number
     set numberwidth=1
     set equalalways
-    set foldcolumn=1
+    set foldcolumn=0
     set foldlevelstart=99           " Do not automatically fold
     set formatoptions=qrn1
     set formatoptions+=j            " Delete comment character when joining commented lines
