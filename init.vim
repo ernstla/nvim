@@ -11,6 +11,7 @@ endif
 
 set autoindent
 set backspace=indent,eol,start 	" Backspace as expected
+set backupcopy=yes
 set clipboard=unnamedplus
 set complete=.,w,b,u,t          " Insert-mode completion
 set completeopt-=preview

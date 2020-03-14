@@ -351,20 +351,6 @@ highlight pythonString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NON
 highlight pythonUnderUnder guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 "
-" - PHP -
-highlight phpBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight phpComparison guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight phpKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpDefine guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
-highlight phpFunctions guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-highlight phpRegion guifg=#c2dcf2 guibg=NONE gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
-highlight phpInclude guifg=#617fa0 guibg=NONE gui=NONE ctermfg=67 ctermbg=NONE cterm=NONE
-highlight phpType guifg=#f38630 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
-highlight phpVarSelector guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight phpDocTags guifg=#98aeb5 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-highlight phpDocParam guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-
-"
 " - Nim -
 highlight nimKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE cterm=NONE
 highlight nimRepeat guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
@@ -373,10 +359,12 @@ highlight nimOperator guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE
 highlight nimBuiltin guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight nimNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight nimSelf guifg=#f5e28e guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight nimString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight nimBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight nimPragma guifg=#ccff99 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
+highlight nimAsync guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 " - HTML
 highlight htmlComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
@@ -461,8 +449,8 @@ highlight phpDefine guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE ct
 highlight phpStructure guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight phpConstant guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight phpCoreConstant guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
-highlight phpFunctions guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-highlight phpSpecialFunction guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight phpFunctions guifg=#af7f99 guibg=NONE gui=NONE ctermfg=130 ctermbg=NONE cterm=NONE
+highlight phpSpecialFunction guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
 highlight phpIdentifier guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpMemberSelector guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpMethods guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
