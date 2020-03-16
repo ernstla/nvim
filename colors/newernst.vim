@@ -278,6 +278,42 @@ highlight typeScriptStringT guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermb
 highlight typeScriptThis guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
 highlight typeScriptType guifg=#fd971f guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 
+
+" - AngularJS -
+" in HTML
+highlight angularMarker guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight angularDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight angularUIDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight angularVariable guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
+" in JavaScript
+highlight angularScope guifg=#5aede0 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+
+
+" Python
+highlight pythonBuiltin guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
+highlight pythonConst guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
+highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
+highlight pythonConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonDecorator guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonDecoratorName guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonDocString guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
+highlight pythonEscape guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonException guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonExceptions guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight pythonFunction guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+highlight pythonInclude guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonNumber guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight pythonOperator guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonRawString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonSelf guifg=#7adffd guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight pythonStatement guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonUnderUnder guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+
+
 " - Rust -
 highlight rustArrowCharacter guifg=#f5f5f5 guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 highlight rustAssert guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
@@ -317,54 +353,35 @@ highlight rustTypedef guifg=#5e81ac guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE 
 highlight rustUnsafeKeyword guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 
 
-" - AngularJS -
-" in HTML
-highlight angularMarker guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight angularDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
-highlight angularUIDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
-highlight angularVariable guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
-" in JavaScript
-highlight angularScope guifg=#5aede0 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-
-" Python
-highlight pythonBuiltin guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-highlight pythonConst guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight pythonConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonDecorator guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight pythonDecoratorName guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight pythonDocString guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight pythonEscape guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight pythonException guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonExceptions guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
-highlight pythonFunction guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight pythonInclude guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonNumber guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight pythonOperator guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonRawString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight pythonRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonSelf guifg=#7adffd guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight pythonStatement guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight pythonUnderUnder guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-
-"
 " - Nim -
-highlight nimKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE cterm=NONE
-highlight nimRepeat guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight nimConditional guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight nimOperator guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
-highlight nimBuiltin guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
-highlight nimNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight nimSelf guifg=#f5e28e guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight nimKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimOperator guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight nimBuiltin guifg=#ffcc69 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight nimSpecialVar guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimNumber guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight nimSelf guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight nimBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight nimPragma guifg=#ccff99 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
-highlight nimAsync guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimBoolean guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight nimPragma guifg=#a1c1e1 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimAsync guifg=#9fccbb guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
 highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+
+" highlight nimKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE cterm=NONE
+" highlight nimRepeat guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+" highlight nimConditional guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+" highlight nimOperator guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
+" highlight nimBuiltin guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+" highlight nimNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+" highlight nimSelf guifg=#f5e28e guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+" highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+" highlight nimBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+" highlight nimPragma guifg=#ccff99 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
+" highlight nimAsync guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 " - HTML
 highlight htmlComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
