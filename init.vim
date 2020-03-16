@@ -182,6 +182,7 @@ runtime init-autocmd.vim
 runtime init-tabline.vim
 runtime init-bundles.vim
 runtime init-plugins.vim
+runtime init-lsp.vim
 runtime init-headertoggle.vim
 runtime init-mappings.vim
 

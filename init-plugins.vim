@@ -165,7 +165,7 @@ let g:vue_pre_processors = ['scss']
 " Ale
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 if has("win32")
     let g:ale_sign_error = '⛔️'
     let g:ale_sign_warning = '💡'
@@ -183,6 +183,7 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'html': [],
+\   'nim': ['nimcheck'],
 \   'rust': ['cargo'],
 \}
 let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
@@ -193,6 +194,7 @@ let g:ale_fixers = {
 \   'svelte': ['eslint', 'prettier', 'prettier_standard'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
+\   'nim': ['nimpretty'],
 \   'rust': ['rustfmt'],
 \}
 let g:ale_python_black_options = '--line-length 88 --skip-string-normalization'

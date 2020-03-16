@@ -64,6 +64,11 @@ Plug 'tpope/vim-haml'
 Plug 'evanleck/vim-svelte'
 Plug 'zah/nim.vim', {'for': 'nim'}
 
+" Neovim only
+if has("nvim")
+    Plug 'neovim/nvim-lsp'
+endif
+
 if !exists("$VSCODE") && !exists('g:vscode')
     Plug 'w0rp/ale'
 endif

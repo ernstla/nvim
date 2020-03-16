@@ -54,8 +54,9 @@ autocmd FileChangedShell * echohl echoError | echo "------------------------- Wa
 autocmd QuickFixCmdPost [^l]* botright cwindow
 autocmd QuickFixCmdPost l*    botright lwindow
 
-" Terminal
+
 if has('nvim')
+    " Terminal
     autocmd TermOpen * setlocal nonumber norelativenumber
     autocmd TermOpen term://* startinsert
 
@@ -72,4 +73,9 @@ if has('nvim')
             \   call nvim_input('<CR>')  |
             \ endif
     augroup END
+
+    " Neovim LSP
+    autocmd Filetype nim setlocal omnifunc=v:lua.vim.lsp.omnifunc
+    autocmd Filetype vue setlocal omnifunc=v:lua.vim.lsp.omnifunc
+    autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 endif

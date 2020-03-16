@@ -10,7 +10,7 @@ syn clear pythonStatement
 
 " Set it to what's in the Python file, minus the class.
 syn keyword pythonStatement    as assert break continue del exec global
-syn keyword pythonStatement    lambda nonlocal pass print return with yield
+syn keyword pythonStatement    lambda nonlocal pass return with yield
 syn keyword pythonStatement    def nextgroup=pythonFunction skipwhite
 
 " Now make seperate syntax groups for the class.
