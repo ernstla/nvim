@@ -369,7 +369,7 @@ highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE c
 highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight nimBoolean guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight nimPragma guifg=#a1c1e1 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight nimAsync guifg=#9fccbb guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
+highlight nimAsync guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 " highlight nimKeyword guifg=#669933  guibg=NONE gui=NONE ctermfg=65 ctermbg=NONE cterm=NONE

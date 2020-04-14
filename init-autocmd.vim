@@ -19,18 +19,20 @@ autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 autocmd BufWritePre *.c :%s/\s\+$//e
+autocmd BufWritePre *.css :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.ini :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.less :%s/\s\+$//e
+autocmd BufWritePre *.mako :%s/\s\+$//e
+autocmd BufWritePre *.msql :%s/\s\+$//e
+autocmd BufWritePre *.nim :%s/\s\+$//e
 autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
-autocmd BufWritePre *.css :%s/\s\+$//e
+autocmd BufWritePre *.rs :%s/\s\+$//e
 autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.less :%s/\s\+$//e
-autocmd BufWritePre *.html :%s/\s\+$//e
-autocmd BufWritePre *.mako :%s/\s\+$//e
 autocmd BufWritePre *.sql :%s/\s\+$//e
-autocmd BufWritePre *.msql :%s/\s\+$//e
 autocmd BufWritePre *.toml :%s/\s\+$//e
-autocmd BufWritePre *.ini :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
 
 autocmd VimResized * wincmd =
