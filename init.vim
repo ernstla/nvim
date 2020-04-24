@@ -128,6 +128,9 @@ let html_no_rendering = 1
 colorscheme newernst-transparent
 if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
+    if executable('/usr/bin/python2')
+        let g:python_host_prog = '/usr/bin/python2'
+    endif
 endif
 
 if has('win32')
