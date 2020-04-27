@@ -52,17 +52,17 @@ Plug 'wellle/targets.vim' " extend and improve text objects
 
 
 " Languages
-Plug 'cespare/vim-toml'
-Plug 'ElmCast/elm-vim'
-Plug 'lifepillar/pgsql.vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
-Plug 'posva/vim-vue'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-haml'
-Plug 'evanleck/vim-svelte'
-Plug 'zah/nim.vim', {'for': 'nim'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'ElmCast/elm-vim', {'for': 'elm'}
+Plug 'lifepillar/pgsql.vim', {'for': 'sql'}
+Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'tpope/vim-haml', {'for': 'scss'}
+Plug 'evanleck/vim-svelte', {'for': 'svelte'}
+Plug 'https://git.serious.selfip.org/ernst/nim.vim.git', {'for': 'nim'}
 
 " Neovim only
 if has("nvim")
