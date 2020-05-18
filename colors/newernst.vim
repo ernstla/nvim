@@ -25,21 +25,6 @@ highlight TabLineSel guifg=#ceecee guibg=#1f323f gui=bold ctermfg=106 ctermbg=23
 highlight TabLineMod guifg=#934242 guibg=#1f323f gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 highlight TabLineModSel guifg=#DC322F guibg=#1f323f gui=bold ctermfg=NONE ctermbg=247 cterm=NONE
 
-" Brigther chrome
-" highlight Normal guifg=#c7cadf guibg=#00101c gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
-" highlight LineNr guifg=#364956 guibg=#061926 gui=NONE ctermfg=240 ctermbg=235 cterm=NONE
-" highlight SignColumn guifg=#586e75 guibg=#061926 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-" highlight FoldColumn guifg=#586e75 guibg=#061926 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-" highlight VertSplit guifg=#263946 guibg=NONE gui=NONE ctermfg=236 ctermbg=236 cterm=NONE
-" highlight CursorLineNr guibg=#105563 guifg=#a6b9c6 gui=bold ctermfg=15 ctermbg=241 cterm=NONE
-" highlight NonText guifg=#586e75 guibg=#061926 gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE " Empty line's tilde character
-" highlight StatusLine guifg=#ffffffa guibg=#0a4d5e gui=NONE ctermfg=15 ctermbg=240 cterm=NONE
-" highlight TabLineFill guifg=NONE guibg=#061926 gui=NONE ctermfg=0 ctermbg=236 cterm=NONE
-" highlight TabLine guifg=#586e75 guibg=#002632 gui=NONE ctermfg=248 ctermbg=236 cterm=NONE
-" highlight TabLineSel guifg=#ffffff guibg=#004354 gui=bold ctermfg=106 ctermbg=238 cterm=NONE
-" highlight TabLineMod guifg=#DC322F guibg=#002632 gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-" highlight TabLineModSel guifg=#934242 guibg=#0a4d5e gui=bold ctermfg=NONE ctermbg=247 cterm=NONE
-
 if exists("$VSCODE")
     highlight StatusLine guifg=#ffffff guibg=#4e4e4e gui=NONE ctermfg=15 ctermbg=240 cterm=NONE
     highlight TabLineFill guifg=NONE guibg=#061926 gui=NONE ctermfg=0 ctermbg=236 cterm=NONE
@@ -60,7 +45,7 @@ highlight DiffChange guifg=#485b39 guibg=#c1d3b1 gui=NONE ctermfg=2 ctermbg=193 
 highlight DiffDelete guifg=#c47b7b guibg=#934242 gui=NONE ctermfg=223 ctermbg=88 cterm=NONE
 highlight DiffText guifg=#934242 guibg=#f9c2c2 gui=NONE ctermfg=196 ctermbg=223 cterm=NONE
 highlight Directory guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight Error guifg=#df0000 guibg=NONE gui=NONE ctermfg=9 ctermbg=NONE cterm=NONE
+highlight Error guifg=#993300 guibg=NONE gui=NONE ctermfg=9 ctermbg=NONE cterm=NONE
 highlight ErrorMsg guifg=#ffffff guibg=#df0000 gui=NONE ctermfg=15 ctermbg=52 cterm=NONE
 highlight Identifier guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight IncSearch guifg=#1c1c1c guibg=#8fbe00 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
@@ -80,7 +65,6 @@ highlight Title guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm
 highlight VisualNOS guifg=#263946 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 " highlight WarningMsg
 highlight WildMenu guifg=#1c1c1c guibg=#8fbe00 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
-
 
 "
 " --------- DEFAULT SYNTAX COLORS ---------
@@ -118,6 +102,16 @@ highlight Todo guifg=#95c2e8 guibg=#1c1c1c gui=NONE ctermfg=153 ctermbg=NONE cte
 highlight Type guifg=#268bd2 guibg=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=NONE
 " highlight Typedef
 
+"
+" ----------------- LSP ----------------
+"
+highlight LspDiagnosticsError guifg=#db4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
+highlight LspDiagnosticsWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+" highlight LspDiagnosticInformation
+" highlight LspDiagnosticHint
+" highlight LspReferenceText
+" highlight LspReferenceRead
+" highlight LspReferenceWrite
 
 "
 " --------- LANGUAGES & PLUGINS ---------

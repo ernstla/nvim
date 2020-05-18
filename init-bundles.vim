@@ -67,6 +67,7 @@ Plug 'https://git.serious.selfip.org/ernst/nim.vim.git', {'for': 'nim'}
 " Neovim only
 if has("nvim")
     Plug 'neovim/nvim-lsp'
+    Plug 'haorenW1025/diagnostic-nvim'
 endif
 
 if !exists("$VSCODE") && !exists('g:vscode')
