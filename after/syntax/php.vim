@@ -28,6 +28,8 @@ syntax match phpDocTags "@\(abstract\|access\|author\|category\|copyright\|depre
 syntax match phpDocParam contained "\s\S\+"
 syntax match phpDocTags "@filesource" containedin=phpComment
 
+syn region phpRegionEcho matchgroup=Delimiter start="<?=" end="?>" contains=@phpClTop
+
 syntax case match
 
 highlight link phpCommentTitle SpecialComment
@@ -35,3 +37,4 @@ highlight link phpDocComment Comment
 highlight link phpDocTags Special
 highlight link phpDocParam Function
 highlight link phpCommentStar Comment
+highlight link phpRegionEcho Delimiter

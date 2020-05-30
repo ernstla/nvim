@@ -185,6 +185,7 @@ let g:ale_linters = {
 \   'html': [],
 \   'nim': ['nimcheck'],
 \   'rust': ['cargo'],
+\   'php': ['php', 'phpcs'],
 \}
 let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
@@ -196,10 +197,13 @@ let g:ale_fixers = {
 \   'scss': ['stylelint'],
 \   'nim': ['nimpretty'],
 \   'rust': ['rustfmt'],
+\   'php': ['php_cs_fixer'],
 \}
 let g:ale_python_black_options = '--line-length 88 --skip-string-normalization'
 let g:ale_python_isort_options = '--multi-line 3 --trailing-comma'
 " let g:ale_javascript_prettier_options = '--print-with 88 --tab-with 4 --single-quote --trailing-comma "all"'
+let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_rust_rls_executable = '/home/ernst/.cargo/bin/rls'
 let g:ale_rust_rls_options = '--cli'

@@ -1,4 +1,21 @@
+extends html
+
 snippet php
 <?php $0 ?>
 endsnippet
 
+snippet strict
+<?php declare(strict_types=1);
+endsnippet
+
+snippet log
+error_log($0);
+endsnippet
+
+snippet logs
+error_log("$0");
+endsnippet
+
+snippet =
+<?= $0 ?>
+endsnippet
