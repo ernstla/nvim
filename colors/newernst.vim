@@ -278,7 +278,7 @@ highlight typeScriptType guifg=#fd971f guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 
 " - AngularJS -
 " in HTML
-highlight angularMarker guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight angularMarker guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE 
 highlight angularDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 highlight angularUIDirective guifg=#dfafff guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 highlight angularVariable guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
@@ -443,7 +443,8 @@ highlight djangoArgument guifg=#bbffff guibg=NONE gui=NONE ctermfg=159 ctermbg=N
 highlight bladeConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight bladeKeyword guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight bladeEchoDelim guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight bladeAngularDelim guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight bladeParen guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight bladeStructure guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 
 " - PHP -
 highlight phpBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
