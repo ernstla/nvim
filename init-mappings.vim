@@ -41,6 +41,7 @@ vnoremap <leader>R "ay:%s/<C-R>a//g<Left><Left>
 nnoremap <Leader>tt <esc>:tabnew<cr>
 nnoremap <Leader>j <esc>gt
 nnoremap <Leader>k <esc>gT
+nnoremap gr gT
 nnoremap <M-1> 1gt
 nnoremap <M-2> 2gt
 nnoremap <M-3> 3gt

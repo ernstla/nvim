@@ -210,7 +210,10 @@ let g:ale_rust_rls_options = '--cli'
 let g:ale_pattern_options = {
 \   'Workspace/neorent.*\.py$': {'ale_fixers': ['isort']},
 \   'Workspace/neorent.*\.js$': {'ale_fixers': []},
+\   'Workspace/neorent.*\.json$': {'ale_fixers': []},
 \   'Workspace/neoapp.*\.js$': {'ale_fixers': []},
+\   'Workspace/neoapp.*\.json$': {'ale_fixers': []},
+\   'Workspace/neoapp.*\.vue$': {'ale_fixers': []},
 \   '/mnt/c/Users/Ernst/Workspace.*\.rs$': {'ale_rust_rls_executable': '/mnt/c/Users/Ernst/.cargo/bin/rls.exe'},
 \}
 

@@ -33,7 +33,7 @@ syn match pgMakoEscape /\\$/
 " The default public schema
 syn keyword pgPublicSchema public
 syn keyword pgBoolean true True TRUE false False FALSE
-syn keyword pgUnreserved content locale path action comments comment superuser option options name value data
+syn keyword pgUnreserved content locale path action comments comment superuser option options name value data role
 
 " Default highlighting links
 if version >= 508 || !exists("did_pgmako_syn_inits")
