@@ -401,10 +401,10 @@ highlight sqlNumber guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE ct
 highlight sqlType guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight sqlString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight sqlFlow guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
-highlight sqlStatement guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight sqlKeyword guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight sqlOperator guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight sqlPlpgsqlKeyword guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight sqlStatement guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlOperator guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlPlpgsqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight pgPostgresDelim guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight pgPostgresVariable guifg=#5f8700 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
@@ -415,6 +415,7 @@ highlight pgUnreserved guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=
 " - PostgreSQL Mako -
 highlight pgMakoDelim guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight pgMakoEnd guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight pgPhpRegion guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 
 
 " - XML -

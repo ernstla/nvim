@@ -30,6 +30,9 @@ syn match pgMakoDelim "</%\(def\|call\|namespace\|block\|[a-zA-Z_][a-zA-Z0-9_]*:
 " Newline Escapes
 syn match pgMakoEscape /\\$/
 
+
+syn region pgPhpRegion matchgroup=Delimiter start="<?php" end="?>" contains=@phpClTop
+
 " The default public schema
 syn keyword pgPublicSchema public
 syn keyword pgBoolean true True TRUE false False FALSE
