@@ -15,6 +15,7 @@ autocmd BufRead,BufNewFile *.boot set filetype=clojure
 autocmd BufRead,BufNewFile *.pxi set filetype=clojure
 autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile *.msql set filetype=pgsql
+autocmd BufRead,BufNewFile *.sql.php set filetype=pgsql
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 

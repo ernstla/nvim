@@ -249,11 +249,10 @@ vnoremap gm :call NERDComment("v", "Comment")<cr>
 nnoremap gs :call NERDComment("n", "Invert")<cr>
 vnoremap gs :call NERDComment("v", "Invert")<cr>
 
-" FOR WSL ONLY
-let s:clip = '/mnt/c/Windows/System32/clip.exe' 
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<cr>")).' | '.s:clip)
-    augroup END
+"" FOR WSL ONLY
+if has('wsl')
+   augroup WSLYank
+       autocmd!
+       autocmd TextYankPost * :call system('clip.exe ',@")
+   augroup END
 end

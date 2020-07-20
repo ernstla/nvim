@@ -47,7 +47,7 @@ set undofile                    " Persistent undo
 set undoreload=10000
 set virtualedit=block           " Allow block mode after end of line
 
-setlocal nospell 
+setlocal nospell
 setlocal spelllang=en           " Spell checking
 
 if exists('g:vscode')
@@ -145,8 +145,8 @@ if has('win32')
     endif
 
     set shell=powershell.exe
-    set shellquote=( 
-    set shellpipe=\| 
+    set shellquote=(
+    set shellpipe=\|
     set shellxquote=
     set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
     set shellredir=\|\ Out-File\ -Encoding\ UTF8
@@ -179,10 +179,10 @@ else
     endif
 endif
 
-runtime init-statusline.vim
 runtime init-autocmd.vim
 runtime init-tabline.vim
 runtime init-bundles.vim
+runtime init-statusline.vim
 runtime init-plugins.vim
 runtime init-lsp.vim
 runtime init-headertoggle.vim
