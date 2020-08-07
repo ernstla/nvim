@@ -21,7 +21,6 @@ endif
 
 
 Plug 'Sirver/ultisnips'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'guns/xterm-color-table.vim', {'on': 'XtermColorTable'}
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'jlanzarotta/bufexplorer'
@@ -53,7 +52,6 @@ Plug 'wellle/targets.vim' " extend and improve text objects
 
 " Languages
 Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'lifepillar/pgsql.vim', {'for': 'sql'}
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
