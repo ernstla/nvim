@@ -173,7 +173,7 @@ else
     let g:ale_sign_error = '❌ '
     let g:ale_sign_warning = '💡'
 end
-let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
+" let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],
 \   'typescript': ['tslint'],
@@ -191,7 +191,7 @@ let g:ale_scss_sasslint_options = '-c .sass-lint.yml'
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier', 'eslint'],
-\   'json': ['prettier', 'eslint'],
+\   'json': ['eslint', 'prettier'],
 \   'svelte': ['eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],

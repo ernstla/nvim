@@ -141,6 +141,7 @@ endfunction
 
 command! -nargs=* -complete=file Grep call Grp(<q-args>)
 command! -nargs=* -complete=file Ag call Grp(<q-args>)
+command! -nargs=* -complete=file AG call Grp(<q-args>)
 command! -nargs=* -complete=file Rg call Grp(<q-args>)
 
 if has('win32')
