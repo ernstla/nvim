@@ -194,7 +194,12 @@ highlight rstStrongEmphasis guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermb
 " - JavaScript -
 "
 highlight jsString guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight jsTemplateString guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight jsTemplateBraces guifg=#dfafff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight jsSpreadOperator guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight jsObjectStringKey guifg=#fff1a0 guibg=NONE gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+highlight jsAsyncKeyword guifg=#7adffd guibg=NONE gui=NONE ctermfg=50 ctermbg=NONE cterm=NONE
+highlight jsForAwait guifg=#7adffd guibg=NONE gui=NONE ctermfg=50 ctermbg=NONE cterm=NONE
 highlight jsExtendsKeyword guifg=#ff8787 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight jsOperatorKeyword guifg=#ff8787 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight jsClassKeyword guifg=#ff8787 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
@@ -240,7 +245,10 @@ highlight vueEvent guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE ct
 
 " - Svelte.js -
 highlight svelteConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight svelteRepeat guifg=#df87df guibg=NONE gui=NONE ctermfg=176 cterm=NONE
+highlight svelteRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+" jsBraces are single unspecific blocks. Specific Blocks are jsFuncBraces,
+" jsIfElseBraces etc. 
+highlight jsBraces guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 
 " - TypeScript -
 highlight typeScriptAjaxObjects guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
@@ -399,17 +407,19 @@ highlight htmlSpecialChar guifg=#ffc48c guibg=NONE gui=NONE ctermfg=202 ctermbg=
 highlight sqlConstant guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
 highlight sqlNumber guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight sqlType guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight sqlString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight sqlString guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
 highlight sqlFlow guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight sqlStatement guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlOperator guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlPlpgsqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlFunction guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+highlight sqlIdentifier guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight pgPostgresDelim guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight pgPostgresVariable guifg=#5f8700 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 " - Overwrites
-highlight pgPublicSchema guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight pgPublicSchema guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight pgBoolean guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight pgUnreserved guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
 " - PostgreSQL Mako -

@@ -36,7 +36,7 @@ syn region pgPhpRegion matchgroup=Delimiter start="<?php" end="?>" contains=@php
 " The default public schema
 syn keyword pgPublicSchema public
 syn keyword pgBoolean true True TRUE false False FALSE
-syn keyword pgUnreserved content locale path action comments comment superuser option options name value data role
+syn keyword pgUnreserved content locale path action comments comment superuser option options name value version edges data role
 
 " Default highlighting links
 if version >= 508 || !exists("did_pgmako_syn_inits")
