@@ -34,10 +34,26 @@ snippet name
 namespace $1;
 endsnippet
 
+snippet e
+<?= $this->e($1) ?>
+endsnippet
+
+snippet ?for
+<?php for ($1): ?>
+	$0
+<?php endfor ?>
+endsnippet
+
 snippet for
-for ($1 as $2) {
+for ($1) {
 	$0
 }
+endsnippet
+
+snippet ?foreach
+<?php foreach ($1 as $2): ?>
+	$0
+<?php endforeach ?>
 endsnippet
 
 snippet foreach
@@ -46,10 +62,24 @@ foreach ($1 as $2) {
 }
 endsnippet
 
+snippet ?if
+<?php if ($1): ?>
+	$0
+<?php endif ?>
+endsnippet
+
 snippet if
 if ($1) {
 	$0
 }
+endsnippet
+
+snippet ?else
+<?php if ($1): ?>
+	$0
+<?php else: ?>
+
+<?php endif ?>
 endsnippet
 
 snippet else

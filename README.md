@@ -10,7 +10,7 @@ Installation
 Language Servers
 ----------------
 
-    npm install -g @elm-tooling/elm-language-server elm elf-format elm-test
+    npm install -g intelephense vls
 
     rustup update
     rustup component add rls rust-analysis rust-src
