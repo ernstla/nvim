@@ -8,6 +8,14 @@ snippet strict
 <?php declare(strict_types=1);
 endsnippet
 
+snippet echo
+echo($1 . PHP_EOL);
+endsnippet
+
+snippet echos
+echo("$1\n");
+endsnippet
+
 snippet log
 error_log($1);
 endsnippet

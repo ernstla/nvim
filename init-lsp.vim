@@ -8,7 +8,7 @@ if has('nvim')
 
 	lua vim.lsp.set_log_level("debug")
 lua << EOF
-    local nvim_lsp = require'nvim_lsp'
+    local nvim_lsp = require'lspconfig'
 
     -- Nim
 	nvim_lsp.nimls.setup{

@@ -27,6 +27,7 @@ set ignorecase
 set incsearch 		            " Search all instances
 set linebreak                   " Word wrap if wrapping is enabled
 set matchpairs=(:),{:},[:],<:>
+set maxmempattern=5000
 set nobackup
 set nocursorcolumn
 set noerrorbells visualbell t_vb= " No beeps
