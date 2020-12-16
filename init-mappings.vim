@@ -204,7 +204,7 @@ if has('nvim')
 endif
 
 " Format json
-command Jsonify   %!python -m json.tool
+command Jsonify   %!python3 -m json.tool
 command Tidy      !tidy -mi -html -wrap 0 %
 
 " UndoTree

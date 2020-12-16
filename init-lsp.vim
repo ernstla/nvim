@@ -18,83 +18,79 @@ lua << EOF
 	}
 
     -- Python
-	nvim_lsp.pyls.setup{
-        on_attach=require'diagnostic'.on_attach
-    }
+	nvim_lsp.pyls.setup{}
 
     -- Vue
-	nvim_lsp.vuels.setup{
-        on_attach=require'diagnostic'.on_attach
-    }
+	nvim_lsp.vuels.setup{}
 
     -- PHP
-    -- nvim_lsp.intelephense.setup({
-    --     init_options = { licenceKey = '005UH9RB1NL07NE'},
-    --     settings = {
-    --         intelephense = {
-    --             stubs = { 
-    --                 "bcmath",
-    --                 "bz2",
-    --                 "calendar",
-    --                 "Core",
-    --                 "curl",
-    --                 "date",
-    --                 "dba",
-    --                 "dom",
-    --                 "enchant",
-    --                 "fileinfo",
-    --                 "filter",
-    --                 "ftp",
-    --                 "gd",
-    --                 "gettext",
-    --                 "hash",
-    --                 "iconv",
-    --                 "imap",
-    --                 "intl",
-    --                 "json",
-    --                 "ldap",
-    --                 "libxml",
-    --                 "memcached",
-    --                 "mbstring",
-    --                 "mcrypt",
-    --                 "mysql",
-    --                 "mysqli",
-    --                 "password",
-    --                 "pcntl",
-    --                 "pcre",
-    --                 "PDO",
-    --                 "pdo_mysql",
-    --                 "Phar",
-    --                 "readline",
-    --                 "recode",
-    --                 "Reflection",
-    --                 "regex",
-    --                 "session",
-    --                 "SimpleXML",
-    --                 "soap",
-    --                 "sockets",
-    --                 "sodium",
-    --                 "SPL",
-    --                 "standard",
-    --                 "superglobals",
-    --                 "sysvsem",
-    --                 "sysvshm",
-    --                 "tokenizer",
-    --                 "xml",
-    --                 "xdebug",
-    --                 "xmlreader",
-    --                 "xmlwriter",
-    --                 "yaml",
-    --                 "zip",
-    --                 "zlib",
-    --                 "wordpress",
-    --                 "woocommerce"
-    --             },
-    --             files = {
-    --                 maxSize = 5000000;
-    --             };
-    --         };
-    --     }; 
-    -- });
+    --nvim_lsp.intelephense.setup({
+    --    init_options = { licenceKey = '005UH9RB1NL07NE'},
+    --    settings = {
+    --        intelephense = {
+    --            stubs = { 
+    --                "bcmath",
+    --                "bz2",
+    --                "calendar",
+    --                "Core",
+    --                "curl",
+    --                "date",
+    --                "dba",
+    --                "dom",
+    --                "enchant",
+    --                "fileinfo",
+    --                "filter",
+    --                "ftp",
+    --                "gd",
+    --                "gettext",
+    --                "hash",
+    --                "iconv",
+    --                "imap",
+    --                "intl",
+    --                "json",
+    --                "ldap",
+    --                "libxml",
+    --                "memcached",
+    --                "mbstring",
+    --                "mcrypt",
+    --                "mysql",
+    --                "mysqli",
+    --                "password",
+    --                "pcntl",
+    --                "pcre",
+    --                "PDO",
+    --                "pdo_mysql",
+    --                "Phar",
+    --                "readline",
+    --                "recode",
+    --                "Reflection",
+    --                "regex",
+    --                "session",
+    --                "SimpleXML",
+    --                "soap",
+    --                "sockets",
+    --                "sodium",
+    --                "SPL",
+    --                "standard",
+    --                "superglobals",
+    --                "sysvsem",
+    --                "sysvshm",
+    --                "tokenizer",
+    --                "xml",
+    --                "xdebug",
+    --                "xmlreader",
+    --                "xmlwriter",
+    --                "yaml",
+    --                "zip",
+    --                "zlib",
+    --                "wordpress",
+    --                "woocommerce"
+    --            },
+    --            files = {
+    --                maxSize = 5000000;
+    --            };
+    --        };
+    --    }; 
+    --});
 EOF
 endif

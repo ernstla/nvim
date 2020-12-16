@@ -296,26 +296,27 @@ highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 
 
 " Python
-highlight pythonBuiltin guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-highlight pythonConst guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonBuiltin guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
+highlight pythonConst guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight pythonConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight pythonDecorator guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight pythonDecoratorName guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight pythonDocString guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonEscape guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight pythonException guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight pythonExceptions guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight pythonFunction guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight pythonInclude guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonNumber guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight pythonOperator guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonRawString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight pythonRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonSelf guifg=#7adffd guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight pythonStatement guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonString guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonInclude guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonNumber guifg=#d08770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight pythonOperator guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonRawString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonQuotes guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonSelf guifg=#a3be8c guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight pythonStatement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight pythonString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
 highlight pythonUnderUnder guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 
@@ -407,6 +408,7 @@ highlight htmlSpecialChar guifg=#ffc48c guibg=NONE gui=NONE ctermfg=202 ctermbg=
 highlight sqlConstant guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
 highlight sqlNumber guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight sqlType guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight sqlCreateTextSearchKeyword guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight sqlString guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
 highlight sqlFlow guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight sqlStatement guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
