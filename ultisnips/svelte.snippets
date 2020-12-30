@@ -20,3 +20,21 @@ snippet each "each " b!
 	${2:}
 {/each}
 endsnippet
+
+snippet key "key " b!
+{#key ${1:value}}
+	${2:}
+{/key}
+endsnippet
+
+snippet debug "{@debug '' + ...}"
+{@debug $0}
+endsnippet
+
+snippet debugs "{@debug ...}"
+{@debug '$1' + $0}
+endsnippet
+
+snippet _ "{_('...')}"
+{_('$0')}
+endsnippet

@@ -427,7 +427,7 @@ highlight pgUnreserved guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=
 " - PostgreSQL Mako -
 highlight pgMakoDelim guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight pgMakoEnd guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight pgPhpRegion guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight pgPhpRegion guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 
 
 " - XML -
