@@ -9,6 +9,7 @@ autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.wsgi set filetype=python
 autocmd BufRead,BufNewFile *.scss set filetype=scss
 autocmd BufRead,BufNewFile *.nim set filetype=nim
+autocmd BufRead,BufNewFile *.nimble set filetype=nimble
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 autocmd BufRead,BufNewFile *.ini.tmpl set filetype=dosini
 autocmd BufRead,BufNewFile *.boot set filetype=clojure

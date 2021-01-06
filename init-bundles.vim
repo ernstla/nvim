@@ -60,8 +60,8 @@ Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tpope/vim-haml', {'for': 'scss'}
 Plug 'evanleck/vim-svelte', {'for': 'svelte'}
-Plug 'zah/nim.vim'
-" Plug 'https://git.serious.selfip.org/ernst/nim.vim.git', {'for': 'nim'}
+" Plug 'zah/nim.vim'
+Plug 'https://git.serious.selfip.org/ernst/nim.vim.git'
 
 " Neovim only
 if has("nvim")

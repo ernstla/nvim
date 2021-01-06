@@ -367,7 +367,38 @@ highlight rustUnsafeKeyword guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermb
 " cyan     #92b7c1
 
 " - Nim -
-highlight nimKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimOperator guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+" highlight nimBuiltin guifg=#ffcc69 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+" highlight nimSpecialVar guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimNumber guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+" highlight nimSelf guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+" highlight nimBoolean guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+" highlight nimPragma guifg=#a1c1e1 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" highlight nimAsync guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+" highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" highlight nimUnittest guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+
+highlight nimStatement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimPreCondit guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimInclude guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimPragma guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimKeywordOperator guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimQuote guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimRawString guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimPreProcStmt guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+highlight nimBuiltinType guifg=#ffcc69 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight nimBuiltin guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight nimType guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+highlight nimConstant guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+
+
 highlight nimRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimOperator guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
@@ -377,12 +408,9 @@ highlight nimNumber guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE c
 highlight nimSelf guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimFunction guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight nimBoolean guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight nimPragma guifg=#a1c1e1 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimAsync guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight nimBle guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimUnittest guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-
 
 " - HTML
 highlight htmlComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
