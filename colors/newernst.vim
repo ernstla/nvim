@@ -105,8 +105,11 @@ highlight Type guifg=#268bd2 guibg=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=N
 "
 " ----------------- LSP ----------------
 "
-highlight LspDiagnosticsError guifg=#db4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
-highlight LspDiagnosticsWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight LspDiagnosticsDefaultError guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE 
+highlight LspDiagnosticsDefaultWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight LspDiagnosticsDefaultHint guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight LspDiagnosticsDefaultInformation guifg=#95c2e8 guibg=#1c1c1c gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
+
 " highlight LspDiagnosticInformation
 " highlight LspDiagnosticHint
 " highlight LspReferenceText
@@ -172,7 +175,7 @@ highlight cppType guifg=#aee239 guibg=NONE gui=NONE ctermfg=149 ctermbg=NONE cte
 highlight elmConditional guifg=#ccff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
 highlight elmLetBlockDefinition guifg=#ffc48c guibg=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 highlight elmCaseBlockDefinition guifg=#ffc48c guibg=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
-highlight elmTypedef guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight elmTypede guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight elmAlias guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 highlight elmTopLevelDecl guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight elmImport guifg=#f38630 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE

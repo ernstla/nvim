@@ -194,7 +194,7 @@ if has('nvim')
 
     " Neovim LSP
     nnoremap <silent> gd            <cmd>lua vim.lsp.buf.declaration()<CR>
-    nnoremap <silent> <c-]>         <cmd>lua vim.lsp.buf.definition()<CR>
+    nnoremap <silent> gG         <cmd>lua vim.lsp.buf.definition()<CR>
     nnoremap <silent> K             <cmd>lua vim.lsp.buf.hover()<CR>
     nnoremap <silent> gD            <cmd>lua vim.lsp.buf.implementation()<CR>
     nnoremap <silent> <leader>k     <cmd>lua vim.lsp.buf.signature_help()<CR>

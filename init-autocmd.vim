@@ -37,6 +37,9 @@ autocmd BufWritePre *.sql :%s/\s\+$//e
 autocmd BufWritePre *.toml :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
 
+autocmd BufWritePre *.php lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)
+
 autocmd VimResized * wincmd =
 
 " Fix syntax issues in vue files
