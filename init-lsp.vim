@@ -17,6 +17,7 @@ lua << EOF
     local nvim_lsp = require'lspconfig'
 
     -- Nim
+    --    nimble install nimls
 	nvim_lsp.nimls.setup{
         cmd = { "nimlsp" };
         filetypes = { "nim" };
@@ -24,18 +25,23 @@ lua << EOF
 	}
 
     -- Python
+    --    pip install --user python-language-server
 	nvim_lsp.pyls.setup{}
 
     -- Vue
+    --    npm install -g vls
 	nvim_lsp.vuels.setup{}
 
     -- Typescript
+    --    npm install -g typescript typescript-language-server
     nvim_lsp.tsserver.setup{}
 
     -- Svelte
+    --    npm install -g svelte-language-server
     nvim_lsp.svelte.setup{}
 
     -- PHP
+    --    npm install -g intelephense
     nvim_lsp.intelephense.setup({
         init_options = { licenceKey = '005UH9RB1NL07NE'},
         settings = {
