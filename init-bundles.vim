@@ -31,6 +31,7 @@ Plug 'junegunn/gv.vim'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
+Plug 'kevinhwang91/nvim-bqf'
 Plug 'lilydjwg/colorizer', {'on': 'ColorToggle'}
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'

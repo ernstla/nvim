@@ -91,8 +91,16 @@ noremap <C-O> <C-O>zz
 noremap <C-I> <C-I>zz
 
 " Easy navigation in Quickfix window
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        botright copen 15
+    else
+        cclose
+    endif
+endfunction
+nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
+nnoremap <silent> <C-F3> :call ToggleQuickFix()<cr>
 nnoremap <F3> :cnext<cr>
-nnoremap <M-F3> :botright cope 15<cr>
 if has("gui_running")
     nnoremap <S-F3> :cprevious<cr>
 else
@@ -101,7 +109,7 @@ endif
 
 " Easy navigation in Location List
 nnoremap <F4> :lnext<cr>zz
-nnoremap <M-F4> :botright lopen 15<cr>
+nnoremap <C-F4> :botright lopen 15<cr>
 if has("gui_running")
     nnoremap <S-F4> :lprevious<cr>zz
 else

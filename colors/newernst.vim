@@ -300,7 +300,7 @@ highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 
 " Python
 highlight pythonBuiltin guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-highlight pythonConst guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonConst guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
@@ -312,14 +312,14 @@ highlight pythonException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=N
 highlight pythonExceptions guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight pythonFunction guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight pythonInclude guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonNumber guifg=#d08770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight pythonNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight pythonOperator guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonRawString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
-highlight pythonQuotes guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonRawString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight pythonQuotes guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight pythonRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight pythonSelf guifg=#a3be8c guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-highlight pythonStatement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight pythonString guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
+highlight pythonStatement guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight pythonString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight pythonUnderUnder guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 
 
@@ -379,21 +379,21 @@ highlight rustUnsafeKeyword guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermb
 
 highlight nimStatement guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight nimCallable guifg=#798ec3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
-highlight nimCallableDef guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight nimCallableCall guifg=#aae0ff guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
+highlight nimCallableDef guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight nimCallableCall  guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
 highlight nimConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimKeywordOperator guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight nimInclude guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight nimPragma guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight nimInclude guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight nimBuiltin guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight nimString guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight nimQuote guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight nimRawString guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimPreProcStmt guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight nimPreCondit guifg=#ffcc69 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 highlight nimBuiltinType guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight nimBuiltin guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight nimPragma guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight nimType guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight nimConstant guifg=#a3be8c guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 highlight nimNumber guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
