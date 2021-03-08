@@ -47,7 +47,7 @@ autocmd BufEnter *.vue syntax sync fromstart
 
 " allow autocomplete of words with dashes
 autocmd FileType css,scss,less,html,vue,php,python,mako,lisp,scheme,clojure setlocal iskeyword+=-
-autocmd FileType ruby,scheme,lisp,clojure,hy,nim setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType ruby,scheme,lisp,clojure,hy,nim,raml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType pgsql setlocal commentstring=--\ %s
 autocmd FileType dosini setlocal commentstring=#\ %s
