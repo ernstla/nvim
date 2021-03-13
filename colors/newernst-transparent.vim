@@ -7,7 +7,7 @@ endif
 runtime colors/newernst.vim
 
 "Override the name of the base colorscheme with the name of this custom one
-let g:colors_name = "newernst-tranparent"
+let g:colors_name = "newernst-transparent"
 
 "Clear the colors for any items that you don't like
 hi clear StatusLine

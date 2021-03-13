@@ -126,7 +126,9 @@ let python_highlight_all = 1
 " HTML syntax settings
 let html_no_rendering = 1
 
-colorscheme newernst-transparent
+if !exists('g:vscode')
+    colorscheme newernst-transparent
+endif
 if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
     if executable('/usr/bin/python2')
