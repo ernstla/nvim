@@ -34,11 +34,9 @@ if !exists('g:vscode')
     Plug 'guns/xterm-color-table.vim', {'on': 'XtermColorTable'}
     Plug 'jeetsukumaran/vim-filebeagle'
     Plug 'jlanzarotta/bufexplorer'
-    Plug 'jmcantrell/vim-virtualenv'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/gv.vim'
-    Plug 'kevinhwang91/nvim-bqf'
     Plug 'lilydjwg/colorizer', {'on': 'ColorToggle'}
     Plug 'luochen1990/rainbow'
     Plug 'majutsushi/tagbar'
