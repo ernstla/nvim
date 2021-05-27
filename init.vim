@@ -190,5 +190,6 @@ runtime init-plugins.vim
 runtime init-lsp.vim
 runtime init-headertoggle.vim
 runtime init-mappings.vim
+runtime init-neovide.vim
 
 set secure " don't allow usafe commands in project .vimrc files
