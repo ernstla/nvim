@@ -1,7 +1,6 @@
 "
 " Filetypes
 "
-" autocmd BufRead,BufWrite * Neomake
 
 autocmd BufRead,BufNewFile *.h set filetype=c
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -43,8 +42,8 @@ autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 autocmd VimResized * wincmd =
 
-" Fix syntax issues in vue files
-autocmd BufEnter *.vue syntax sync fromstart
+" resync syntax highlighting - may be slow
+autocmd BufEnter * :syntax sync fromstart
 
 " allow autocomplete of words with dashes
 autocmd FileType css,scss,less,html,vue,php,python,mako,lisp,scheme,clojure setlocal iskeyword+=-

@@ -301,6 +301,7 @@ highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 " Python
 highlight pythonBuiltin guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
 highlight pythonConst guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonAsync guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
