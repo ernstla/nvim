@@ -246,7 +246,7 @@ nnoremap <silent> <M-p> <Esc>:Files<cr>
 nnoremap <silent> <C-p> <Esc>:GitFiles<cr>
 
 " Git: fugitive / git-messenger
-nmap <silent> <Leader>gs <Esc>:Gstatus<cr>gg<C-n>
+nmap <silent> <Leader>gs <Esc>:Git<cr>gg<C-n>
 noremap <silent> <Leader>gp <Esc>:Gpush<cr>
 noremap <silent> <Leader>gb <Esc>:Gblame<cr>
 noremap <silent> <Leader>gd <Esc>:Gvdiff<cr>

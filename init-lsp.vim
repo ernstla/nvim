@@ -26,9 +26,7 @@ lua << EOF
 
     -- Python
     --    pip install --user python-language-server
-	nvim_lsp.pyls.setup{
-        cmd = { "pyls" };
-    }
+	--nvim_lsp.pyls.setup{}
 
     -- Vue
     --    npm install -g vls
