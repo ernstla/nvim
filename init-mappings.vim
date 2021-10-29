@@ -239,10 +239,11 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir GitFiles
     \ call fzf#vim#gitfiles(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
-nnoremap <silent> <M-a> <Esc>:FZRg<cr>
+nnoremap <silent> <M-r> <Esc>:FZRg<cr>
 nnoremap <silent> <M-c> <Esc>:FZCommit<cr>
 nnoremap <silent> <M-t> <Esc>:FZTags<cr>
-nnoremap <silent> <M-p> <Esc>:Files<cr>
+nnoremap <silent> <M-p> <Esc>:FZFiles<cr>
+nnoremap <silent> <M-b> <Esc>:FZBuffers<cr>
 nnoremap <silent> <C-p> <Esc>:GitFiles<cr>
 
 " Git: fugitive / git-messenger
@@ -253,10 +254,10 @@ noremap <silent> <Leader>gd <Esc>:Gvdiff<cr>
 noremap <silent> <Leader>gm <Esc><Plug>(git-messenger)
 
 " NERDCommenter
-nnoremap gm :call NERDComment("n", "Comment")<cr>
-vnoremap gm :call NERDComment("v", "Comment")<cr>
-nnoremap gs :call NERDComment("n", "Invert")<cr>
-vnoremap gs :call NERDComment("v", "Invert")<cr>
+nnoremap gm :call nerdcommenter#Comment("n", "Comment")<cr>
+vnoremap gm :call nerdcommenter#Comment("v", "Comment")<cr>
+nnoremap gs :call nerdcommenter#Comment("n", "Invert")<cr>
+vnoremap gs :call nerdcommenter#Comment("v", "Invert")<cr>
 
 "" FOR WSL ONLY
 if has('wsl')
