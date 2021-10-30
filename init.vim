@@ -57,7 +57,7 @@ if exists('g:vscode')
 else
     set number
     set numberwidth=1
-    set equalalways
+    set noequalalways
     set foldcolumn=0
     set foldlevelstart=99           " Do not automatically fold
     set formatoptions=qrn1
