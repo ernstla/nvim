@@ -239,16 +239,18 @@ highlight jsRegexpQuantifier guifg=#e9890d guibg=NONE gui=NONE ctermfg=208 cterm
 highlight jsConstant guifg=#ef9090 guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight jsNull guifg=#ef9090 guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 
+" - Svelte.js -
+highlight svelteConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight svelteRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight svelteKeyword guifg=#ef9090 guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+
 " - Vue.js -
 highlight vueTemplateTag guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight vueStyleTag guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight vueScriptTag guifg=#df87df guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
-highlight vueDirective guifg=#df87df guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
+" highlight vueDirective guifg=#df87df guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
 highlight vueEvent guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
 
-" - Svelte.js -
-highlight svelteConditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
-highlight svelteRepeat guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 " jsBraces are single unspecific blocks. Specific Blocks are jsFuncBraces,
 " jsIfElseBraces etc. 
 highlight jsBraces guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
