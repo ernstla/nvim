@@ -1,9 +1,7 @@
 vim.cmd [[
-
 "
 " Filetypes
 "
-
 autocmd BufRead,BufNewFile *.h set filetype=c
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.less set filetype=css
@@ -21,12 +19,16 @@ autocmd BufRead,BufNewFile *.sql.php set filetype=pgsql
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
+"
+" Remove trailing whitespaces
+"
 autocmd BufWritePre *.c :%s/\s\+$//e
 autocmd BufWritePre *.css :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd BufWritePre *.ini :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 autocmd BufWritePre *.less :%s/\s\+$//e
+autocmd BufWritePre *.lua :%s/\s\+$//e
 autocmd BufWritePre *.mako :%s/\s\+$//e
 autocmd BufWritePre *.msql :%s/\s\+$//e
 autocmd BufWritePre *.nim :%s/\s\+$//e
@@ -35,9 +37,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.rs :%s/\s\+$//e
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.sql :%s/\s\+$//e
+autocmd BufWritePre *.svelte :%s/\s\+$//e
 autocmd BufWritePre *.toml :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
-autocmd BufWritePre *.svelte :%s/\s\+$//e
 
 autocmd BufWritePre *.php lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)

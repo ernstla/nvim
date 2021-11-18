@@ -33,7 +33,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'tsserver', 'vuels', 'svelte' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -49,7 +49,7 @@ local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 -- Make runtime files discoverable to the server
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
-require('lspconfig').sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup {
   cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
   on_attach = on_attach,
   capabilities = capabilities,
@@ -77,3 +77,83 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
+--
+-- Nim
+--
+nvim_lsp.nimls.setup{
+    cmd = { "nimlsp" };
+    filetypes = { "nim" };
+    root_dir = nvim_lsp.util.root_pattern(".git") or nvim_lsp.util.os_homedir;
+}
+
+
+-- PHP
+--    npm install -g intelephense
+nvim_lsp.intelephense.setup({
+    init_options = { licenceKey = '005UH9RB1NL07NE'},
+    settings = {
+        intelephense = {
+            stubs = {
+                "bcmath",
+                "bz2",
+                "calendar",
+                "Core",
+                "curl",
+                "date",
+                "dba",
+                "dom",
+                "enchant",
+                "fileinfo",
+                "filter",
+                "ftp",
+                "gd",
+                "gettext",
+                "hash",
+                "iconv",
+                "imap",
+                "intl",
+                "json",
+                "ldap",
+                "libxml",
+                "memcached",
+                "mbstring",
+                "mcrypt",
+                "mysql",
+                "mysqli",
+                "password",
+                "pcntl",
+                "pcre",
+                "PDO",
+                "pdo_mysql",
+                "Phar",
+                "readline",
+                "recode",
+                "Reflection",
+                "regex",
+                "session",
+                "SimpleXML",
+                "soap",
+                "sockets",
+                "sodium",
+                "SPL",
+                "standard",
+                "superglobals",
+                "sysvsem",
+                "sysvshm",
+                "tokenizer",
+                "xml",
+                "xdebug",
+                "xmlreader",
+                "xmlwriter",
+                "yaml",
+                "zip",
+                "zlib",
+                "wordpress",
+                "woocommerce"
+            },
+            files = {
+                maxSize = 5000000;
+            };
+        };
+    };
+});

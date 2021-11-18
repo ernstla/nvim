@@ -29,7 +29,7 @@ require('telescope').setup {
 --
 local t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
-end   
+end
 local cmp = require 'cmp'
 cmp.setup {
     snippet = {
@@ -122,7 +122,7 @@ vim.g.NERDCustomDelimiters = { c = { left = '/**',right = '*/' } }
 vim.g.NERDCommentEmptyLines = 1
 -- Enable trimming of trailing whitespace when uncommenting
 vim.g.NERDTrimTrailingWhitespace = 1
--- Enable NERDCommenterToggle to check all selected lines is commented or not 
+-- Enable NERDCommenterToggle to check all selected lines is commented or not
 vim.g.NERDToggleCheckAllLines = 1
 vim.g.nerd_ft = ''
 
