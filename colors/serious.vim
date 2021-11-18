@@ -8,22 +8,24 @@ if exists('syntax_on')
 endif
 
 set background=dark
-let colors_name = "newernst"
+let colors_name = "serious"
 
 
 " Chrome
-highlight Normal guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
-highlight LineNr guifg=#1f323f guibg=#0a0e1a gui=NONE ctermfg=240 ctermbg=235 cterm=NONE
-highlight SignColumn guifg=#586e75 guibg=#0a0e1a gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-highlight FoldColumn guifg=#586e75 guibg=#0a0e1a gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-highlight VertSplit guifg=#1a152a guibg=NONE gui=NONE ctermfg=236 ctermbg=236 cterm=NONE
-highlight CursorLineNr guifg=#ceecee guibg=#0a0e1a gui=bold ctermfg=15 ctermbg=241 cterm=NONE
-highlight NonText guifg=#1f323f guibg=#0a0e1a gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE " Empty line's tilde character
-highlight TabLineFill guifg=NONE guibg=#1a1d2a gui=NONE ctermfg=0 ctermbg=236 cterm=NONE
-highlight TabLine guifg=#586e75 guibg=#1f323f gui=NONE ctermfg=248 ctermbg=236 cterm=NONE
-highlight TabLineSel guifg=#ceecee guibg=#1f323f gui=bold ctermfg=106 ctermbg=238 cterm=NONE
-highlight TabLineMod guifg=#934242 guibg=#1f323f gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-highlight TabLineModSel guifg=#DC322F guibg=#1f323f gui=bold ctermfg=NONE ctermbg=247 cterm=NONE
+"
+"
+highlight Normal guifg=#c7cadf guibg=NONE gui=NONE ctermfg=253 ctermbg=NONE cterm=NONE
+highlight LineNr guifg=#1f323f guibg=NONE gui=NONE ctermfg=240 ctermbg=NONE cterm=NONE
+highlight SignColumn guifg=#586e75 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+highlight FoldColumn guifg=#586e75 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+highlight VertSplit guifg=#1a152a guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
+highlight CursorLineNr guifg=#ceecee guibg=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=NONE
+highlight NonText guifg=#1f323f guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE " Empty line's tilde character
+highlight TabLineFill guifg=NONE guibg=NONE gui=NONE ctermfg=0 ctermbg=NONE cterm=NONE
+highlight TabLine guifg=#586e75 guibg=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
+highlight TabLineSel guifg=#ceecee guibg=NONE gui=bold ctermfg=106 ctermbg=NONE cterm=NONE
+highlight TabLineMod guifg=#934242 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+highlight TabLineModSel guifg=#DC322F guibg=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=NONE
 
 if exists("$VSCODE")
     highlight StatusLine guifg=#ffffff guibg=#4e4e4e gui=NONE ctermfg=15 ctermbg=240 cterm=NONE
@@ -31,9 +33,8 @@ if exists("$VSCODE")
     highlight TabLineSel guifg=#ffffff guibg=#2c2c2c gui=bold ctermfg=106 ctermbg=238 cterm=NONE
 endif
 
-
 highlight Folded guifg=#98aeb5 guibg=#06302c gui=italic ctermfg=243 ctermbg=235 cterm=NONE
-highlight ColorColumn guifg=NONE guibg=#00111b gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
+highlight ColorColumn guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 highlight Cursorline guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 highlight Visual guifg=#ffffff guibg=#01708c gui=NONE ctermfg=15 ctermbg=24 cterm=NONE
 highlight echoError guifg=#ffffff guibg=#df0000 gui=NONE ctermfg=15 ctermbg=160 cterm=NONE " custom highligh groups
@@ -59,6 +60,7 @@ highlight Search guifg=#1c1c1c guibg=#ffbb29 gui=NONE ctermfg=0 ctermbg=106 cter
 highlight QuickFixLine guifg=#ffffff guibg=#105563 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 highlight SpellBad guifg=#DC322F guisp=#ffffff guibg=NONE gui=undercurl ctermfg=NONE ctermbg=52 cterm=NONE
 highlight SpellCap guifg=#fd971f guisp=#DC322F  guibg=NONE gui=undercurl ctermfg=NONE ctermbg=52 cterm=NONE
+highlight StatusLine guifg=#ffffff guibg=#070713 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight StatusLineNC guifg=#586e75 guibg=#07303c gui=NONE ctermfg=241 ctermbg=236 cterm=NONE
 highlight Title guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
 " highlight Underlined
@@ -131,16 +133,16 @@ highlight AleErrorSign guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NON
 highlight AleWarningSign guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 
 " - Signify -
-highlight SignifyLineAdd guifg=#8fbe00 guibg=#0a0e1a gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifyLineChange guifg=#8fbe00 guibg=#0a0e1a gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifyLineDelete guifg=#cb4b16 guibg=#0a0e1a gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
-highlight SignifyLineChangeDelete guifg=#01a8c6 guibg=#0a0e1a gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
-highlight SignifyLineDeleteFirstLine guifg=#cb4b16 guibg=#0a0e1a gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
-highlight SignifySignAdd guifg=#8fbe00 guibg=#0a0e1a gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifySignChange guifg=#8fbe00 guibg=#0a0e1a gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifySignDelete guifg=#cb4b16 guibg=#0a0e1a gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
-highlight SignifySignChangeDelete guifg=#01a8c6 guibg=#0a0e1a gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
-highlight SignifySignDeleteFirstLine guifg=#cb4b16 guibg=#0a0e1a gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifyLineAdd guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifyLineChange guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifyLineDelete guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifyLineChangeDelete guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
+highlight SignifyLineDeleteFirstLine guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifySignAdd guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifySignChange guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifySignDelete guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifySignChangeDelete guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
+highlight SignifySignDeleteFirstLine guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
 
 " - FZF -
 highlight fzf1 guifg=#ffffff guibg=#061926 ctermfg=yellow ctermbg=blue

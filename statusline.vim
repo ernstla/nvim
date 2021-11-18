@@ -17,6 +17,34 @@ highlight ErnstSLInactiveFG guifg=#1f424f guibg=#131313
 highlight ErnstSLHighFG guifg=#ffaf00 guibg=#131313
 highlight ErnstSLNormalFG guifg=#4f727f guibg=#131313
 
+lua << EOF
+function _G.get_diagnostics(bufnr)
+    local diag = vim.diagnostic.get(bufnr)
+    local result = {
+        errors = 0,
+        warnings = 0,
+        hints = 0,
+        infos = 0,
+        total = 0,
+    }
+
+    for i, d in pairs(diag) do
+        if d.severity == 1 then
+            result.errors = result.errors + 1
+        elseif d.severity == 2 then
+            result.warnings = result.warnings + 1
+        elseif d.severity == 3 then
+            result.infos = result.infos + 1
+        elseif d.severity == 4 then
+            result.hints = result.hints + 1
+        end
+        result.total = result.total + 1
+    end
+
+    return result
+end
+EOF
+
 function! StatuslineGit()
     let git = fugitive#head()
     if git != ''
@@ -51,14 +79,15 @@ endfunction
 
 
 function! StatuslineAle() abort
-   let l:counts = ale#statusline#Count(bufnr(''))
-   let l:all_errors = l:counts.error + l:counts.style_error
-   let l:all_non_errors = l:counts.total - l:all_errors
+   let l:counts = v:lua.get_diagnostics(bufnr(''))
+   let l:all_errors = l:counts.errors
+   let l:all_non_errors = l:counts.hints + l:counts.infos
    return l:counts.total == 0 ? '🖖 ' : printf(
    \ '💡%d  💀%d ', 
    \ l:all_non_errors,
    \ l:all_errors
    \)
+   "return '🖖 '
 endfunction
 
 set laststatus=2
