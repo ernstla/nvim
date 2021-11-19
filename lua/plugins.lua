@@ -145,3 +145,13 @@ vim.g.UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 vim.g.UltiSnipsListSnippets = '<c-tab>'
 vim.g.UltiSnipsEditSplit = 'horizontal'
 vim.g.UltiSnipsDontReverseSearchPath = '1'
+
+-- Signify
+vim.g.signify_disable_by_default = 0
+vim.g.signify_sign_show_count = 0
+vim.g.signify_vcs_list = {'git', 'hg'}
+vim.g.signify_sign_add = '┃'
+vim.g.signify_sign_delete = '⎇'
+vim.g.signify_sign_delete_first_line = '‾'
+vim.g.signify_sign_change = '∙'
+vim.g.signify_sign_changedelete = vim.g.signify_sign_change
