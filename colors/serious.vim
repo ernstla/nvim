@@ -107,16 +107,15 @@ highlight Type guifg=#268bd2 guibg=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=N
 "
 " ----------------- LSP ----------------
 "
-highlight LspDiagnosticsDefaultError guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE 
-highlight LspDiagnosticsDefaultWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
-highlight LspDiagnosticsDefaultHint guifg=#88bb55 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight LspDiagnosticsDefaultInformation guifg=#95c2e8 guibg=#1c1c1c gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
+highlight DiagnosticSignError guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE 
+highlight DiagnosticSignWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight DiagnosticSignHint guifg=#88bb55 guibg=NONE gui=NONE ctermfg=28 ctermbg=NONE cterm=NONE
+highlight DiagnosticSignInformation guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
 
-" highlight LspDiagnosticInformation
-" highlight LspDiagnosticHint
-" highlight LspReferenceText
-" highlight LspReferenceRead
-" highlight LspReferenceWrite
+hi DiagnosticVirtualTextError guifg=#bb3b06 ctermfg=124
+hi DiagnosticVirtualTextWarning guifg=#eeaa19 ctermfg=214
+hi DiagnosticVirtualTextHint guifg=#78ab45 ctermfg=28
+hi DiagnosticVirtualTextInformation guifg=#85b2d8 ctermfg=117
 
 "
 " --------- LANGUAGES & PLUGINS ---------

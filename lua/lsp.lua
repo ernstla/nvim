@@ -1,6 +1,21 @@
 -- LSP settings
 local runtime_path = vim.split(package.path, ';')
 
+vim.g.space_before_virtual_text = 1
+vim.g.diagnostic_virtual_text_prefix = '⚡'
+vim.g.diagnostic_enable_virtual_text = 1
+vim.g.diagnostic_show_sign = 0
+vim.g.diagnostic_insert_delay = 1
+-- vim.g.diagnostic_trimmed_virtual_text = '20'
+
+local hl = 'DiagnosticSignError'
+vim.fn.sign_define(hl, {text='❌', texthl=hl, linehl = '', numhl = hl})
+hl = 'DiagnosticSignWarning'
+vim.fn.sign_define(hl, {text='⚡', texthl=hl, linehl = '', numhl = hl})
+hl = 'DiagnosticSignInformation'
+vim.fn.sign_define(hl, {text='◎', texthl=hl, linehl = '', numhl = hl})
+hl = 'DiagnosticSignHint'
+vim.fn.sign_define(hl, {text='○', texthl=hl, linehl = '', numhl = hl})
 
 local nvim_lsp = require 'lspconfig'
 local on_attach = function(_, bufnr)
