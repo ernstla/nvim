@@ -10,9 +10,8 @@ endif
 set background=dark
 let colors_name = "serious"
 
-
-" Chrome
 "
+" Chrome
 "
 highlight Normal guifg=#c7cadf guibg=NONE gui=NONE ctermfg=253 ctermbg=NONE cterm=NONE
 highlight LineNr guifg=#1f323f guibg=NONE gui=NONE ctermfg=240 ctermbg=NONE cterm=NONE
@@ -51,11 +50,8 @@ highlight ErrorMsg guifg=#ffffff guibg=#df0000 gui=NONE ctermfg=15 ctermbg=52 ct
 highlight Identifier guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight IncSearch guifg=#1c1c1c guibg=#8fbe00 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 highlight MatchParen guifg=#ffe7c5 guibg=#006f92 gui=NONE ctermfg=9 ctermbg=0 cterm=NONE
-" highlight ModeMsg
-" highlight MoreMsg
 highlight Pmenu guifg=#ffffff guibg=#303540 gui=NONE ctermfg=0 ctermbg=8 cterm=NONE
 highlight PmenuSel guifg=#ffffff guibg=#485b39 gui=NONE ctermfg=0 ctermbg=7 cterm=NONE
-" highlight Question
 highlight Search guifg=#1c1c1c guibg=#ffbb29 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 highlight QuickFixLine guifg=#ffffff guibg=#105563 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 highlight SpellBad guifg=#DC322F guisp=#ffffff guibg=NONE gui=undercurl ctermfg=NONE ctermbg=52 cterm=NONE
@@ -63,9 +59,7 @@ highlight SpellCap guifg=#fd971f guisp=#DC322F  guibg=NONE gui=undercurl ctermfg
 highlight StatusLine guifg=#ffffff guibg=#070713 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 highlight StatusLineNC guifg=#586e75 guibg=#07303c gui=NONE ctermfg=241 ctermbg=236 cterm=NONE
 highlight Title guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NONE cterm=NONE
-" highlight Underlined
 highlight VisualNOS guifg=#263946 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-" highlight WarningMsg
 highlight WildMenu guifg=#1c1c1c guibg=#8fbe00 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 
 
@@ -75,37 +69,54 @@ highlight IndentBlanklineChar guifg=#162936 gui=nocombine
 " --------- DEFAULT SYNTAX COLORS ---------
 "
 
+" guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+" guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+" guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
+" guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+" guifg=#5aede0 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+" guifg=#bbffff guibg=NONE gui=NONE ctermfg=159 ctermbg=NONE cterm=NONE
+" guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+" guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+" guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+" guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+" guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+" guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
+
 highlight Comment guifg=#586e75 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
 " highlight Boolean
 " highlight Character
-highlight Conditional guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight Conditional guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 " highlight Debug
 " highlight Define
 " highlight Exception
 " highlight Float
 " highlight Function
 " highlight Include
-highlight Keyword guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
+highlight Identifier guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
+highlight Keyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 " highlight Label
 " highlight Macro
 " highlight Number
 " highlight Operator
 " highlight PreCondit
-highlight PreProc guifg=#d33682 guibg=NONE gui=NONE ctermfg=169 ctermbg=NONE cterm=NONE
+highlight PreProc guifg=#c2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 " highlight Region
 " highlight Repeat
 " highlight SpecialChar
 " highlight SpecialComment
 highlight Special guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 " highlight SpecialKey
-highlight Statement guifg=#2ebf7e guibg=NONE gui=NONE ctermfg=36 ctermbg=NONE cterm=NONE
+highlight Statement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 " highlight StorageClass
-highlight String guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=64 ctermbg=NONE cterm=NONE
+highlight String guifg=#ddaa39 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 " highlight Structure
 " highlight Tag
 highlight Todo guifg=#95c2e8 guibg=#1c1c1c gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
-highlight Type guifg=#268bd2 guibg=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=NONE
+highlight Type guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 " highlight Typedef
+highlight vimHiGuiFgBg guifg=#5aede0 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight vimHiCtermFgBg guifg=#5aede0 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
 
 "
 " ----------------- LSP ----------------

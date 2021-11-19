@@ -79,7 +79,7 @@ function! StatuslineMode()
 endfunction
 
 
-function! StatuslineAle() abort
+function! StatusLineDiag() abort
    let l:counts = v:lua.get_diagnostics(bufnr(''))
    let l:all_errors = l:counts.errors
    let l:all_non_errors = l:counts.warnings
@@ -127,7 +127,7 @@ function! SetActiveStatusLine()
     " setlocal statusline+=%#ErnstSLHighFG#
     " setlocal statusline+=
     setlocal statusline+=%#ErnstSLHighBG#
-    setlocal statusline+=\ %{StatuslineAle()}
+    setlocal statusline+=\ %{StatusLineDiag()}
 endfunction
 
 function! SetInactiveStatusLine()
@@ -149,7 +149,7 @@ function! SetInactiveStatusLine()
     setlocal statusline+=%p%%\ 
     setlocal statusline+=\ \ 
     setlocal statusline+=%l:%c\ \  
-    setlocal statusline+=\ %{StatuslineAle()}
+    setlocal statusline+=\ %{StatusLineDiag()}
 endfunction
 
 augroup statusline
