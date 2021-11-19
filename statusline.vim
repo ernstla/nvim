@@ -38,8 +38,9 @@ function _G.get_diagnostics(bufnr)
         elseif d.severity == 4 then
             result.hints = result.hints + 1
         end
-        result.total = result.total + 1
     end
+
+    result.total = result.errors + result.warnings
 
     return result
 end
@@ -81,9 +82,9 @@ endfunction
 function! StatuslineAle() abort
    let l:counts = v:lua.get_diagnostics(bufnr(''))
    let l:all_errors = l:counts.errors
-   let l:all_non_errors = l:counts.hints + l:counts.infos
+   let l:all_non_errors = l:counts.warnings
    return l:counts.total == 0 ? '🖖 ' : printf(
-   \ '💡%d  💀%d ', 
+   \ ' %d   %d ', 
    \ l:all_non_errors,
    \ l:all_errors
    \)
@@ -108,15 +109,15 @@ function! SetActiveStatusLine()
     setlocal statusline+=%=
     setlocal statusline+=%y\ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=🌍 
+    setlocal statusline+=\ 
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=%{&fileencoding?&fileencoding:&encoding}\ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=\ 🔨
+    setlocal statusline+=\ \ 
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=\%{&fileformat}\ \ 
     setlocal statusline+=%#ErnstSLHighFG#
-    setlocal statusline+=\ 📑
+    setlocal statusline+=\ 
     setlocal statusline+=%#ErnstSLNormalFG#
     setlocal statusline+=%p%%\ 
     setlocal statusline+=%#ErnstSLHighFG#
@@ -140,11 +141,11 @@ function! SetInactiveStatusLine()
     setlocal statusline+=\ %m\ 
     setlocal statusline+=%=
     setlocal statusline+=%y\ 
-    setlocal statusline+=🌍 
+    setlocal statusline+=\  
     setlocal statusline+=%{&fileencoding?&fileencoding:&encoding}\ 
-    setlocal statusline+=\ 🔨
+    setlocal statusline+=\ \ 
     setlocal statusline+=\%{&fileformat}\ \ 
-    setlocal statusline+=\ 📑
+    setlocal statusline+=\ 
     setlocal statusline+=%p%%\ 
     setlocal statusline+=\ \ 
     setlocal statusline+=%l:%c\ \  

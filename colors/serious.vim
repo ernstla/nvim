@@ -68,6 +68,9 @@ highlight VisualNOS guifg=#263946 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE 
 " highlight WarningMsg
 highlight WildMenu guifg=#1c1c1c guibg=#8fbe00 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 
+
+highlight IndentBlanklineChar guifg=#162936 gui=nocombine
+
 "
 " --------- DEFAULT SYNTAX COLORS ---------
 "
@@ -107,15 +110,20 @@ highlight Type guifg=#268bd2 guibg=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=N
 "
 " ----------------- LSP ----------------
 "
-highlight DiagnosticSignError guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE 
-highlight DiagnosticSignWarning guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight DiagnosticSignError guifg=#bb2b16 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE 
+highlight DiagnosticSignErrorNumber guifg=#551100 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE 
+highlight DiagnosticSignWarn guifg=#bb7722 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight DiagnosticSignHint guifg=#88bb55 guibg=NONE gui=NONE ctermfg=28 ctermbg=NONE cterm=NONE
-highlight DiagnosticSignInformation guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
-
-hi DiagnosticVirtualTextError guifg=#bb3b06 ctermfg=124
-hi DiagnosticVirtualTextWarning guifg=#eeaa19 ctermfg=214
-hi DiagnosticVirtualTextHint guifg=#78ab45 ctermfg=28
-hi DiagnosticVirtualTextInformation guifg=#85b2d8 ctermfg=117
+highlight DiagnosticSignInfo guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
+highlight DiagnosticVirtualTextError guifg=#662200 ctermfg=124
+highlight DiagnosticVirtualTextWarn guifg=#3f525f ctermfg=214
+highlight DiagnosticVirtualTextHint guifg=#78ab45 ctermfg=28
+highlight DiagnosticVirtualTextInfo guifg=#85b2d8 ctermfg=117
+" Disable underline
+highlight DiagnosticUnderlineError gui=NONE
+highlight DiagnosticUnderlineHint gui=NONE
+highlight DiagnosticUnderlineInfo gui=NONE
+highlight DiagnosticUnderlineWarn gui=NONE
 
 "
 " --------- LANGUAGES & PLUGINS ---------
@@ -132,16 +140,16 @@ highlight AleErrorSign guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=NON
 highlight AleWarningSign guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 
 " - Signify -
-highlight SignifyLineAdd guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifyLineChange guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifyLineDelete guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifyLineAdd guifg=#669933 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifyLineChange guifg=#669933 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifyLineDelete guifg=#8700af guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
 highlight SignifyLineChangeDelete guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
 highlight SignifyLineDeleteFirstLine guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
-highlight SignifySignAdd guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifySignChange guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
-highlight SignifySignDelete guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifySignAdd guifg=#669933 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifySignChange guifg=#669933 guibg=NONE gui=NONE ctermfg=106 ctermbg=235 cterm=NONE
+highlight SignifySignDelete guifg=#8700af guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
 highlight SignifySignChangeDelete guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=235 cterm=NONE
-highlight SignifySignDeleteFirstLine guifg=#cb4b16 guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
+highlight SignifySignDeleteFirstLine guifg=#8700af guibg=NONE gui=NONE ctermfg=166 ctermbg=235 cterm=NONE
 
 " - FZF -
 highlight fzf1 guifg=#ffffff guibg=#061926 ctermfg=yellow ctermbg=blue

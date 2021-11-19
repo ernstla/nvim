@@ -82,6 +82,7 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_show_first_indent_level = false
 
 
 -- BufExplorer
@@ -147,11 +148,12 @@ vim.g.UltiSnipsEditSplit = 'horizontal'
 vim.g.UltiSnipsDontReverseSearchPath = '1'
 
 -- Signify
+vim.g.signify_priority = 0
 vim.g.signify_disable_by_default = 0
 vim.g.signify_sign_show_count = 0
 vim.g.signify_vcs_list = {'git', 'hg'}
 vim.g.signify_sign_add = '┃'
-vim.g.signify_sign_delete = '⎇'
+vim.g.signify_sign_delete = '⌥'
 vim.g.signify_sign_delete_first_line = '‾'
 vim.g.signify_sign_change = '∙'
 vim.g.signify_sign_changedelete = vim.g.signify_sign_change
