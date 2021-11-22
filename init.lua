@@ -7,7 +7,7 @@ local home = vim.fn.getenv('HOME')
 
 cmd('filetype plugin on')
 
-require('packerconf')
+require('bundles')
 
 opt.autoindent = true
 opt.backspace = {'indent', 'eol', 'start'} -- Backspace as expected

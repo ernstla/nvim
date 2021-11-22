@@ -31,6 +31,7 @@ require('packer').startup(function()
     use 'guns/xterm-color-table.vim'
     use 'lilydjwg/colorizer'
     use 'mbbill/undotree'
+    use 'mattn/emmet-vim'
 
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use 'lukas-reineke/indent-blankline.nvim'

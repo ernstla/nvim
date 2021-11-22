@@ -157,3 +157,6 @@ vim.g.signify_sign_delete = '⌥'
 vim.g.signify_sign_delete_first_line = '‾'
 vim.g.signify_sign_change = '∙'
 vim.g.signify_sign_changedelete = vim.g.signify_sign_change
+
+-- Emmet
+vim.g.user_emmet_leader_key = '<c-e>'
