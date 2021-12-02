@@ -9,6 +9,7 @@ Debug lua e. g. with the get_diagnostics function from statusline.vim
 
 See https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
 
+    sudo apt install build-essential ninja-build
     cd ~/Source
     git clone https://github.com/sumneko/lua-language-server
     cd lua-language-server
