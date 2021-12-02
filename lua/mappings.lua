@@ -6,10 +6,14 @@ map('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-map('n', '<up>', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
-map('n', '<down>', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+map('n', 'k', 'gk', opts)
+map('n', '<up>', 'gk', opts)
+map('n', 'j', 'gj', opts)
+map('n', '<down>', 'gj', opts)
+map('v', 'k', 'gk', opts)
+map('v', '<up>', 'gk', opts)
+map('v', 'j', 'gj', opts)
+map('v', '<down>', 'gj', opts)
 
 map('n', 'Y', 'y$', opts)
 
