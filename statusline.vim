@@ -19,7 +19,6 @@ highlight ErnstSLNormalFG guifg=#4f727f guibg=#131313
 
 lua << EOF
 function _G.get_diagnostics(bufnr)
-    local diag = vim.diagnostic.get(bufnr)
     local result = {
         errors = 0,
         warnings = 0,
@@ -27,6 +26,10 @@ function _G.get_diagnostics(bufnr)
         infos = 0,
         total = 0,
     }
+
+    if not vim.diagnostic then return result end
+
+    local diag = vim.diagnostic.get(bufnr)
 
     for i, d in pairs(diag) do
         if d.severity == 1 then
