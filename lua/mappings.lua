@@ -54,6 +54,7 @@ map('', '<c-i>', '<C-I>zz', opts)
 map('n', 'Q', '@@', opts)
 -- Side panes
 map('n', '<c-p>', [[<cmd>lua require('functions').telescope_project_files()<CR>]], opts)
+map('n', '<m-p>', [[<cmd>lua require('functions').telescope_all_files()<CR>]], opts)
 map('n', '<c-f3>', ':Telescope quickfix<cr>', opts)
 map('n', '<f5>', ':UndotreeToggle<cr>', opts)
 map('n', '<f8>', ':NERDTreeToggle<cr>', opts)
