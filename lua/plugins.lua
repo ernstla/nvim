@@ -96,7 +96,11 @@ vim.g.colorizer_startup = 0
 
 
 -- NERDTree
-vim.g.NERDTreeIgnore = {'.pyc$', '~$', '.swp$', '.gif$', '.png$', '.jpg$', '.trc', 'PYSMELLTAGS', '__pycache__', '.*.egg-info$', '^.[[dir]]'}  -- the last one means all hidden dirs
+vim.g.NERDTreeIgnore = {
+    '\\.pyc$', '\\.swp$', '\\.gif$', '\\.png$', '\\.jpg$', '\\.trc',
+    'PYSMELLTAGS', '__pycache__', '\\.*\\.egg-info$',
+    '^\\.[[dir]]', -- the last one means all hidden dirs
+}
 vim.g.NERDTreeMouseMode = 2
 vim.g.NERDTreeQuitOnOpen = 1
 vim.g.NERDTreeChDirMode = 2
