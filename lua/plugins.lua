@@ -71,6 +71,10 @@ cmp.setup {
         { name = 'ultisnips' },
         { name = 'nvim_lsp' },
     },
+    completion = {
+        keyword_length = 2,
+        autocomplete = false,
+    }
 }
 
 
