@@ -10,7 +10,7 @@ M.telescope_all_files = function()
     local opts = {
         hidden = true,
         no_ignore = true,
-        file_ignore_patterns = {'^.git/', 'vendor', 'node_modules', 'data'}
+        file_ignore_patterns = {'^.git/', 'vendor', 'node_modules', 'data', 'log'}
     }
     require'telescope.builtin'.find_files(opts)
 end

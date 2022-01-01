@@ -106,6 +106,12 @@ vim.cmd [[
     nnoremap <Leader>p :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
     \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
     \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
+
+    " Navigate with +/= and - between changes and center change on screen
+    " Catch the transition to diff mode
+    au FilterWritePre * if &diff | exe 'noremap = ]cz.' | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<cr>' | endif
+    au FilterWritePre * if &diff |  exe 'execute "normal zR"' | endif
+    " au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000' | exe 'execute "normal \<c-w>\<c-w>"' | endif
 ]]
 
 if vim.fn.has('wsl') == 1 then
