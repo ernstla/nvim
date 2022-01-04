@@ -32,6 +32,7 @@ require('packer').startup(function()
     use 'lilydjwg/colorizer'
     use 'mbbill/undotree'
     use 'mattn/emmet-vim'
+    use 'nyngwang/NeoZoom.lua'
 
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use 'lukas-reineke/indent-blankline.nvim'

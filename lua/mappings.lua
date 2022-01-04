@@ -1,6 +1,6 @@
 --Remap space as leader key
 local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true, nowait = true }
 
 map('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
@@ -61,6 +61,7 @@ map('n', '<f8>', ':NERDTreeToggle<cr>', opts)
 map('n', '<f9>', ':Telescope buffers<cr>', opts)
 map('n', '<c-f9>', ':BufExplorer<cr>', opts)
 map('n', '<f10>', ':TagbarToggle<cr>', opts)
+map('n', '<leader>gz', '<cmd>NeoZoomToggle<CR>', opts)
 -- Git
 map('', '<leader>gs', '<esc>:Git<cr>', opts)
 map('', '<leader>gb', '<esc>:Git blame<cr>', opts)
