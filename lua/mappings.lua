@@ -61,7 +61,7 @@ map('n', '<f8>', ':NERDTreeToggle<cr>', opts)
 map('n', '<f9>', ':Telescope buffers<cr>', opts)
 map('n', '<c-f9>', ':BufExplorer<cr>', opts)
 map('n', '<f10>', ':TagbarToggle<cr>', opts)
-map('n', '<leader>gz', '<cmd>NeoZoomToggle<CR>', opts)
+map('n', 'gz', '<cmd>NeoZoomToggle<CR>', opts)
 -- Git
 map('', '<leader>gs', '<esc>:Git<cr>', opts)
 map('', '<leader>gb', '<esc>:Git blame<cr>', opts)
