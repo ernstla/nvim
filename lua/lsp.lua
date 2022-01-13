@@ -60,8 +60,8 @@ end
 --
 -- Lua sumneko
 --
-local sumneko_root_path = vim.fn.getenv 'HOME' .. '/Source/lua-language-server' -- Change to your sumneko root installation
-local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
+local sumneko_root_path = vim.fn.getenv 'HOME' .. '/.config/nvim/lsp/lua' -- Change to your sumneko root installation
+local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 -- Make runtime files discoverable to the server
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
@@ -84,6 +84,7 @@ nvim_lsp.sumneko_lua.setup {
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file('', true),
+                checkThirdParty = false,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
