@@ -49,6 +49,13 @@ require('packer').startup(function()
     use 'terryma/vim-multiple-cursors'
     use 'majutsushi/tagbar'
 
+    use {
+    "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+    end
+    }
+
     -- Languages
     use 'cespare/vim-toml'
     use 'lifepillar/pgsql.vim'
