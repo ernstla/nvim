@@ -127,4 +127,9 @@ require('treesitter')
 require('lsp')
 require('plugins')
 require('mappings')
-vim.cmd('source ' .. home .. '/.config/nvim/statusline.vim')
+
+if vim.fn.has('win32') then
+    vim.cmd('source ' .. home .. '/AppData/Local/nvim/statusline.vim')
+else
+    vim.cmd('source ' .. home .. '/.config/nvim/statusline.vim')
+end
