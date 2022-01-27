@@ -65,8 +65,12 @@ map('n', 'gz', '<cmd>NeoZoomToggle<CR>', opts)
 -- Git
 map('', '<leader>gs', '<esc>:Git<cr>', opts)
 map('', '<leader>gb', '<esc>:Git blame<cr>', opts)
--- Telescope
+-- Rest Client
+map('n', '<leader>rr', [[<cmd>lua require('rest-nvim').run()<CR>]], opts)
+map('n', '<leader>rp', [[<cmd>lua require('rest-nvim').run(true)<CR>]], opts) -- preview/verbose
+map('n', '<leader>rl', '<Plug>RestNvimLast', opts)
 
+-- Telescope
 vim.cmd [[
     " Easy navigation in Quickfix window
     function! ToggleQuickFix()
