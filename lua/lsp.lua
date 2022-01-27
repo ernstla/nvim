@@ -61,7 +61,7 @@ end
 -- Lua sumneko
 --
 local sumneko_root_path = ''
-if vim.fn.has('win32') then
+if vim.fn.has('win32') == 1 then
     sumneko_root_path = vim.fn.getenv 'HOME' .. '/AppData/Local/nvim/lsp/lua'
 else
     sumneko_root_path = vim.fn.getenv 'HOME' .. '/.config/nvim/lsp/lua' -- Change to your sumneko root installation

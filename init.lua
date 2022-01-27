@@ -128,7 +128,7 @@ require('lsp')
 require('plugins')
 require('mappings')
 
-if vim.fn.has('win32') then
+if vim.fn.has('win32') == 1 then
     require('neovide')
     vim.cmd('source ' .. home .. '/AppData/Local/nvim/statusline.vim')
 else
