@@ -49,7 +49,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'tsserver', 'vuels', 'svelte' }
+local servers = { 'clangd', 'tsserver', 'vuels', 'svelte' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -129,7 +129,23 @@ nvim_lsp.nimls.setup{
 }
 
 
+--
+-- Rust
+--
+nvim_lsp.rust_analyzer.setup{
+    settings = {
+        ["rust-analyzer"] = {
+            rustfmt = {
+                enableRangeFormatting = true
+            }
+        }
+    }
+}
+
+
+--
 -- PHP
+--
 --    npm install -g intelephense
 nvim_lsp.intelephense.setup({
     init_options = { licenceKey = '005UH9RB1NL07NE'},
