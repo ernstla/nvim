@@ -48,7 +48,7 @@ require('packer').startup(function()
     use 'preservim/nerdtree'
     use 'jlanzarotta/bufexplorer'
     use 'terryma/vim-multiple-cursors'
-    use 'majutsushi/tagbar'
+    use 'preservim/tagbar'
     use { "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
     -- Languages
