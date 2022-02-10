@@ -62,7 +62,7 @@ require('packer').startup(function()
     use 'tpope/vim-haml'
     use 'evanleck/vim-svelte'
     use 'ziglang/zig.vim'
-    use 'https://git.serious.selfip.org/ernst/nim.vim.git'
+    use 'https://git.ernstla.de/ernst/nim.vim.git'
 
     if vim.fn.has("unix") == 1 then
         use 'christoomey/vim-tmux-navigator'
