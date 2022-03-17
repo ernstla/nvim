@@ -4,7 +4,7 @@
 
 ### Python
 
-    pip install --user python-lsp-serve
+    pip install --user python-lsp-server
 
 ### Javascript/Svelte
 
