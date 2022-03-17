@@ -1,4 +1,4 @@
-#Neovim configutation
+# Neovim configuration
 
 ## Install Language Servers
 
