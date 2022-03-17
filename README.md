@@ -18,14 +18,14 @@
     wget https://github.com/sumneko/lua-language-server/releases/download/<version>/lua-language-server-<version>-linux-x64.tar.gz
     tar xfvz lua-language-server-<version>-linux-x64.tar.gz
 
-### Nim
-
-    nimble install nimlsp
-
-## Windows:
+Windows:
 
 Download the LSP from https://github.com/sumneko/lua-language-server/releases
 and extract it to `<User>\AppData\Local\nvim\lsp\lua`
+
+### Nim
+
+    nimble install nimlsp
 
 
 ## Zeuch
