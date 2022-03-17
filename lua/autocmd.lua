@@ -27,6 +27,7 @@ autocmd BufWritePre *.css :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
 autocmd BufWritePre *.ini :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.json :%s/\s\+$//e
 autocmd BufWritePre *.less :%s/\s\+$//e
 autocmd BufWritePre *.lua :%s/\s\+$//e
 autocmd BufWritePre *.mako :%s/\s\+$//e
@@ -37,6 +38,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.rs :%s/\s\+$//e
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.sql :%s/\s\+$//e
+autocmd BufWritePre *.tpql :%s/\s\+$//e
 autocmd BufWritePre *.svelte :%s/\s\+$//e
 autocmd BufWritePre *.toml :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
@@ -44,6 +46,10 @@ autocmd BufWritePre *.vue :%s/\s\+$//e
 autocmd BufWritePre *.php lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.html lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.json lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 autocmd VimResized * wincmd =
 

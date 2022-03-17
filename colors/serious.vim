@@ -526,40 +526,41 @@ highlight bladeParen guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE c
 highlight bladeStructure guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 
 " - PHP -
-highlight phpBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight phpAssignByRef guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpBackslashSequences guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight phpBoolean guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight phpClasses guifg=#df9faf guibg=NONE gui=NONE ctermfg=130 ctermbg=NONE cterm=NONE
+highlight phpCommentTitle guifg=#98aeb5 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
 highlight phpComparison guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpLabel guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpStatement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight phpDefine guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
-highlight phpStructure guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight phpConstant guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight phpCoreConstant guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight phpDefine guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight phpDocParam guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight phpDocTags guifg=#98aeb5 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
+highlight phpException guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight phpFunctions guifg=#af7f99 guibg=NONE gui=NONE ctermfg=130 ctermbg=NONE cterm=NONE
-highlight phpSpecialFunction guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
 highlight phpIdentifier guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight phpInclude guifg=#617fa0 guibg=NONE gui=NONE ctermfg=67 ctermbg=NONE cterm=NONE
+highlight phpKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight phpLabel guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight phpMemberSelector guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpMethods guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpNumber guifg=#f2592a guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 highlight phpOperator guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight phpAssignByRef guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpParent guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight phpRelation guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
 highlight phpRegion guifg=#c2dcf2 guibg=NONE gui=NONE ctermfg=153 ctermbg=NONE cterm=NONE
+highlight phpRelation guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight phpRepeat guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight phpSpecialFunction guifg=#f5e28e guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
+highlight phpStatement guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 highlight phpStorageClass guifg=#617fa0 guibg=NONE gui=NONE ctermfg=67 ctermbg=NONE cterm=NONE
-highlight phpInclude guifg=#617fa0 guibg=NONE gui=NONE ctermfg=67 ctermbg=NONE cterm=NONE
 highlight phpStringBacktick guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight phpStringDouble guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
 highlight phpStringSingle guifg=#ffbb29 guibg=NONE gui=NONE ctermfg=214 ctermbg=NONE cterm=NONE
+highlight phpStructure guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 highlight phpType guifg=#f38630 guibg=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
 highlight phpVarSelector guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight phpDocTags guifg=#98aeb5 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-highlight phpCommentTitle guifg=#98aeb5 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-highlight phpDocParam guifg=#95c2e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 
 " - Clojure -
 highlight clojureString guifg=#5f8700 guibg=NONE gui=NONE ctermfg=64 ctermbg=NONE cterm=NONE
