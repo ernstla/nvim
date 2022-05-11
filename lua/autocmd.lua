@@ -15,7 +15,7 @@ autocmd BufRead,BufNewFile *.boot set filetype=clojure
 autocmd BufRead,BufNewFile *.pxi set filetype=clojure
 autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile *.msql set filetype=pgsql
-autocmd BufRead,BufNewFile *.sql.php set filetype=pgsql
+autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
@@ -50,6 +50,8 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.html lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.json lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.css lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 autocmd VimResized * wincmd =
 
