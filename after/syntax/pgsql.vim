@@ -31,32 +31,10 @@ syn match pgMakoDelim "</%\(def\|call\|namespace\|block\|[a-zA-Z_][a-zA-Z0-9_]*:
 syn match pgMakoEscape /\\$/
 
 
+syn include @pgPythonTop syntax/python.vim
 syn region pgPhpRegion matchgroup=Delimiter start="<?php" end="?>" contains=@phpClTop
 
 " The default public schema
 syn keyword pgPublicSchema public
 syn keyword pgBoolean true True TRUE false False FALSE
 syn keyword pgUnreserved class content locale locked path action comments comment global superuser option options type types name value version edges data role
-
-" Default highlighting links
-if version >= 508 || !exists("did_pgmako_syn_inits")
-  if version < 508
-    let did_pgmako_syn_inits = 1
-    com -nargs=+ HiLink hi link <args>
-  else
-    com -nargs=+ HiLink hi def link <args>
-  endif
-
-  HiLink pgMakoDocComment pgMakoComment
-  HiLink pgMakoDefEnd pgMakoDelim
-
-  HiLink pgMakoAttributeKey Type
-  HiLink pgMakoAttributeValue String
-  HiLink pgMakoText Normal
-  HiLink pgMakoDelim Preproc
-  HiLink pgMakoEnd Keyword
-  HiLink pgMakoComment Comment
-  HiLink pgMakoEscape Special
-
-  delc HiLink
-endif

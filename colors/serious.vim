@@ -94,7 +94,7 @@ highlight Conditional guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE 
 " highlight Function
 " highlight Include
 highlight Identifier guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-highlight Keyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight Keyword guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
 " highlight Label
 " highlight Macro
 " highlight Number
@@ -277,37 +277,39 @@ highlight vueEvent guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE ct
 highlight jsBraces guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 
 " - TypeScript -
-highlight typeScriptAjaxObjects guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight typeScriptBoolean guifg=#c491c4 guibg=NONE gui=NONE ctermfg=176 ctermbg=NONE cterm=NONE
-highlight typeScriptBraces guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight typeScriptBranch guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptComment guifg=#696363 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight typeScriptConditional guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptEndColons guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptException guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptFunction guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptFuncKeyword guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptGlobal guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight typeScriptIdentifier guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptLabel guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptLineComment guifg=#696363 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-highlight typeScriptMember guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight typeScriptMessage guifg=#ffffff guibg=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
-highlight typeScriptNull guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight typeScriptNumber guifg=#fc580c guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-highlight typeScriptOpSymbols guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight typeScriptOperator guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptParens guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight typeScriptRepeat guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptReserved guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptSpecial guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight typeScriptSpecialCharacter guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
-highlight typeScriptStatement guifg=#ff5f87 guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
-highlight typeScriptStringD guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
-highlight typeScriptStringS guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
-highlight typeScriptStringT guifg=#fd971f guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight typeScriptThis guifg=#ffff99 guibg=NONE gui=NONE ctermfg=229 ctermbg=NONE cterm=NONE
-highlight typeScriptType guifg=#fd971f guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight typescriptBraces guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptImport guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptExport guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptInterfaceKeyword guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptInterfaceExtends guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptVariable guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptInterfaceName guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptBOM guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight typescriptFuncKeyword guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptOperator guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight typescriptAsyncFuncKeyword guifg=#b48ead guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptFuncName guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptObjectLabel guifg=#d3eebc guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight typescriptMember guifg=#fdd9ae guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight typescriptCall guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptFuncComma guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptUnion guifg=#f8f8f0 guibg=NONE gui=NONE ctermfg=231 ctermbg=NONE cterm=NONE
+highlight typescriptArrowFunc guifg=#a3be8c guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight typescriptBOMWindowProp guifg=#a3be8c guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight typescriptDOMDocMethod guifg=#a3be8c guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight typescriptPredefinedType guifg=#a3be8c guibg=NONE gui=NONE ctermfg=204 ctermbg=NONE cterm=NONE
+highlight typescriptGlobalMethod guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight typescriptCastKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptConditional guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptTry guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptExceptions guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptStatementKeyword guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight typescriptString guifg=#ebcb8b guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight typescriptTemplate guifg=#ebcb8b guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
+highlight typescriptTemplateSubstitution guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
+highlight typescriptTemplateSB guifg=#d08770 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight typescriptGlobal guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+highlight typescriptNumber guifg=#ff8770 guibg=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 
 
 " - AngularJS -
@@ -323,7 +325,7 @@ highlight angularService guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=38 ctermbg=NO
 
 " Python
 highlight pythonBuiltin guifg=#af7f99 guibg=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-highlight pythonConst guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight pythonConst guifg=#86a943 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight pythonAsync guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight pythonClass guifg=#f5c264 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 highlight pythonComment guifg=#556270 guibg=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
