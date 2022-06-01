@@ -66,10 +66,16 @@ end
 -- Lua sumneko
 --
 local sumneko_root_path = ''
+local sumneko_lib_path = ''
 if vim.fn.has('win32') == 1 then
     sumneko_root_path = vim.fn.getenv 'HOME' .. '/AppData/Local/nvim/lsp/lua'
+    sumneko_lib_path = sumneko_root_path
+elseif vim.fn.has('macunix') == 1 then
+    sumneko_root_path = '/usr/local' -- Change to your sumneko root installation
+    sumneko_lib_path = '/usr/local/Cellar/lua-language-server/3.2.4/libexec/'
 else
     sumneko_root_path = vim.fn.getenv 'HOME' .. '/.config/nvim/lsp/lua' -- Change to your sumneko root installation
+    sumneko_lib_path = sumneko_root_path
 end
 local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 if file_exists(sumneko_binary) then
@@ -77,7 +83,7 @@ if file_exists(sumneko_binary) then
     table.insert(runtime_path, 'lua/?.lua')
     table.insert(runtime_path, 'lua/?/init.lua')
     nvim_lsp.sumneko_lua.setup {
-        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+        cmd = { sumneko_binary, '-E', sumneko_lib_path .. '/main.lua' },
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {

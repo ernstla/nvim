@@ -13,6 +13,8 @@
 
 ### Lua
     
+Linux:
+
     mkdir -p ./config/nvim/lsp/lua
     cd .config/nvim/lsp/lua
     wget https://github.com/sumneko/lua-language-server/releases/download/<version>/lua-language-server-<version>-linux-x64.tar.gz
@@ -22,6 +24,10 @@ Windows:
 
 Download the LSP from https://github.com/sumneko/lua-language-server/releases
 and extract it to `<User>\AppData\Local\nvim\lsp\lua`
+
+OSX:
+
+    brew install lua-language-server
 
 ### Nim
 
