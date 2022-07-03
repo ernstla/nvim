@@ -39,12 +39,28 @@ from pprint import pprint
 pprint($0)
 endsnippet
 
+snippet pp
+pprint($0)
+endsnippet
+
+snippet pps
+pprint('$0')
+endsnippet
+
 snippet pdb
 import pdb; pdb.set_trace()
 endsnippet
 
 snippet caller
 import inspect; print(inspect.stack()[1][3])
+endsnippet
+
+snippet p
+print($0)
+endsnippet
+
+snippet ps
+print('$0')
 endsnippet
 
 snippet pl
