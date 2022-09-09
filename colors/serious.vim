@@ -53,6 +53,7 @@ highlight MatchParen guifg=#ffe7c5 guibg=#006f92 gui=NONE ctermfg=9 ctermbg=0 ct
 highlight Pmenu guifg=#ffffff guibg=#303540 gui=NONE ctermfg=0 ctermbg=8 cterm=NONE
 highlight PmenuSel guifg=#ffffff guibg=#485b39 gui=NONE ctermfg=0 ctermbg=7 cterm=NONE
 highlight Search guifg=#1c1c1c guibg=#ffbb29 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
+highlight Quote guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
 highlight QuickFixLine guifg=#ffffff guibg=#105563 gui=NONE ctermfg=0 ctermbg=106 cterm=NONE
 highlight SpellBad guifg=#DC322F guisp=#ffffff guibg=NONE gui=undercurl ctermfg=NONE ctermbg=52 cterm=NONE
 highlight SpellCap guifg=#fd971f guisp=#DC322F  guibg=NONE gui=undercurl ctermfg=NONE ctermbg=52 cterm=NONE
@@ -476,6 +477,7 @@ highlight htmlSpecialChar guifg=#ffc48c guibg=NONE gui=NONE ctermfg=202 ctermbg=
 highlight sqlConstant guifg=#01a8c6 guibg=NONE gui=NONE ctermfg=106 ctermbg=NONE cterm=NONE
 highlight sqlNumber guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
 highlight sqlType guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
+highlight sqlTypeConversion guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight sqlCreateTextSearchKeyword guifg=#ffc48c guibg=NONE gui=NONE ctermfg=38 ctermbg=NONE cterm=NONE
 highlight sqlString guifg=#fdf088 guibg=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
 highlight sqlFlow guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE
@@ -484,19 +486,24 @@ highlight sqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE 
 highlight sqlOperator guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlPlpgsqlKeyword guifg=#f38630 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlFunction guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
-highlight sqlOperator guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+highlight sqlCustomFunction guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlJsonFunction guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+highlight sqlPostgresFunction guifg=#86b953 guibg=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 highlight sqlIdentifier guifg=#ffffff guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
-highlight pgPostgresDelim guifg=#8fbe00 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight pgPostgresVariable guifg=#5f8700 guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
 " - Overwrites
-highlight pgPublicSchema guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-highlight pgBoolean guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
-highlight pgUnreserved guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
+highlight sqlPublicSchema guifg=#697eb3 guibg=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+highlight sqlBoolean guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+highlight sqlSpecial guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+highlight sqlUnreserved guifg=#c7cadf guibg=#000510 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
 " - PostgreSQL Mako -
-highlight pgMakoDelim guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight pgMakoEnd guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
-highlight pgPhpRegion guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-
+highlight sqlMakoDelim guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight sqlMakoEnd guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight sqlPhpDelim guifg=#0095ff guibg=NONE gui=NONE ctermfg=39 ctermbg=NONE cterm=NONE
+highlight sqlPhpDelim guifg=#DC322F guisp=#ffffff guibg=NONE gui=NONE ctermfg=NONE ctermbg=52 cterm=NONE
+highlight sqlPhpRegion guifg=#ffaaaa guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE
+highlight sqlColonParam guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight sqlPostgresDelim guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
+highlight sqlPostgresVariable guifg=#7ab6e8 guibg=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 
 " - XML -
 highlight xmlAttrib guifg=#fdca49 guibg=NONE gui=NONE ctermfg=221 ctermbg=NONE cterm=NONE

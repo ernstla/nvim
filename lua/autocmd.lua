@@ -13,9 +13,6 @@ autocmd BufRead,BufNewFile *.asm set filetype=nasm
 autocmd BufRead,BufNewFile *.ini.tmpl set filetype=dosini
 autocmd BufRead,BufNewFile *.boot set filetype=clojure
 autocmd BufRead,BufNewFile *.pxi set filetype=clojure
-autocmd BufRead,BufNewFile *.sql set filetype=pgsql
-autocmd BufRead,BufNewFile *.msql set filetype=pgsql
-autocmd BufRead,BufNewFile *.sql set filetype=pgsql
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
@@ -43,15 +40,15 @@ autocmd BufWritePre *.svelte :%s/\s\+$//e
 autocmd BufWritePre *.toml :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
 
-autocmd BufWritePre *.php lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.html lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.json lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.css lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.php lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.nim lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.html lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.svelte lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.json lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.css lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.scss lua vim.lsp.buf.format(nil, 1000)
 
 autocmd VimResized * wincmd =
 

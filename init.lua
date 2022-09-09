@@ -5,6 +5,7 @@ local g = vim.g
 local opt = vim.opt
 local home = vim.fn.getenv('HOME')
 
+require('autocmd')
 cmd('filetype plugin on')
 
 require('bundles')
@@ -122,8 +123,7 @@ opt.termguicolors = true
 vim.cmd [[colorscheme serious]]
 
 
-require('autocmd')
-require('treesitter')
+-- require('treesitter')
 require('lsp')
 require('plugins')
 require('mappings')

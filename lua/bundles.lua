@@ -37,9 +37,9 @@ require('packer').startup(function()
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'mhinz/vim-signify', requires = { 'nvim-lua/plenary.nvim' } }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use 'nvim-treesitter/playground'
+    -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    -- use 'nvim-treesitter/nvim-treesitter-textobjects'
+    -- use 'nvim-treesitter/playground'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -53,7 +53,6 @@ require('packer').startup(function()
 
     -- Languages
     use 'cespare/vim-toml'
-    use 'lifepillar/pgsql.vim'
     use 'mxw/vim-jsx'
     use 'pangloss/vim-javascript'
     use 'plasticboy/vim-markdown'

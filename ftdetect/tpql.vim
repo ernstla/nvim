@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.tpql     set filetype=pgsql
+au BufRead,BufNewFile *.tpql     set filetype=sql

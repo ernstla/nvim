@@ -1,6 +1,7 @@
 " Vim syntax file
 " Language:	Javascript
 " Maintainer:	Thomas Ernst <thomas.ernst@ebenefuenf.de>
+syn sync fromstart
 
 
 syn keyword javascriptThis      self this angular
