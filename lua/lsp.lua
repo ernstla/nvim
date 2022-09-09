@@ -54,7 +54,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'tsserver', 'vuels', 'svelte', 'jsonls', 'cssls' }
+local servers = { 'clangd', 'tsserver', 'vuels', 'svelte', 'jsonls' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -63,57 +63,7 @@ for _, lsp in ipairs(servers) do
 end
 
 --
--- Lua sumneko
---
-local sumneko_root_path = ''
-local sumneko_lib_path = ''
-if vim.fn.has('win32') == 1 then
-    sumneko_root_path = vim.fn.getenv 'HOME' .. '/AppData/Local/nvim/lsp/lua'
-    sumneko_lib_path = sumneko_root_path
-elseif vim.fn.has('macunix') == 1 then
-    sumneko_root_path = '/usr/local' -- Change to your sumneko root installation
-    sumneko_lib_path = '/usr/local/Cellar/lua-language-server/3.2.4/libexec/'
-else
-    sumneko_root_path = vim.fn.getenv 'HOME' .. '/.config/nvim/lsp/lua' -- Change to your sumneko root installation
-    sumneko_lib_path = sumneko_root_path
-end
-local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
-if file_exists(sumneko_binary) then
-    -- Make runtime files discoverable to the server
-    table.insert(runtime_path, 'lua/?.lua')
-    table.insert(runtime_path, 'lua/?/init.lua')
-    nvim_lsp.sumneko_lua.setup {
-        cmd = { sumneko_binary, '-E', sumneko_lib_path .. '/main.lua' },
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-            Lua = {
-                runtime = {
-                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                    version = 'LuaJIT',
-                    -- Setup your lua path
-                    path = runtime_path,
-                },
-                diagnostics = {
-                    -- Get the language server to recognize the `vim` global
-                    globals = { 'vim' },
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = vim.api.nvim_get_runtime_file('', true),
-                    checkThirdParty = false,
-                },
-                -- Do not send telemetry data containing a randomized but unique identifier
-                telemetry = {
-                    enable = false,
-                },
-            },
-        },
-    }
-end
-
---
--- Nim
+-- Python
 --
 nvim_lsp.pylsp.setup{
     cmd = { 'pyls' },
@@ -165,63 +115,13 @@ nvim_lsp.intelephense.setup({
     settings = {
         intelephense = {
             stubs = {
-                'bcmath',
-                'bz2',
-                'calendar',
-                'Core',
-                'curl',
-                'date',
-                'dba',
-                'dom',
-                'enchant',
-                'fileinfo',
-                'filter',
-                'ftp',
-                'gd',
-                'gettext',
-                'hash',
-                'iconv',
-                'imap',
-                'intl',
-                'json',
-                'ldap',
-                'libxml',
-                'memcached',
-                'mbstring',
-                'mcrypt',
-                'mysql',
-                'mysqli',
-                'openssl',
-                'password',
-                'pcntl',
-                'pcre',
-                'PDO',
-                'pdo_mysql',
-                'Phar',
-                'readline',
-                'recode',
-                'Reflection',
-                'regex',
-                'session',
-                'SimpleXML',
-                'soap',
-                'sockets',
-                'sodium',
-                'SPL',
-                'standard',
-                'superglobals',
-                'sysvsem',
-                'sysvshm',
-                'tokenizer',
-                'xml',
-                'xdebug',
-                'xmlreader',
-                'xmlwriter',
-                'yaml',
-                'zip',
-                'zlib',
-                'wordpress',
-                'woocommerce'
+                'bcmath', 'bz2', 'calendar', 'Core', 'curl', 'date', 'dba', 'dom', 'enchant',
+                'fileinfo', 'filter', 'ftp', 'gd', 'gettext', 'hash', 'iconv', 'imap', 'intl',
+                'json', 'ldap', 'libxml', 'memcached', 'mbstring', 'mcrypt', 'mysql', 'mysqli',
+                'openssl', 'password', 'pcntl', 'pcre', 'PDO', 'pdo_mysql', 'Phar', 'readline',
+                'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets', 'sodium',
+                'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer', 'xml', 'xdebug',
+                'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib', 'wordpress', 'woocommerce'
             },
             files = {
                 maxSize = 5000000;
@@ -229,3 +129,54 @@ nvim_lsp.intelephense.setup({
         };
     };
 });
+
+
+--
+-- Lua sumneko
+--
+local sumneko_root_path = ''
+local sumneko_lib_path = ''
+if vim.fn.has('win32') == 1 then
+    sumneko_root_path = vim.fn.getenv 'HOME' .. '/AppData/Local/nvim/lsp/lua'
+    sumneko_lib_path = sumneko_root_path
+elseif vim.fn.has('macunix') == 1 then
+    sumneko_root_path = '/usr/local' -- Change to your sumneko root installation
+    sumneko_lib_path = '/usr/local/Cellar/lua-language-server/3.2.4/libexec/'
+else
+    sumneko_root_path = vim.fn.getenv 'HOME' .. '/.config/nvim/lsp/lua' -- Change to your sumneko root installation
+    sumneko_lib_path = sumneko_root_path
+end
+local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
+if file_exists(sumneko_binary) then
+    -- Make runtime files discoverable to the server
+    table.insert(runtime_path, 'lua/?.lua')
+    table.insert(runtime_path, 'lua/?/init.lua')
+    nvim_lsp.sumneko_lua.setup {
+        cmd = { sumneko_binary, '-E', sumneko_lib_path .. '/main.lua' },
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                    version = 'LuaJIT',
+                    -- Setup your lua path
+                    path = runtime_path,
+                },
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { 'vim' },
+                },
+                workspace = {
+                    -- Make the server aware of Neovim runtime files
+                    library = vim.api.nvim_get_runtime_file('', true),
+                    checkThirdParty = false,
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {
+                    enable = false,
+                },
+            },
+        },
+    }
+end

@@ -11,8 +11,12 @@
     npm install -g typescript typescript-language-server \
         vscode-langservers-extracted svelte-language-server
 
+### Nim
+
+    nimble install nimlsp
+
 ### Lua
-    
+
 Linux:
 
     mkdir -p ./config/nvim/lsp/lua
@@ -28,10 +32,6 @@ and extract it to `<User>\AppData\Local\nvim\lsp\lua`
 OSX:
 
     brew install lua-language-server
-
-### Nim
-
-    nimble install nimlsp
 
 
 ## Zeuch

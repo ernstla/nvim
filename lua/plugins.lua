@@ -142,6 +142,17 @@ vim.g.NERDTreeWinSize = 23
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrows = 1
 
+-- ALE
+-- vim.g.ale_fixers = {
+   -- css = {'prettier'},
+   -- scss = {'prettier'}
+-- }
+-- vim.g.ale_linters_explicit = 1
+-- vim.g.ale_linters = {
+   -- css = {'eslint'},
+   -- scss = {'eslint'}
+-- }
+
 --
 -- NERDCommenter
 -- Add spaces after comment delimiters by default
@@ -153,7 +164,7 @@ vim.g.NERDDefaultAlign = 'left'
 -- Set a language to use its alternate delimiters by default
 vim.g.NERDAltDelims_java = 1
 -- Add your own custom formats or override the defaults
-vim.g.NERDCustomDelimiters = { c = { left = '/**',right = '*/' } }
+vim.g.NERDCustomDelimiters = { c = { left = '/**', right = '*/' } }
 -- Allow commenting and inverting empty lines (useful when commenting a region)
 vim.g.NERDCommentEmptyLines = 1
 -- Enable trimming of trailing whitespace when uncommenting

@@ -34,6 +34,9 @@ require('packer').startup(function()
     use 'mattn/emmet-vim'
     use 'nyngwang/NeoZoom.lua'
 
+    use 'sbdchd/neoformat'
+    -- use 'dense-analysis/ale'
+
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'mhinz/vim-signify', requires = { 'nvim-lua/plenary.nvim' } }

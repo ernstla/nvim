@@ -47,8 +47,8 @@ autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 1000)
 autocmd BufWritePre *.html lua vim.lsp.buf.format(nil, 1000)
 autocmd BufWritePre *.svelte lua vim.lsp.buf.format(nil, 1000)
 autocmd BufWritePre *.json lua vim.lsp.buf.format(nil, 1000)
-autocmd BufWritePre *.css lua vim.lsp.buf.format(nil, 1000)
-autocmd BufWritePre *.scss lua vim.lsp.buf.format(nil, 1000)
+autocmd BufWritePre *.css Neoformat
+autocmd BufWritePre *.scss Neoformat
 
 autocmd VimResized * wincmd =
 
