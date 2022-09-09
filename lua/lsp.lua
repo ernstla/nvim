@@ -66,6 +66,8 @@ end
 -- Python
 --
 nvim_lsp.pylsp.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
     cmd = { 'pyls' },
     filetypes = { 'python' },
     root_dir = function(fname)
@@ -86,6 +88,8 @@ nvim_lsp.pylsp.setup{
 -- Nim
 --
 nvim_lsp.nimls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
     cmd = { 'nimlsp' };
     filetypes = { 'nim' };
     root_dir = nvim_lsp.util.root_pattern('.git') or nvim_lsp.util.os_homedir;
@@ -96,6 +100,8 @@ nvim_lsp.nimls.setup{
 -- Rust
 --
 nvim_lsp.rust_analyzer.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         ["rust-analyzer"] = {
             rustfmt = {
@@ -111,6 +117,8 @@ nvim_lsp.rust_analyzer.setup{
 --
 --    npm install -g intelephense
 nvim_lsp.intelephense.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
     init_options = { licenceKey = '005UH9RB1NL07NE'},
     settings = {
         intelephense = {
