@@ -16,6 +16,9 @@ autocmd BufRead,BufNewFile *.pxi set filetype=clojure
 autocmd BufRead,BufNewFile .eslintrc set filetype=json
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
+" jsonc files
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+
 "
 " Remove trailing whitespaces
 "
