@@ -71,11 +71,8 @@ require'lir'.setup {
 }
 
 vim.api.nvim_set_keymap('n', '-', [[<Cmd> execute 'e ' .. expand('%:p:h')<CR>]], { noremap = true })
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-require'lir.float'.toggle()
-require'lir.float'.init()
+--vim.g.loaded_netrw = 1
+--vim.g.loaded_netrwPlugin = 1
 
 -- custom folder icon
 --require'nvim-web-devicons'.set_icon({
@@ -85,4 +82,4 @@ require'lir.float'.init()
 --    name = "LirFolderNode"
 --  }
 --})
--
+
