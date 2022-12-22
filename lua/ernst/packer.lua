@@ -14,4 +14,9 @@ return require('packer').startup(function(use)
         'tamago324/lir.nvim',
 	requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    use({
+        'aserowy/tmux.nvim',
+        config = function() require('tmux').setup() end
+    })
 end)
