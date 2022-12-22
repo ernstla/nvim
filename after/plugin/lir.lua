@@ -5,7 +5,7 @@ local clipboard_actions = require'lir.clipboard.actions'
 require'lir'.setup {
   show_hidden_files = false,
   ignore = {}, -- { ".DS_Store" "node_modules" } etc.
-  --devicons_enable = true,
+  devicons_enable = true,
   mappings = {
     ['<CR>']     = actions.edit,
     ['<C-s>'] = actions.split,
