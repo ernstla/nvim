@@ -3,7 +3,10 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'ThePrimeagen/harpoon',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     use {
         'nvim-telescope/telescope.nvim', 
@@ -11,18 +14,22 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use 'nvim-tree/nvim-web-devicons'
+
     -- filebeagle and dirvish alternative
     use {
         'tamago324/lir.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use({
+    use {
         'aserowy/tmux.nvim',
         config = function() require('tmux').setup() end
-    })
+    }
 
-    use({
-        'rose-pine/neovim', as = 'rose-pine'
-    })
+    -- color scheme
+    use {'rose-pine/neovim', as = 'rose-pine'}
+
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use 'nvim-treesitter/playground'
 end)
