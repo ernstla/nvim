@@ -1,5 +1,5 @@
 -- All clipboard functionality is disabled as it
--- interferes with win32yank and always enables tmuxclipboard
+-- interfers with win32yank and always enables tmuxclipboard
 -- It overrides the vim.g.clipboard global
 require('tmux').setup {
     copy_sync = {

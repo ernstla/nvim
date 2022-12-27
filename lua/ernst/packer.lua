@@ -3,8 +3,13 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    use 'aserowy/tmux.nvim'
+    use 'mbbill/undotree'
 
-   --- use 'aserowy/tmux.nvim'
+    use 'tpope/vim-repeat'
+    use 'tpope/vim-surround'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-obsession'
 
     use {
         'ThePrimeagen/harpoon',
