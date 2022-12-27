@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
 
     use 'aserowy/tmux.nvim'
     use 'mbbill/undotree'
+    use 'NvChad/nvim-colorizer.lua'
 
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'

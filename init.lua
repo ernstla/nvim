@@ -71,6 +71,7 @@ opt.startofline = false -- Keep the cursor in the current column when moving bet
 opt.swapfile = false
 opt.tabstop = 4
 opt.tags = { './.tags', './tags' }
+opt.termguicolors = true
 opt.textwidth = 0
 opt.timeout = true
 opt.timeoutlen = 500
