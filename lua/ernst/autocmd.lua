@@ -37,6 +37,7 @@ autocmd({ 'BufWritePre' }, {
         '*.rs',
         '*.svelte',
         '*.ts',
+        '*.lua',
     },
     command = 'LspZeroFormat'
 })
