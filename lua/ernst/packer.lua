@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     use 'NvChad/nvim-colorizer.lua'
     use 'mg979/vim-visual-multi'
     use 'bronson/vim-visual-star-search'
+    use 'numToStr/Comment.nvim'
 
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
