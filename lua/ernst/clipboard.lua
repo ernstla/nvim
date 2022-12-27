@@ -1,24 +1,16 @@
-if vim.fn.has('wsl') == true then
+-- If this has no effect, disable copy_sync and all its sync_*
+-- settings in the tmux.nvim package config
+if vim.fn.has('wsl') == 1 then
     vim.g.clipboard = {
-        name = "win32yank",
+        name = 'win32yank',
         copy = {
-            ["+"] = "win32yank.exe -i",
-            ["*"] = "win32yank.exe -i",
+            ['+'] = {'win32yank.exe', '-i'},
+            ['*'] = {'win32yank.exe -i'},
         },
         paste = {
-            ["+"] = "win32yank.exe -o",
-            ["*"] = "win32yank.exe -o",
+            ['+'] = {'win32yank.exe', '-o'},
+            ['*'] = {'win32yank.exe', '-o'},
         },
-        cache_enabled = true,
+        cache_enabled = false,
     }
-
-    vim.api.nvim_exec(
-        [[
-            augroup WSLYank
-                autocmd!
-                autocmd TextYankPost * :call system('clip.exe ',@")
-            augroup end
-        ]],
-        false
-    )
 end

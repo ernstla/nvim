@@ -3,6 +3,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+
+   --- use 'aserowy/tmux.nvim'
+
     use {
         'ThePrimeagen/harpoon',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -22,10 +25,6 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use {
-        'aserowy/tmux.nvim',
-        config = function() require('tmux').setup() end
-    }
 
     -- color scheme
     use {'rose-pine/neovim', as = 'rose-pine'}
