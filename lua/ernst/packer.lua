@@ -6,6 +6,8 @@ return require('packer').startup(function(use)
     use 'aserowy/tmux.nvim'
     use 'mbbill/undotree'
     use 'NvChad/nvim-colorizer.lua'
+    use 'mg979/vim-visual-multi'
+    use 'bronson/vim-visual-star-search'
 
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
@@ -28,7 +30,10 @@ return require('packer').startup(function(use)
     -- filebeagle and dirvish alternative
     use {
         'tamago324/lir.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = {
+            { 'nvim-lua/plenary.nvim' },
+            { 'nvim-tree/nvim-web-devicons' },
+        }
     }
 
 
