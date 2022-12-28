@@ -1,9 +1,13 @@
-require("ernst")
-
 local g = vim.g
 local opt = vim.opt
 local wo = vim.wo
 local home = vim.fn.getenv('HOME')
+
+-- let nvim-tree hijack directory windows (e. g. `nvim .`)
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
+require("ernst")
 
 opt.autoindent = true
 opt.backspace = { 'indent', 'eol', 'start' } -- Backspace as expected
@@ -17,7 +21,7 @@ opt.cursorcolumn = false
 opt.cursorline = true
 opt.diffopt = { 'vertical', 'filler' }
 opt.encoding = 'utf-8'
-opt.equalalways = false
+opt.equalalways = true
 opt.errorbells = false
 opt.expandtab = true
 opt.exrc = true

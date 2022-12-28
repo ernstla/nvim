@@ -43,6 +43,14 @@ vim.cmd.colorscheme('rose-pine')
 
 local hl = vim.api.nvim_set_hl
 
-hl(0, "Normal", { bg = "none" })
-hl(0, "NormalFloat", { bg = "none" })
-hl(0, "CursorLine", { bg = "none" })
+hl(0, 'Normal', { bg = 'none' })
+hl(0, 'NormalFloat', { bg = 'none' })
+hl(0, 'CursorLine', { bg = 'none' })
+hl(0, 'LirFloatCursorLine', { bg = '#202326' })
+hl(0, 'NvimTreeCursorLine', { bg = '#202326' })
+
+hl(0, 'NvimTreeWindowPicker', { fg = '#ffffff', bg = '#669933' })
+
+hl(0, 'GitSignsAdd', { fg = '#669933' })
+hl(0, 'GitSignsChange', { fg = '#ccff99' })
+hl(0, 'GitSignsDelete', { fg = '#cb4b16' })

@@ -52,6 +52,7 @@ require 'lir'.setup {
         ['@'] = actions.cd,
         ['Y'] = actions.yank_path,
         ['.'] = actions.toggle_show_hidden,
+        ['H'] = actions.toggle_show_hidden,
         ['D'] = actions.delete,
 
         ['J'] = function()

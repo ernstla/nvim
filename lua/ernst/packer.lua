@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     use 'mg979/vim-visual-multi'
     use 'bronson/vim-visual-star-search'
     use 'numToStr/Comment.nvim'
+    use 'lewis6991/gitsigns.nvim'
 
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
@@ -17,23 +18,27 @@ return require('packer').startup(function(use)
 
     use {
         'ThePrimeagen/harpoon',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
 
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
 
-    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
 
     -- filebeagle and dirvish alternative
     use {
         'tamago324/lir.nvim',
         requires = {
-            { 'nvim-lua/plenary.nvim' },
-            { 'nvim-tree/nvim-web-devicons' },
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
         }
     }
 
