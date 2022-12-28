@@ -2,6 +2,7 @@ require("ernst")
 
 local g = vim.g
 local opt = vim.opt
+local wo = vim.wo
 local home = vim.fn.getenv('HOME')
 
 opt.autoindent = true
@@ -95,3 +96,5 @@ opt.winminheight = 0
 opt.wrap = false
 opt.wrapmargin = 0
 opt.writebackup = false
+
+wo.signcolumn = 'yes'
