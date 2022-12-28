@@ -3,13 +3,14 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'aserowy/tmux.nvim'
-    use 'mbbill/undotree'
     use 'NvChad/nvim-colorizer.lua'
-    use 'mg979/vim-visual-multi'
+    use 'aserowy/tmux.nvim'
     use 'bronson/vim-visual-star-search'
-    use 'numToStr/Comment.nvim'
     use 'lewis6991/gitsigns.nvim'
+    use 'mbbill/undotree'
+    use 'mg979/vim-visual-multi'
+    use 'numToStr/Comment.nvim'
+    use 'stevearc/qf_helper.nvim'
 
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
