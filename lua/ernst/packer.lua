@@ -52,7 +52,11 @@ M.setup = function(is_bootstrap)
         -- color scheme
         use { 'rose-pine/neovim', as = 'rose-pine' }
 
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        if is_bootstrap then
+            use 'nvim-treesitter/nvim-treesitter'
+        else
+            use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        end
         use 'nvim-treesitter/playground'
 
         use {

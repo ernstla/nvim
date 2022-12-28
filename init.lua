@@ -1,5 +1,5 @@
 -- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     is_bootstrap = true
@@ -10,6 +10,9 @@ end
 require("ernst/packer").setup(is_bootstrap)
 
 if is_bootstrap then
+    -- remove 'after' from runtimepath
+    vim.cmd('set rtp-=' .. vim.fn.stdpath('config') .. '/after')
+
     print '=================================='
     print '    Plugins are being installed'
     print '    Wait until Packer completes,'
