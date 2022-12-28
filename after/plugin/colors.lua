@@ -54,3 +54,8 @@ hl(0, 'NvimTreeWindowPicker', { fg = '#ffffff', bg = '#669933' })
 hl(0, 'GitSignsAdd', { fg = '#669933' })
 hl(0, 'GitSignsChange', { fg = '#ccff99' })
 hl(0, 'GitSignsDelete', { fg = '#cb4b16' })
+
+hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
+hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
+hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
+hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })

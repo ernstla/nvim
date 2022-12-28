@@ -82,6 +82,20 @@ autocmd({ 'FileChangedShell' }, {
     command = 'echohl echoError | echo "WARNING: File changed on disk" | echohl'
 })
 
+
+-- " Navigate with +/= and - between changes and center change on screen
+-- " Catch the transition to diff mode
+autocmd({ 'FilterWritePre' }, {
+    group = Ernst,
+    pattern = '*',
+    command = "if &diff | exe 'noremap = ]cz.' | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<cr>' | endif",
+})
+autocmd({ 'FilterWritePre' }, {
+    group = Ernst,
+    pattern = '*',
+    command = [[if &diff |  exe 'execute "normal zR"' | endif]]
+})
+
 -- Neovim Terminal
 local Terminal = augroup('Terminal', { clear = true })
 autocmd({ 'TermOpen' }, {
