@@ -64,3 +64,6 @@ map('', '<c-i>', '<C-I>zz', opts)
 
 -- Run last macro
 map('n', 'Q', '@@', opts)
+
+-- Get TreeSitter or Neovim highlight group under cursor
+map('n', '<leader>p', require('ernst/lib').print_highlight_group, opts)
