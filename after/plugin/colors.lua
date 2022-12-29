@@ -109,11 +109,18 @@ hl(0, 'DiagnosticVirtualTextInfo', { fg = '#85b2d8' })
 hl(0, 'LirFloatCursorLine', { bg = '#202326' })
 hl(0, 'NvimTreeCursorLine', { bg = '#202326' })
 
+-- see nvim-tree.lua/lua/nvim-tree/colors.lua
 hl(0, 'NvimTreeWindowPicker', { fg = '#ffffff', bg = '#669933' })
+hl(0, 'NvimTreeFolderIcon', { fg = '#85b2d8' })
+hl(0, 'NvimTreeFolderName', { fg = '#7ab6e8' })
+hl(0, 'NvimTreeEmptyFolderName', { fg = '#7ab6e8' })
+hl(0, 'NvimTreeNormal', { fg = '#f2e9e1' })
 
 hl(0, 'GitSignsAdd', { fg = '#669933' })
 hl(0, 'GitSignsChange', { fg = '#ccff99' })
 hl(0, 'GitSignsDelete', { fg = '#cb4b16' })
+
+hl(0, 'LirFolderNode', { fg = '#cb4b16' })
 
 -- Languages
 hl(0, 'phpAssignByRef', { fg = '#f8f8f0' })

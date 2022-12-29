@@ -68,7 +68,7 @@ require 'lir'.setup {
         win_opts = construct_win_opts,
         curdir_window = {
             enable = true,
-            highlight_dirname = false
+            highlight_dirname = true
         },
 
         -- -- You can define a function that returns a table to be passed as the third
@@ -105,12 +105,3 @@ require 'lir'.setup {
 
 -- vim.api.nvim_set_keymap('n', '-', [[<Cmd> execute 'silent! edit ' .. expand('%:p:h')<CR>]], { noremap = true })
 vim.keymap.set('n', '-', function() float.init() end, { noremap = true })
-
--- custom folder icon
---require'nvim-web-devicons'.set_icon({
---  lir_folder_icon = {
---    icon = "",
---    color = "#7ebae4",
---    name = "LirFolderNode"
---  }
---})
