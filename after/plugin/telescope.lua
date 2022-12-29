@@ -18,6 +18,7 @@ require('telescope').setup {
             vertical = { width = 0.5, height = 0.8, mirror = true, prompt_position = 'bottom' },
             horizontal = { width = 0.6, height = 0.6, mirror = false, prompt_position = 'top' }
         },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
     },
     pickers = {
         buffers = {
@@ -31,7 +32,7 @@ require('telescope').setup {
                 },
             }
         }
-    }
+    },
 }
 
 vim.keymap.set('n', '<m-p>', builtin.find_files, {})
