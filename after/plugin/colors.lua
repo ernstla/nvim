@@ -38,21 +38,57 @@ require('rose-pine').setup({
 
 vim.cmd.colorscheme('rose-pine')
 
+local n = 'DiagnosticSignError'
+vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = 'DiagnosticSignErrorNumber' })
+n = 'DiagnosticSignWarn'
+vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
+n = 'DiagnosticSignHint'
+vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
+n = 'DiagnosticSignInfo'
+vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
+
+
 local hl = vim.api.nvim_set_hl
 
+-- Builtin
+hl(0, 'CursorLine', { bg = 'none' })
+hl(0, 'CursorLineNr', { fg = '#f4e28e', bg = '#303336' })
+hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#8fbe00' })
+hl(0, 'LineNr', { fg = '#1f323f' })
 hl(0, 'Normal', { bg = 'none' })
 hl(0, 'NormalFloat', { bg = 'none' })
-hl(0, 'LineNr', { fg = '#1f323f' })
-hl(0, 'CursorLineNr', { fg = '#f4e28e' })
-hl(0, 'CursorLine', { bg = 'none' })
-hl(0, 'LirFloatCursorLine', { bg = '#202326' })
-hl(0, 'NvimTreeCursorLine', { bg = '#202326' })
-
-hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
 hl(0, 'TabLine', { fg = '#586e75', bg = 'none' })
-hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
+hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
 hl(0, 'TabLineMod', { fg = '#934242', bg = 'none' })
 hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
+hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
+hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
+hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
+hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
+hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })
+
+-- Autocomplete menus
+hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
+hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#485b39' })
+hl(0, 'CmpBorder', { fg = '#505356' })
+
+-- TreeSitter
+hl(0, '@keyword', { fg = '#697eb3' })
+hl(0, '@conditional', { fg = '#7ab6e8' })
+
+-- Diagnostics
+hl(0, 'DiagnosticSignError', { fg = '#bb2b16' })
+hl(0, 'DiagnosticSignErrorNumber', { fg = '#551100' })
+hl(0, 'DiagnosticSignWarn', { fg = '#bb7722' })
+hl(0, 'DiagnosticSignHint', { fg = '#af7f99' })
+hl(0, 'DiagnosticSignInfo', { fg = '#95c2e8' })
+hl(0, 'DiagnosticVirtualTextError', { fg = '#662200' })
+hl(0, 'DiagnosticVirtualTextWarn', { fg = '#3f525f' })
+hl(0, 'DiagnosticVirtualTextHint', { fg = '#5f3f49' })
+hl(0, 'DiagnosticVirtualTextInfo', { fg = '#85b2d8' })
+-- Plugins
+hl(0, 'LirFloatCursorLine', { bg = '#202326' })
+hl(0, 'NvimTreeCursorLine', { bg = '#202326' })
 
 hl(0, 'NvimTreeWindowPicker', { fg = '#ffffff', bg = '#669933' })
 
@@ -60,35 +96,7 @@ hl(0, 'GitSignsAdd', { fg = '#669933' })
 hl(0, 'GitSignsChange', { fg = '#ccff99' })
 hl(0, 'GitSignsDelete', { fg = '#cb4b16' })
 
-hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
-hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
-hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
-hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })
-
-hl(0, 'BackendBlue1', { fg = '#617fa0' })
-hl(0, 'BackendBlue2', { fg = '#697eb3' })
-hl(0, 'BackendBlue3', { fg = '#7ab6e8' })
-hl(0, 'BackendBlue4', { fg = '#95c2e8' })
-hl(0, 'BackendBlue5', { fg = '#c2dcf2' })
-hl(0, 'BackendPurple1', { fg = '#af7f99' })
-hl(0, 'BackendPurple2', { fg = '#df9faf' })
-hl(0, 'BackendOrange1', { fg = '#f2592a' })
-hl(0, 'BackendOrange2', { fg = '#f38630' })
-hl(0, 'BackendOrange3', { fg = '#ffbb29' })
-hl(0, 'BackendOrange4', { fg = '#f4e28e' })
-hl(0, 'BackendWhite', { fg = '#f8f8f0' })
-hl(0, 'BackendGray', { fg = '#98aeb5' })
-
-hl(0, '@include', { link = 'BackendBlue1' })
-hl(0, '@keyword', { link = 'BackendBlue2' })
-hl(0, '@type', { link = 'BackendBlue5' })
-hl(0, '@conditional', { link = 'BackendBlue3' })
-hl(0, '@method', { link = 'BackendBlue5' })
-hl(0, '@function.call', { link = 'BackendPurple1' })
-hl(0, '@constructor', { link = 'BackendPurple2' })
-hl(0, '@type.builtin', { link = 'BackendOrange2' })
-hl(0, '@type.qualifier', { link = 'BackendBlue1' })
-
+-- Languages
 hl(0, 'phpAssignByRef', { fg = '#f8f8f0' })
 hl(0, 'phpBackslashSequences', { fg = '#f2592a' })
 hl(0, 'phpBoolean', { fg = '#f2592a' })

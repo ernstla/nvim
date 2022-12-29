@@ -99,6 +99,16 @@ cmp.setup {
             end
         end, { 'i', 's' }),
     },
+    window = {
+        completion = cmp.config.window.bordered({
+            border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+            winhighlight = 'Normal:Normal,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
+        }),
+        documentation = cmp.config.window.bordered({
+            border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+            winhighlight = 'Normal:Normal,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
+        }),
+    },
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
