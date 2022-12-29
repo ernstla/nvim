@@ -67,3 +67,8 @@ map('n', 'Q', '@@', opts)
 
 -- Get TreeSitter or Neovim highlight group under cursor
 map('n', '<leader>p', require('ernst/lib').print_highlight_group, opts)
+
+map('n', '[d', vim.diagnostic.goto_prev, opts)
+map('n', ']d', vim.diagnostic.goto_next, opts)
+map('n', '<leader>e', vim.diagnostic.open_float, opts)
+map('n', '<leader>q', vim.diagnostic.setloclist, opts)

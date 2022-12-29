@@ -9,8 +9,10 @@ end
 
 require("ernst/packer").setup(is_bootstrap)
 
+-- When we are bootstrapping a configuration, it doesn't
+-- make sense to execute the rest of the init.lua.
 if is_bootstrap then
-    -- remove 'after' from runtimepath
+    -- remove 'after' from runtimepath as the plugin setups would crash
     vim.cmd('set rtp-=' .. vim.fn.stdpath('config') .. '/after')
 
     print '=================================='
@@ -20,15 +22,6 @@ if is_bootstrap then
     print '=================================='
     return
 end
-
--- Automatically source and re-compile packer whenever you save this init.lua
-local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-    command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
-    group = packer_group,
-    pattern = vim.fn.expand '$MYVIMRC',
-})
-
 
 local g = vim.g
 local opt = vim.opt

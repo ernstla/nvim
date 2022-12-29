@@ -1,87 +1,103 @@
-local lsp = require("lsp-zero")
+-- LSP settings.
+--
+-- This function gets run when an LSP connects to a particular buffer.
+local on_attach = function(_, bufnr)
+    local map = function(keys, func, desc)
+        if desc then
+            desc = 'LSP: ' .. desc
+        end
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'sumneko_lua',
-    'rust_analyzer',
-    'svelte',
-    'jsonls',
-    'pylsp',
-    --'nimlsp',
-    'intelephense',
-})
-
--- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
--- Reset all default keyboard mappins (interferes with C-K for example)
-lsp.set_preferences({
-    set_lsp_keymaps = false
-})
-
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-})
-
--- disable completion with tab
--- this helps with copilot setup
--- cmp_mappings['<Tab>'] = nil
--- cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    -- sign_icons = {
-    --     error = 'E',
-    --     warn = 'W',
-    --     hint = 'H',
-    --     info = 'I'
-    -- }
-})
-
-lsp.on_attach(function(client, bufnr)
-    local map = function(mode, lhs, rhs)
-        local opts = { remap = false, buffer = bufnr }
-        vim.keymap.set(mode, lhs, rhs, opts)
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
 
-    map('n', 'K', vim.lsp.buf.hover)
-    map('n', 'gd', vim.lsp.buf.definition)
-    map('n', 'gD', vim.lsp.buf.declaration)
-    map('n', 'gi', vim.lsp.buf.implementation)
-    map('n', 'go', vim.lsp.buf.type_definition)
-    map('n', 'gr', vim.lsp.buf.references)
-    map('n', '<leader>k', vim.lsp.buf.signature_help)
-    map('n', '<F2>', vim.lsp.buf.rename)
-    map('n', '<F4>', vim.lsp.buf.code_action)
+    map('K', vim.lsp.buf.hover, 'Hover Documentation')
+    map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+    map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+    map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+    map('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+    map('<leader>k', vim.lsp.buf.signature_help, 'Signature Documentation')
+    map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-    -- Diagnostics
-    map('n', 'gl', vim.diagnostic.open_float)
-    map('n', '[d', vim.diagnostic.goto_prev)
-    map('n', ']d', vim.diagnostic.goto_next)
-end)
+    -- Create a command `:Format` local to the LSP buffer
+    -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    --     vim.lsp.buf.format()
+    -- end, { desc = 'Format current buffer with LSP' })
+end
 
-lsp.setup()
+local servers = require('ernst/lspservers').servers
 
-vim.diagnostic.config({
-    virtual_text = true,
-})
+-- Setup neovim lua configuration
+require('neodev').setup()
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- Setup mason so it can manage external tooling
+require('mason').setup()
+
+-- Ensure the servers above are installed
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+    ensure_installed = vim.tbl_keys(servers),
+}
+
+mason_lspconfig.setup_handlers {
+    function(server_name)
+        local settings = servers[server_name]
+        settings["capabilities"] = capabilities
+        settings["on_attach"] = on_attach
+        require('lspconfig')[server_name].setup(settings)
+    end,
+}
+
+-- Turn on lsp status information
+require('fidget').setup()
+
+-- nvim-cmp setup
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
+
+cmp.setup {
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert {
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+    },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    },
+}
