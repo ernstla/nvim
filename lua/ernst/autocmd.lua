@@ -39,7 +39,7 @@ autocmd({ 'BufWritePre' }, {
         '*.ts',
         '*.lua',
     },
-    command = 'lua vim.lsp.buf.format({async = true})'
+    command = 'lua vim.lsp.buf.format()'
 })
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
