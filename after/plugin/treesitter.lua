@@ -1,6 +1,17 @@
 require 'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all"
-    ensure_installed = { "c", "css", "javascript", "lua", "rust", "scss", "svelte", "typescript" },
+    -- A list of parser names, or 'all'
+    ensure_installed = {
+        'c',
+        'css',
+        'javascript',
+        'lua',
+        'php',
+        'python',
+        'rust',
+        'scss',
+        'svelte',
+        'typescript'
+    },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -14,7 +25,7 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
 
         -- list of language that will be disabled
-        disable = {},
+        disable = { 'php', 'python' },
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

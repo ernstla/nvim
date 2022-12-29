@@ -6,17 +6,11 @@ local col = vim.fn.col
 
 M = {}
 
-M.get_highlight_group = function()
+local get_highlight_group = function()
     local hi = synIDattr(synID(line('.'), col('.'), 1), 'name')
     local trans = synIDattr(synID(line('.'), col('.'), 0), 'name')
     local lo = synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
-    print('doldi' .. hi .. 'hans')
-
-    if hi ~= '' and hi ~= nil then
-        return 'group:<' .. hi .. '>  transparent:<' .. trans .. '>  inherited:<' .. lo .. '>'
-    end
-
-    return 'Highlighted by TreeSitter'
+    return 'group:<' .. hi .. '>  transparent:<' .. trans .. '>  inherited:<' .. lo .. '>'
 end
 
 M.print_highlight_group = function()
@@ -26,7 +20,7 @@ M.print_highlight_group = function()
     if highlighter.active[buf] then
         vim.cmd('TSHighlightCapturesUnderCursor')
     else
-        print(M.get_highlight_group())
+        print(get_highlight_group())
     end
 end
 

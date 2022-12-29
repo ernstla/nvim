@@ -75,6 +75,23 @@ hl(0, 'CmpBorder', { fg = '#505356' })
 -- TreeSitter
 hl(0, '@keyword', { fg = '#697eb3' })
 hl(0, '@conditional', { fg = '#7ab6e8' })
+hl(0, '@tag', { fg = '#f38630' })
+hl(0, '@tag.delimiter', { fg = '#f38630' })
+hl(0, '@tag.attribute', { fg = '#fdca49' })
+
+hl(0, '@cssid', { fg = '#7ab6e8' })
+hl(0, '@cssclass', { fg = '#9ccfd8' })
+hl(0, '@property.css', { fg = '#ea9a97' })
+hl(0, '@function.css', { fg = '#eb6f92' })
+hl(0, '@tag.css', { fg = '#ea9d34' })
+
+
+hl(0, '@type.svelte', { fg = '#7ab6e8' })
+hl(0, '@keyword.svelte', { fg = '#7ab6e8' })
+hl(0, '@punctuation.bracket.svelte', { fg = '#7ab6e8' })
+-- Strange vim groups not affected by TreeSitter
+-- e. g. svelte custom component names (uppercase tag name)
+hl(0, 'Structure', { fg = '#c47b7b' })
 
 -- Diagnostics
 hl(0, 'DiagnosticSignError', { fg = '#bb2b16' })
