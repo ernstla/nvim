@@ -5,12 +5,11 @@ M = {}
 -- Add any additional override configuration in the following tables. They will be passed to
 -- the `settings` field of the server config. You must look up that documentation yourself.
 M.servers = {
-    tsserver = {},
     eslint = {},
-    rust_analyzer = {},
-    svelte = {},
     jsonls = {},
-    nimls = {},
+    svelte = {},
+    tsserver = {},
+
     pylsp = {
         cmd = { 'pylsp' },
         filetypes = { 'python' },
@@ -42,6 +41,7 @@ M.servers = {
             }
         }
     },
+
     intelephense = {
         init_options = { licenceKey = '005UH9RB1NL07NE' },
         settings = {
@@ -61,6 +61,7 @@ M.servers = {
             }
         }
     },
+
     sumneko_lua = {
         settings = {
             Lua = {
@@ -68,6 +69,22 @@ M.servers = {
                 telemetry = { enable = false },
             },
         },
+    },
+
+    rust_analyzer = {
+        settings = {
+            ["rust-analyzer"] = {
+                rustfmt = {
+                    enableRangeFormatting = true
+                }
+            }
+        }
+    },
+
+    nimls = {
+        cmd = { 'nimlsp' };
+        filetypes = { 'nim' };
+        root_dir = util.root_pattern('.git') or util.os_homedir;
     },
 }
 
