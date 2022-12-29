@@ -69,6 +69,7 @@ M.setup = function(is_bootstrap)
 
         use { 'rose-pine/neovim', as = 'rose-pine' }
 
+        use 'mattn/emmet-vim'
         use 'NvChad/nvim-colorizer.lua'
         use 'aserowy/tmux.nvim'
         use 'bronson/vim-visual-star-search'

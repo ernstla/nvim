@@ -7,6 +7,9 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
+-- Settings required before packer is loaded
+vim.g.user_emmet_leader_key = '<c-e>'
+
 require("ernst/packer").setup(is_bootstrap)
 
 -- When we are bootstrapping a configuration, it doesn't
