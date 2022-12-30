@@ -1,7 +1,30 @@
+local colors = {
+    love = '#b4334a',
+    muted = '#6e6a86',
+    base = '#191724',
+    overlay = '#f2e9e1',
+    iris = '#806a99',
+    gold = '#da8d24',
+    pine = '#286983',
+}
+
+local theme = {
+    normal = {
+        a = { fg = colors.overlay, bg = colors.love },
+        b = { fg = colors.overlay, bg = colors.muted },
+        c = { fg = colors.muted, bg = 'none' },
+        z = { fg = colors.overlay, bg = colors.base },
+    },
+    insert = { a = { fg = colors.overlay, bg = colors.pine } },
+    visual = { a = { fg = colors.overlay, bg = colors.gold } },
+    replace = { a = { fg = colors.overlay, bg = colors.iris } },
+    command = { a = { fg = colors.overlay, bg = colors.iris } },
+}
+
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'OceanicNext',
+        theme = theme,
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
