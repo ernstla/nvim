@@ -68,6 +68,7 @@ hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
 hl(0, 'TabLineMod', { fg = '#934242', bg = 'none' })
 hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
 hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
+hl(0, 'Visual', { fg = '#f2e9e1', bg = '#a4233a' })
 
 -- Autocomplete menus
 hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
