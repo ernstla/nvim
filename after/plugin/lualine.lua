@@ -3,7 +3,7 @@ local colors = {
     muted = '#6e6a86',
     base = '#191724',
     overlay = '#f2e9e1',
-    iris = '#806a99',
+    iris = '#a04a79',
     gold = '#da8d24',
     pine = '#286983',
 }
@@ -15,10 +15,22 @@ local theme = {
         c = { fg = colors.muted, bg = 'none' },
         z = { fg = colors.overlay, bg = colors.base },
     },
-    insert = { a = { fg = colors.overlay, bg = colors.pine } },
-    visual = { a = { fg = colors.overlay, bg = colors.gold } },
-    replace = { a = { fg = colors.overlay, bg = colors.iris } },
-    command = { a = { fg = colors.overlay, bg = colors.iris } },
+    insert = {
+        a = { fg = colors.overlay, bg = colors.pine },
+        z = { fg = colors.overlay, bg = colors.base },
+    },
+    visual = {
+        a = { fg = colors.overlay, bg = colors.gold },
+        z = { fg = colors.overlay, bg = colors.base },
+    },
+    replace = {
+        a = { fg = colors.overlay, bg = colors.iris },
+        z = { fg = colors.overlay, bg = colors.base },
+    },
+    command = {
+        a = { fg = colors.overlay, bg = colors.iris },
+        z = { fg = colors.overlay, bg = colors.base },
+    },
 }
 
 require('lualine').setup {
