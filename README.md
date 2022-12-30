@@ -1,11 +1,17 @@
-# Neovim configuration
+# Neovim config
 
-## Measure startup time
-
-    nvim --startuptime startup.log
+No worries, this will never be a Neovim distribution
 
 ## Zeuch
 
-Debug lua e. g. with the get_diagnostics function from statusline.vim
+Measure startup time
 
-    :lua print(vim.inspect(get_diagnostics(0)))
+    nvim --startuptime startup.log
+
+Show all highlight groups colored (does not show up immediately)
+
+    :so $VIMRUNTIME/syntax/hitest.vim
+
+Debug lua e. g. 
+
+    :lua print(vim.inspect(variable))

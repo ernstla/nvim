@@ -16,11 +16,14 @@ require('telescope').setup {
         layout_strategy = 'horizontal',
         layout_config = {
             vertical = { width = 0.5, height = 0.8, mirror = true, prompt_position = 'bottom' },
-            horizontal = { width = 0.6, height = 0.6, mirror = false, prompt_position = 'top' }
+            horizontal = { width = 91, height = 0.6, mirror = false, prompt_position = 'top' }
         },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
     },
     pickers = {
+        git_files = {
+            previewer = false,
+        },
         buffers = {
             show_all_buffers = true,
             sort_lastused = true,
@@ -38,6 +41,7 @@ require('telescope').setup {
 vim.keymap.set('n', '<m-p>', builtin.find_files, {})
 vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<c-b>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ag', function()
     builtin.grep_string({ search = vim.fn.input('Grep: ') });
 end)
