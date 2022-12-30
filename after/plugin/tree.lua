@@ -3,6 +3,9 @@ require('nvim-tree').setup({
     hijack_directories = {
         enable = false,
     },
+    git = {
+        enable = false
+    },
     view = {
         adaptive_size = true,
         mappings = {
@@ -18,7 +21,6 @@ require('nvim-tree').setup({
     renderer = {
         group_empty = true,
         icons = {
-            git_placement = 'after',
             glyphs = {
                 git = {
                     unstaged = '◦'

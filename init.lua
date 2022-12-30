@@ -12,6 +12,11 @@ vim.g.user_emmet_leader_key = '<c-e>'
 
 require("ernst/packer").setup(is_bootstrap)
 
+if not is_bootstrap then
+    -- Saves about 70ms startup time
+    require('impatient') --.enable_profile()
+end
+
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
 if is_bootstrap then

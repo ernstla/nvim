@@ -4,6 +4,9 @@ M.setup = function(is_bootstrap)
     return require('packer').startup(function(use)
         use 'wbthomason/packer.nvim'
 
+        -- Performance booster
+        use 'lewis6991/impatient.nvim'
+
         use {
             'neovim/nvim-lspconfig',
             requires = {
