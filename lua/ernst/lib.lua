@@ -10,6 +10,7 @@ local get_highlight_group = function()
     local hi = synIDattr(synID(line('.'), col('.'), 1), 'name')
     local trans = synIDattr(synID(line('.'), col('.'), 0), 'name')
     local lo = synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
+
     return 'group:<' .. hi .. '>  transparent:<' .. trans .. '>  inherited:<' .. lo .. '>'
 end
 
