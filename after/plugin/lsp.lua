@@ -63,8 +63,16 @@ mason_lspconfig.setup_handlers {
 require('fidget').setup()
 
 -- nvim-cmp setup
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+map('i', '<c-j>', "<cmd>lua require('luasnip').jump(1)<CR>", opts)
+map('s', '<c-j>', "<cmd>lua require('luasnip').jump(1)<CR>", opts)
+map('i', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<CR>", opts)
+map('s', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<CR>", opts)
+
+require('ernst/snippets')
 
 local kind_icons = {
     Text = "",
