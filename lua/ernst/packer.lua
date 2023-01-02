@@ -27,6 +27,11 @@ M.setup = function(is_bootstrap)
         }
 
         use {
+            'folke/trouble.nvim',
+            requires = { 'nvim-tree/nvim-web-devicons' }
+        }
+
+        use {
             'ThePrimeagen/harpoon',
             requires = { 'nvim-lua/plenary.nvim' }
         }
