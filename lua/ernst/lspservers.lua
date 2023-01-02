@@ -9,6 +9,7 @@ M.servers = {
     jsonls = {},
     svelte = {},
     tsserver = {},
+    psalm = {},
 
     pylsp = {
         cmd = { 'pylsp' },
