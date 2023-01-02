@@ -58,7 +58,12 @@ M.servers = {
                 },
                 files = {
                     maxSize = 5000000;
-                }
+                },
+                diagnostics = {
+                    enable = false,
+                    typeErrors = false, -- provided by Psalm
+                    implementationErrors = false -- reenable when readonly problems are fixed
+                },
             }
         }
     },

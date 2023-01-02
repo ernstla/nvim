@@ -27,6 +27,11 @@ M.setup = function(is_bootstrap)
         }
 
         use {
+            'jose-elias-alvarez/null-ls.nvim',
+            requires = { 'nvim-lua/plenary.nvim' }
+        }
+
+        use {
             'folke/trouble.nvim',
             requires = { 'nvim-tree/nvim-web-devicons' }
         }
