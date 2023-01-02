@@ -36,12 +36,12 @@ require('Comment').setup({
 })
 
 local api = require('Comment.api')
-local esc = vim.api.nvim_replace_termcodes('<ESC>', true, false, true)
+local esc = vim.api.nvim_replace_termcodes('<esc>', true, false, true)
 
 vim.keymap.set(
     'n',
-    '<c-_>', -- <C-_> means <C-/> -- see :help :map-special-keys
-    "<Cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<CR>",
+    '<c-_>', -- <c-_> means <c-/> -- see :help :map-special-keys
+    "<cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<cr>",
     { noremap = true, silent = true, nowait = true }
 )
 

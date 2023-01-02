@@ -23,9 +23,9 @@ require 'qf_helper'.setup({
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true, nowait = true }
 
-map('n', '<C-F3>', '<Cmd>QFToggle<CR>', opts)
-map('n', '<F3>', '<Cmd>QFNext<CR>', opts)
-map('n', '<S-F3>', '<Cmd>QFPrev<CR>', opts)
-map('n', '<C-F4>', '<Cmd>LLToggle<CR>', opts)
-map('n', '<F4>', '<Cmd>LLNext<CR>', opts)
-map('n', '<S-F4>', '<Cmd>LLPrev<CR>', opts)
+map('n', '<c-f3>', '<cmd>QFToggle<cr>', opts)
+map('n', '<f3>', '<cmd>QFNext<cr>', opts)
+map('n', '<s-f3>', '<cmd>QFPrev<cr>', opts)
+map('n', '<c-f4>', '<cmd>LLToggle<cr>', opts)
+map('n', '<f4>', '<cmd>LLNext<cr>', opts)
+map('n', '<s-f4>', '<cmd>LLPrev<cr>', opts)

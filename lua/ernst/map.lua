@@ -2,7 +2,7 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true, nowait = true }
 
-map('', '<Space>', '<Nop>', opts)
+map('', '<space>', '<nop>', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -51,16 +51,16 @@ map('n', '<leader>w', ':set wrap! wrap?<cr>', opts)
 map('n', '<leader>i', ':set list!<cr>', opts)
 
 -- Resize window
-map('', '<leader>>', '20<C-w>>', opts)
-map('', '<leader><', '20<C-w><', opts)
+map('', '<leader>>', '20<c-w>>', opts)
+map('', '<leader><', '20<c-w><', opts)
 
 -- Center search matches
 map('n', 'n', 'nzz', opts)
 map('n', 'N', 'Nzz', opts)
 map('n', '*', '*zz', opts)
 map('n', '#', '#zz', opts)
-map('', '<c-o>', '<C-O>zz', opts)
-map('', '<c-i>', '<C-I>zz', opts)
+map('', '<c-o>', '<c-o>zz', opts)
+map('', '<c-i>', '<c-i>zz', opts)
 
 -- Run last macro
 map('n', 'Q', '@@', opts)

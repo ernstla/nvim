@@ -1,2 +1,2 @@
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
-vim.keymap.set('n', '<leader>gb', '<Cmd>Git blame<CR>', {buffer = true})
+vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<cr>', { buffer = true })

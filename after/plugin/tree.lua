@@ -14,7 +14,7 @@ require('nvim-tree').setup({
                 { key = "?", action = "toggle_help" },
                 { key = 'O', action = 'edit' },
                 { key = 'u', action = 'dir_up' },
-                { key = { 'o', '<CR>' }, action = 'edit_no_picker' },
+                { key = { 'o', '<cr>' }, action = 'edit_no_picker' },
             },
         },
     },
@@ -39,4 +39,4 @@ require('nvim-tree').setup({
     }
 })
 
-vim.keymap.set('n', '<F8>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, nowait = true })
+vim.keymap.set('n', '<f8>', '<cmd>NvimTreeToggle<cr>', { noremap = true, silent = true, nowait = true })

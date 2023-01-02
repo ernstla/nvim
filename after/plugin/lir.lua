@@ -36,15 +36,15 @@ require 'lir'.setup {
     ignore = { ".DS_Store" },
     devicons_enable = true,
     mappings = {
-        ['<CR>']  = actions.edit,
-        ['<C-s>'] = actions.split,
-        ['<C-v>'] = actions.vsplit,
-        ['<C-t>'] = actions.tabedit,
+        ['<cr>']  = actions.edit,
+        ['<c-s>'] = actions.split,
+        ['<c-v>'] = actions.vsplit,
+        ['<c-t>'] = actions.tabedit,
 
         ['-'] = actions.up,
         ['q'] = actions.quit,
-        ['<ESC>'] = actions.quit,
-        ['<C-c>'] = actions.quit,
+        ['<esc>'] = actions.quit,
+        ['<c-c>'] = actions.quit,
 
         ['K'] = actions.mkdir,
         ['+'] = actions.newfile,
@@ -94,7 +94,7 @@ require 'lir'.setup {
             0,
             "x",
             "J",
-            ':<C-u>lua require"lir.mark.actions".toggle_mark("v")<CR>',
+            ':<c-u>lua require"lir.mark.actions".toggle_mark("v")<cr>',
             { noremap = true, silent = true }
         )
 
@@ -103,5 +103,5 @@ require 'lir'.setup {
     end,
 }
 
--- vim.api.nvim_set_keymap('n', '-', [[<Cmd> execute 'silent! edit ' .. expand('%:p:h')<CR>]], { noremap = true })
+-- vim.api.nvim_set_keymap('n', '-', [[<cmd> execute 'silent! edit ' .. expand('%:p:h')<cr>]], { noremap = true })
 vim.keymap.set('n', '-', function() float.toggle() end, { noremap = true })

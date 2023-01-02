@@ -67,10 +67,10 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-map('i', '<c-j>', "<cmd>lua require('luasnip').jump(1)<CR>", opts)
-map('s', '<c-j>', "<cmd>lua require('luasnip').jump(1)<CR>", opts)
-map('i', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<CR>", opts)
-map('s', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<CR>", opts)
+map('i', '<c-j>', "<cmd>lua require('luasnip').jump(1)<cr>", opts)
+map('s', '<c-j>', "<cmd>lua require('luasnip').jump(1)<cr>", opts)
+map('i', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<cr>", opts)
+map('s', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<cr>", opts)
 
 require('ernst/snippets')
 
@@ -118,14 +118,14 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert {
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete({ behavior = cmp.SelectBehavior.Insert }),
-        ['<CR>'] = cmp.mapping.confirm {
+        ['<c-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-f>'] = cmp.mapping.scroll_docs(4),
+        ['<c-space>'] = cmp.mapping.complete({ behavior = cmp.SelectBehavior.Insert }),
+        ['<cr>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
-        ['<Tab>'] = cmp.mapping(function(fallback)
+        ['<tab>'] = cmp.mapping(function(fallback)
             if luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             elseif cmp.visible() then
@@ -137,7 +137,7 @@ cmp.setup {
                 fallback()
             end
         end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
+        ['<s-tab>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             elseif cmp.visible() then

@@ -1,1 +1,1 @@
-vim.keymap.set('n', 'q', '<C-w>q')
+vim.keymap.set('n', 'q', '<c-w>q')
