@@ -6,13 +6,14 @@ local colors = {
     iris = '#a04a79',
     gold = '#da8d24',
     pine = '#286983',
+    bg = '#080b0e',
 }
 
 local theme = {
     normal = {
         a = { fg = colors.overlay, bg = colors.love },
         b = { fg = colors.overlay, bg = colors.muted },
-        c = { fg = colors.muted, bg = 'none' },
+        c = { fg = colors.muted, bg = colors.bg },
         z = { fg = colors.overlay, bg = colors.base },
     },
     insert = {

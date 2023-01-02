@@ -104,4 +104,4 @@ require 'lir'.setup {
 }
 
 -- vim.api.nvim_set_keymap('n', '-', [[<Cmd> execute 'silent! edit ' .. expand('%:p:h')<CR>]], { noremap = true })
-vim.keymap.set('n', '-', function() float.init() end, { noremap = true })
+vim.keymap.set('n', '-', function() float.toggle() end, { noremap = true })
