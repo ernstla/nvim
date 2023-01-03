@@ -71,4 +71,22 @@ return {
         i(0),
         t(');'),
     }),
+    snippet('hans', {
+        t("echo '~~~~~~~~~~~ HANS ~~~~~~~~~~~~'")
+    }),
+    snippet('franz', {
+        t("echo '~~~~~~~~~~~ FRANZ ~~~~~~~~~~~'")
+    }),
+    snippet('doldi', {
+        t("echo '~~~~~~~~~~~ DOLDI ~~~~~~~~~~~'")
+    }),
+    snippet('fritz', {
+        t("echo '~~~~~~~~~~~ FRITZ ~~~~~~~~~~~'")
+    }),
+    snippet('robert', {
+        t("echo '~~~~~~~~~~~ ROBERT ~~~~~~~~~~'")
+    }),
+    snippet('roland', {
+        t("echo '~~~~~~~~~~~ ROLAND ~~~~~~~~~~'")
+    }),
 }
