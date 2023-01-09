@@ -69,6 +69,17 @@ autocmd({ 'FileType' }, {
     command = 'setlocal ts=2 sts=2 sw=2 expandtab'
 })
 
+autocmd('TextYankPost', {
+    group = Ernst,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'YankHigh',
+            timeout = 373, -- what a prime number
+        })
+    end,
+})
+
 -- Quickfix window placement
 autocmd({ 'QuickFixCmdPost' }, { group = Ernst, pattern = '[^l]*', command = 'botright cwindow' })
 autocmd({ 'QuickFixCmdPost' }, { group = Ernst, pattern = 'l* ', command = 'botright lwindow' })

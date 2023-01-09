@@ -69,7 +69,10 @@ hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
 hl(0, 'TabLineMod', { fg = '#934242', bg = 'none' })
 hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
 hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
-hl(0, 'Visual', { fg = '#f2e9e1', bg = '#a4233a' })
+hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
+
+-- Custom
+hl(0, 'YankHigh', { fg = '#f2e9e1', bg = '#a4233a' })
 
 -- Autocomplete menus
 hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
@@ -122,6 +125,7 @@ hl(0, 'NvimTreeNormal', { fg = '#f2e9e1' })
 hl(0, 'GitSignsAdd', { fg = '#669933' })
 hl(0, 'GitSignsChange', { fg = '#ccff99' })
 hl(0, 'GitSignsDelete', { fg = '#cb4b16' })
+hl(0, 'GitSignsChangeDelete', { fg = '#cb4b16' })
 
 hl(0, 'LirFolderNode', { fg = '#cb4b16' })
 
