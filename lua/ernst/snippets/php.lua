@@ -24,12 +24,37 @@ return {
         i(0),
         t("') ?>"),
     }),
+    snippet('class', {
+        t('class '), i(1), t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('abstract', {
+        t('abstract class '), i(1), t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('interface', {
+        t('interface '), i(1), t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('trait', {
+        t('trait '), i(1), t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
     snippet('construct', {
-        t('public function __construct('),
-        i(1),
-        t({ ') {', '\t' }),
-        i(0),
-        t({ '', '}' }),
+        t('public function __construct('), i(1), t({ ') {', '\t' }),
+        i(0), t({ '', '}' }),
+    }),
+    snippet('public', {
+        t('public function '), i(1), t('('), i(2), t('): '), i(3),
+        t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('protected', {
+        t('protected function '), i(1), t('('), i(2), t('): '), i(3),
+        t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('private', {
+        t('private function '), i(1), t('('), i(2), t('): '), i(3),
+        t({ '', '{', '\t' }), i(0), t({ '', '}' }),
+    }),
+    snippet('static', {
+        t('public static function '), i(1), t('('), i(2), t('): '), i(3),
+        t({ '', '{', '\t' }), i(0), t({ '', '}' }),
     }),
     snippet('log', {
         t('error_log('),
@@ -71,22 +96,46 @@ return {
         i(0),
         t(');'),
     }),
+    snippet('line', {
+        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
+    }),
     snippet('hans', {
-        t("echo '~~~~~~~~~~~ HANS ~~~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ HANS ~~~~~~~~~~~~");')
     }),
     snippet('franz', {
-        t("echo '~~~~~~~~~~~ FRANZ ~~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ FRANZ ~~~~~~~~~~~");')
     }),
     snippet('doldi', {
-        t("echo '~~~~~~~~~~~ DOLDI ~~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ DOLDI ~~~~~~~~~~~");')
     }),
     snippet('fritz', {
-        t("echo '~~~~~~~~~~~ FRITZ ~~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ FRITZ ~~~~~~~~~~~");')
     }),
     snippet('robert', {
-        t("echo '~~~~~~~~~~~ ROBERT ~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ ROBERT ~~~~~~~~~~");')
     }),
     snippet('roland', {
-        t("echo '~~~~~~~~~~~ ROLAND ~~~~~~~~~~'")
+        t('error_log("~~~~~~~~~~~ ROLAND ~~~~~~~~~~");')
+    }),
+    snippet('linee', {
+        t('echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\n";')
+    }),
+    snippet('hanse', {
+        t('echo "~~~~~~~~~~~ HANS ~~~~~~~~~~~~\\n";')
+    }),
+    snippet('franze', {
+        t('echo "~~~~~~~~~~~ FRANZ ~~~~~~~~~~~\\n";')
+    }),
+    snippet('doldie', {
+        t('echo "~~~~~~~~~~~ DOLDI ~~~~~~~~~~~\\n";')
+    }),
+    snippet('fritze', {
+        t('echo "~~~~~~~~~~~ FRITZ ~~~~~~~~~~~\\n";')
+    }),
+    snippet('roberte', {
+        t('echo "~~~~~~~~~~~ ROBERT ~~~~~~~~~~\\n";')
+    }),
+    snippet('rolande', {
+        t('echo "~~~~~~~~~~~ ROLAND ~~~~~~~~~~\\n";')
     }),
 }
