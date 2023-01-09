@@ -1,7 +1,7 @@
 -- LSP settings.
 --
 -- This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local map = function(keys, func, desc)
         if desc then
             desc = 'LSP: ' .. desc
@@ -26,6 +26,11 @@ local on_attach = function(_, bufnr)
     -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     --     vim.lsp.buf.format()
     -- end, { desc = 'Format current buffer with LSP' })
+
+    -- prefer null-ls/php-cs-fixer formatting over intelephense
+    if client.name == "intelephense" then
+        client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
+    end
 end
 
 local servers = require('ernst/lspservers').servers

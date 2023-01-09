@@ -9,7 +9,7 @@ M.servers = {
     jsonls = {},
     svelte = {},
     tsserver = {},
-    psalm = {},
+    -- psalm = {},
 
     pylsp = {
         cmd = { 'pylsp' },
@@ -43,6 +43,13 @@ M.servers = {
         }
     },
 
+    -- phpactor = {
+    -- init_options = {
+    --     ["language_server_php_cs_fixer.enabled"] = true,
+    --     ["language_server_psalm.enabled"] = true,
+    -- }
+    -- },
+
     intelephense = {
         init_options = { licenceKey = '005UH9RB1NL07NE' },
         settings = {
@@ -57,12 +64,14 @@ M.servers = {
                     'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib', 'wordpress', 'woocommerce'
                 },
                 files = {
-                    maxSize = 5000000;
+                    maxSize = 5000000
+                },
+                format = {
+                    -- This does not work. See intelephense condition in lsp.lua `on_attach`
+                    enable = false, -- use phpcsfixer with ls-null
                 },
                 diagnostics = {
-                    enable = false,
-                    typeErrors = false, -- provided by Psalm
-                    implementationErrors = false -- reenable when readonly problems are fixed
+                    enable = true,
                 },
             }
         }
