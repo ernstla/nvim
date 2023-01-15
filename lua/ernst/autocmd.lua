@@ -47,6 +47,11 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
     pattern = { 'tsconfig.json', },
     command = 'set filetype=jsonc'
 })
+autocmd({ 'BufRead', 'BufNewFile' }, {
+    group = Ernst,
+    pattern = { '*.mako', },
+    command = 'set filetype=mako'
+})
 
 -- Suppose the dash is part of a keyword
 autocmd({ 'FileType' }, {
