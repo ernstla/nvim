@@ -82,14 +82,15 @@ M.setup = function(is_bootstrap)
 
         use { 'rose-pine/neovim', as = 'rose-pine' }
 
-        use 'mattn/emmet-vim'
         use 'NvChad/nvim-colorizer.lua'
         use 'aserowy/tmux.nvim'
         use 'bronson/vim-visual-star-search'
         use 'lewis6991/gitsigns.nvim'
+        use 'mattn/emmet-vim'
         use 'mbbill/undotree'
         use 'mg979/vim-visual-multi'
         use 'numToStr/Comment.nvim'
+        use 'simrat39/symbols-outline.nvim'
         use 'stevearc/qf_helper.nvim'
 
         use 'tpope/vim-repeat'
