@@ -26,7 +26,6 @@ require('telescope').setup {
         buffers = {
             show_all_buffers = true,
             sort_lastused = true,
-            theme = 'dropdown',
             previewer = false,
             mappings = {
                 i = {
@@ -53,6 +52,7 @@ require('telescope').setup {
 vim.keymap.set('n', '<m-p>', builtin.find_files, {})
 vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<f9>', builtin.buffers, {})
 vim.keymap.set('n', '<m-b>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ag', function()
     builtin.grep_string({ search = vim.fn.input('ripgrep: ') });
