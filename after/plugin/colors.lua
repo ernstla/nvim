@@ -71,6 +71,17 @@ hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
 hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
 hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
 
+hl(0, 'TelescopeNormal', { fg = '#f2e9e1', bg = 'none' })
+hl(0, 'TelescopeBorder', { fg = '#404346', bg = 'none' })
+hl(0, 'TelescopeSelection', { fg = '#ffffff', bg = '#202326' })
+hl(0, 'TelescopeResultsTitle', { fg = '#404346', bg = 'none' })
+hl(0, 'TelescopePromptBorder', { fg = '#634242', bg = 'none' })
+hl(0, 'TelescopePromptTitle', { fg = '#934242', bg = 'none' })
+hl(0, 'TelescopePromptPrefix', { fg = '#934242', bg = 'none' })
+hl(0, 'TelescopePromptNormal', { fg = '#f2e9e1', bg = 'none' })
+hl(0, 'TelescopePreviewNormal', { fg = '#f2e9e1', bg = 'none' })
+hl(0, 'TelescopeResultsNormal', { fg = '#f2e9e1', bg = 'none' })
+
 -- Custom
 hl(0, 'YankHigh', { fg = '#f2e9e1', bg = '#a4233a' })
 

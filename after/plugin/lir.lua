@@ -34,7 +34,7 @@ end
 require 'lir'.setup {
     show_hidden_files = false,
     ignore = { ".DS_Store" },
-    devicons_enable = true,
+    devicons = { enable = true },
     mappings = {
         ['<cr>']  = actions.edit,
         ['<c-s>'] = actions.split,

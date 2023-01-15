@@ -32,7 +32,8 @@ require('telescope').setup {
                 i = {
                     ['<c-x>'] = actions.delete_buffer,
                 },
-            }
+            },
+            borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
         },
         grep_string = {
             layout_config = {
@@ -54,5 +55,5 @@ vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<m-b>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ag', function()
-    builtin.grep_string({ search = vim.fn.input('Grep: ') });
+    builtin.grep_string({ search = vim.fn.input('ripgrep: ') });
 end)
