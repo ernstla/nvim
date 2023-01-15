@@ -42,7 +42,7 @@ map('n', '<leader>tt', ':tabnew<cr>', opts)
 map('n', '<leader>h', ':set hlsearch!<cr>', opts)
 
 -- Toggle relativenumber
-map('n', '<leader>r', ':set relativenumber!<cr>', opts)
+map('n', '<leader>tr', ':set relativenumber!<cr>', opts)
 
 -- Toggle wrapping
 map('n', '<leader>w', ':set wrap! wrap?<cr>', opts)

@@ -42,7 +42,8 @@ require('telescope').setup {
             },
             mappings = {
                 i = {
-                    ['<c-q>'] = actions.smart_add_to_qflist + actions.open_qflist,
+                    ['<c-q>'] = actions.smart_send_to_qflist,
+                    --['<c-q>'] = actions.smart_add_to_qflist + actions.open_qflist,
                 }
             }
         },
@@ -54,6 +55,6 @@ vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<f9>', builtin.buffers, {})
 vim.keymap.set('n', '<m-b>', builtin.buffers, {})
-vim.keymap.set('n', '<leader>ag', function()
+vim.keymap.set('n', '<leader>r', function()
     builtin.grep_string({ search = vim.fn.input('ripgrep: ') });
 end)
