@@ -87,14 +87,14 @@ return {
         t("'" .. '. "\\n");'),
     }),
     snippet('pr', {
-        t('print_r('),
+        t('print(print_r('),
         i(0),
-        t(');'),
+        t(', true) . PHP_EOL);'),
     }),
     snippet('printr', {
-        t('print_r('),
+        t('print(print_r('),
         i(0),
-        t(');'),
+        t(', true) . PHP_EOL);'),
     }),
     snippet('line', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
@@ -137,5 +137,52 @@ return {
     }),
     snippet('rolande', {
         t('echo "~~~~~~~~~~~ ROLAND ~~~~~~~~~~\\n";')
+    }),
+    snippet('/', {
+        t({ '/**', ' * ' }), i(1), t({ '', ' */' }),
+    }),
+    snippet('?foreach', {
+        t('<?php foreach ('), i(1), t(' as '), i(2), t({ ') : ?>', '' }),
+        t('\t'), i(0),
+        t({ '', '<?php endforeach ?>' }),
+    }),
+    snippet('foreach', {
+        t('foreach ('), i(1), t(' as '), i(2), t({ ') {', '' }),
+        t('\t'), i(0),
+        t({ '', '}' }),
+    }),
+    snippet('?for', {
+        t('<?php for ('), i(1), t({ ') : ?>', '' }),
+        t('\t'), i(0),
+        t({ '', '<?php endfor ?>' }),
+    }),
+    snippet('for', {
+        t('for ('), i(1), t({ ') {', '' }),
+        t('\t'), i(0),
+        t({ '', '}' }),
+    }),
+    snippet('?if', {
+        t('<?php if ('), i(1), t({ ') : ?>', '' }),
+        t('\t'), i(0),
+        t({ '', '<?php endif ?>' }),
+    }),
+    snippet('if', {
+        t('if ('), i(1), t({ ') {', '' }),
+        t('\t'), i(0),
+        t({ '', '}' }),
+    }),
+    snippet('?else', {
+        t('<?php if ('), i(1), t({ ') : ?>', '' }),
+        t('\t'), i(2),
+        t({ '', '<?php else: ?>', '' }),
+        t('\t'), i(0),
+        t({ '', '<?php endif ?>' }),
+    }),
+    snippet('else', {
+        t('if ('), i(1), t({ ') {', '' }),
+        t('\t'), i(2),
+        t({ '', '} else {', '' }),
+        t('\t'), i(0),
+        t({ '', '}' }),
     }),
 }
