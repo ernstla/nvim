@@ -53,6 +53,8 @@ map('n', '<leader>i', ':set list!<cr>', opts)
 -- Resize window
 map('', '<leader>>', '20<c-w>>', opts)
 map('', '<leader><', '20<c-w><', opts)
+map('', '<leader>=', '10<c-w>+', opts)
+map('', '<leader>-', '10<c-w>-', opts)
 
 -- Center search matches
 map('n', 'n', 'nzz', opts)
@@ -64,6 +66,7 @@ map('', '<c-i>', '<c-i>zz', opts)
 
 -- Run last macro
 map('n', 'Q', '@@', opts)
+map('n', '<F6>', '@@', opts)
 
 -- Get TreeSitter or Neovim highlight group under cursor
 map('n', '<leader>p', require('ernst/lib').print_highlight_group, opts)

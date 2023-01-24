@@ -71,6 +71,27 @@ hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
 hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
 hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
 
+-- Autocomplete menus
+hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
+hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#485b39' })
+hl(0, 'CmpBorder', { fg = '#505356' })
+
+-- fugitive
+hl(0, 'fugitiveHeader', { fg = '#ffbb29' })
+hl(0, 'fugitiveHeading', { fg = '#af7f99' })
+hl(0, 'fugitiveHash', { fg = '#efafc9' })
+hl(0, 'fugitiveStagedHeading', { fg = '#669933' })
+hl(0, 'fugitiveStagedModifier', { fg = '#669933' })
+hl(0, 'fugitiveStagedSection', { fg = '#ccffaa' })
+hl(0, 'fugitiveUnstagedHeading', { fg = '#cb4b16' })
+hl(0, 'fugitiveUnstagedModifier', { fg = '#cb4b16' })
+hl(0, 'fugitiveUnstagedSection', { fg = '#ffbb86' })
+hl(0, 'fugitiveUntrackedHeading', { fg = '#7ab6e8' })
+hl(0, 'fugitiveUntrackedModifier', { fg = '#7ab6e8' })
+hl(0, 'fugitiveUntrackedSection', { fg = '#caf6ff' })
+
+
+-- Telescope
 hl(0, 'TelescopeNormal', { fg = '#f2e9e1', bg = 'none' })
 hl(0, 'TelescopeBorder', { fg = '#404346', bg = 'none' })
 hl(0, 'TelescopeSelection', { fg = '#ffffff', bg = '#202326' })
@@ -84,11 +105,6 @@ hl(0, 'TelescopeResultsNormal', { fg = '#f2e9e1', bg = 'none' })
 
 -- Custom
 hl(0, 'YankHigh', { fg = '#f2e9e1', bg = '#a4233a' })
-
--- Autocomplete menus
-hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
-hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#485b39' })
-hl(0, 'CmpBorder', { fg = '#505356' })
 
 -- TreeSitter
 hl(0, '@keyword', { fg = '#697eb3' })
@@ -177,6 +193,25 @@ hl(0, 'phpStructure', { fg = '#697eb3' })
 hl(0, 'phpType', { fg = '#f38630' })
 hl(0, 'phpVarSelector', { fg = '#f2e9e1' })
 
+hl(0, 'htmlComment', { fg = '#556270' })
+hl(0, 'htmlCommentPart', { fg = '#556270' })
+hl(0, 'htmlTagName', { fg = '#f38630' })
+hl(0, 'htmlEndTag', { fg = '#f38630' })
+hl(0, 'htmlTag', { fg = '#f38630' })
+hl(0, 'htmlTagN', { fg = '#f38630' })
+hl(0, 'htmlArg', { fg = '#fdca49' })
+hl(0, 'htmlString', { fg = '#ffbb29' })
+hl(0, 'htmlSpecialTagName', { fg = '#f2592a' })
+hl(0, 'htmlLink', { fg = '#ffffff' })
+hl(0, 'htmlTitle', { fg = '#ffffff' })
+hl(0, 'htmlH1', { fg = '#ffffff' })
+hl(0, 'htmlH2', { fg = '#ffffff' })
+hl(0, 'htmlH3', { fg = '#ffffff' })
+hl(0, 'htmlH4', { fg = '#ffffff' })
+hl(0, 'htmlH5', { fg = '#ffffff' })
+hl(0, 'htmlH6', { fg = '#ffffff' })
+hl(0, 'htmlSpecialChar', { fg = '#ffc48c' })
+
 hl(0, 'pythonBuiltin', { fg = '#af7f99' })
 hl(0, 'pythonConst', { fg = '#86a943' })
 hl(0, 'pythonAsync', { fg = '#7ab6e8' })
@@ -228,3 +263,6 @@ hl(0, 'sqlPhpRegion', { fg = '#ffaaaa' })
 hl(0, 'sqlColonParam', { fg = '#7ab6e8' })
 hl(0, 'sqlPostgresDelim', { fg = '#7ab6e8' })
 hl(0, 'sqlPostgresVariable', { fg = '#7ab6e8' })
+
+hl(0, 'markdownBold', { fg = '#f4e28e' })
+hl(0, 'markdownItalic', { fg = '#ffc48c' })
