@@ -93,6 +93,7 @@ M.setup = function(is_bootstrap)
         use 'simrat39/symbols-outline.nvim'
         use 'stevearc/qf_helper.nvim'
 
+        use 'tpope/vim-abolish'
         use 'tpope/vim-repeat'
         use 'tpope/vim-surround'
         use 'tpope/vim-fugitive'
