@@ -14,9 +14,6 @@ M.setup = function(is_bootstrap)
                 'williamboman/mason.nvim',
                 'williamboman/mason-lspconfig.nvim',
 
-                -- Useful status updates for LSP
-                'j-hui/fidget.nvim',
-
                 -- Additional lua configuration, makes nvim stuff amazing
                 'folke/neodev.nvim',
             },
@@ -98,6 +95,9 @@ M.setup = function(is_bootstrap)
         use 'tpope/vim-surround'
         use 'tpope/vim-fugitive'
         use 'tpope/vim-obsession'
+
+        -- Languages
+        use 'alaviss/nim.nvim'
 
         if is_bootstrap then
             require('packer').sync()

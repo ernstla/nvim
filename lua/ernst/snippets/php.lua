@@ -72,29 +72,44 @@ return {
         t(', true));'),
     }),
     snippet('print', {
-        t('print('),
+        t('echo '),
         i(0),
-        t(', "\\n");'),
+        t(' . PHP_EOL;'),
+    }),
+    snippet('echo', {
+        t('echo '),
+        i(0),
+        t(' . PHP_EOL;'),
+    }),
+    snippet('es', {
+        t('echo "'),
+        i(0),
+        t('" . PHP_EOL;'),
+    }),
+    snippet('echos', {
+        t('echo "'),
+        i(0),
+        t('" . PHP_EOL;'),
     }),
     snippet('ps', {
-        t("print('"),
+        t("echo '"),
         i(0),
-        t("'" .. '. "\\n");'),
+        t("'" .. ' . PHP_EOL;'),
     }),
     snippet('prints', {
-        t("print('"),
+        t("echo '"),
         i(0),
-        t("'" .. '. "\\n");'),
+        t("'" .. ' . PHP_EOL;'),
     }),
     snippet('pr', {
-        t('print(print_r('),
+        t('echo print_r('),
         i(0),
-        t(', true) . PHP_EOL);'),
+        t(', true) . PHP_EOL;'),
     }),
     snippet('printr', {
-        t('print(print_r('),
+        t('echo print_r('),
         i(0),
-        t(', true) . PHP_EOL);'),
+        t(', true) . PHP_EOL;'),
     }),
     snippet('line', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
