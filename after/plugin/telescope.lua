@@ -47,6 +47,19 @@ require('telescope').setup {
                 }
             }
         },
+        lsp_references = {
+            layout_config = {
+                horizontal = {
+                    width = 0.8, height = 0.6, mirror = false, prompt_position = 'top', preview_width = 0.6
+                }
+            },
+            mappings = {
+                i = {
+                    ['<c-q>'] = actions.smart_send_to_qflist,
+                    --['<c-q>'] = actions.smart_add_to_qflist + actions.open_qflist,
+                }
+            }
+        },
     },
 }
 
