@@ -1,49 +1,34 @@
--- Install packer
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local is_bootstrap = false
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    is_bootstrap = true
-    vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-    vim.cmd [[packadd packer.nvim]]
-end
-
--- Settings required before packer is loaded
-vim.g.user_emmet_leader_key = '<c-e>'
-
-require("ernst/packer").setup(is_bootstrap)
-
-if not is_bootstrap then
-    -- Saves about 70ms startup time
-    require('impatient') --.enable_profile()
-end
-
--- When we are bootstrapping a configuration, it doesn't
--- make sense to execute the rest of the init.lua.
-if is_bootstrap then
-    -- remove 'after' from runtimepath as the plugin setups would crash
-    vim.cmd('set rtp-=' .. vim.fn.stdpath('config') .. '/after')
-
-    print '=================================='
-    print '    Plugins are being installed'
-    print '    Wait until Packer completes,'
-    print '       then restart nvim'
-    print '=================================='
-    return
-end
-
 local g = vim.g
 local o = vim.o
 local opt = vim.opt
 local wo = vim.wo
 local home = vim.fn.getenv('HOME')
 
+-- Install lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- make sure to set `mapleader` before lazy so our mappings are correct
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Global plugin settings
+g.user_emmet_leader_key = '<c-e>'
 g.loaded_netrw = 1 -- let nvim-tree hijack directory windows (e. g. `nvim .`)
 g.loaded_netrwPlugin = 1
 g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
 
+-- Load lazy, autocmd, mappings etc.
 require("ernst")
 
 o.autoindent = true

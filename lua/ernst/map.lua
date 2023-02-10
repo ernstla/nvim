@@ -3,8 +3,6 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true, nowait = true }
 
 map('', '<space>', '<nop>', opts)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 map('n', 'k', 'gk', opts)
 map('n', '<up>', 'gk', opts)
