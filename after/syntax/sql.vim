@@ -35,6 +35,7 @@ syn match sqlMakoEscape /\\$/
 syn include @sqlPhpTop syntax/php.vim
 
 syn region sqlPhpRegion matchgroup=sqlPhpDelim start="<?php" end="?>" contains=@sqlPhpTop
+syn region sqlPhpRegion matchgroup=sqlPhpDelim start="<?=" end="?>" contains=@sqlPhpTop
 
 syn match sqlTypeConversion "::[a-zA-Z0-9_]\+"
 syn match sqlColonParam ":[a-zA-Z0-9_]\+"
