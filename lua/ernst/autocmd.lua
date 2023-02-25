@@ -44,6 +44,12 @@ autocmd({ 'BufWritePre' }, {
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
+    pattern = '*/templates/*.php',
+    command = 'set filetype=html syntax=php',
+})
+
+autocmd({ 'BufRead', 'BufNewFile' }, {
+    group = Ernst,
     pattern = { 'tsconfig.json', },
     command = 'set filetype=jsonc'
 })
