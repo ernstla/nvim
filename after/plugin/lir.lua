@@ -36,7 +36,11 @@ require 'lir'.setup {
     ignore = { ".DS_Store" },
     devicons = { enable = true },
     mappings = {
-        ['<cr>']  = actions.edit,
+        ['<cr>']  = function()
+            actions.edit({
+                modified_split_command = 'edit'
+            })
+        end,
         ['<c-s>'] = actions.split,
         ['<c-v>'] = actions.vsplit,
         ['<c-t>'] = actions.tabedit,
@@ -46,7 +50,8 @@ require 'lir'.setup {
         ['<esc>'] = actions.quit,
         ['<c-c>'] = actions.quit,
 
-        ['K'] = actions.mkdir,
+        ['F'] = actions.mkdir,
+        ['O'] = actions.mkdir,
         ['+'] = actions.newfile,
         ['R'] = actions.rename,
         ['@'] = actions.cd,
