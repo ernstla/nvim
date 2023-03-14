@@ -6,4 +6,8 @@ ls.add_snippets(nil, {
     php = require('ernst/snippets/php'),
     python = require('ernst/snippets/python'),
     svelte = require('ernst/snippets/svelte'),
+    javascript = require('ernst/snippets/javascript'),
 })
+
+ls.filetype_extend('typescript', { 'javascript' })
+ls.filetype_extend('svelte', { 'javascript' })
