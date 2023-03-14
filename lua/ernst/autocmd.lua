@@ -47,7 +47,6 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
     pattern = '*/templates/*.php',
     command = 'set filetype=html syntax=php',
 })
-
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { 'tsconfig.json', },
@@ -57,6 +56,11 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { '*.mako', },
     command = 'set filetype=mako'
+})
+autocmd({ 'BufRead', 'BufNewFile' }, {
+    group = Ernst,
+    pattern = { '*.msql', },
+    command = 'set filetype=sql'
 })
 
 -- Suppose the dash is part of a keyword
