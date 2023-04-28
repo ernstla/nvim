@@ -31,6 +31,11 @@ local on_attach = function(client, bufnr)
     if client.name == "intelephense" then
         client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
     end
+    if client.name == "tsserver" then
+        -- client.server_capabilities.semanticTokensProvider = false
+        -- client.server_capabilities.documentHighlightProvider = false
+        -- print(vim.inspect( client.server_capabilities))
+    end
 end
 
 local servers = require('ernst/lspservers').servers
