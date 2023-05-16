@@ -21,7 +21,11 @@ require('telescope').setup {
     },
     pickers = {
         git_files = {
+            hidden = true,
             previewer = false,
+        },
+        find_files = {
+            hidden = true
         },
         buffers = {
             show_all_buffers = true,

@@ -29,17 +29,27 @@ autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
         '*.html',
-        '*.js',
         '*.json',
+        '*.lua',
         '*.nim',
         '*.php',
         '*.py',
         '*.rs',
+        '*.scss',
         '*.svelte',
         '*.ts',
-        '*.lua',
+        '*.js',
+        '*rc',
     },
     command = 'lua vim.lsp.buf.format()'
+})
+
+autocmd({ 'BufWritePre' }, {
+    group = Ernst,
+    pattern = {
+        '*.vue',
+    },
+    command = 'EslintFixAll'
 })
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
@@ -104,7 +114,8 @@ autocmd({ 'CursorHold', 'CursorHoldI', 'FocusGained', 'BufEnter' }, {
     group = Ernst, pattern = '*', command = 'checktime'
 })
 autocmd({ 'FileChangedShell' }, {
-    group = Ernst, pattern = '*',
+    group = Ernst,
+    pattern = '*',
     command = 'echohl echoError | echo "WARNING: File changed on disk" | echohl'
 })
 
@@ -114,7 +125,8 @@ autocmd({ 'FileChangedShell' }, {
 autocmd({ 'FilterWritePre' }, {
     group = Ernst,
     pattern = '*',
-    command = "if &diff | exe 'noremap = ]cz.' | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<cr>' | endif",
+    command =
+    "if &diff | exe 'noremap = ]cz.' | exe 'noremap + ]cz.' | exe 'noremap - [cz.' | exe 'noremap U :diffupdate<cr>' | endif",
 })
 autocmd({ 'FilterWritePre' }, {
     group = Ernst,

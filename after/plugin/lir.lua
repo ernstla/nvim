@@ -32,7 +32,7 @@ local function construct_win_opts()
 end
 
 require 'lir'.setup {
-    show_hidden_files = false,
+    show_hidden_files = true,
     ignore = { ".DS_Store" },
     devicons = { enable = true },
     mappings = {
@@ -45,28 +45,28 @@ require 'lir'.setup {
         ['<c-v>'] = actions.vsplit,
         ['<c-t>'] = actions.tabedit,
 
-        ['-'] = actions.up,
-        ['q'] = actions.quit,
+        ['-']     = actions.up,
+        ['q']     = actions.quit,
         ['<esc>'] = actions.quit,
         ['<c-c>'] = actions.quit,
 
-        ['F'] = actions.mkdir,
-        ['O'] = actions.mkdir,
-        ['+'] = actions.newfile,
-        ['R'] = actions.rename,
-        ['@'] = actions.cd,
-        ['Y'] = actions.yank_path,
-        ['.'] = actions.toggle_show_hidden,
-        ['H'] = actions.toggle_show_hidden,
-        ['D'] = actions.delete,
+        ['F']     = actions.mkdir,
+        ['O']     = actions.mkdir,
+        ['+']     = actions.newfile,
+        ['R']     = actions.rename,
+        ['@']     = actions.cd,
+        ['Y']     = actions.yank_path,
+        ['.']     = actions.toggle_show_hidden,
+        ['H']     = actions.toggle_show_hidden,
+        ['D']     = actions.delete,
 
-        ['J'] = function()
+        ['J']     = function()
             mark_actions.toggle_mark()
             vim.cmd('normal! j')
         end,
-        ['C'] = clipboard_actions.copy,
-        ['X'] = clipboard_actions.cut,
-        ['P'] = clipboard_actions.paste,
+        ['C']     = clipboard_actions.copy,
+        ['X']     = clipboard_actions.cut,
+        ['P']     = clipboard_actions.paste,
     },
     float = {
         winblend = 0,

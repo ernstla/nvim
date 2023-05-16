@@ -5,11 +5,19 @@ M = {}
 -- Add any additional override configuration in the following tables. They will be passed to
 -- the `settings` field of the server config. You must look up that documentation yourself.
 M.servers = {
-    eslint = {},
     jsonls = {},
     svelte = {},
+    volar = {},
     tsserver = {},
-    -- psalm = {},
+    eslint = {},
+    stylelint_lsp = {
+        filetypes = { 'css', 'less', 'postcss', 'sass', 'scss' },
+        settings = {
+            stylelintplus = {
+                autoFixOnFormat = true,
+            }
+        }
+    },
 
     pylsp = {
         cmd = { 'pylsp' },
@@ -97,9 +105,9 @@ M.servers = {
     },
 
     nimls = {
-        cmd = { 'nimlsp' };
-        filetypes = { 'nim' };
-        root_dir = util.root_pattern('.git') or util.os_homedir;
+        cmd = { 'nimlsp' },
+        filetypes = { 'nim' },
+        root_dir = util.root_pattern('.git') or util.os_homedir,
     },
 }
 

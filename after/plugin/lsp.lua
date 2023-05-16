@@ -29,7 +29,11 @@ local on_attach = function(client, bufnr)
 
     -- prefer null-ls/php-cs-fixer formatting over intelephense
     if client.name == "intelephense" then
-        client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
+        client.server_capabilities.documentFormattingProvider = false
+    end
+    -- prefer EslintFixAll formatting over volar
+    if client.name == "volar" then
+        client.server_capabilities.documentFormattingProvider = false
     end
     if client.name == "tsserver" then
         -- client.server_capabilities.semanticTokensProvider = false
