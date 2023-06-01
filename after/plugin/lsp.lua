@@ -23,23 +23,30 @@ local on_attach = function(client, bufnr)
     map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
     -- Create a command `:Format` local to the LSP buffer
-    -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    --     vim.lsp.buf.format()
-    -- end, { desc = 'Format current buffer with LSP' })
+    vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+        vim.lsp.buf.format()
+    end, { desc = 'Format current buffer with LSP' })
+
+    -- Deactivate syntax highlighting tokens provided by lsp
+    if client.server_capabilities.semanticTokensProvider then
+        client.server_capabilities.semanticTokensProvider = nil
+    end
 
     -- prefer null-ls/php-cs-fixer formatting over intelephense
     if client.name == "intelephense" then
         client.server_capabilities.documentFormattingProvider = false
     end
+
     -- prefer EslintFixAll formatting over volar
-    if client.name == "volar" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-    if client.name == "tsserver" then
-        -- client.server_capabilities.semanticTokensProvider = false
-        -- client.server_capabilities.documentHighlightProvider = false
-        -- print(vim.inspect( client.server_capabilities))
-    end
+    -- if client.name == "volar" then
+    --     client.server_capabilities.documentFormattingProvider = false
+    -- end
+
+    -- if client.name == "tsserver" then
+    -- client.server_capabilities.semanticTokensProvider = false
+    -- client.server_capabilities.documentHighlightProvider = false
+    -- print(vim.inspect( client.server_capabilities))
+    -- end
 end
 
 local servers = require('ernst/lspservers').servers

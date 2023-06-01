@@ -15,14 +15,14 @@ local get_highlight_group = function()
 end
 
 M.print_highlight_group = function()
-    -- local buf = vim.api.nvim_get_current_buf()
-    -- local highlighter = require "vim.treesitter.highlighter"
-    --
-    -- if highlighter.active[buf] then
-    vim.cmd('TSHighlightCapturesUnderCursor')
-    -- else
-    --     print(get_highlight_group())
-    -- end
+    local buf = vim.api.nvim_get_current_buf()
+    local highlighter = require "vim.treesitter.highlighter"
+
+    if highlighter.active[buf] then
+        vim.cmd('TSHighlightCapturesUnderCursor')
+    else
+        print(get_highlight_group())
+    end
 end
 
 return M

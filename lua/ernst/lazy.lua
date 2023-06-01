@@ -46,7 +46,8 @@ require("lazy").setup({
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     },
 
-    { -- filebeagle and dirvish alternative
+    {
+        -- filebeagle and dirvish alternative
         'tamago324/lir.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
     },
