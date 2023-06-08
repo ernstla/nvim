@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
+local lib = require('ernst.lib')
 
 require('telescope').setup {
     defaults = {
@@ -68,7 +69,7 @@ require('telescope').setup {
 }
 
 vim.keymap.set('n', '<m-p>', builtin.find_files, {})
-vim.keymap.set('n', '<c-p>', builtin.git_files, {})
+vim.keymap.set('n', '<c-p>', lib.project_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<f9>', builtin.buffers, {})
 vim.keymap.set('n', '<m-b>', builtin.buffers, {})
