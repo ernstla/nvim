@@ -58,32 +58,32 @@ M.servers = {
     --     }
     -- },
 
-    -- intelephense = {
-    --     init_options = { licenceKey = '005UH9RB1NL07NE' },
-    --     settings = {
-    --         intelephense = {
-    --             stubs = {
-    --                 'bcmath', 'bz2', 'calendar', 'Core', 'curl', 'date', 'dba', 'dom', 'enchant',
-    --                 'fileinfo', 'filter', 'ftp', 'gd', 'gettext', 'hash', 'iconv', 'imap', 'intl',
-    --                 'json', 'ldap', 'libxml', 'memcached', 'mbstring', 'mcrypt', 'mysql', 'mysqli',
-    --                 'openssl', 'password', 'pcntl', 'pcre', 'PDO', 'pdo_mysql', 'Phar', 'readline',
-    --                 'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets', 'sodium',
-    --                 'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer', 'xml', 'xdebug',
-    --                 'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib', 'wordpress', 'woocommerce'
-    --             },
-    --             files = {
-    --                 maxSize = 5000000
-    --             },
-    --             format = {
-    --                 -- This does not work. See intelephense condition in lsp.lua `on_attach`
-    --                 enable = false, -- use phpcsfixer with ls-null
-    --             },
-    --             diagnostics = {
-    --                 enable = true,
-    --             },
-    --         }
-    --     }
-    -- },
+    intelephense = {
+        init_options = { licenceKey = '005UH9RB1NL07NE' },
+        settings = {
+            intelephense = {
+                stubs = {
+                    'bcmath', 'bz2', 'calendar', 'Core', 'curl', 'date', 'dba', 'dom', 'enchant',
+                    'fileinfo', 'filter', 'ftp', 'gd', 'gettext', 'hash', 'iconv', 'imap', 'intl',
+                    'json', 'ldap', 'libxml', 'memcached', 'mbstring', 'mcrypt', 'mysql', 'mysqli',
+                    'openssl', 'password', 'pcntl', 'pcre', 'PDO', 'pdo_mysql', 'Phar', 'readline',
+                    'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets', 'sodium',
+                    'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer', 'xml', 'xdebug',
+                    'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib', 'wordpress', 'woocommerce'
+                },
+                files = {
+                    maxSize = 5000000
+                },
+                format = {
+                    -- This does not work. See intelephense condition in lsp.lua `on_attach`
+                    enable = false, -- use phpcsfixer with ls-null
+                },
+                diagnostics = {
+                    enable = true,
+                },
+            }
+        }
+    },
 
     lua_ls = {
         settings = {
