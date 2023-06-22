@@ -58,6 +58,7 @@ hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
 hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
 hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
 hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })
+hl(0, 'FloatBorder', { fg = '#404346', bg = 'none' })
 hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#f9c2c2' })
 hl(0, 'Search', { fg = '#1c1c1c', bg = '#c47b7b' })
 hl(0, 'LineNr', { fg = '#1f323f' })
@@ -146,6 +147,7 @@ hl(0, 'DiagnosticVirtualTextInfo', { fg = '#85b2d8' })
 -- Plugins
 hl(0, 'LirFloatCursorLine', { bg = '#202326' })
 hl(0, 'NvimTreeCursorLine', { bg = '#202326' })
+hl(0, 'LspInfoBorder', { fg = '#404346', bg = 'none' })
 
 -- see nvim-tree.lua/lua/nvim-tree/colors.lua
 hl(0, 'NvimTreeWindowPicker', { fg = '#ffffff', bg = '#669933' })

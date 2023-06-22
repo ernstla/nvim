@@ -59,7 +59,16 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Setup mason so it can manage external tooling
-require('mason').setup()
+require('mason').setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        },
+        border = 'single',
+    }
+})
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
@@ -79,6 +88,9 @@ mason_lspconfig.setup_handlers {
         end
     end,
 }
+
+-- Needs to be after the mason-lspconfig call
+require('lspconfig.ui.windows').default_options.border = 'single'
 
 -- nvim-cmp setup
 local cmp = require('cmp')
