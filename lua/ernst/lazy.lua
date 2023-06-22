@@ -91,4 +91,8 @@ require("lazy").setup({
 
     -- Languages
     'alaviss/nim.nvim',
+}, {
+    ui = {
+        border = "single",
+    }
 })
