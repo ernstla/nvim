@@ -1,5 +1,12 @@
 -- LSP settings.
---
+
+local on_init = function(client, initialization_result)
+    if client.server_capabilities then
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
+    end
+end
+
 -- This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
     local map = function(keys, func, desc)
@@ -28,9 +35,9 @@ local on_attach = function(client, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 
     -- Deactivate syntax highlighting tokens provided by lsp
-    if client.server_capabilities.semanticTokensProvider then
-        client.server_capabilities.semanticTokensProvider = nil
-    end
+    -- if client.server_capabilities.semanticTokensProvider then
+    --     client.server_capabilities.semanticTokensProvider = nil
+    -- end
 
     -- prefer null-ls/php-cs-fixer formatting over intelephense
     if client.name == "intelephense" then
@@ -83,6 +90,7 @@ mason_lspconfig.setup_handlers {
             local settings = servers[server_name]
             settings["capabilities"] = capabilities
             settings["on_attach"] = on_attach
+            settings['on_init'] = on_init
 
             require('lspconfig')[server_name].setup(settings)
         end
