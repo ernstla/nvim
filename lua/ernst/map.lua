@@ -34,7 +34,7 @@ map('v', '<leader>ds', ':s/^\\s*/&&<cr>', opts)
 map('n', '<leader>tt', ':tabnew<cr>', opts)
 
 -- Autocompletion
---map('i', '<c-space>', '<c-x><c-o>', opts)
+map('i', '<c-n>', '<c-x><c-o>', opts)
 
 -- Toggle hlsearch
 map('n', '<leader>h', ':set hlsearch!<cr>', opts)

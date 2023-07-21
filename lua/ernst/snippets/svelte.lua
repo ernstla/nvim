@@ -1,6 +1,8 @@
 local ls = require("luasnip")
 
 local snippet = ls.snippet
+local rep = require("luasnip.extras").rep
+local fmt = require("luasnip.extras.fmt").fmt
 local t = ls.text_node
 local i = ls.insert_node
 
@@ -21,12 +23,22 @@ return {
         i(0),
         t({ '', '{/if}' }),
     }),
+    snippet('el', {
+        t('{:else}'),
+    }),
     snippet('each', {
         t('{#each '),
-        i(1, 'condition'),
+        i(1, 'iterator'),
         t({ '}', '\t' }),
         i(0),
         t({ '', '{/each}' }),
+    }),
+    snippet('key', {
+        t('{#key '),
+        i(1, 'value'),
+        t({ '}', '\t' }),
+        i(0),
+        t({ '', '{/key}' }),
     }),
     snippet('debug', {
         t('{@debug '),
@@ -38,4 +50,22 @@ return {
         i(0),
         t("')}"),
     }),
+    snippet('script', {
+        t({'<script lang="ts">', '\t'}),
+        i(0),
+        t({'', '</script>'}),
+    }),
+    snippet('style', {
+        t({'<style lang="postcss">', '\t'}),
+        i(0),
+        t({'', '</style>'}),
+    }),
+    snippet("imps",
+        fmt("import {a} from '{b}{a}.svelte';", {
+            a = i(1, "Module"),
+            b = i(0)
+        }, {
+            repeat_duplicates = true
+        })
+    )
 }

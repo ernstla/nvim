@@ -15,6 +15,20 @@ return {
         i(0),
         t("');"),
     }),
+    snippet('imp', {
+        t("import { "),
+        i(1),
+        t(" } from '"),
+        i(0),
+        t("';"),
+    }),
+    snippet('import', {
+        t("import "),
+        i(1),
+        t(" from '"),
+        i(0),
+        t("';"),
+    }),
     snippet('stack', {
         t('console.log(new Error().stack);'),
         i(0)
