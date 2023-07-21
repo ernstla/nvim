@@ -71,6 +71,7 @@ require("lazy").setup({
 
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
+    'hrsh7th/cmp-buffer',
     'pangloss/vim-javascript',
     'NvChad/nvim-colorizer.lua',
     'aserowy/tmux.nvim',
