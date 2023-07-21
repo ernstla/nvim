@@ -24,7 +24,7 @@ vim.g.maplocalleader = ' '
 
 -- Global plugin settings
 g.user_emmet_leader_key = '<c-e>'
-g.loaded_netrw = 1 -- let nvim-tree hijack directory windows (e. g. `nvim .`)
+g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
 g.loaded_netrwPlugin = 1
 g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
 
@@ -49,19 +49,20 @@ o.foldlevelstart = 99 -- Do not automatically fold
 o.formatoptions = 'qrn1'
 o.grepformat = '%f:%l:%c:%m,%f:%l:%m'
 o.grepprg = 'rg --smart-case --vimgrep --no-heading' -- use ripgrep
-o.hidden = true -- Avoid asking to save before hiding
+o.hidden = true                                      -- Avoid asking to save before hiding
 o.history = 1000
-o.hlsearch = false -- Don't highlight matched regexp by default
+o.hlsearch = false                                   -- Don't highlight matched regexp by default
 o.ignorecase = true
-o.incsearch = true -- Search all instances
+o.incsearch = true                                   -- Search all instances
 o.joinspaces = false
 o.lazyredraw = true
 o.linebreak = true -- Word wrap if wrapping is enabled
 o.maxmempattern = 5000
-o.modeline = true -- Respect modeline of the file (the famous "vi:noai:sw = 3 ts=6" on the beginning of the files)
-o.mouse = 'a' -- allow mouse in console
+o.modeline = true  -- Respect modeline of the file (the famous "vi:noai:sw = 3 ts=6" on the beginning of the files)
+o.mouse = 'a'      -- allow mouse in console
 o.number = true
 o.numberwidth = 1
+o.omnifunc = 'syntaxcomplete#Complete'
 o.previewheight = 25
 o.ruler = true
 o.scroll = 5
@@ -71,7 +72,7 @@ o.shiftround = true
 o.shiftwidth = 4
 o.shortmess = 'aoOtI'
 o.showbreak = '╰'
-o.showcmd = true -- Show number of selected chars/lines
+o.showcmd = true  -- Show number of selected chars/lines
 o.showmatch = true
 o.showtabline = 1 -- Always show tabline
 o.sidescroll = 1
@@ -81,9 +82,9 @@ o.smartindent = true
 o.smarttab = true
 o.softtabstop = 4
 o.spell = false
-o.spelllang = 'en' -- Spell checking
+o.spelllang = 'en'    -- Spell checking
 o.splitbelow = false
-o.splitright = true -- Open new splits to the right
+o.splitright = true   -- Open new splits to the right
 o.startofline = false -- Keep the cursor in the current column when moving between lines (if possible)
 o.swapfile = false
 o.tabstop = 4
@@ -112,7 +113,7 @@ o.wrapmargin = 0
 o.writebackup = false
 
 opt.backspace = { 'indent', 'eol', 'start' } -- Backspace as expected
-opt.complete = { '.', 'w', 'b', 'u', 't' } -- Insert-mode completion
+opt.complete = { '.', 'w', 'b', 'u', 't' }   -- Insert-mode completion
 opt.completeopt:remove({ 'preview' })
 opt.diffopt = { 'vertical', 'filler' }
 opt.fileformats = { 'unix', 'dos' }

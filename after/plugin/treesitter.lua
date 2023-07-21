@@ -11,7 +11,8 @@ require 'nvim-treesitter.configs'.setup {
         'rust',
         'scss',
         'svelte',
-        'typescript'
+        'typescript',
+        'vue',
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
