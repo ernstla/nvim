@@ -40,6 +40,10 @@ require('lualine').setup {
         theme = theme,
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
+        -- Lualine kills the nvim intro screen if separators are used.
+        -- If they are disabled like below, the intro screen stays.
+        --    component_separators = '',
+        --    section_separators = '',
         disabled_filetypes = {
             statusline = {},
             winbar = {},

@@ -70,6 +70,7 @@ o.scrolljump = 1
 o.scrolloff = 0
 o.shiftround = true
 o.shiftwidth = 4
+-- o.shortmess = 'filnxtToOF'
 o.shortmess = 'aoOtI'
 o.showbreak = '╰'
 o.showcmd = true  -- Show number of selected chars/lines
@@ -126,3 +127,5 @@ opt.tags = { './.tags', './tags' }
 opt.wildignore = { '*.o', '*.obj', '*.pyc', '*.swc', '*.DS_STORE', '*.bkp' }
 
 wo.signcolumn = 'yes'
+
+-- vim.cmd('source ' .. home .. '/.config/nvim/statusline.vim')
