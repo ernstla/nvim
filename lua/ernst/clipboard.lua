@@ -14,3 +14,18 @@ if vim.fn.has('wsl') == 1 then
         cache_enabled = false,
     }
 end
+
+if vim.fn.executable('pbcopy') == 1 then
+    vim.g.clipboard = {
+        name = 'pbcopy',
+        copy = {
+            ['+'] = {'pbcopy'},
+            ['*'] = {'pbcopy'},
+        },
+        paste = {
+            ['+'] = {'pbpaste'},
+            ['*'] = {'pbpaste'},
+        },
+        cache_enabled = false,
+    }
+end
