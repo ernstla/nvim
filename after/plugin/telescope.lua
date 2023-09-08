@@ -26,7 +26,17 @@ require('telescope').setup {
             previewer = false,
         },
         find_files = {
-            hidden = true
+            hidden = true,
+            find_command = {
+                'fdfind',
+                '--type', 'f',
+                '--no-ignore',
+                '--hidden',
+                '--exclude=node_modules',
+                '--exclude=.git',
+                '--color=never',
+                '--follow',
+            }
         },
         buffers = {
             show_all_buffers = true,
