@@ -6,6 +6,8 @@ null_ls.setup({
             extra_filetypes = { "svelte" },
         }),
         null_ls.builtins.formatting.phpcsfixer,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
         --null_ls.builtins.diagnostics.php,
         --null_ls.builtins.diagnostics.phpcs,
         --null_ls.builtins.diagnostics.psalm,
