@@ -8,6 +8,7 @@ require("oil").setup({
         ["<C-p>"] = "actions.preview",
         ["<C-c>"] = "actions.close",
         ["q"] = "actions.close",
+        ["<esc>"] = "actions.close",
         ["<C-l>"] = "actions.refresh",
         ["-"] = "actions.parent",
         ["_"] = "actions.open_cwd",
