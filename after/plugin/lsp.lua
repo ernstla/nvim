@@ -2,8 +2,8 @@
 
 local on_init = function(client, initialization_result)
     if client.server_capabilities then
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
+        -- client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.semanticTokensProvider = false         -- turn off semantic tokens
     end
 end
 
@@ -222,7 +222,7 @@ cmp.setup {
     formatting = {
         format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)             -- This concatonates the icons with the name of the item kind
             -- Source
             vim_item.menu = ({
                 buffer = "[Buffer]",

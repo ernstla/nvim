@@ -38,6 +38,9 @@ M.servers = {
             pylsp = {
                 configurationSources = { 'flake8' },
                 plugins = {
+                    black = {
+                        enabled = true
+                    },
                     flake8 = {
                         enabled = true,
                         ignore = { 'E501' },
@@ -67,8 +70,10 @@ M.servers = {
                     'fileinfo', 'filter', 'ftp', 'gd', 'gettext', 'hash', 'iconv', 'imap', 'intl',
                     'json', 'ldap', 'libxml', 'memcached', 'mbstring', 'mcrypt', 'mysql', 'mysqli',
                     'openssl', 'password', 'pcntl', 'pcre', 'PDO', 'pdo_mysql', 'Phar', 'readline',
-                    'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets', 'sodium',
-                    'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer', 'xml', 'xdebug',
+                    'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets',
+                    'sodium',
+                    'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer', 'xml',
+                    'xdebug',
                     'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib', 'wordpress', 'woocommerce'
                 },
                 files = {
@@ -76,7 +81,7 @@ M.servers = {
                 },
                 format = {
                     -- This does not work. See intelephense condition in lsp.lua `on_attach`
-                    enable = false, -- use phpcsfixer with ls-null
+                    enable = false,                     -- use phpcsfixer with ls-null
                 },
                 diagnostics = {
                     enable = true,
@@ -90,6 +95,12 @@ M.servers = {
             Lua = {
                 workspace = { checkThirdParty = false },
                 telemetry = { enable = false },
+                format = {
+                    defaultConfig = {
+                        indent_style = "space",
+                        indent_size = 2
+                    }
+                }
             },
         },
     },

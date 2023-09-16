@@ -47,9 +47,8 @@ require("lazy").setup({
     },
 
     {
-        -- filebeagle and dirvish alternative
-        'tamago324/lir.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
+        'stevearc/oil.nvim',
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
