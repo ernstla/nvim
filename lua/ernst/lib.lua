@@ -21,7 +21,8 @@ M.print_highlight_group = function()
     local highlighter = require "vim.treesitter.highlighter"
 
     if highlighter.active[buf] then
-        vim.cmd('TSHighlightCapturesUnderCursor')
+        vim.cmd('TSNodeUnderCursor')
+        --vim.cmd('TSHighlightCapturesUnderCursor')
     else
         print(get_highlight_group())
     end
