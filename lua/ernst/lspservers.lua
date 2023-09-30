@@ -8,7 +8,20 @@ M.servers = {
     jsonls = {},
     svelte = {},
     -- volar = {},
-    tsserver = {},
+    tsserver = {
+        settings = {
+            javascript = {
+                format = {
+                    enabled = false
+                }
+            },
+            typescript = {
+                format = {
+                    enabled = false
+                }
+            },
+        }
+    },
     eslint = {},
     stylelint_lsp = {
         filetypes = { 'css', 'less', 'postcss', 'sass', 'scss' },
@@ -38,9 +51,6 @@ M.servers = {
             pylsp = {
                 configurationSources = { 'flake8' },
                 plugins = {
-                    black = {
-                        enabled = true
-                    },
                     flake8 = {
                         enabled = true,
                         ignore = { 'E501' },
@@ -81,7 +91,7 @@ M.servers = {
                 },
                 format = {
                     -- This does not work. See intelephense condition in lsp.lua `on_attach`
-                    enable = false,                     -- use phpcsfixer with ls-null
+                    enable = false, -- use phpcsfixer directly
                 },
                 diagnostics = {
                     enable = true,

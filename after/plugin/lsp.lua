@@ -2,8 +2,22 @@
 
 local on_init = function(client, initialization_result)
     if client.server_capabilities then
-        -- client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.semanticTokensProvider = false         -- turn off semantic tokens
+        if client.name == "tsserver" then
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+        end
+
+        -- prefer php-cs-fixer formatting over intelephense
+        if client.name == "intelephense" then
+            client.server_capabilities.documentFormattingProvider = false
+        end
+
+        -- prefer black/isort over lsp capabilities
+        if client.name == "pylsp" then
+            client.server_capabilities.documentFormattingProvider = false
+        end
+
+        client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
     end
 end
 
@@ -38,11 +52,6 @@ local on_attach = function(client, bufnr)
     -- if client.server_capabilities.semanticTokensProvider then
     --     client.server_capabilities.semanticTokensProvider = nil
     -- end
-
-    -- prefer null-ls/php-cs-fixer formatting over intelephense
-    if client.name == "intelephense" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
 
     -- prefer EslintFixAll formatting over volar
     -- if client.name == "volar" then
@@ -222,7 +231,7 @@ cmp.setup {
     formatting = {
         format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)             -- This concatonates the icons with the name of the item kind
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             -- Source
             vim_item.menu = ({
                 buffer = "[Buffer]",

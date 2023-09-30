@@ -20,11 +20,6 @@ require("lazy").setup({
     },
 
     {
-        'jose-elias-alvarez/null-ls.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
-    {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
@@ -70,6 +65,7 @@ require("lazy").setup({
 
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
+    'nvimdev/guard.nvim',
     'hrsh7th/cmp-buffer',
     'pangloss/vim-javascript',
     'NvChad/nvim-colorizer.lua',

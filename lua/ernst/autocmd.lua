@@ -52,6 +52,22 @@ autocmd({ 'BufWritePre' }, {
     command = 'EslintFixAll'
 })
 
+autocmd({ 'BufWritePre' }, {
+    group = Ernst,
+    pattern = {
+        '*.py',
+    },
+    command = 'GuardFmt'
+})
+
+autocmd({ 'BufWritePost' }, {
+    group = Ernst,
+    pattern = {
+        '*.php',
+    },
+    command = 'GuardFmt'
+})
+
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = '*/templates/*.php',
