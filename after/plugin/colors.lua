@@ -127,13 +127,15 @@ hl(0, '@punctuation.bracket.svelte', { fg = '#7ab6e8' })
 hl(0, '@keyword.svelte', { fg = '#7ab6e8' })
 hl(0, '@punctuation.bracket.svelte', { fg = '#7ab6e8' })
 
-hl(0, '@method.vue', { fg = '#86a943' })
+hl(0, '@method.vue', { fg = '#9ccfd8' })
 hl(0, '@operator.vue', { fg = '#ffbb29' })
 hl(0, '@variable.vue', { fg = '#f5e28e' })
 hl(0, '@punctuation.special.vue', { fg = '#f5e28e' })
+hl(0, '@tag.attribute.directive.vue', { fg = '#7ab6e8' })
 
 hl(0, '@property.javascript', { fg = '#f2e9e1' })
 hl(0, '@variable.javascript', { fg = '#f2e9e1' })
+
 
 -- Strange vim groups not affected by TreeSitter
 -- e. g. svelte custom component names (uppercase tag name)
