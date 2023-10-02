@@ -5,9 +5,10 @@ local ft = require('guard.filetype')
 ft('php'):fmt({
     cmd = 'php-cs-fixer',
     args = {
-        "--no-interaction",
-        "--quiet",
-        "fix",
+        '--no-interaction',
+        '--config=.php-cs-fixer.dist.php',
+        '--quiet',
+        'fix',
     },
     fname = true,
     stdin = false,  -- php-cs-fixer does not support stdin/stdout
