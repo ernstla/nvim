@@ -200,4 +200,32 @@ return {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
+    snippet('only', {
+        t('/** @group only */')
+    }),
+    snippet('equal', {
+        t("$this->assertEquals("),
+        i(0),
+        t(")"),
+    }),
+    snippet('equals', {
+        t("$this->assertEquals('"),
+        i(0),
+        t("')"),
+    }),
+    snippet('same', {
+        t("$this->assertSame("),
+        i(0),
+        t(")"),
+    }),
+    snippet('sames', {
+        t("$this->assertSame('"),
+        i(0),
+        t("')"),
+    }),
+    snippet('instance', {
+        t("$this->assertInstanceOf("),
+        i(0),
+        t(")"),
+    }),
 }
