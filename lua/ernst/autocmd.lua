@@ -60,19 +60,30 @@ autocmd({ 'BufWritePre' }, {
     command = 'GuardFmt'
 })
 
-autocmd({ 'BufWritePost' }, {
+-- autocmd({ 'BufWritePost' }, {
+--     group = Ernst,
+--     pattern = {
+--         '*.php',
+--     },
+--     callback = function()
+--         local winview = vim.fn.winsaveview()
+--         vim.api.nvim_command('GuardFmt')
+--         vim.fn.winrestview(winview)
+--     end,
+-- })
+autocmd("BufWritePost", {
     group = Ernst,
     pattern = {
         '*.php',
     },
-    command = 'GuardFmt'
+    command = "silent! !php-cs-fixer fix <afile>",
 })
 
-autocmd({ 'BufRead', 'BufNewFile' }, {
-    group = Ernst,
-    pattern = '*/templates/*.php',
-    command = 'set filetype=html syntax=php',
-})
+-- autocmd({ 'BufRead', 'BufNewFile' }, {
+--     group = Ernst,
+--     pattern = '*/templates/*.php',
+--     command = 'set filetype=html syntax=php',
+-- })
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { 'tsconfig.json', },

@@ -2,10 +2,11 @@
 
 local ft = require('guard.filetype')
 
-ft('php'):fmt({
+local phpFixerArgs = {
     cmd = 'php-cs-fixer',
     args = {
         '--no-interaction',
+        '--allow-risky=yes',
         '--config=.php-cs-fixer.dist.php',
         '--quiet',
         'fix',
@@ -13,7 +14,9 @@ ft('php'):fmt({
     fname = true,
     stdin = false,  -- php-cs-fixer does not support stdin/stdout
     stdout = false, -- triggers re-read file after formatting
-})
+}
+ft('php'):fmt(phpFixerArgs)
+ft('html'):fmt(phpFixerArgs)
 
 ft('python'):fmt({
     cmd = 'black',
