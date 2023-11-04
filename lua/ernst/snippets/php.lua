@@ -200,8 +200,11 @@ return {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
+    snippet('useonly', {
+        t("use PHPUnit\\Framework\\Attributes\\Group;")
+    }),
     snippet('only', {
-        t('/** @group only */')
+        t("#[Group('only')]")
     }),
     snippet('equal', {
         t("$this->assertEquals("),
