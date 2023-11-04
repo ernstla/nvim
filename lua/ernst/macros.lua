@@ -33,6 +33,15 @@ setreg(
     )
 )
 
+-- Pest to PHPUnit - transform expect()->toContain
+setreg(
+    'C',
+    replace(
+        ':let oldpattern=@/<CR>^cw$this->assertStringContainsString<ESC>la, <ESC>' ..
+        '$xx^/)->toContain<CR>vlllllllllllldD^/,<CR>P$a);<ESC>:let @/=oldpattern<CR>j^'
+    )
+)
+
 -- Pest to PHPUnit - transform expect()->toBeInstanceOf
 setreg(
     'I',
