@@ -13,6 +13,7 @@ require 'nvim-treesitter.configs'.setup {
         'svelte',
         'typescript',
         'vue',
+        'markdown_inline',
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

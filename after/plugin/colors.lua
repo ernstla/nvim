@@ -136,6 +136,9 @@ hl(0, '@tag.attribute.directive.vue', { fg = '#7ab6e8' })
 hl(0, '@property.javascript', { fg = '#f2e9e1' })
 hl(0, '@variable.javascript', { fg = '#f2e9e1' })
 
+hl(0, '@text.literal.markdown_inline', { fg = '#eb6b36' })
+hl(0, '@punctuation.delimiter.markdown_inline', { fg = '#eb6b36' })
+
 
 -- Strange vim groups not affected by TreeSitter
 -- e. g. svelte custom component names (uppercase tag name)
@@ -322,9 +325,6 @@ hl(0, 'sqlPhpRegion', { fg = '#ffaaaa' })
 hl(0, 'sqlColonParam', { fg = '#95c2e8' })
 hl(0, 'sqlPostgresDelim', { fg = '#95c2e8' })
 hl(0, 'sqlPostgresVariable', { fg = '#95c2e8' })
-
-hl(0, 'markdownBold', { fg = '#f4e28e' })
-hl(0, 'markdownItalic', { fg = '#ffc48c' })
 
 hl(0, 'nimStatement', { fg = '#97b060' })
 hl(0, 'nimException', { fg = '#97b060' })

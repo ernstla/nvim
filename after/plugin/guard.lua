@@ -28,9 +28,15 @@ ft('python'):fmt({
     stdin = true,
 })
 
-ft('vue,svelte'):fmt({
+local prettier = {
     cmd = 'prettier',
     args = { '--stdin-filepath' },
     fname = true,
     stdin = true,
-})
+}
+
+ft('css'):fmt(prettier)
+ft('javascript'):fmt(prettier)
+ft('svelte'):fmt(prettier)
+ft('typescript'):fmt(prettier)
+ft('scss'):fmt(prettier)

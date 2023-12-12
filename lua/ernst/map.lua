@@ -45,6 +45,9 @@ map('n', '<leader>tr', ':set relativenumber!<cr>', opts)
 -- Toggle wrapping
 map('n', '<leader>w', ':set wrap! wrap?<cr>', opts)
 
+-- Reformat paragraph
+map('n', '<leader>f', 'vipgq')
+
 -- Toggle invisibles
 map('n', '<leader>i', ':set list!<cr>', opts)
 

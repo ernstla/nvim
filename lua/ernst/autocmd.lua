@@ -28,17 +28,11 @@ autocmd({ 'BufWritePre' }, {
 autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
-        '*.html',
         '*.json',
         '*.lua',
         '*.nim',
-        '*.php',
         '*.py',
         '*.rs',
-        '*.scss',
-        '*.svelte',
-        '*.ts',
-        '*.js',
         '*rc',
     },
     command = 'lua vim.lsp.buf.format()'
@@ -55,26 +49,21 @@ autocmd({ 'BufWritePre' }, {
 autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
-        '*.py',
+        '*.css',
+        '*.html',
+        '*.js',
+        '*.scss',
+        '*.svelte',
+        '*.ts',
     },
     command = 'GuardFmt'
 })
 
--- autocmd({ 'BufWritePost' }, {
---     group = Ernst,
---     pattern = {
---         '*.php',
---     },
---     callback = function()
---         local winview = vim.fn.winsaveview()
---         vim.api.nvim_command('GuardFmt')
---         vim.fn.winrestview(winview)
---     end,
--- })
 autocmd("BufWritePost", {
     group = Ernst,
     pattern = {
-        '*.php',
+        'src/**/*.php',
+        'tests/**/*.php',
     },
     command = "silent! !php-cs-fixer fix <afile>",
 })

@@ -7,7 +7,8 @@ M = {}
 M.servers = {
     jsonls = {},
     svelte = {},
-    -- volar = {},
+    eslint = {},
+
     tsserver = {
         settings = {
             javascript = {
@@ -20,15 +21,6 @@ M.servers = {
                     enabled = false
                 }
             },
-        }
-    },
-    eslint = {},
-    stylelint_lsp = {
-        filetypes = { 'css', 'less', 'postcss', 'sass', 'scss' },
-        settings = {
-            stylelintplus = {
-                autoFixOnFormat = true,
-            }
         }
     },
 
