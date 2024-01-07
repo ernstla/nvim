@@ -201,10 +201,13 @@ return {
         t({ '', '}' }),
     }),
     snippet('useonly', {
-        t("use PHPUnit\\Framework\\Attributes\\Group;")
+        t("use PHPUnit\\Framework\\Attributes\\Group as G;")
+    }),
+    snippet('useo', {
+        t("use PHPUnit\\Framework\\Attributes\\Group as G;")
     }),
     snippet('only', {
-        t("#[Group('only')]")
+        t("#[G('only')]")
     }),
     snippet('equal', {
         t("$this->assertEquals("),

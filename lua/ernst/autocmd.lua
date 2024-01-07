@@ -62,10 +62,9 @@ autocmd({ 'BufWritePre' }, {
 autocmd("BufWritePost", {
     group = Ernst,
     pattern = {
-        'src/**/*.php',
-        'tests/**/*.php',
+        '*.php',
     },
-    command = "silent! !php-cs-fixer fix <afile>",
+    command = "silent! !php-cs-fixer fix <afile> | e",
 })
 
 -- autocmd({ 'BufRead', 'BufNewFile' }, {
