@@ -67,6 +67,7 @@ require("lazy").setup({
 
     'nvimdev/guard.nvim',
     'hrsh7th/cmp-buffer',
+    'Exafunction/codeium.vim',
     'pangloss/vim-javascript',
     'NvChad/nvim-colorizer.lua',
     'aserowy/tmux.nvim',
