@@ -28,7 +28,7 @@ setreg(
 setreg(
     'E',
     replace(
-        ':let oldpattern=@/<CR>^cw$this->assertEquals<ESC>la, <ESC>' ..
+        ':let oldpattern=@/<CR>^cw$this->assertSame<ESC>la, <ESC>' ..
         '$xx^/)->toBe<CR>vllllllldD^/,<CR>P$a);<ESC>:let @/=oldpattern<CR>j^'
     )
 )
