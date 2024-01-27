@@ -63,7 +63,7 @@ hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#f9c2c2' })
 hl(0, 'Search', { fg = '#1c1c1c', bg = '#c47b7b' })
 hl(0, 'LineNr', { fg = '#1f323f' })
 hl(0, 'Normal', { fg = '#f2e9e1', bg = 'none', })
-hl(0, 'NormalFloat', { bg = 'none' })
+hl(0, 'NormalFloat', { bg = '#131313' })
 hl(0, 'NormalNC', { fg = '#f2e9e1', bg = 'none', })
 hl(0, 'TabLine', { fg = '#586e75', bg = 'none' })
 hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
@@ -73,7 +73,7 @@ hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
 hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
 
 -- Autocomplete menus
-hl(0, 'Pmenu', { fg = '#ffffff', bg = '#101316' })
+hl(0, 'Pmenu', { fg = '#ffffff', bg = '#801316' })
 hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#485b39' })
 hl(0, 'CmpBorder', { fg = '#505356' })
 
