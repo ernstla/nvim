@@ -46,19 +46,6 @@ autocmd({ 'BufWritePre' }, {
     command = 'EslintFixAll'
 })
 
-autocmd({ 'BufWritePre' }, {
-    group = Ernst,
-    pattern = {
-        '*.css',
-        '*.html',
-        '*.js',
-        '*.scss',
-        '*.svelte',
-        '*.ts',
-    },
-    command = 'GuardFmt'
-})
-
 autocmd("BufWritePost", {
     group = Ernst,
     pattern = {
@@ -67,21 +54,18 @@ autocmd("BufWritePost", {
     command = "silent! !php-cs-fixer fix <afile> | e",
 })
 
--- autocmd({ 'BufRead', 'BufNewFile' }, {
---     group = Ernst,
---     pattern = '*/templates/*.php',
---     command = 'set filetype=html syntax=php',
--- })
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { 'tsconfig.json', },
     command = 'set filetype=jsonc'
 })
+
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { '*.mako', },
     command = 'set filetype=mako'
 })
+
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { '*.msql', },
