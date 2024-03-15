@@ -1,4 +1,4 @@
-require 'qf_helper'.setup({
+require('qf_helper').setup({
     prefer_loclist = true, -- Used for QNext/QPrev (see Commands below)
     sort_lsp_diagnostics = true, -- Sort LSP diagnostic results
     quickfix = {

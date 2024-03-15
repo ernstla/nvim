@@ -4,7 +4,6 @@ require("oil").setup({
         ["."] = "actions.toggle_hidden",
         ["<C-c>"] = "actions.close",
         ["<C-i>"] = "actions.select_vsplit",
-        ["<C-i>"] = "actions.select_vsplit",
         ["<C-p>"] = "actions.preview",
         ["<C-s>"] = "actions.select_split",
         ["<C-t>"] = "actions.select_tab",

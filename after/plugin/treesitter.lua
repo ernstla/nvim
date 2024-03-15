@@ -1,22 +1,25 @@
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or 'all'
     ensure_installed = {
-        'c',      -- these
-        'lua',    -- are
-        'vim',    -- provided
-        'vimdoc', -- by neovim
+        'c',
         'css',
         'html',
         'javascript',
+        'lua',
+        'markdown_inline',
         'php',
         'python',
+        'query',
         'rust',
         'scss',
         'svelte',
         'typescript',
+        'vim',
+        'vimdoc',
         'vue',
-        'markdown_inline',
     },
+
+    modules = {},
 
     ignore_install = {},
 
