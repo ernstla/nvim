@@ -43,7 +43,6 @@ o.equalalways = true
 o.errorbells = false
 o.expandtab = true
 o.exrc = true
-o.fileformat = 'unix'
 o.foldcolumn = '0'
 o.foldlevelstart = 99 -- Do not automatically fold
 o.formatoptions = 'qrn1'

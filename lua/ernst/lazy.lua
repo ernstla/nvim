@@ -31,7 +31,7 @@ require("lazy").setup({
 
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.5',
+        branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
@@ -50,11 +50,10 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
 
+
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         dependencies = {
             'nvim-treesitter/playground',
             -- Additional text objects via treesitter
@@ -65,7 +64,6 @@ require("lazy").setup({
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
     'nvimdev/guard.nvim',
-    -- 'leafOfTree/vim-svelte-plugin',
     'hrsh7th/cmp-buffer',
     'Exafunction/codeium.vim',
     'pangloss/vim-javascript',
@@ -88,7 +86,7 @@ require("lazy").setup({
 
     -- Languages
     'alaviss/nim.nvim',
-    'ziglang/zig.vim',
+    'ziglang/zig',
 }, {
     ui = {
         border = "single",
