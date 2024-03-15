@@ -88,6 +88,7 @@ require("lazy").setup({
 
     -- Languages
     'alaviss/nim.nvim',
+    'ziglang/zig.vim',
 }, {
     ui = {
         border = "single",
