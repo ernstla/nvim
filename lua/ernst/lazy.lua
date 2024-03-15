@@ -38,7 +38,6 @@ require("lazy").setup({
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     },
 
     {
@@ -66,6 +65,7 @@ require("lazy").setup({
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
     'nvimdev/guard.nvim',
+    -- 'leafOfTree/vim-svelte-plugin',
     'hrsh7th/cmp-buffer',
     'Exafunction/codeium.vim',
     'pangloss/vim-javascript',

@@ -8,15 +8,15 @@ require('nvim-tree').setup({
     },
     view = {
         adaptive_size = true,
-        mappings = {
-            list = {
-                { key = "-", action = "" },
-                { key = "?", action = "toggle_help" },
-                { key = 'O', action = 'edit' },
-                { key = 'u', action = 'dir_up' },
-                { key = { 'o', '<cr>' }, action = 'edit_no_picker' },
-            },
-        },
+        --mappings = {
+        --    list = {
+        --        { key = "-", action = "" },
+        --        { key = "?", action = "toggle_help" },
+        --        { key = 'O', action = 'edit' },
+        --        { key = 'u', action = 'dir_up' },
+        --        { key = { 'o', '<cr>' }, action = 'edit_no_picker' },
+        --    },
+        --},
     },
     renderer = {
         group_empty = true,

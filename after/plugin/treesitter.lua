@@ -1,11 +1,13 @@
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or 'all'
     ensure_installed = {
-        'c',
+        'c',      -- these
+        'lua',    -- are
+        'vim',    -- provided
+        'vimdoc', -- by neovim
         'css',
         'html',
         'javascript',
-        'lua',
         'php',
         'python',
         'rust',
@@ -15,6 +17,8 @@ require 'nvim-treesitter.configs'.setup {
         'vue',
         'markdown_inline',
     },
+
+    ignore_install = {},
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
