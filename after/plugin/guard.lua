@@ -28,19 +28,19 @@ ft('python'):fmt({
     stdin = true,
 })
 
-local prettier = {
-    cmd = 'prettier',
-    args = { '--stdin-filepath' },
-    fname = true,
-    stdin = true,
-    opts = {},
-}
+-- local prettier = {
+--     cmd = 'prettier',
+--     args = { '--stdin-filepath' },
+--     fname = true,
+--     stdin = true,
+--     opts = {},
+-- }
 
-ft('css'):fmt(prettier)
-ft('javascript'):fmt(prettier)
-ft('svelte'):fmt(prettier)
-ft('typescript'):fmt(prettier)
-ft('scss'):fmt(prettier)
+-- ft('css'):fmt(prettier)
+-- ft('javascript'):fmt(prettier)
+-- ft('svelte'):fmt(prettier)
+-- ft('typescript'):fmt(prettier)
+-- ft('scss'):fmt(prettier)
 
 require('guard').setup({
     -- Choose to format on every write to a buffer

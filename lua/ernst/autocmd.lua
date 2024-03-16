@@ -28,11 +28,16 @@ autocmd({ 'BufWritePre' }, {
 autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
+        '*.css',
+        '*.js',
         '*.json',
         '*.lua',
         '*.nim',
         '*.py',
         '*.rs',
+        '*.scss',
+        '*.svelte',
+        '*.ts',
         '*rc',
     },
     command = 'lua vim.lsp.buf.format()'
