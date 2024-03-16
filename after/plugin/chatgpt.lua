@@ -1,8 +1,8 @@
-local secrets = require('ernst/secrets')
-
-if not secrets then
+if not pcall(require, 'ernst/secrets') then
     return
 end
+
+local secrets = require('ernst/secrets')
 
 require('gp').setup({
     openai_api_key = secrets.openai_api_key,
