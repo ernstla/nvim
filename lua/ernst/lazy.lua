@@ -60,10 +60,23 @@ require("lazy").setup({
             'nvim-treesitter/nvim-treesitter-textobjects',
         }
     },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        -- The following is already set in init.lua
+        --init = function()
+        --    vim.o.timeout = true
+        --    vim.o.timeoutlen = 500
+        --end
+    },
+
+    {
+        'robitx/gp.nvim',
+        dependencies = 'folke/which-key.nvim'
+    },
 
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
-    'robitx/gp.nvim',
     'Exafunction/codeium.vim',
     'NvChad/nvim-colorizer.lua',
     'aserowy/tmux.nvim',
