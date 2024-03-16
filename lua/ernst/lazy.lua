@@ -63,18 +63,19 @@ require("lazy").setup({
 
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
-    'nvimdev/guard.nvim',
-    'hrsh7th/cmp-buffer',
+    'robitx/gp.nvim',
     'Exafunction/codeium.vim',
-    'pangloss/vim-javascript',
     'NvChad/nvim-colorizer.lua',
     'aserowy/tmux.nvim',
     'bronson/vim-visual-star-search',
+    'hrsh7th/cmp-buffer',
     'lewis6991/gitsigns.nvim',
     'mattn/emmet-vim',
     'mbbill/undotree',
     'mg979/vim-visual-multi',
     'numToStr/Comment.nvim',
+    'nvimdev/guard.nvim',
+    'pangloss/vim-javascript',
     'simrat39/symbols-outline.nvim',
     'stevearc/qf_helper.nvim',
 
