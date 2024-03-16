@@ -1,81 +1,89 @@
 --Remap space as leader key
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true, nowait = true }
 
-map('', '<space>', '<nop>', opts)
+function map(mode, lhs, rhs, newopts)
+    local opts = { noremap = true, silent = true, nowait = true }
+    newopts = newopts or {}
+    for k, v in pairs(newopts) do opts[k] = v end
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
 
-map('n', 'k', 'gk', opts)
-map('n', '<up>', 'gk', opts)
-map('n', 'j', 'gj', opts)
-map('n', '<down>', 'gj', opts)
-map('v', 'k', 'gk', opts)
-map('v', '<up>', 'gk', opts)
-map('v', 'j', 'gj', opts)
-map('v', '<down>', 'gj', opts)
+map('', '<space>', '<nop>')
 
-map('n', 'Y', 'y$', opts)
+map('n', 'k', 'gk')
+map('n', '<up>', 'gk')
+map('n', 'j', 'gj')
+map('n', '<down>', 'gj')
+map('v', 'k', 'gk')
+map('v', '<up>', 'gk')
+map('v', 'j', 'gj')
+map('v', '<down>', 'gj')
+
+map('n', 'Y', 'y$')
+map("x", "p", [["_dP`[v`]=]], { desc = "Paste, but don't override the yank register" })
+map("x", "P", "p", { desc = "P with the default p behaviour" })
 
 -- Visually select current line without line ending
-map('n', '_', '^vg_', opts)
+map('n', '_', '^vg_')
 
 -- Easier quotes
-map('n', 'ci2', 'ci"', opts)
-map('n', 'ca2', 'ca"', opts)
-map('n', 'di2', 'di"', opts)
-map('n', 'da2', 'da"', opts)
-map('n', 'yi2', 'yi"', opts)
-map('n', 'ya2', 'ya"', opts)
+map('n', 'ci2', 'ci"')
+map('n', 'ca2', 'ca"')
+map('n', 'di2', 'di"')
+map('n', 'da2', 'da"')
+map('n', 'yi2', 'yi"')
+map('n', 'ya2', 'ya"')
 
 -- Double the number of leading spaces
-map('n', '<leader>ds', ':%s/^\\s*/&&<cr>', opts)
-map('v', '<leader>ds', ':s/^\\s*/&&<cr>', opts)
+map('n', '<leader>ds', ':%s/^\\s*/&&<cr>')
+map('v', '<leader>ds', ':s/^\\s*/&&<cr>')
 
 -- Tabs
-map('n', '<leader>tt', ':tabnew<cr>', opts)
+map('n', '<leader>tt', ':tabnew<cr>')
 
 -- Autocompletion
-map('i', '<c-n>', '<c-x><c-o>', opts)
+map('i', '<c-n>', '<c-x><c-o>')
 
 -- Toggle hlsearch
-map('n', '<leader>h', ':set hlsearch!<cr>', opts)
+map('n', '<leader>h', ':set hlsearch!<cr>')
 
 -- Toggle relativenumber
-map('n', '<leader>tr', ':set relativenumber!<cr>', opts)
+map('n', '<leader>tr', ':set relativenumber!<cr>')
 
 -- Toggle wrapping
-map('n', '<leader>w', ':set wrap! wrap?<cr>', opts)
+map('n', '<leader>w', ':set wrap! wrap?<cr>')
 
 -- Reformat paragraph
 map('n', '<leader>f', 'vipgq')
 
 -- Toggle invisibles
-map('n', '<leader>i', ':set list!<cr>', opts)
+map('n', '<leader>i', ':set list!<cr>')
 
 -- Resize window
-map('', '<leader>>', '20<c-w>>', opts)
-map('', '<leader><', '20<c-w><', opts)
-map('', '<leader>=', '10<c-w>+', opts)
-map('', '<leader>-', '10<c-w>-', opts)
+map('', '<leader>>', '20<c-w>>')
+map('', '<leader><', '20<c-w><')
+map('', '<leader>=', '10<c-w>+')
+map('', '<leader>-', '10<c-w>-')
 
 -- Center search matches
-map('n', 'n', 'nzz', opts)
-map('n', 'N', 'Nzz', opts)
-map('n', '*', '*zz', opts)
-map('n', '#', '#zz', opts)
-map('', '<c-o>', '<c-o>zz', opts)
-map('', '<c-i>', '<c-i>zz', opts)
+map('n', 'n', 'nzz')
+map('n', 'N', 'Nzz')
+map('n', '*', '*zz')
+map('n', '#', '#zz')
+map('', '<c-o>', '<c-o>zz')
+map('', '<c-i>', '<c-i>zz')
 
 -- Run last macro
-map('n', 'Q', '@@', opts)
-map('n', '<F6>', '@@', opts)
+map('n', 'Q', '@@')
+map('n', '<F6>', '@@')
 
 -- Get TreeSitter or Neovim highlight group under cursor
-map('n', '<leader>p', require('ernst/lib').print_highlight_group, opts)
+map('n', '<leader>p', require('ernst/lib').print_highlight_group)
 
-map('n', '[d', vim.diagnostic.goto_prev, opts)
-map('n', ']d', vim.diagnostic.goto_next, opts)
-map('n', '<leader>e', vim.diagnostic.open_float, opts)
-map('n', '<leader>q', vim.diagnostic.setloclist, opts)
+map('n', '[d', vim.diagnostic.goto_prev)
+map('n', ']d', vim.diagnostic.goto_next)
+map('n', '<leader>e', vim.diagnostic.open_float)
+map('n', '<leader>q', vim.diagnostic.setloclist)
 
-map('n', '<leader>gs', '<cmd>Git<cr>', opts)
-map('n', '<leader>gb', '<cmd>Git blame<cr>', opts)
+map('n', '<leader>gs', '<cmd>Git<cr>')
+map('n', '<leader>gb', '<cmd>Git blame<cr>')
