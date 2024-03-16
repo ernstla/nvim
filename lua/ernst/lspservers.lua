@@ -122,6 +122,8 @@ M.servers = {
         filetypes = { 'nim' },
         root_dir = util.root_pattern('.git') or util.os_homedir,
     },
+
+    tailwindcss = {},
 }
 
 return M
