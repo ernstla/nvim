@@ -101,6 +101,7 @@ require("lazy").setup({
     -- Languages
     'alaviss/nim.nvim',
     'ziglang/zig',
+    'luckasRanarison/tailwind-tools.nvim',
 }, {
     ui = {
         border = "single",
