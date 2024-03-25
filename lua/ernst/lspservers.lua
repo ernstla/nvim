@@ -8,6 +8,7 @@ M.servers = {
     jsonls = {},
     svelte = {},
     eslint = {},
+    ols = {},
 
     tsserver = {
         settings = {

@@ -33,6 +33,7 @@ autocmd({ 'BufWritePre' }, {
         '*.json',
         '*.lua',
         '*.nim',
+        '*.odin',
         '*.py',
         '*.rs',
         '*.scss',

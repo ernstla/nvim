@@ -7,6 +7,7 @@ require 'nvim-treesitter.configs'.setup {
         'javascript',
         'lua',
         'markdown_inline',
+        'odin',
         'php',
         'python',
         'query',
