@@ -87,3 +87,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist)
 
 map('n', '<leader>gs', '<cmd>Git<cr>')
 map('n', '<leader>gb', '<cmd>Git blame<cr>')
+
+-- Tailwind Tools
+map('n', '<leader>tw', '<cmd>TailwindConcealToggle<cr>')
+map('n', '<leader>tc', '<cmd>TailwindColorToggle<cr>')
