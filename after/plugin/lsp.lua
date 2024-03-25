@@ -89,8 +89,13 @@ require('mason').setup({
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 
+local excluded = {}
+if vim.fn.executable("ols") then
+    table.insert(excluded, "ols")
+end
 mason_lspconfig.setup {
-    ensure_installed = vim.tbl_keys(servers),
+    -- ensure_installed = vim.tbl_keys(servers),
+    automatic_installation = { exclude = excluded },
 }
 
 mason_lspconfig.setup_handlers {
