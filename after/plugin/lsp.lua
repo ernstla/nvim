@@ -12,8 +12,8 @@ local on_init = function(client, initialization_result)
             client.server_capabilities.documentFormattingProvider = false
         end
 
-        -- prefer black/isort over lsp capabilities
-        if client.name == "pylsp" then
+        -- prefer ruff via Guard over lsp capabilities
+        if client.name == "pylsp" or client.name == "rufflsp" then
             client.server_capabilities.documentFormattingProvider = false
         end
 

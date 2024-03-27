@@ -18,13 +18,14 @@ local phpFixerArgs = {
 ft('php'):fmt(phpFixerArgs)
 ft('html'):fmt(phpFixerArgs)
 
+
 ft('python'):fmt({
-    cmd = 'black',
-    args = { '--quiet', '-' },
+    cmd = 'ruff',
+    args = { 'format', '-' },
     stdin = true,
 }):append({
-    cmd = 'isort',
-    args = { '--', '-' },
+    cmd = 'ruff',
+    args = { 'check', '-', '--fix', '--select', 'I' },
     stdin = true,
 })
 
@@ -44,10 +45,7 @@ ft('python'):fmt({
 
 require('guard').setup({
     -- Choose to format on every write to a buffer
-    fmt_on_save = true,
+    fmt_on_save = false, -- Done via autocmd'ing GuardFmt. This setting seems to be unreliable - Ernst
     -- Use lsp if no formatter was defined for this filetype
     lsp_as_default_formatter = false,
-    -- By default, Guard writes the buffer on every format
-    -- You can disable this by setting:
-    -- save_on_fmt = false,
 })

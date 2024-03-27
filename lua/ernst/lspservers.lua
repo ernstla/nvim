@@ -9,6 +9,7 @@ M.servers = {
     svelte = {},
     eslint = {},
     ols = {},
+    ruff_lsp = {},
 
     tsserver = {
         settings = {
@@ -40,21 +41,6 @@ M.servers = {
             return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname)
         end,
         single_file_support = true,
-        settings = {
-            pylsp = {
-                configurationSources = { 'flake8' },
-                plugins = {
-                    flake8 = {
-                        enabled = true,
-                        ignore = { 'E501' },
-                        maxLineLength = 89
-                    },
-                    pycodestyle = {
-                        enabled = false,
-                    }
-                }
-            }
-        }
     },
 
     -- phpactor = {

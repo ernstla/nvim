@@ -34,7 +34,6 @@ autocmd({ 'BufWritePre' }, {
         '*.lua',
         '*.nim',
         '*.odin',
-        '*.py',
         '*.rs',
         '*.scss',
         '*.svelte',
@@ -52,12 +51,14 @@ autocmd({ 'BufWritePre' }, {
     command = 'EslintFixAll'
 })
 
-autocmd("BufWritePost", {
+autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
+        '*.py',
         '*.php',
+        '*.html',
     },
-    command = "silent! !php-cs-fixer fix <afile> | e",
+    command = 'GuardFmt'
 })
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
