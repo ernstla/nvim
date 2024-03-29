@@ -20,10 +20,25 @@ require('telescope').setup {
         },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
     },
+    extensions = {
+        fzf = {
+            fuzzy = true,                   -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
+        }
+    },
     pickers = {
         git_files = {
             hidden = true,
             previewer = false,
+            find_command = {
+                'fdfind',
+                '--type', 'f',
+                '--hidden',
+                '--follow',
+            }
         },
         find_files = {
             hidden = true,
@@ -77,6 +92,8 @@ require('telescope').setup {
         },
     },
 }
+
+require('telescope').load_extension('fzf')
 
 vim.keymap.set('n', '<m-p>', builtin.find_files, {})
 vim.keymap.set('n', '<c-p>', lib.project_files, {})
