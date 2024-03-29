@@ -117,12 +117,20 @@ require('lspconfig.ui.windows').default_options.border = 'single'
 -- nvim-cmp setup
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+luasnip.config.set_config({
+    update_events = 'TextChanged,TextChangedI' -- shows changes as you type with extras.rep
+})
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 map('i', '<c-j>', "<cmd>lua require('luasnip').jump(1)<cr>", opts)
 map('s', '<c-j>', "<cmd>lua require('luasnip').jump(1)<cr>", opts)
 map('i', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<cr>", opts)
 map('s', '<c-k>', "<cmd>lua require('luasnip').jump(-1)<cr>", opts)
+vim.keymap.set({ "i", "s" }, "<c-e>", function()
+    if luasnip.choice_active() then
+        luasnip.change_choice(1)
+    end
+end, { silent = true })
 
 -- Kill snippets session when leaving insert mode
 local unlinkgrp = vim.api.nvim_create_augroup(

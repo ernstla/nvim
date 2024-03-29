@@ -34,7 +34,7 @@ require('telescope').setup {
             hidden = true,
             previewer = false,
             find_command = {
-                'fdfind',
+                'fd',
                 '--type', 'f',
                 '--hidden',
                 '--follow',
@@ -43,7 +43,7 @@ require('telescope').setup {
         find_files = {
             hidden = true,
             find_command = {
-                'fdfind',
+                'fd',
                 '--type', 'f',
                 '--no-ignore',
                 '--hidden',
