@@ -108,7 +108,7 @@ autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank({
             higroup = 'YankHigh',
-            timeout = 373, -- what a prime number
+            timeout = 613, -- what a prime number
         })
     end,
 })

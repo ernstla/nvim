@@ -58,12 +58,12 @@ hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
 hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
 hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
 hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })
-hl(0, 'FloatBorder', { fg = '#404346', bg = 'none' })
+hl(0, 'FloatBorder', { fg = '#804346', bg = 'none' })
 hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#f9c2c2' })
 hl(0, 'Search', { fg = '#1c1c1c', bg = '#c47b7b' })
 hl(0, 'LineNr', { fg = '#1f323f' })
 hl(0, 'Normal', { fg = '#f2e9e1', bg = 'none', })
-hl(0, 'NormalFloat', { bg = '#5f2f49' })
+hl(0, 'NormalFloat', { bg = '#431313' })
 hl(0, 'NormalNC', { fg = '#f2e9e1', bg = 'none', })
 hl(0, 'TabLine', { fg = '#586e75', bg = 'none' })
 hl(0, 'TabLineFill', { fg = 'none', bg = 'none' })
@@ -105,7 +105,11 @@ hl(0, 'TelescopePreviewNormal', { fg = '#f2e9e1', bg = 'none' })
 hl(0, 'TelescopeResultsNormal', { fg = '#f2e9e1', bg = 'none' })
 
 -- Custom
-hl(0, 'YankHigh', { fg = '#f2e9e1', bg = '#a4233a' })
+hl(0, 'YankHigh', { fg = '#f2e9e1', bg = '#558822' })
+
+hl(0, 'MasonNormal', { bg = 'none', default = true })
+hl(0, 'LazyNormal', { bg = 'none', default = true })
+hl(0, 'WhichKeyFloat', { bg = '#171313' })
 
 -- TreeSitter
 hl(0, '@keyword', { fg = '#697eb3' })
