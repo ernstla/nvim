@@ -31,7 +31,7 @@ require("lazy").setup({
 
     {
         'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
+        --branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
@@ -92,7 +92,7 @@ require("lazy").setup({
     'mbbill/undotree',
     'mg979/vim-visual-multi',
     'numToStr/Comment.nvim',
-    'nvimdev/guard.nvim',
+    'stevearc/conform.nvim',
     'pangloss/vim-javascript',
     'simrat39/symbols-outline.nvim',
     'stevearc/qf_helper.nvim',

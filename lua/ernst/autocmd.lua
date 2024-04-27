@@ -28,16 +28,12 @@ autocmd({ 'BufWritePre' }, {
 autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
-        '*.css',
-        '*.js',
         '*.json',
         '*.lua',
         '*.nim',
         '*.odin',
         '*.rs',
         '*.scss',
-        '*.svelte',
-        '*.ts',
         '*rc',
     },
     command = 'lua vim.lsp.buf.format()'
@@ -57,8 +53,14 @@ autocmd({ 'BufWritePre' }, {
         '*.py',
         '*.php',
         '*.html',
+        '*.ts',
+        '*.svelte',
+        '*.js',
+        '*.css',
     },
-    command = 'GuardFmt'
+    callback = function(args)
+        require("conform").format({ bufnr = args.buf })
+    end,
 })
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
