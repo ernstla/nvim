@@ -18,7 +18,7 @@ require 'nvim-treesitter.configs'.setup {
         'typescript',
         'vim',
         'vimdoc',
-        'vue',
+        -- 'vue',
     },
 
     modules = {},
