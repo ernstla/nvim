@@ -73,6 +73,11 @@ map('n', '#', '#zz')
 map('', '<c-o>', '<c-o>zz')
 map('', '<c-i>', '<c-i>zz')
 
+-- Move faster
+map('n', '<m-j>', '5j')
+map('n', '<m-k>', '5k')
+
+
 -- Run last macro
 map('n', 'Q', '@@')
 map('n', '<F6>', '@@')
