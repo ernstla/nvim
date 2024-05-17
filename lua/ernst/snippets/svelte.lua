@@ -40,10 +40,29 @@ return {
         i(0),
         t({ '', '{/key}' }),
     }),
+    snippet('snippet', {
+        t('{#snippet '),
+        i(1, 'name'),
+        t({ '()}', '\t' }),
+        i(0),
+        t({ '', '{/snippet}' }),
+    }),
     snippet('debug', {
         t('{@debug '),
         i(0),
         t('}'),
+    }),
+    snippet('pprint', {
+        t('<pre>{JSON.stringify('),
+        i(0),
+        t(', null, 2)}</pre>'),
+    }),
+    snippet('render', {
+        t('{@render '),
+        i(1, 'name'),
+        t('('),
+        i(0),
+        t(')}'),
     }),
     snippet('_', {
         t("{_('"),
@@ -51,14 +70,14 @@ return {
         t("')}"),
     }),
     snippet('script', {
-        t({'<script lang="ts">', '\t'}),
+        t({ '<script lang="ts">', '\t' }),
         i(0),
-        t({'', '</script>'}),
+        t({ '', '</script>' }),
     }),
     snippet('style', {
-        t({'<style lang="postcss">', '\t'}),
+        t({ '<style lang="postcss">', '\t' }),
         i(0),
-        t({'', '</style>'}),
+        t({ '', '</style>' }),
     }),
     snippet("imps",
         fmt("import {a} from '{b}{a}.svelte';", {
