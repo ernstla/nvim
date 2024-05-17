@@ -95,7 +95,8 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 
-vim.keymap.set('n', '<m-p>', builtin.find_files, {})
+-- vim.keymap.set('n', '<m-p>', builtin.find_files, {})
+vim.keymap.set('n', '<m-p>', builtin.fd, {})
 vim.keymap.set('n', '<c-p>', lib.project_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<f9>', builtin.buffers, {})
