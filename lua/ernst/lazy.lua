@@ -63,7 +63,7 @@ require("lazy").setup({
         dependencies = {
             'nvim-treesitter/playground',
             -- Additional text objects via treesitter
-            'nvim-treesitter/nvim-treesitter-textobjects',
+            -- 'nvim-treesitter/nvim-treesitter-textobjects',
         }
     },
     {
