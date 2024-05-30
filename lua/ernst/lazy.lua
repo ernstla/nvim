@@ -82,7 +82,6 @@ require("lazy").setup({
     },
 
     { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
-    'Exafunction/codeium.vim',
     'NvChad/nvim-colorizer.lua',
     'aserowy/tmux.nvim',
     'bronson/vim-visual-star-search',
