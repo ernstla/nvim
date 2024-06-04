@@ -111,6 +111,11 @@ return {
         i(0),
         t(', true) . PHP_EOL;'),
     }),
+    snippet('dump', {
+        t('<?php var_dump('),
+        i(0),
+        t('); ?>'),
+    }),
     snippet('line', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
