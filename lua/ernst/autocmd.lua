@@ -30,6 +30,7 @@ autocmd({ 'BufWritePre' }, {
     pattern = {
         '*.json',
         '*.lua',
+        '*.go',
         '*.nim',
         '*.odin',
         '*.rs',

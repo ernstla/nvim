@@ -43,12 +43,17 @@ M.servers = {
         single_file_support = true,
     },
 
-    -- phpactor = {
-    --     init_options = {
-    --         ["language_server_php_cs_fixer.enabled"] = true,
-    --         ["language_server_psalm.enabled"] = true,
-    --     }
-    -- },
+    gopls = {
+        settings = {
+            gopls = {
+                completeUnimported = true,
+                usePlaceholders = true,
+                analyses = {
+                    unusedparams = true,
+                },
+            }
+        }
+    },
 
     intelephense = {
         init_options = { licenceKey = '005UH9RB1NL07NE' },
