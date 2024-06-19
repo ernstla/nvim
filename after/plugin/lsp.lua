@@ -1,5 +1,18 @@
 -- LSP settings.
 
+vim.diagnostic.config({
+    underline = true,
+    signs = true,
+    virtual_text = true,
+    float = {
+        show_header = true,
+        source = 'always',
+        border = 'rounded',
+        focusable = false,
+    },
+    update_in_insert = false,
+})
+
 local on_init = function(client, initialization_result)
     if client.server_capabilities then
         if client.name == "tsserver" then
