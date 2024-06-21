@@ -16,18 +16,9 @@ require('telescope').setup {
         layout_strategy = 'horizontal',
         layout_config = {
             vertical = { width = 0.5, height = 0.8, mirror = true, prompt_position = 'bottom' },
-            horizontal = { width = 91, height = 0.6, mirror = false, prompt_position = 'top' }
+            horizontal = { width = 191, height = 0.6, mirror = false, prompt_position = 'top' }
         },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
-    },
-    extensions = {
-        fzf = {
-            fuzzy = true,                   -- false will only do exact matching
-            override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true,    -- override the file sorter
-            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
-            -- the default case_mode is "smart_case"
-        }
     },
     pickers = {
         git_files = {
@@ -42,13 +33,19 @@ require('telescope').setup {
         },
         find_files = {
             hidden = true,
+            no_ignore = true,
+            follow = true,
             find_command = {
-                'fd',
+                'fdfind',
                 '--type', 'f',
                 '--no-ignore',
                 '--hidden',
                 '--exclude=node_modules',
+                '--exclude=vendor',
                 '--exclude=.git',
+                '--exclude=.svelte-kit',
+                '--exclude=build',
+                '--exclude=dist',
                 '--color=never',
                 '--follow',
             }
@@ -93,10 +90,7 @@ require('telescope').setup {
     },
 }
 
-require('telescope').load_extension('fzf')
-
--- vim.keymap.set('n', '<m-p>', builtin.find_files, {})
-vim.keymap.set('n', '<m-p>', builtin.fd, {})
+vim.keymap.set('n', '<m-p>', builtin.find_files, {})
 vim.keymap.set('n', '<c-p>', lib.project_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<f9>', builtin.buffers, {})
