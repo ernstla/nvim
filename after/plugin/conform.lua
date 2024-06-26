@@ -3,7 +3,7 @@
 require("conform").setup({
     formatters = {
         -- Only use python formatters if they are present in the virtual env
-        ruff = {
+        ruff_format = {
             command = (os.getenv("VIRTUAL_ENV") or "NOT/AVAILABLE") .. "/bin/ruff"
         },
         black = {
@@ -19,8 +19,8 @@ require("conform").setup({
         javascript = { { "prettierd", "prettier" } },
         php = { "php_cs_fixer" },
         python = function(bufnr)
-            if require("conform").get_formatter_info("ruff", bufnr).available then
-                return { "ruff" }
+            if require("conform").get_formatter_info("ruff_format", bufnr).available then
+                return { "ruff_format" }
             else
                 return { "isort", "black" }
             end
