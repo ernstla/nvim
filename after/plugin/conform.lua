@@ -6,6 +6,9 @@ require("conform").setup({
         ruff_format = {
             command = (os.getenv("VIRTUAL_ENV") or "NOT/AVAILABLE") .. "/bin/ruff"
         },
+        ruff_fix = {
+            command = (os.getenv("VIRTUAL_ENV") or "NOT/AVAILABLE") .. "/bin/ruff"
+        },
         black = {
             command = (os.getenv("VIRTUAL_ENV") or "NOT/AVAILABLE") .. "/bin/black"
         },
@@ -20,7 +23,7 @@ require("conform").setup({
         php = { "php_cs_fixer" },
         python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
-                return { "ruff_format" }
+                return { "ruff_format", "ruff_fix" }
             else
                 return { "isort", "black" }
             end
