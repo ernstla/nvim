@@ -157,8 +157,8 @@ hl(0, 'DiagnosticSignWarn', { fg = '#bb7722' })
 hl(0, 'DiagnosticSignHint', { fg = '#af7f99' })
 hl(0, 'DiagnosticSignInfo', { fg = '#95c2e8' })
 hl(0, 'DiagnosticVirtualTextError', { fg = '#eb6b36' })
-hl(0, 'DiagnosticVirtualTextWarn', { fg = '#3f525f' })
-hl(0, 'DiagnosticVirtualTextHint', { fg = '#5f3f49' })
+hl(0, 'DiagnosticVirtualTextWarn', { fg = '#6f828f' })
+hl(0, 'DiagnosticVirtualTextHint', { fg = '#8f6f79' })
 hl(0, 'DiagnosticVirtualTextInfo', { fg = '#85b2d8' })
 
 -- Plugins
