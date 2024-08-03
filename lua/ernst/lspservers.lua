@@ -27,20 +27,16 @@ M.servers = {
     },
 
     pylsp = {
-        cmd = { 'pylsp' },
-        filetypes = { 'python' },
-        root_dir = function(fname)
-            local root_files = {
-                'pyproject.toml',
-                'setup.py',
-                'setup.cfg',
-                'requirements.txt',
-                'Pipfile',
-                '.git',
+        settings = {
+            pylsp = {
+                cmd = { 'pylsp' },
+                filetypes = { 'python' },
+                plugins = {
+                    pycodestyle = { enabled = false },
+                    pyflakes = { enabled = false },
+                },
             }
-            return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname)
-        end,
-        single_file_support = true,
+        }
     },
 
     gopls = {
