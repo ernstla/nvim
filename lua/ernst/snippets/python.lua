@@ -30,6 +30,11 @@ return {
         i(0),
         t("')"),
     }),
+    snippet('prints', {
+        t("print('"),
+        i(0),
+        t("')"),
+    }),
     snippet('pdb', {
         t('import pdb; pdb.set_trace()'),
     }),
