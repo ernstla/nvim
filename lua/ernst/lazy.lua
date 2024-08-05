@@ -89,6 +89,7 @@ require("lazy").setup({
     'pangloss/vim-javascript',
     'simrat39/symbols-outline.nvim',
     'stevearc/qf_helper.nvim',
+    'justinmk/vim-sneak',
 
     'tpope/vim-abolish',
     'tpope/vim-repeat',
