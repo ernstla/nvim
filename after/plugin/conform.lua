@@ -17,9 +17,10 @@ require("conform").setup({
         },
     },
     formatters_by_ft = {
-        css = { { "prettierd", "prettier" } },
+        css = { "prettierd", "prettier", stop_after_first = true },
+        scss = { "prettierd", "prettier", stop_after_first = true },
         html = { "php_cs_fixer" },
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
         php = { "php_cs_fixer" },
         python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
@@ -28,8 +29,8 @@ require("conform").setup({
                 return { "isort", "black" }
             end
         end,
-        svelte = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        vue = { { "prettierd", "prettier" } },
+        svelte = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        vue = { "prettierd", "prettier", stop_after_first = true },
     },
 })

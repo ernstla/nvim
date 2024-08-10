@@ -34,7 +34,6 @@ autocmd({ 'BufWritePre' }, {
         '*.nim',
         '*.odin',
         '*.rs',
-        '*.scss',
         '*rc',
     },
     command = 'lua vim.lsp.buf.format()'
@@ -58,6 +57,7 @@ autocmd({ 'BufWritePre' }, {
         '*.svelte',
         '*.js',
         '*.css',
+        '*.scss',
     },
     callback = function(args)
         require("conform").format({ bufnr = args.buf })
