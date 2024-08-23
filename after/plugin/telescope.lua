@@ -18,17 +18,15 @@ require('telescope').setup {
             vertical = { width = 0.5, height = 0.8, mirror = true, prompt_position = 'bottom' },
             horizontal = { width = 191, height = 0.6, mirror = false, prompt_position = 'top' }
         },
-        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     },
     pickers = {
         git_files = {
             hidden = true,
             previewer = false,
-            find_command = {
-                'fd',
-                '--type', 'f',
-                '--hidden',
-                '--follow',
+            file_ignore_patterns = {
+                'venv', '__pycache__', '%.xlsx', '%.jpg', '%.jpeg', '%.jfif', '%.png', '%.webp', '%.pdf',
+                '%.odt', '%.ico', '%.JPEG', '%.JPG', '%.mp4', '%.woff', '%.woff2', '%.ttf', '%.otf',
             }
         },
         find_files = {
@@ -95,6 +93,7 @@ vim.keymap.set('n', '<c-p>', lib.project_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<f9>', builtin.buffers, {})
 vim.keymap.set('n', '<m-b>', builtin.buffers, {})
+vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>r', function()
     builtin.grep_string({ search = vim.fn.input('ripgrep: ') });
 end)
