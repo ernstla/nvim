@@ -23,7 +23,10 @@ require('lazy').setup({ import = "ernst/plugins" }, {
     },
     ui = {
         border = "single",
-    }
+    },
+    install = {
+        colorscheme = { "rose-pine" },
+    },
 })
 
 -- Load autocmd, mappings etc.
