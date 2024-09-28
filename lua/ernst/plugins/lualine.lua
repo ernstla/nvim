@@ -34,53 +34,51 @@ local theme = {
     },
 }
 
-return {
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-        opts = {
-            options = {
-                icons_enabled = true,
-                theme = theme,
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
-                -- Lualine kills the nvim intro screen if separators are used.
-                -- If they are disabled like below, the intro screen stays.
-                --    component_separators = '',
-                --    section_separators = '',
-                disabled_filetypes = {
-                    statusline = {},
-                    winbar = {},
-                },
-                ignore_focus = {},
-                always_divide_middle = true,
-                globalstatus = false,
-                refresh = {
-                    statusline = 1000,
-                    tabline = 1000,
-                    winbar = 1000,
-                }
+return { {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    opts = {
+        options = {
+            icons_enabled = true,
+            theme = theme,
+            component_separators = { left = '', right = '' },
+            section_separators = { left = '', right = '' },
+            -- Lualine kills the nvim intro screen if separators are used.
+            -- If they are disabled like below, the intro screen stays.
+            --    component_separators = '',
+            --    section_separators = '',
+            disabled_filetypes = {
+                statusline = {},
+                winbar = {},
             },
-            sections = {
-                lualine_a = { 'mode' },
-                lualine_b = { 'branch' },
-                lualine_c = { { 'filename', path = 1 } },
-                lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'progress', 'location' },
-                lualine_z = { 'diagnostics' }
-            },
-            inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { { 'filename', path = 1 } },
-                lualine_x = { 'location' },
-                lualine_y = {},
-                lualine_z = {}
-            },
-            tabline = {},
-            winbar = {},
-            inactive_winbar = {},
-            extensions = {}
-        }
+            ignore_focus = {},
+            always_divide_middle = true,
+            globalstatus = false,
+            refresh = {
+                statusline = 1000,
+                tabline = 1000,
+                winbar = 1000,
+            }
+        },
+        sections = {
+            lualine_a = { 'mode' },
+            lualine_b = { 'branch' },
+            lualine_c = { { 'filename', path = 1 } },
+            lualine_x = { 'encoding', 'fileformat', 'filetype' },
+            lualine_y = { 'progress', 'location' },
+            lualine_z = { 'diagnostics' }
+        },
+        inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = { { 'filename', path = 1 } },
+            lualine_x = { 'location' },
+            lualine_y = {},
+            lualine_z = {}
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = {}
     }
-}
+} }
