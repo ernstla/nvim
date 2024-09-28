@@ -11,7 +11,7 @@ M.servers = {
     ols = {},
     ruff_lsp = {},
 
-    tsserver = {
+    ts_ls = {
         settings = {
             javascript = {
                 format = {

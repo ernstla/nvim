@@ -97,6 +97,8 @@ require("lazy").setup({
     'tpope/vim-fugitive',
     'tpope/vim-obsession',
 
+    { 'echasnovski/mini.splitjoin',  version = false },
+
     -- Languages
     'alaviss/nim.nvim',
     'ziglang/zig',
