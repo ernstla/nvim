@@ -24,7 +24,14 @@ g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g.
 g.loaded_netrwPlugin = 1
 g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
 
-require('ernst/lazy')
+require('lazy').setup({ import = "ernst/plugins" }, {
+    change_detection = {
+        notify = false,
+    },
+    ui = {
+        border = "single",
+    }
+})
 
 -- Load nvim settings, lazy, autocmd, mappings etc.
 require("ernst")
