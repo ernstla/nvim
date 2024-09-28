@@ -1,7 +1,14 @@
+local g = vim.g
 local o = vim.o
 local opt = vim.opt
 local wo = vim.wo
 local home = vim.fn.getenv('HOME')
+
+-- Global plugin settings
+g.user_emmet_leader_key = '<c-e>'
+g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
+g.loaded_netrwPlugin = 1
+g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
 
 o.autoindent = true
 o.backup = false

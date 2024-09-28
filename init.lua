@@ -1,5 +1,3 @@
-local g = vim.g
-
 -- Install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -18,12 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Global plugin settings
-g.user_emmet_leader_key = '<c-e>'
-g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
-g.loaded_netrwPlugin = 1
-g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
-
+require('ernst/settings')
 require('lazy').setup({ import = "ernst/plugins" }, {
     change_detection = {
         notify = false,
@@ -33,5 +26,5 @@ require('lazy').setup({ import = "ernst/plugins" }, {
     }
 })
 
--- Load nvim settings, lazy, autocmd, mappings etc.
+-- Load autocmd, mappings etc.
 require("ernst")

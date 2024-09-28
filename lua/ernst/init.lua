@@ -1,4 +1,3 @@
-require('ernst/settings')
 require('ernst/autocmd')
 require('ernst/clipboard')
 require('ernst/command')
