@@ -65,6 +65,8 @@ map('', '<leader><', '20<c-w><')
 map('', '<leader>=', '10<c-w>+')
 map('', '<leader>-', '10<c-w>-')
 
+map('t', '<ESC><ESC>', '<C-\\><C-n>')
+
 -- Center search matches
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
