@@ -1,4 +1,15 @@
 return {
-    { 'echasnovski/mini.splitjoin', version = false },
-    { 'echasnovski/mini.surround',  version = false },
+    {
+        'echasnovski/mini.splitjoin',
+        opts = {
+            mappings = {
+                toggle = 'gp',
+                split = '',
+                join = '',
+            },
+        },
+        version = false
+    },
+    { 'echasnovski/mini.surround', version = false
+    },
 }
