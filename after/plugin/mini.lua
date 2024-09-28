@@ -5,3 +5,5 @@ require('mini.splitjoin').setup({
         join = '',
     },
 })
+
+require('mini.surround').setup()

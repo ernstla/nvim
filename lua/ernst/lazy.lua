@@ -98,6 +98,7 @@ require("lazy").setup({
     'tpope/vim-obsession',
 
     { 'echasnovski/mini.splitjoin',  version = false },
+    { 'echasnovski/mini.surround',   version = false },
 
     -- Languages
     'alaviss/nim.nvim',
