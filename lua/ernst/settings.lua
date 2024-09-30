@@ -105,5 +105,3 @@ opt.tags = { './.tags', './tags' }
 opt.wildignore = { '*.o', '*.obj', '*.pyc', '*.swc', '*.DS_STORE', '*.bkp' }
 
 wo.signcolumn = 'yes'
-
--- vim.cmd('source ' .. home .. '/.config/nvim/statusline.vim')
