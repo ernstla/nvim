@@ -37,7 +37,7 @@ return {
                 virtual_text = true,
                 float = {
                     show_header = true,
-                    source = 'always',
+                    source = true,
                     border = 'rounded',
                     focusable = false,
                 },
@@ -69,6 +69,11 @@ return {
             })
             mason_lspconfig.setup_handlers({
                 function(server_name)
+                    -- https://github.com/neovim/nvim-lspconfig/pull/3232
+                    if server_name == "tsserver" then
+                        server_name = "ts_ls"
+                    end
+
                     if servers[server_name] ~= nil then
                         local settings = servers[server_name]
                         settings["capabilities"] = capabilities

@@ -10,7 +10,7 @@ M.servers = function(util)
         ols = {},
         ruff_lsp = {},
 
-        ts_ls = {
+        tsserver = {
             settings = {
                 javascript = {
                     format = {
