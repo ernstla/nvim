@@ -3,27 +3,12 @@ M = {}
 -- Add any additional override configuration in the following tables. They will be passed to
 -- the `settings` field of the server config. You must look up that documentation yourself.
 M.servers = function(util)
-    return {
+    local servers = {
         jsonls = {},
         svelte = {},
         eslint = {},
         ols = {},
         ruff_lsp = {},
-
-        tsserver = {
-            settings = {
-                javascript = {
-                    format = {
-                        enabled = false
-                    }
-                },
-                typescript = {
-                    format = {
-                        enabled = false
-                    }
-                },
-            }
-        },
 
         pylsp = {
             settings = {
@@ -112,6 +97,23 @@ M.servers = function(util)
 
         tailwindcss = {},
     }
+
+    servers[vim.loop.os_uname().sysname == 'Darwin' and 'tsserver' or 'ts_ls'] = {
+        settings = {
+            javascript = {
+                format = {
+                    enabled = false
+                }
+            },
+            typescript = {
+                format = {
+                    enabled = false
+                }
+            },
+        }
+    }
+
+    return servers
 end
 
 return M
