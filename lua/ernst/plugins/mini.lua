@@ -10,6 +10,6 @@ return {
         },
         version = false
     },
-    { 'echasnovski/mini.surround', version = false
-    },
+    { 'echasnovski/mini.surround', version = false },
+    { 'echasnovski/mini.nvim',     version = false }
 }
