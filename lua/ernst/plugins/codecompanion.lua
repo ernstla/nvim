@@ -28,6 +28,11 @@ return { {
                     env = {
                         api_key = secrets.anthropic_key
                     },
+                }),
+                openai = require("codecompanion.adapters").extend("openai", {
+                    env = {
+                        api_key = secrets.openai_api_key
+                    },
                 })
             },
             display = {
@@ -44,12 +49,15 @@ return { {
         require('codecompanion').setup(spec.opts())
 
         vim.cmd([[cab cc CodeCompanion]])
-        vim.cmd([[cab ccc CodeCompanionChat]])
         vim.cmd([[cab ca CodeCompanionActions]])
 
         vim.api.nvim_set_keymap("n", "<LocalLeader>gg", "<cmd>CodeCompanionChat Toggle<cr>",
             { noremap = true, silent = true })
         vim.api.nvim_set_keymap("v", "<LocalLeader>gg", "<cmd>CodeCompanionChat Toggle<cr>",
+            { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<LocalLeader>gi", "<cmd>CodeCompanion<cr>",
+            { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("v", "<LocalLeader>gi", "<cmd>CodeCompanion<cr>",
             { noremap = true, silent = true })
         vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
     end
