@@ -96,11 +96,10 @@ return { {
 
         require('telescope').setup(spec.opts(actions))
 
-        vim.keymap.set('n', '<m-p>', builtin.find_files, {})
+        vim.keymap.set('n', '<leader>p', builtin.find_files, {})
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
         vim.keymap.set('n', '<leader>b', builtin.buffers, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
-        vim.keymap.set('n', '<m-b>', builtin.buffers, {})
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>r', function()
             builtin.grep_string({ search = vim.fn.input('ripgrep: ') })
