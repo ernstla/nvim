@@ -2,7 +2,7 @@ M = {}
 
 M.on_init = function(client, initialization_result)
     if client.server_capabilities then
-        if client.name == "tsserver" or client.name == "ts_ls" then
+        if client.name == "ts_ls" then
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
         end
@@ -58,7 +58,7 @@ M.on_attach = function(client, bufnr)
     --     client.server_capabilities.documentFormattingProvider = false
     -- end
 
-    -- if client.name == "tsserver" or client.name == "ts_ls" then
+    -- if client.name == "ts_ls" then
     -- client.server_capabilities.semanticTokensProvider = false
     -- client.server_capabilities.documentHighlightProvider = false
     -- print(vim.inspect( client.server_capabilities))

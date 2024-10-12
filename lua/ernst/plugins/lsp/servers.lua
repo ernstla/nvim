@@ -95,22 +95,23 @@ M.servers = function(util)
             root_dir = util.root_pattern('.git') or util.os_homedir,
         },
 
-        tailwindcss = {},
-    }
+        ts_ls = {
+            settings = {
+                javascript = {
+                    format = {
+                        enabled = false
+                    }
+                },
+                typescript = {
+                    format = {
+                        enabled = false
+                    }
+                },
+            }
+        },
 
-    servers[vim.loop.os_uname().sysname == 'Darwin' and 'tsserver' or 'ts_ls'] = {
-        settings = {
-            javascript = {
-                format = {
-                    enabled = false
-                }
-            },
-            typescript = {
-                format = {
-                    enabled = false
-                }
-            },
-        }
+
+        tailwindcss = {},
     }
 
     return servers
