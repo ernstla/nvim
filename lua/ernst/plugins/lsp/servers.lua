@@ -9,6 +9,7 @@ M.servers = function(util)
         eslint = {},
         ols = {},
         ruff_lsp = {},
+        volar = {},
 
         pylsp = {
             settings = {

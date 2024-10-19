@@ -2,7 +2,7 @@ return { {
     'rose-pine/neovim',
     name = 'rose-pine',
     opts = {
-        dark_variant = 'moon',     --- 'main' | 'moon'
+        dark_variant = 'moon', --- 'main' | 'moon'
         bold_vert_split = false,
         dim_nc_background = false,
         disable_background = true,
@@ -134,13 +134,16 @@ return { {
         hl(0, '@keyword.svelte', { fg = '#7ab6e8' })
         hl(0, '@punctuation.bracket.svelte', { fg = '#7ab6e8' })
 
-        hl(0, '@variable.builtin.typescript', { fg = '#eb6f92' })
+        hl(0, '@variable.builtin.typescript', { fg = '#c47b7b' })
+        hl(0, '@variable.builtin.javascript', { fg = '#c47b7b' })
 
         hl(0, '@method.vue', { fg = '#9ccfd8' })
+        hl(0, '@function.method.vue', { fg = '#ea9a97' })
+        hl(0, '@variable.member.vue', { fg = '#a3be8c' })
         hl(0, '@operator.vue', { fg = '#ffbb29' })
         hl(0, '@variable.vue', { fg = '#f5e28e' })
         hl(0, '@punctuation.special.vue', { fg = '#f5e28e' })
-        hl(0, '@tag.attribute.directive.vue', { fg = '#7ab6e8' })
+        hl(0, '@attr.directive.vue', { fg = '#7ab6e8' })
 
         hl(0, '@property.javascript', { fg = '#f2e9e1' })
         hl(0, '@variable.javascript', { fg = '#f2e9e1' })
@@ -310,27 +313,27 @@ return { {
         hl(0, 'nimPreProcStmt', { fg = '#fd981f' })
         hl(0, 'nimConstant', { fg = '#cb4b16' })
         hl(0, 'nimNumber', { fg = '#cb4b16' })
-        hl(0, 'nimSugUnknown', { fg = '#fff8dc' })          -- Error
-        hl(0, 'nimSugParam', { fg = '#fff8dc' })            -- Identifier
-        hl(0, 'nimSugModule', { fg = '#fff8dc' })           -- Identifier
-        hl(0, 'nimSugType', { fg = '#ffca29' })             -- Type
-        hl(0, 'nimSugGenericParam', { fg = '#fff8dc' })     -- Type
-        hl(0, 'nimSugVar', { fg = '#fff8dc' })              -- Identifier
-        hl(0, 'nimSugGlobalVar', { fg = '#fff8dc' })        -- Identifier
-        hl(0, 'nimSugLet', { fg = '#fff8dc' })              -- Identifier
-        hl(0, 'nimSugGlobalLet', { fg = '#fff8dc' })        -- Identifier
-        hl(0, 'nimSugConst', { fg = '#fff8dc' })            -- Constant
-        hl(0, 'nimSugResult', { fg = '#fff8dc' })           -- Special
-        hl(0, 'nimSugProc', { fg = '#d7dfc0' })             -- Function
-        hl(0, 'nimSugFunc', { fg = '#dda48c' })             -- Function
-        hl(0, 'nimSugMethod', { fg = '#fff8dc' })           -- Function
-        hl(0, 'nimSugIterator', { fg = '#fff8dc' })         -- Function
-        hl(0, 'nimSugConverter', { fg = '#fff8dc' })        -- Macro
-        hl(0, 'nimSugMacro', { fg = '#fff8dc' })            -- Macro
-        hl(0, 'nimSugTemplate', { fg = '#fff8dc' })         -- Macro
-        hl(0, 'nimSugField', { fg = '#fff8dc' })            -- Identifier
-        hl(0, 'nimSugEnumField', { fg = '#fff8dc' })        -- Constant
-        hl(0, 'nimSugForVar', { fg = '#fff8dc' })           -- Identifier
-        hl(0, 'nimSugLabel', { fg = '#fff8dc' })            -- Identifier
+        hl(0, 'nimSugUnknown', { fg = '#fff8dc' })      -- Error
+        hl(0, 'nimSugParam', { fg = '#fff8dc' })        -- Identifier
+        hl(0, 'nimSugModule', { fg = '#fff8dc' })       -- Identifier
+        hl(0, 'nimSugType', { fg = '#ffca29' })         -- Type
+        hl(0, 'nimSugGenericParam', { fg = '#fff8dc' }) -- Type
+        hl(0, 'nimSugVar', { fg = '#fff8dc' })          -- Identifier
+        hl(0, 'nimSugGlobalVar', { fg = '#fff8dc' })    -- Identifier
+        hl(0, 'nimSugLet', { fg = '#fff8dc' })          -- Identifier
+        hl(0, 'nimSugGlobalLet', { fg = '#fff8dc' })    -- Identifier
+        hl(0, 'nimSugConst', { fg = '#fff8dc' })        -- Constant
+        hl(0, 'nimSugResult', { fg = '#fff8dc' })       -- Special
+        hl(0, 'nimSugProc', { fg = '#d7dfc0' })         -- Function
+        hl(0, 'nimSugFunc', { fg = '#dda48c' })         -- Function
+        hl(0, 'nimSugMethod', { fg = '#fff8dc' })       -- Function
+        hl(0, 'nimSugIterator', { fg = '#fff8dc' })     -- Function
+        hl(0, 'nimSugConverter', { fg = '#fff8dc' })    -- Macro
+        hl(0, 'nimSugMacro', { fg = '#fff8dc' })        -- Macro
+        hl(0, 'nimSugTemplate', { fg = '#fff8dc' })     -- Macro
+        hl(0, 'nimSugField', { fg = '#fff8dc' })        -- Identifier
+        hl(0, 'nimSugEnumField', { fg = '#fff8dc' })    -- Constant
+        hl(0, 'nimSugForVar', { fg = '#fff8dc' })       -- Identifier
+        hl(0, 'nimSugLabel', { fg = '#fff8dc' })        -- Identifier
     end
 } }

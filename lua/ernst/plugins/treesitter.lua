@@ -27,7 +27,7 @@ return { {
             'vim',
             'vimdoc',
             'yaml',
-            -- 'vue',
+            'vue',
         },
 
         modules = {},
