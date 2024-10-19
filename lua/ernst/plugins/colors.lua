@@ -134,8 +134,8 @@ return { {
         hl(0, '@keyword.svelte', { fg = '#7ab6e8' })
         hl(0, '@punctuation.bracket.svelte', { fg = '#7ab6e8' })
 
-        hl(0, '@variable.builtin.typescript', { fg = '#c47b7b' })
-        hl(0, '@variable.builtin.javascript', { fg = '#c47b7b' })
+        hl(0, '@variable.builtin.typescript', { fg = '#ea9a97' })
+        hl(0, '@variable.builtin.javascript', { fg = '#ea9a97' })
 
         hl(0, '@method.vue', { fg = '#9ccfd8' })
         hl(0, '@function.method.vue', { fg = '#ea9a97' })
