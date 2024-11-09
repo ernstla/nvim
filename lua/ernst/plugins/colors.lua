@@ -269,6 +269,8 @@ return { {
         hl(0, 'pythonString', { fg = '#ffbb29' })
         hl(0, 'pythonUnderUnder', { fg = '#fd971f' })
 
+        hl(0, 'makoEnd', { fg = '#7ab6e8' })
+
         hl(0, 'sqlConstant', { fg = '#01a8c6' })
         hl(0, 'sqlNumber', { fg = '#ffaaaa' })
         hl(0, 'sqlType', { fg = '#ffc48c' })
