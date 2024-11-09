@@ -46,7 +46,7 @@ return {
         i(0),
     }),
     snippet('main', {
-        t({ "if __main__ == '__main__':", '\t' }),
+        t({ "if __name__ == '__main__':", '\t' }),
         i(0),
     }),
     snippet('hans', {
