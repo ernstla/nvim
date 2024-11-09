@@ -8,7 +8,7 @@ M.servers = function(util)
         svelte = {},
         eslint = {},
         ols = {},
-        ruff_lsp = {},
+        ruff = {},
         volar = {},
 
         pylsp = {
