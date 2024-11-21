@@ -52,6 +52,11 @@ return {
         i(0),
         t('}'),
     }),
+    snippet('logr', {
+        t('<pre>{JSON.stringify('),
+        i(0),
+        t(', null, 2)}</pre>'),
+    }),
     snippet('pprint', {
         t('<pre>{JSON.stringify('),
         i(0),
