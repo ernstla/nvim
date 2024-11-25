@@ -1,6 +1,7 @@
 local command = vim.api.nvim_create_user_command
 
-command('Colorizer', 'ColorizerToggle', {})
+command('Colors', 'CccHighlighterToggle', {})
+command('PickColor', 'CccPick', {})
 command('Ag', function(opts) vim.cmd('silent! :botright :grep ' .. opts.args) end, { nargs = '*' })
 command('Agi', function(opts) vim.cmd('silent! :botright :grep --ignore-case ' .. opts.args) end, { nargs = '*' })
 command('Ags', function(opts) vim.cmd('silent! :botright :grep --case-sensitive ' .. opts.args) end, { nargs = '*' })

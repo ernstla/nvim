@@ -10,6 +10,11 @@ return {
         i(0),
         t(')'),
     }),
+    snippet('logr', {
+        t({ 'from pprint import pprint', 'pprint(', }),
+        i(0),
+        t(')'),
+    }),
     snippet('pp', {
         t('pprint('),
         i(0),
@@ -20,12 +25,12 @@ return {
         i(0),
         t(')'),
     }),
-    snippet('p', {
+    snippet('log', {
         t('print('),
         i(0),
         t(')'),
     }),
-    snippet('ps', {
+    snippet('logs', {
         t("print('"),
         i(0),
         t("')"),

@@ -59,7 +59,7 @@ return { {
         hl(0, 'Delimiter', { fg = '#cb4b16' })
         hl(0, 'DiffAdd', { fg = '#c1d3b1', bg = '#485b39' })
         hl(0, 'DiffChange', { fg = '#485b39', bg = '#c1d3b1' })
-        hl(0, 'DiffDelete', { fg = '#c47b7b', bg = '#934242' })
+        hl(0, 'DiffDelete', { fg = '#f9c2c2', bg = '#934242' })
         hl(0, 'DiffText', { fg = '#934242', bg = '#f9c2c2' })
         hl(0, 'FloatBorder', { fg = '#cb4b16', bg = 'none' })
         hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#f9c2c2' })
@@ -73,7 +73,8 @@ return { {
         hl(0, 'TabLineMod', { fg = '#934242', bg = 'none' })
         hl(0, 'TabLineModSel', { fg = '#dc322f', bg = 'none' })
         hl(0, 'TabLineSel', { fg = '#ceecee', bg = 'none' })
-        hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
+        -- hl(0, 'Visual', { fg = '#f2e9e1', bg = '#934242' })
+        hl(0, 'Visual', { fg = '#f2e9e1', bg = '#e54231' })
 
         -- Autocomplete menus
         hl(0, 'Pmenu', { fg = '#ffffff', bg = '#801316' })
