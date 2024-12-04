@@ -113,7 +113,8 @@ return { {
 
         hl(0, 'MasonNormal', { bg = 'none', default = true })
         hl(0, 'LazyNormal', { bg = 'none', default = true })
-        hl(0, 'WhichKeyFloat', { bg = '#171313' })
+
+        hl(0, 'WhichKeyNormal', { bg = '#0a0d13' })
 
         -- TreeSitter
         hl(0, '@keyword', { fg = '#697eb3' })

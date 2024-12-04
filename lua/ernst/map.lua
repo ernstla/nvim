@@ -91,7 +91,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist)
 map('n', '<leader>gs', '<cmd>Git<cr>')
 map('n', '<leader>gb', '<cmd>Gitsigns blame<cr>')
 map('n', '<leader>gl', '<cmd>Gitsigns blame_line<cr>')
-map('n', '<leader>gc', '<cmd>Gitsigns blame_line<cr>')
+map('n', '<leader>gc', '<cmd>Gitsigns toggle_current_line_blame<cr>')
 
 -- Tailwind Tools
 map('n', '<leader>tw', '<cmd>TailwindConcealToggle<cr>')
