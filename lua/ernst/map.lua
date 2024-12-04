@@ -89,7 +89,9 @@ map('n', '<leader>e', vim.diagnostic.open_float)
 map('n', '<leader>q', vim.diagnostic.setloclist)
 
 map('n', '<leader>gs', '<cmd>Git<cr>')
-map('n', '<leader>gb', '<cmd>Git blame<cr>')
+map('n', '<leader>gb', '<cmd>Gitsigns blame<cr>')
+map('n', '<leader>gl', '<cmd>Gitsigns blame_line<cr>')
+map('n', '<leader>gc', '<cmd>Gitsigns blame_line<cr>')
 
 -- Tailwind Tools
 map('n', '<leader>tw', '<cmd>TailwindConcealToggle<cr>')
