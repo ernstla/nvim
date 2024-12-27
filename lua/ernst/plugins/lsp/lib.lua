@@ -17,6 +17,11 @@ M.on_init = function(client, initialization_result)
             client.server_capabilities.documentFormattingProvider = false
         end
 
+        -- prefer prettier lsp capabilities
+        if client.name == "jsonls" then
+            client.server_capabilities.documentFormattingProvider = false
+        end
+
         client.server_capabilities.semanticTokensProvider = false -- turn off semantic tokens
     end
 end

@@ -2,3 +2,4 @@
 packer_compiled.lua
 lua/ernst/secrets.lua
 sessions/*.vim
+sessions/*.obsession

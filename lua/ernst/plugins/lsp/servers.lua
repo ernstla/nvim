@@ -4,12 +4,26 @@ M = {}
 -- the `settings` field of the server config. You must look up that documentation yourself.
 M.servers = function(util)
     local servers = {
-        jsonls = {},
         svelte = {},
         eslint = {},
         ols = {},
         ruff = {},
         volar = {},
+
+        jsonls = {
+            settings = {
+                jsonls = {
+                    format = {
+                        enabled = false
+                    }
+                },
+                json = {
+                    format = {
+                        enabled = false
+                    }
+                }
+            }
+        },
 
         pylsp = {
             settings = {
