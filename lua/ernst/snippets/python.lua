@@ -4,37 +4,45 @@ local snippet = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-local print = {
-    t('print('),
-    i(0),
-    t(')'),
-}
-local pprint = {
-    t({ 'from pprint import pprint', 'pprint(', }),
-    i(0),
-    t(')'),
-}
-local prints = {
-    t("print('"),
-    i(0),
-    t("')"),
-}
-local line = {
-    t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')")
-}
+local echo = function()
+    return {
+        t('print('),
+        i(0),
+        t(')'),
+    }
+end
+local pprint = function()
+    return {
+        t({ 'from pprint import pprint', 'pprint(', }),
+        i(0),
+        t(')'),
+    }
+end
+local prints = function()
+    return {
+        t("print('"),
+        i(0),
+        t("')"),
+    }
+end
+local line = function()
+    return {
+        t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')")
+    }
+end
 
 return {
-    snippet('pprint', pprint),
-    snippet('logr', pprint),
+    snippet('pprint', pprint()),
+    snippet('logr', pprint()),
     snippet('pp', {
         t('pprint('),
         i(0),
         t(')'),
     }),
-    snippet('print', print),
-    snippet('log', print),
-    snippet('logs', prints),
-    snippet('prints', prints),
+    snippet('print', echo()),
+    snippet('log', echo()),
+    snippet('logs', prints()),
+    snippet('prints', prints()),
     snippet('pdb', {
         t('import pdb; pdb.set_trace()'),
     }),
@@ -49,8 +57,8 @@ return {
         t({ "if __name__ == '__main__':", '\t' }),
         i(0),
     }),
-    snippet('line', line),
-    snippet('ln', line),
+    snippet('line', line()),
+    snippet('ln', line()),
     snippet('hans', {
         t("print('~~~~~~~~~~~ HANS ~~~~~~~~~~~~')")
     }),
