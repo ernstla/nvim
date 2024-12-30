@@ -17,6 +17,9 @@ return {
                     'hrsh7th/cmp-buffer', -- nvim-cmp source for buffer words.
                 },
             },
+
+            "mfussenegger/nvim-dap",
+            "jay-babu/mason-nvim-dap.nvim",
         },
         opts = {
             ui = {
@@ -53,6 +56,10 @@ return {
 
             -- Setup mason so it can manage external tooling
             require('mason').setup(spec.opts)
+            -- DAP config is in dap.lua. This exists only to use ensure installed
+            require('mason-nvim-dap').setup({
+                ensure_installed = { 'php', 'python' },
+            })
 
             -- Ensure the servers above are installed
             local mason_lspconfig = require('mason-lspconfig')

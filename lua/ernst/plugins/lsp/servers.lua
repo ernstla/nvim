@@ -89,7 +89,12 @@ M.servers = function(util)
                             indent_style = "space",
                             indent_size = 2
                         }
-                    }
+                    },
+                    diagnostics = {
+                        disable = {
+                            "missing-fields", -- don't complain about missing fields in tables
+                        }
+                    },
                 },
             },
         },
