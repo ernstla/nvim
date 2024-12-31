@@ -78,13 +78,22 @@ return { {
         require("which-key").add(
             {
                 {
-                    { '<leader>db', function() require('dap').continue() end,          desc = 'DAP: continue/start',    nowait = true, remap = false },
-                    { '<leader>ss', function() require('dap').step_over() end,         desc = 'DAP: step over',         nowait = true, remap = false },
-                    { '<leader>si', function() require('dap').step_into() end,         desc = 'DAP: step into',         nowait = true, remap = false },
-                    { '<leader>so', function() require('dap').step_out() end,          desc = 'DAP: step out',          nowait = true, remap = false },
-                    { '<leader>dd', function() require('dap').toggle_breakpoint() end, desc = 'DAP: toggle breakpoint', nowait = true, remap = false },
+                    { '<F49>',      function() require('dap').terminate() end,         desc = 'DAP: terminate',         nowait = true, remap = false },
+                    { '<leader>dt', function() require('dap').terminate() end,         desc = 'DAP: terminate',         nowait = true, remap = false },
+                    { '<F50>',      function() require('dapui').open() end,            desc = 'DAP UI: open',           nowait = true, remap = false },
                     { '<leader>do', function() require('dapui').open() end,            desc = 'DAP UI: open',           nowait = true, remap = false },
+                    { '<F51>',      function() require('dapui').close() end,           desc = 'DAP UI: close',          nowait = true, remap = false },
                     { '<leader>dc', function() require('dapui').close() end,           desc = 'DAP UI: close',          nowait = true, remap = false },
+                    { '<F52>',      function() require('dap').toggle_breakpoint() end, desc = 'DAP: toggle breakpoint', nowait = true, remap = false },
+                    { '<leader>dd', function() require('dap').toggle_breakpoint() end, desc = 'DAP: toggle breakpoint', nowait = true, remap = false },
+                    { '<F53>',      function() require('dap').continue() end,          desc = 'DAP: continue/start',    nowait = true, remap = false },
+                    { '<leader>db', function() require('dap').continue() end,          desc = 'DAP: continue/start',    nowait = true, remap = false },
+                    { '<F54>',      function() require('dap').step_over() end,         desc = 'DAP: step over',         nowait = true, remap = false },
+                    { '<leader>ss', function() require('dap').step_over() end,         desc = 'DAP: step over',         nowait = true, remap = false },
+                    { '<F55>',      function() require('dap').step_into() end,         desc = 'DAP: step into',         nowait = true, remap = false },
+                    { '<leader>si', function() require('dap').step_into() end,         desc = 'DAP: step into',         nowait = true, remap = false },
+                    { '<F56>',      function() require('dap').step_out() end,          desc = 'DAP: step out',          nowait = true, remap = false },
+                    { '<leader>so', function() require('dap').step_out() end,          desc = 'DAP: step out',          nowait = true, remap = false },
                 },
             })
     end
