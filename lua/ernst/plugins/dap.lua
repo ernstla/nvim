@@ -4,41 +4,51 @@ return { {
         'mfussenegger/nvim-dap',
         'nvim-neotest/nvim-nio',
         'mfussenegger/nvim-dap-python',
+        'nvim-treesitter/nvim-treesitter',
+        'theHamsta/nvim-dap-virtual-text',
     },
     opts = {
         layouts = { {
             elements = { {
-                id = "scopes",
+                id = 'scopes',
                 size = 0.25
             }, {
-                id = "breakpoints",
+                id = 'breakpoints',
                 size = 0.25
             }, {
-                id = "stacks",
+                id = 'stacks',
                 size = 0.25
             }, {
-                id = "watches",
+                id = 'watches',
                 size = 0.25
             } },
-            position = "left",
+            position = 'left',
             size = 131
         }, {
             elements = { {
-                id = "repl",
+                id = 'repl',
                 size = 0.5
             }, {
-                id = "console",
+                id = 'console',
                 size = 0.5
             } },
-            position = "bottom",
+            position = 'bottom',
             size = 17
         } },
     },
     config = function(spec)
-        local dap = require("dap")
-        local dapui = require("dapui")
+        local dap = require('dap')
+        local dapui = require('dapui')
 
         dapui.setup(spec.opts)
+        require('nvim-dap-virtual-text').setup({
+            enabled = true,
+            enabled_commands = true,
+            highlight_changed_variables = true,
+            highlight_new_as_changed = true,
+            virt_text_pos = 'eol',
+            commented = false,
+        })
 
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()
@@ -61,7 +71,7 @@ return { {
             }
         }
         -- Python
-        require("dap-python").setup("uv")
+        require('dap-python').setup('uv')
         table.insert(require('dap').configurations.python, {
             type = 'python',
             request = 'attach',
@@ -75,7 +85,7 @@ return { {
         vim.fn.sign_define('DapStopped',
             { text = '', texthl = 'DapStopped', linehl = '', numhl = 'DapLineNr' })
 
-        require("which-key").add(
+        require('which-key').add(
             {
                 {
                     { '<F49>',      function() require('dap').terminate() end,         desc = 'DAP: terminate',         nowait = true, remap = false },
