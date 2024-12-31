@@ -21,7 +21,7 @@ return { {
                 size = 0.25
             } },
             position = "left",
-            size = 61
+            size = 131
         }, {
             elements = { {
                 id = "repl",
@@ -56,12 +56,19 @@ return { {
             {
                 type = 'php',
                 request = 'launch',
-                name = 'Listen for Xdebug',
+                name = 'Listen for xdebug',
                 port = 9003
             }
         }
         -- Python
         require("dap-python").setup("uv")
+        table.insert(require('dap').configurations.python, {
+            type = 'python',
+            request = 'attach',
+            name = 'Listen for debugpy',
+            host = '127.0.0.1',
+            port = 5678,
+        })
 
 
         vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = 'DapLineNr' })
