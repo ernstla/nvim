@@ -65,6 +65,7 @@ return { {
         hl(0, 'IncSearch', { fg = '#1c1c1c', bg = '#f9c2c2' })
         hl(0, 'Search', { fg = '#1c1c1c', bg = '#c47b7b' })
         hl(0, 'LineNr', { fg = '#5f727f' })
+        hl(0, 'MatchParen', { fg = '#e54231', bg = '#414141', })
         hl(0, 'Normal', { fg = '#f2e9e1', bg = 'none', })
         hl(0, 'NormalFloat', { bg = 'none' })
         hl(0, 'NormalNC', { fg = '#f2e9e1', bg = 'none', })
