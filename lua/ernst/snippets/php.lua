@@ -119,6 +119,9 @@ return {
     snippet('line', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
+    snippet('ln', {
+        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
+    }),
     snippet('hans', {
         t('error_log("~~~~~~~~~~~ HANS ~~~~~~~~~~~~");')
     }),
@@ -227,10 +230,7 @@ return {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
-    snippet('useonly', {
-        t("use PHPUnit\\Framework\\Attributes\\Group as G;")
-    }),
-    snippet('useo', {
+    snippet('uo', {
         t("use PHPUnit\\Framework\\Attributes\\Group as G;")
     }),
     snippet('only', {

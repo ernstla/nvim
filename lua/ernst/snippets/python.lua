@@ -59,8 +59,27 @@ return {
     }),
     snippet('line', line()),
     snippet('ln', line()),
+
+    snippet('hinna', {
+        t("print('~~~~~~~~~~~ HINNA ~~~~~~~~~~~')")
+    }),
+    snippet('dinna', {
+        t("print('~~~~~~~~~~~ DINNA ~~~~~~~~~~~')")
+    }),
+    snippet('danna', {
+        t("print('~~~~~~~~~~~ DANNA ~~~~~~~~~~~')")
+    }),
+    snippet('daua', {
+        t("print('~~~~~~~~~~~ DAUA ~~~~~~~~~~~~')")
+    }),
     snippet('hans', {
         t("print('~~~~~~~~~~~ HANS ~~~~~~~~~~~~')")
+    }),
+    snippet('günter', {
+        t("print('~~~~~~~~~~ GÜNTER ~~~~~~~~~~~')")
+    }),
+    snippet('günther', {
+        t("print('~~~~~~~~~~ GÜNTHER ~~~~~~~~~~')")
     }),
     snippet('franz', {
         t("print('~~~~~~~~~~~ FRANZ ~~~~~~~~~~~')")
