@@ -1,3 +1,9 @@
+if not pcall(require, 'ernst/secrets') then
+    return
+end
+
+local secrets = require('ernst/secrets')
+
 M = {}
 
 -- Add any additional override configuration in the following tables. They will be passed to
@@ -9,6 +15,7 @@ M.servers = function(util)
         ols = {},
         ruff = {},
         volar = {},
+        nim_langserver = {},
 
         jsonls = {
             settings = {
@@ -51,7 +58,9 @@ M.servers = function(util)
         },
 
         intelephense = {
-            init_options = { licenceKey = '005UH9RB1NL07NE' },
+            init_options = {
+                licenceKey = secrets.intelephense_key,
+            },
             settings = {
                 intelephense = {
                     stubs = {
@@ -107,12 +116,6 @@ M.servers = function(util)
                     }
                 }
             }
-        },
-
-        nimls = {
-            cmd = { 'nimlsp' },
-            filetypes = { 'nim' },
-            root_dir = util.root_pattern('.git') or util.os_homedir,
         },
 
         ts_ls = {
