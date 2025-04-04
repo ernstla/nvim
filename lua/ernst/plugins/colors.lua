@@ -305,44 +305,5 @@ return { {
         hl(0, 'sqlColonParam', { fg = '#95c2e8' })
         hl(0, 'sqlPostgresDelim', { fg = '#95c2e8' })
         hl(0, 'sqlPostgresVariable', { fg = '#95c2e8' })
-
-        hl(0, 'nimStatement', { fg = '#97b060' })
-        hl(0, 'nimException', { fg = '#97b060' })
-        hl(0, 'nimConditional', { fg = '#97b060' })
-        hl(0, 'nimInclude', { fg = '#97b060' })
-        hl(0, 'nimRepeat', { fg = '#97b060' })
-        hl(0, 'nimPragma', { fg = '#94435a' })
-        hl(0, 'nimPragmaList', { fg = '#94435a' })
-        hl(0, 'nimKeywordOperator', { fg = '#97b060' })
-        hl(0, 'nimComment', { fg = '#505345' })
-        hl(0, 'nimQuote', { fg = '#ffc470' })
-        hl(0, 'nimString', { fg = '#ffc470' })
-        hl(0, 'nimRawString', { fg = '#ffc470' })
-        hl(0, 'nimPreCondit', { fg = '#fd981f' })
-        hl(0, 'nimPreProcStmt', { fg = '#fd981f' })
-        hl(0, 'nimConstant', { fg = '#cb4b16' })
-        hl(0, 'nimNumber', { fg = '#cb4b16' })
-        hl(0, 'nimSugUnknown', { fg = '#fff8dc' })      -- Error
-        hl(0, 'nimSugParam', { fg = '#fff8dc' })        -- Identifier
-        hl(0, 'nimSugModule', { fg = '#fff8dc' })       -- Identifier
-        hl(0, 'nimSugType', { fg = '#ffca29' })         -- Type
-        hl(0, 'nimSugGenericParam', { fg = '#fff8dc' }) -- Type
-        hl(0, 'nimSugVar', { fg = '#fff8dc' })          -- Identifier
-        hl(0, 'nimSugGlobalVar', { fg = '#fff8dc' })    -- Identifier
-        hl(0, 'nimSugLet', { fg = '#fff8dc' })          -- Identifier
-        hl(0, 'nimSugGlobalLet', { fg = '#fff8dc' })    -- Identifier
-        hl(0, 'nimSugConst', { fg = '#fff8dc' })        -- Constant
-        hl(0, 'nimSugResult', { fg = '#fff8dc' })       -- Special
-        hl(0, 'nimSugProc', { fg = '#d7dfc0' })         -- Function
-        hl(0, 'nimSugFunc', { fg = '#dda48c' })         -- Function
-        hl(0, 'nimSugMethod', { fg = '#fff8dc' })       -- Function
-        hl(0, 'nimSugIterator', { fg = '#fff8dc' })     -- Function
-        hl(0, 'nimSugConverter', { fg = '#fff8dc' })    -- Macro
-        hl(0, 'nimSugMacro', { fg = '#fff8dc' })        -- Macro
-        hl(0, 'nimSugTemplate', { fg = '#fff8dc' })     -- Macro
-        hl(0, 'nimSugField', { fg = '#fff8dc' })        -- Identifier
-        hl(0, 'nimSugEnumField', { fg = '#fff8dc' })    -- Constant
-        hl(0, 'nimSugForVar', { fg = '#fff8dc' })       -- Identifier
-        hl(0, 'nimSugLabel', { fg = '#fff8dc' })        -- Identifier
     end
 } }

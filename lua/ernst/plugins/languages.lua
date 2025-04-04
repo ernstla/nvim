@@ -1,5 +1,4 @@
 return {
-    'alaviss/nim.nvim',
     {
         'luckasRanarison/tailwind-tools.nvim',
         opts = {
