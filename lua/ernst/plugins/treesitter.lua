@@ -25,6 +25,7 @@ return { {
             'tsx',
             'typescript',
             'vim',
+            'nim',
             'vimdoc',
             'yaml',
             'vue',
