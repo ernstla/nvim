@@ -73,7 +73,7 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { '*.mako', },
-    command = 'set filetype=mako'
+    command = 'set filetype=mako.html'
 })
 
 autocmd({ 'BufRead', 'BufNewFile' }, {
