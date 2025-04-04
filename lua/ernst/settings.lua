@@ -6,6 +6,7 @@ local home = vim.fn.getenv('HOME')
 
 -- Global plugin settings
 g.user_emmet_leader_key = '<c-e>'
+g.user_emmet_install_global = 1
 g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
 g.loaded_netrwPlugin = 1
 g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
@@ -26,12 +27,12 @@ o.foldcolumn = '0'
 o.foldlevelstart = 99 -- Do not automatically fold
 o.formatoptions = 'qrn1'
 o.grepformat = '%f:%l:%c:%m,%f:%l:%m'
-o.grepprg = 'rg --smart-case --vimgrep --no-heading' -- use ripgrep
-o.hidden = true                                      -- Avoid asking to save before hiding
+o.grepprg = 'rg --smart-case --vimgrep --no-heading --hidden --glob \'!.git\'' -- use ripgrep
+o.hidden = true                                                                -- Avoid asking to save before hiding
 o.history = 1000
-o.hlsearch = false                                   -- Don't highlight matched regexp by default
+o.hlsearch = false                                                             -- Don't highlight matched regexp by default
 o.ignorecase = true
-o.incsearch = true                                   -- Search all instances
+o.incsearch = true                                                             -- Search all instances
 o.joinspaces = false
 o.lazyredraw = true
 o.linebreak = true -- Word wrap if wrapping is enabled

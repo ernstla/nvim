@@ -11,7 +11,7 @@ return { {
         default = {
             find = {
                 cmd = "rg",
-                options = {} -- disables `ignore-case by` default
+                options = { 'hidden' }
             },
             replace = {
                 cmd = "oxi"
