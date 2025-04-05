@@ -18,7 +18,11 @@ return {
             diagnostics = {
                 disable = {
                     "missing-fields", -- don't complain about missing fields in tables
-                }
+                },
+                globals = {
+                    'vim',
+                    'require'
+                },
             },
         }
     }
