@@ -1,0 +1,15 @@
+vim.lsp.enable({
+    'eslint',
+    'go',
+    'json',
+    'lua',
+    'nim',
+    'php',
+    'python',
+    'ruff',
+    'rust',
+    'svelte',
+    'tailwind',
+    'typescript',
+    'vue'
+})

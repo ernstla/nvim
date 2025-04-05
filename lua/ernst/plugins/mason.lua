@@ -1,4 +1,3 @@
-
 return { {
     'williamboman/mason.nvim',
     opts = {},
@@ -21,8 +20,8 @@ return { {
         require('mason').setup(spec.opts)
 
         vim.api.nvim_create_user_command("MasonInstallAll", function()
-            registry = require('mason-registry')
-            ensure_installed = {}
+            local registry = require('mason-registry')
+            local ensure_installed = {}
 
             for _, lsp_name in ipairs(spec.ensure_installed) do
                 local lsp = registry.get_package(lsp_name)
@@ -32,7 +31,7 @@ return { {
                 end
             end
 
-            if next(ensure_installed) ~= nill then
+            if next(ensure_installed) ~= nil then
                 vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
             else
                 print('Mason: nothing to install')
