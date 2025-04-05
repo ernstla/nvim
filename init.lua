@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd.colorscheme('serious')
+
 -- make sure to set `mapleader` before lazy so our mappings are correct
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -24,7 +26,7 @@ require('lazy').setup({ import = "ernst/plugins" }, {
         border = "single",
     },
     install = {
-        colorscheme = { "rose-pine" },
+        colorscheme = { "serious" },
     },
 })
 
