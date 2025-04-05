@@ -41,15 +41,19 @@ return { {
     config = function()
         vim.cmd.colorscheme('rose-pine')
 
-        local n = 'DiagnosticSignError'
-        vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = 'DiagnosticSignErrorNumber' })
-        n = 'DiagnosticSignWarn'
-        vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
-        n = 'DiagnosticSignHint'
-        vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
-        n = 'DiagnosticSignInfo'
-        vim.fn.sign_define(n, { text = '', texthl = n, linehl = '', numhl = '' })
-
+        vim.diagnostic.config {
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = " ",
+                    [vim.diagnostic.severity.WARN] = " ",
+                    [vim.diagnostic.severity.INFO] = " ",
+                    [vim.diagnostic.severity.HINT] = "",
+                },
+                numhl = {
+                    [vim.diagnostic.severity.ERROR] = "DiagnosticSignErrorNumber",
+                },
+            },
+        }
 
         local hl = vim.api.nvim_set_hl
 
