@@ -36,6 +36,7 @@ return { {
                     { "<leader>ac", "<cmd>GpChatNew<cr>",        desc = "AI: New Chat",         nowait = true, remap = false },
                     { "<leader>at", "<cmd>GpChatNew tabnew<cr>", desc = "AI: New Chat tabnew",  nowait = true, remap = false },
                     { "<leader>av", "<cmd>GpChatNew vsplit<cr>", desc = "AI: New Chat vsplit",  nowait = true, remap = false },
+                    { "<leader>ai", "<cmd>GpChatNew vsplit<cr>", desc = "AI: New Chat vsplit",  nowait = true, remap = false },
                     { "<leader>as", "<cmd>GpChatNew split<cr>",  desc = "AI: New Chat split",   nowait = true, remap = false },
                     { "<leader>aa", "<cmd>GpAppend<cr>",         desc = "AI: Append (after)",   nowait = true, remap = false },
                     { "<leader>ar", "<cmd>GpRewrite<cr>",        desc = "AI: Inline Rewrite",   nowait = true, remap = false },
