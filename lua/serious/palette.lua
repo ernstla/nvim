@@ -1,84 +1,88 @@
-local rosepine = {
-    _nc = "#1f1d30",
-    base = "#232136",
-    surface = "#2a273f",
-    overlay = "#393552",
-    muted = "#6e6a86",
-    subtle = "#908caa",
-    text = "#e0def4",
-    love = "#eb6f92",
-    gold = "#f6c177",
-    rose = "#ea9a97",
-    pine = "#3e8fb0",
-    foam = "#9ccfd8",
-    iris = "#c4a7e7",
-    leaf = "#95b1ac",
-    highlight_low = "#2a283e",
-    highlight_med = "#44415a",
-    highlight_high = "#56526e",
-    none = "NONE",
-}
-
-function hexToRgb(color)
-    color = string.lower(color)
-    return { tonumber(color:sub(2, 3), 16), tonumber(color:sub(4, 5), 16), tonumber(color:sub(6, 7), 16) }
-end
-
-function blend(foreground, background, alpha)
-    alpha = type(alpha) == 'string' and (tonumber(alpha, 16) / 0xff) or alpha
-
-    local bg = hexToRgb(background)
-    local fg = hexToRgb(foreground)
-
-    local blendChannel = function(i)
-        local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
-        return math.floor(math.min(math.max(0, ret), 255) + 0.5)
-    end
-
-    return string.format('#%02x%02x%02x', blendChannel(1), blendChannel(2), blendChannel(3))
-end
-
 local palette = {
-    none = 'NONE',
-    bg = '#000000',
-    fg = '#eceff4',
-    night = {
-        c0 = '#2e3440',
-        c1 = '#3b4252',
-        c2 = '#434c5e',
-        c3 = '#4c566a',
-    },
-    snow = {
-        c0 = '#d8dee9',
-        c1 = '#e5e9f0',
-        c2 = '#eceff4',
-    },
-    frost = {
-        blue       = '#5e81ac',
-        light_blue = '#81a1c1',
-        sea        = '#8fbcbb',
-        turquoise  = '#88c0d0',
-    },
-    aurora = {
-        green  = '#a3be8c',
-        orange = '#d08770',
-        purple = '#B48EAD',
-        red    = '#bf616a',
-        yellow = '#ebcb8b',
-    },
-    blend = {
-        red       = blend('#bf616a', '#2E3440', 0.1),
-        yellow    = blend('#ebcb8b', '#2E3440', 0.1),
-        green     = blend('#a3be8c', '#2E3440', 0.1),
-        turquoise = blend('#88c0d0', '#2E3440', 0.1),
-        blue      = blend('#5e81ac', '#2E3440', 0.2),
-        bluec1    = blend('#5e81ac', '#2E3440', 0.3),
-        comment   = blend('#616E88', '#2E3440', 0.9),
-    },
-    special = {
-        sea = '#8EBDBC',
-        light_blue = '#7AA1BE',
-    },
+    none    = 'NONE',
+    text    = '#f2e9e1',
+    comment = '#393552',
+
+    black   = '#000000',
+    white   = '#ffffff',
+
+    grey0   = '#c2dcf2',
+    grey1   = '#98aeb5',
+    grey2   = '#556270',
+    grey3   = '#464340',
+    grey4   = '#393552',
+    grey5   = '#232136',
+    grey6   = '#1f1d30',
+    grey7   = '#0a0d13',
+
+    brown3  = '#8f6f79',
+    brown4  = '#634242',
+
+    blue0   = '#caf6ff',
+    blue1   = '#9ccfd8',
+    blue2   = '#01a8c6',
+    blue3   = '#3e8fb0',
+    blue4   = '#7ab6e8',
+    blue5   = '#85b2d8',
+    blue6   = '#95c2e8',
+    blue7   = '#697eb3',
+    blue8   = '#617fa0',
+
+    sea4    = '#8fbcbb',
+    sea5    = '#88c0d0',
+
+    green0  = '#ccffaa',
+    green1  = '#c1d3b1',
+    green2  = '#a3be8c',
+    green3  = '#95b1ac',
+    green4  = '#86a943',
+    green5  = '#669933',
+    green6  = '#558822',
+    green7  = '#485b39',
+    green8  = '#384b29',
+
+    red0    = '#ffc2b1',
+    red1    = '#f59281',
+    red2    = '#bf616a',
+    red3    = '#e54231',
+    red4    = '#a50000',
+    red5    = '#934242',
+    red6    = '#733232',
+    red7    = '#511313',
+    red8    = '#311313',
+
+    rose0   = '#ffd2d2',
+    rose1   = '#f9c2c2',
+    rose2   = '#f9aaaa',
+    rose3   = '#eb6f92',
+    rose4   = '#ea9a97',
+    rose5   = '#df9faf',
+    rose6   = '#b4637a',
+    rose7   = '#94536a',
+    rose8   = '#84435a',
+
+    purple2 = '#c4a7e7',
+    purple3 = '#b48ead',
+    purple4 = '#af7f99',
+    purple5 = '#908caa',
+
+    yellow3 = '#f5f28e',
+    yellow4 = '#ffdd00',
+    yellow5 = '#fdca49',
+
+    salmon3 = '#ffd9ae',
+    salmon5 = '#ffbb86',
+    salmon6 = '#d08770',
+    salmon7 = '#d56d56',
+
+    orange1 = '#f4e28e',
+    orange2 = '#ebcb8b',
+    orange3 = '#f5c264',
+    orange4 = '#ffbb29',
+    orange5 = '#ea9d34',
+    orange6 = '#fd971f',
+    orange7 = '#eb6b36',
+    orange8 = '#bb7722',
 }
 
 return palette
