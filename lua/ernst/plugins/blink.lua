@@ -15,7 +15,21 @@ return { {
                 'buffer',
             },
         },
-        fuzzy = { implementation = "prefer_rust_with_warning" }
+        fuzzy = { implementation = "prefer_rust_with_warning" },
+        completion = {
+            menu = {
+                border = 'rounded',
+                auto_show = true,
+            },
+            documentation = {
+                window = { border = 'rounded' },
+                auto_show = true
+            },
+        },
+        signature = {
+            enabled = true,
+            window = { border = 'rounded' }
+        },
     },
     opts_extend = { "sources.default" }
 } }

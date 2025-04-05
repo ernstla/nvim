@@ -82,9 +82,13 @@ return { {
         hl(0, 'Visual', { fg = '#f2e9e1', bg = '#e54231' })
 
         -- Autocomplete menus
-        hl(0, 'Pmenu', { fg = '#ffffff', bg = '#801316' })
-        hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#485b39' })
-        hl(0, 'CmpBorder', { fg = '#505356' })
+        hl(0, 'Pmenu', { fg = '#ffffff', bg = 'none' })
+        hl(0, 'PmenuSel', { fg = '#ffffff', bg = '#411313' })
+        hl(0, 'PmenuThumb', { bg = '#a50000', })
+        hl(0, 'PmenuMatch', { fg = '#e5e5e5' })
+        hl(0, 'PmenuMatchSel', { fg = '#e54231', bg = '#ffffff' })
+        hl(0, 'FloatBorder', { fg = '#e54231' })
+        hl(0, 'BlinkCmpMenuBorder', { fg = '#e54231' })
 
         -- fugitive
         hl(0, 'fugitiveHeader', { fg = '#ffbb29' })
@@ -99,11 +103,6 @@ return { {
         hl(0, 'fugitiveUntrackedHeading', { fg = '#7ab6e8' })
         hl(0, 'fugitiveUntrackedModifier', { fg = '#7ab6e8' })
         hl(0, 'fugitiveUntrackedSection', { fg = '#caf6ff' })
-
-
-        hl(0, 'DapBreakpoint', { fg = '#e54231' })
-        hl(0, 'DapStopped', { fg = '#88bb55' })
-        hl(0, 'DapLineNr', { fg = '#f9c2c2' })
 
         -- Telescope
         hl(0, 'TelescopeNormal', { fg = '#f2e9e1', bg = 'none' })
