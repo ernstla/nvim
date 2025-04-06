@@ -5,6 +5,7 @@ function M.reload_colorscheme()
     package.loaded['serious/base'] = nil
     package.loaded['serious/languages'] = nil
     package.loaded['serious/plugins'] = nil
+    package.loaded['serious/treesitter'] = nil
     package.loaded["serious"] = nil
     require("serious")
     vim.cmd.colorscheme('serious')

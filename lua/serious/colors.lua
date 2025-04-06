@@ -15,11 +15,12 @@ return {
     grey6   = '#1f1d30',
     grey7   = '#0a0d13',
 
+    brown1  = '#fdd9ae',
     brown3  = '#8f6f79',
     brown4  = '#634242',
+    brown5  = '#bb7722',
 
     blue0   = '#caf6ff',
-    blue1   = '#9ccfd8',
     blue2   = '#01a8c6',
     blue3   = '#3e8fb0',
     blue4   = '#7ab6e8',
@@ -28,13 +29,17 @@ return {
     blue7   = '#697eb3',
     blue8   = '#617fa0',
 
+    sea2    = '#ceecee',
+    sea3    = '#9ccfd8',
     sea4    = '#8fbcbb',
     sea5    = '#88c0d0',
+    sea7    = '#586e75',
+    sea8    = '#5f727f',
 
     green0  = '#ccffaa',
     green1  = '#c1d3b1',
     green2  = '#a3be8c',
-    green3  = '#95b1ac',
+    green3  = '#96c963',
     green4  = '#86a943',
     green5  = '#669933',
     green6  = '#558822',
@@ -51,6 +56,10 @@ return {
     red7    = '#511313',
     red8    = '#311313',
 
+    vermil4 = '#e54231',
+    vermil5 = '#cb4b16',
+    vermil6 = '#bb2b16',
+
     rose0   = '#ffd2d2',
     rose1   = '#f9c2c2',
     rose2   = '#f9aaaa',
@@ -60,7 +69,9 @@ return {
     rose6   = '#b4637a',
     rose7   = '#94536a',
     rose8   = '#84435a',
+    rose9   = '#c47b7b',
 
+    purple1 = '#efafc9',
     purple2 = '#c4a7e7',
     purple3 = '#b48ead',
     purple4 = '#af7f99',
@@ -71,9 +82,10 @@ return {
     yellow5 = '#fdca49',
 
     salmon3 = '#ffd9ae',
-    salmon5 = '#ffbb86',
-    salmon6 = '#d08770',
-    salmon7 = '#d56d56',
+    salmon5 = '#ffc48c',
+    salmon6 = '#ffbb86',
+    salmon7 = '#d08770',
+    salmon8 = '#d56d56',
 
     orange1 = '#f4e28e',
     orange2 = '#ebcb8b',
@@ -81,6 +93,7 @@ return {
     orange4 = '#ffbb29',
     orange5 = '#ea9d34',
     orange6 = '#fd971f',
-    orange7 = '#eb6b36',
-    orange8 = '#bb7722',
+    orange7 = '#f38630',
+    orange8 = '#eb6b36',
+    orange9 = '#f2592a',
 }

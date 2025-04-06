@@ -2,6 +2,7 @@ local colors = require('serious/colors')
 local base = require('serious/base')
 local languages = require('serious/languages')
 local plugins = require('serious/plugins')
+local treesitter = require('serious/treesitter')
 local M = {}
 
 function M.colorscheme()
@@ -10,6 +11,7 @@ function M.colorscheme()
         base.syntax,
         languages,
         plugins,
+        treesitter,
     }
 
     for _, category in pairs(categories) do
