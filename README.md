@@ -15,3 +15,11 @@ Show all highlight groups colored (does not show up immediately)
 Debug lua e. g. 
 
     :lua print(vim.inspect(variable))
+
+## Spectre and Oxi
+
+To use oxi for replacement run
+
+    ~/.local/share/nvim/lazy/nvim-spectre/build.sh
+
+See spectres README fo more information
