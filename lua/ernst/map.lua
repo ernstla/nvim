@@ -38,32 +38,6 @@ map('n', 'ya2', 'ya"')
 map('n', '<leader>ds', ':%s/^\\s*/&&<cr>')
 map('v', '<leader>ds', ':s/^\\s*/&&<cr>')
 
--- Tabs
-map('n', '<leader>tt', ':tabnew<cr>')
-
--- Autocompletion
-map('i', '<c-n>', '<c-x><c-o>')
-
--- Toggle hlsearch
-map('n', '<leader>h', ':set hlsearch!<cr>')
-
--- Toggle relativenumber
-map('n', '<leader>tr', ':set relativenumber!<cr>')
-
--- Toggle wrapping
-map('n', '<leader>w', ':set wrap! wrap?<cr>')
-
--- Reformat paragraph
-map('n', '<leader>f', 'vipgq')
-
--- Toggle invisibles
-map('n', '<leader>i', ':set list!<cr>')
-
--- Resize window
-map('', '<leader>>', '20<c-w>>')
-map('', '<leader><', '20<c-w><')
-map('', '<leader>=', '10<c-w>+')
-map('', '<leader>-', '10<c-w>-')
 
 map('t', '<ESC><ESC>', '<C-\\><C-n>')
 
@@ -75,25 +49,54 @@ map('n', '#', '#zz')
 map('', '<c-o>', '<c-o>zz')
 map('', '<c-i>', '<c-i>zz')
 
-
 -- Run last macro
 map('n', 'Q', '@@')
 map('n', '<F6>', '@@')
 
-map('n', '<leader>p', ':Inspect<cr>')
--- Define a command to reload your colorscheme
-vim.keymap.set('n', '<F12>', require('ernst/lib').reload_colorscheme, { desc = 'Reload colorscheme' })
+map('n', '<F12>', require('ernst/lib').reload_colorscheme, { desc = 'Reload colorscheme' })
 
 map('n', '[d', vim.diagnostic.goto_prev)
 map('n', ']d', vim.diagnostic.goto_next)
-map('n', '<leader>e', vim.diagnostic.open_float)
-map('n', '<leader>q', vim.diagnostic.setloclist)
 
-map('n', '<leader>gs', '<cmd>Git<cr>')
-map('n', '<leader>gw', '<cmd>Gitsigns blame (who)<cr>')
-map('n', '<leader>gb', '<cmd>Git blame<cr>')
-map('n', '<leader>gl', '<cmd>Gitsigns blame_line<cr>')
+require("which-key").add(
+    { {
+        mode = { "n" },
+        --
+        -- Resize window
+        { '<leader>>',  '20<c-w>>',                       desc = 'make window wider',           nowait = true, remap = false },
+        { '<leader><',  '20<c-w><',                       desc = 'make window narrower',        nowait = true, remap = false },
+        { '<leader>=',  '10<c-w>+',                       desc = 'make window taller',          nowait = true, remap = false },
+        { '<leader>-',  '10<c-w>-',                       desc = 'make window lower',           nowait = true, remap = false },
 
--- Tailwind Tools
-map('n', '<leader>tw', '<cmd>TailwindConcealToggle<cr>')
-map('n', '<leader>tc', '<cmd>TailwindColorToggle<cr>')
+        -- Toggle invisibles
+        { '<leader>i',  ':set list!<cr>',                 desc = 'toggle invisibles',           nowait = true, remap = false },
+        { '<leader>e',  vim.diagnostic.open_float,        desc = 'show line diagnostics',       nowait = true, remap = false },
+        { '<leader>q',  vim.diagnostic.setloclist,        desc = 'show diagnostic in loc list', nowait = true, remap = false },
+
+        { '<leader>gs', '<cmd>Git<cr>',                   desc = 'git status',                  nowait = true, remap = false },
+        { '<leader>gw', '<cmd>Gitsigns blame (who)<cr>',  desc = 'git blame (who)',             nowait = true, remap = false },
+        { '<leader>gb', '<cmd>Git blame<cr>',             desc = 'git blame',                   nowait = true, remap = false },
+        { '<leader>gl', '<cmd>Gitsigns blame_line<cr>',   desc = 'git blame (line)',            nowait = true, remap = false },
+
+        -- Tailwind Tools
+        { '<leader>tw', '<cmd>TailwindConcealToggle<cr>', desc = 'tailwind coceal',             nowait = true, remap = false },
+        { '<leader>tc', '<cmd>TailwindColorToggle<cr>',   desc = 'tailwind show/hide colors',   nowait = true, remap = false },
+        -- Tabs
+        { '<leader>tt', ':tabnew<cr>',                    desc = 'tab new',                     nowait = true, remap = false },
+
+        -- Toggle hlsearch
+        { '<leader>h',  ':set hlsearch!<cr>',             desc = 'toggle search highlighting',  nowait = true, remap = false },
+
+        -- Toggle relativenumber
+        { '<leader>tr', ':set relativenumber!<cr>',       desc = 'toggle relative number',      nowait = true, remap = false },
+
+        -- Toggle wrapping
+        { '<leader>w',  ':set wrap! wrap?<cr>',           desc = 'toggle line wrapping',        nowait = true, remap = false },
+
+        -- Reformat paragraph
+        { '<leader>f',  'vipgq',                          desc = 'reformat paragraph',          nowait = true, remap = false },
+
+        -- Inspect treesitter and highlighter groups
+        { '<leader>p',  ':Inspect<cr>',                   desc = 'show highlighting info',      nowait = true, remap = true },
+    } }
+)

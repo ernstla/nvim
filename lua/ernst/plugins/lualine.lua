@@ -4,7 +4,7 @@ local theme = {
     normal = {
         a = { fg = c.text, bg = c.rose7 },
         b = { fg = c.text, bg = c.grey6 },
-        c = { fg = c.comment, bg = c.black },
+        c = { fg = c.comment, bg = c.grey7 },
         z = { fg = c.text, bg = c.grey6 },
     },
     insert = {

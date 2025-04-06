@@ -44,20 +44,39 @@ return { {
 
         local gs = package.loaded.gitsigns
 
-        vim.keymap.set('n', '<leader>]', function()
-            if vim.wo.diff then return ']c' end
-            vim.schedule(function()
-                gs.next_hunk()
-            end)
-            return '<Ignore>'
-        end, { noremap = true, silent = true, nowait = true, desc = "next change hunk", expr = true })
+        require("which-key").add({ {
+            mode = { "n" },
+            {
+                '<leader>]',
+                function()
+                    if vim.wo.diff then return ']c' end
+                    vim.schedule(function()
+                        gs.next_hunk()
+                    end)
+                    return '<Ignore>'
+                end,
+                noremap = true,
+                silent = true,
+                nowait = true,
+                desc = "git: next change hunk",
+                expr = true
+            },
 
-        vim.keymap.set('n', '<leader>[', function()
-            if vim.wo.diff then return '[c' end
-            vim.schedule(function()
-                gs.prev_hunk()
-            end)
-            return '<Ignore>'
-        end, { noremap = true, silent = true, nowait = true, desc = "previous change hunk", expr = true })
+            {
+                '<leader>[',
+                function()
+                    if vim.wo.diff then return '[c' end
+                    vim.schedule(function()
+                        gs.prev_hunk()
+                    end)
+                    return '<Ignore>'
+                end,
+                noremap = true,
+                silent = true,
+                nowait = true,
+                desc = "git: previous change hunk",
+                expr = true
+            },
+        } })
     end
 } }

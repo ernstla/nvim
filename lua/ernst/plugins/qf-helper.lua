@@ -27,11 +27,16 @@ return { {
         local map = vim.keymap.set
         local opts = { noremap = true, silent = true, nowait = true }
 
-        map('n', '<leader><f3>', '<cmd>QFToggle<cr>', opts)
         map('n', '<f3>', '<cmd>QFNext<cr>zz', opts)
         map('n', '<s-f3>', '<cmd>QFPrev<cr>zz', opts)
-        map('n', '<leader><f4>', '<cmd>LLToggle<cr>', opts)
         map('n', '<f4>', '<cmd>LLNext<cr>', opts)
         map('n', '<s-f4>', '<cmd>LLPrev<cr>', opts)
+
+        require("which-key").add(
+            { {
+                mode = { "n" },
+                { '<leader><f4>', '<cmd>LLToggle<cr>', desc = 'toggle location list', noremap = true, nowait = true },
+                { '<leader><f3>', '<cmd>QFToggle<cr>', desc = 'toggle quickfix list', noremap = true, nowait = true },
+            } })
     end
 } }

@@ -16,14 +16,11 @@ return { {
     config = function(spec)
         require('trouble').setup(spec.opts)
 
-        require("which-key").add(
-            {
-                {
-                    { "<leader>te", "<cmd>Trouble diagnostics toggle<cr>",              desc = "Trouble: toogle errors",  nowait = true, remap = false },
-                    { "<leader>tE", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Trouble: toogle errors",  nowait = true, remap = false },
-                    { "<leader>ts", "<cmd>Trouble symbols toggle<cr>",                  desc = "Trouble: toogle symbols", nowait = true, remap = false },
-                }
-            }
-        )
+        require("which-key").add({ {
+            mode = { "n" },
+            { "<leader>te", "<cmd>Trouble diagnostics toggle<cr>",              desc = "trouble: toogle errors",  nowait = true, remap = false },
+            { "<leader>tE", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "trouble: toogle errors",  nowait = true, remap = false },
+            { "<leader>ts", "<cmd>Trouble symbols toggle<cr>",                  desc = "trouble: toogle symbols", nowait = true, remap = false },
+        } })
     end
 } }

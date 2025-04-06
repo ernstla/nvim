@@ -36,7 +36,7 @@ return {
 
     TelescopeNormal           = { fg = c.text, bg = c.none },
     TelescopeBorder           = { fg = c.grey2, bg = c.none },
-    TelescopeSelection        = { fg = c.white, bg = c.grey6 },
+    TelescopeSelection        = { fg = c.red1, bg = c.grey7 },
     TelescopeResultsTitle     = { fg = c.grey1, bg = c.none },
     TelescopePromptBorder     = { fg = c.red5, bg = c.none },
     TelescopePromptTitle      = { fg = c.red3, bg = c.none },

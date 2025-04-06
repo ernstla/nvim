@@ -1,6 +1,7 @@
 return {
     none    = 'NONE',
     text    = '#f2e9e1',
+    bg      = '#000306',
     comment = '#556270',
 
     black   = '#000000',
@@ -14,6 +15,7 @@ return {
     grey5   = '#232136',
     grey6   = '#1f1d30',
     grey7   = '#0a0d13',
+    grey8   = '#03060a',
 
     brown1  = '#fdd9ae',
     brown3  = '#8f6f79',

@@ -98,11 +98,24 @@ return { {
 
         vim.keymap.set('n', '<m-p>', builtin.find_files, {})
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
-        vim.keymap.set('n', '<leader>b', builtin.buffers, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-        vim.keymap.set('n', '<leader>r', function()
-            builtin.grep_string({ search = vim.fn.input('ripgrep: ') })
-        end)
+
+        require("which-key").add(
+            { {
+                mode = { "n" },
+                { '<leader>b',  builtin.buffers,   desc = 'telescope: buffers',   nowait = true, remap = false },
+                { '<leader>tb', builtin.buffers,   desc = 'telescope: buffers',   nowait = true, remap = false },
+                { '<leader>th', builtin.help_tags, desc = 'telescope: help tags', nowait = true, remap = false },
+                {
+                    '<leader>r',
+                    function()
+                        builtin.grep_string({ search = vim.fn.input('ripgrep: ') })
+                    end,
+                    desc = 'telescope: ripgrep',
+                    nowait = true,
+                    remap = false
+                },
+            } }
+        )
     end
 } }
