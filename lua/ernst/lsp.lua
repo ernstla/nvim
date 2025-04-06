@@ -1,4 +1,8 @@
 vim.diagnostic.config {
+    float = {
+        border = "rounded",
+        source = "always",
+    },
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = ' ',
