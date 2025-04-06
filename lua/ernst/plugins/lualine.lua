@@ -1,36 +1,27 @@
-local colors = {
-    love = '#b4334a',
-    muted = '#6e6a86',
-    base = '#191724',
-    overlay = '#f2e9e1',
-    iris = '#a04a79',
-    gold = '#da8d24',
-    pine = '#286983',
-    bg = '#080b0e',
-}
+local c = require('serious/colors')
 
 local theme = {
     normal = {
-        a = { fg = colors.overlay, bg = colors.love },
-        b = { fg = colors.overlay, bg = colors.muted },
-        c = { fg = colors.muted, bg = colors.bg },
-        z = { fg = colors.overlay, bg = colors.base },
+        a = { fg = c.text, bg = c.rose7 },
+        b = { fg = c.text, bg = c.grey6 },
+        c = { fg = c.comment, bg = c.black },
+        z = { fg = c.text, bg = c.grey6 },
     },
     insert = {
-        a = { fg = colors.overlay, bg = colors.pine },
-        z = { fg = colors.overlay, bg = colors.base },
+        a = { fg = c.text, bg = c.blue3 },
+        z = { fg = c.text, bg = c.grey6 },
     },
     visual = {
-        a = { fg = colors.overlay, bg = colors.gold },
-        z = { fg = colors.overlay, bg = colors.base },
+        a = { fg = c.text, bg = c.orange7 },
+        z = { fg = c.text, bg = c.grey6 },
     },
     replace = {
-        a = { fg = colors.overlay, bg = colors.iris },
-        z = { fg = colors.overlay, bg = colors.base },
+        a = { fg = c.text, bg = c.purple6 },
+        z = { fg = c.text, bg = c.grey6 },
     },
     command = {
-        a = { fg = colors.overlay, bg = colors.iris },
-        z = { fg = colors.overlay, bg = colors.base },
+        a = { fg = c.text, bg = c.purple6 },
+        z = { fg = c.text, bg = c.grey6 },
     },
 }
 

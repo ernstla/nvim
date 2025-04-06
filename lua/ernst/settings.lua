@@ -87,23 +87,3 @@ o.wildmenu = true
 o.wildmode = 'full'
 o.winaltkeys = 'no'
 o.winborder = '' -- As long as plugins have their own setting, disable winborder
-o.winfixwidth = false
-o.winminheight = 0
-o.wrap = false
-o.wrapmargin = 0
-o.writebackup = false
-
-opt.backspace = { 'indent', 'eol', 'start' } -- Backspace as expected
-opt.complete = { '.', 'w', 'b', 'u', 't' }   -- Insert-mode completion
-opt.completeopt:remove({ 'preview' })
-opt.diffopt = { 'vertical', 'filler' }
-opt.fileformats = { 'unix', 'dos' }
-opt.formatoptions:append({ 'j' }) -- Delete comment character when joining commented lines
-opt.listchars = { nbsp = '·', tab = '› ', eol = '¬', trail = '·', extends = '…', precedes = '…' }
-opt.matchpairs = { '(:)', '{:}', '[:]', '<:>' }
-opt.path:append({ '**' }) -- Search through sub-directories when looking up a file
-opt.sessionoptions = { 'blank', 'buffers', 'curdir', 'folds', 'help', 'options', 'tabpages', 'globals' }
-opt.tags = { './.tags', './tags' }
-opt.wildignore = { '*.o', '*.obj', '*.pyc', '*.swc', '*.DS_STORE', '*.bkp' }
-
-wo.signcolumn = 'yes'
