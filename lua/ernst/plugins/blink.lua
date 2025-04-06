@@ -7,7 +7,11 @@ return { {
         -- C-n/C-p or Up/Down: Select next/previous item
         -- C-e: Hide menu
         -- C-k: Toggle signature help (if signature.enabled = true)
-        keymap = { preset = 'enter' },
+        keymap = {
+            preset = 'enter',
+            ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
+            ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
+        },
         sources = {
             default = {
                 'lsp',
