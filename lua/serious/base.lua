@@ -26,7 +26,7 @@ M.gui = {
     DiffChange                 = { fg = c.green7, bg = c.green1 },
     DiffDelete                 = { fg = c.rose1, bg = c.red5 },
     DiffText                   = { fg = c.red5, bg = c.rose1 },
-    Directory                  = { fg = c.text, bg = c.none },
+    Directory                  = { fg = c.blue4, bg = c.none },
     EndOfBuffer                = { fg = c.grey4, bg = c.none },
     ErrorMsg                   = { fg = c.red2, bg = c.none },
     FloatBorder                = { fg = c.vermil5, bg = c.none },
@@ -108,7 +108,7 @@ M.syntax = {
     Constant       = { fg = c.sea4, bg = c.none },
     Debug          = { fg = c.grey0, bg = c.none },
     Define         = { fg = c.sea3, bg = c.none },
-    Delimiter      = { fg = c.text, bg = c.none },
+    Delimiter      = { fg = c.vermil4, bg = c.none },
     Error          = { fg = c.red2, bg = c.none },
     Exception      = { fg = c.sea4, bg = c.none },
     Float          = { fg = c.purple2, bg = c.none },
@@ -140,4 +140,3 @@ M.syntax = {
 }
 
 return M
-

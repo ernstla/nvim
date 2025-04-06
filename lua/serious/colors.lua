@@ -28,6 +28,7 @@ return {
     blue6   = '#95c2e8',
     blue7   = '#697eb3',
     blue8   = '#617fa0',
+    pine    = '#286983',
 
     sea2    = '#ceecee',
     sea3    = '#9ccfd8',
@@ -67,7 +68,7 @@ return {
     rose4   = '#ea9a97',
     rose5   = '#df9faf',
     rose6   = '#b4637a',
-    rose7   = '#94536a',
+    rose7   = '#b4334a',
     rose8   = '#84435a',
     rose9   = '#c47b7b',
 
@@ -76,6 +77,8 @@ return {
     purple3 = '#b48ead',
     purple4 = '#af7f99',
     purple5 = '#908caa',
+    purple6 = '#a04a79',
+    purple7 = '#94536a',
 
     yellow3 = '#f5f28e',
     yellow4 = '#ffdd00',

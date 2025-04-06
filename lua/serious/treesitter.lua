@@ -34,4 +34,8 @@ return {
 
     ['@text.literal.markdown_inline'] = { fg = c.organge8 },
     ['@punctuation.delimiter.markdown_inline'] = { fg = c.organge8 },
+
+    ['@propery.lua'] = { fg = c.grey0 },
+    ['@punctuation.delimiter.lua'] = { fg = c.text },
+    ['@punctuation.bracket.lua'] = { fg = c.sea3 },
 }

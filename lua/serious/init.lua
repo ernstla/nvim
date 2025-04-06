@@ -1,4 +1,3 @@
-local colors = require('serious/colors')
 local base = require('serious/base')
 local languages = require('serious/languages')
 local plugins = require('serious/plugins')
