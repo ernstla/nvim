@@ -1,12 +1,15 @@
-local base = require('serious/base')
 local colors = require('serious/colors')
+local base = require('serious/base')
+local languages = require('serious/languages')
+local plugins = require('serious/plugins')
 local M = {}
 
 function M.colorscheme()
     local categories = {
         base.gui,
         base.syntax,
-        colors
+        languages,
+        plugins,
     }
 
     for _, category in pairs(categories) do
