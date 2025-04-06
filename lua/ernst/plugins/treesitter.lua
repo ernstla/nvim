@@ -44,7 +44,7 @@ return { {
 
         highlight = {
             -- `false` will disable the whole extension
-            enable = false,
+            enable = true,
 
             -- list of language that will be disabled
             disable = { 'html', 'php', 'python', 'javascript' },
