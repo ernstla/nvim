@@ -80,8 +80,7 @@ map('', '<c-i>', '<c-i>zz')
 map('n', 'Q', '@@')
 map('n', '<F6>', '@@')
 
--- Get TreeSitter or Neovim highlight group under cursor
-map('n', '<leader>p', require('ernst/lib').print_highlight_group)
+map('n', '<leader>p', ':Inspect<cr>')
 
 map('n', '[d', vim.diagnostic.goto_prev)
 map('n', ']d', vim.diagnostic.goto_next)
@@ -92,7 +91,6 @@ map('n', '<leader>gs', '<cmd>Git<cr>')
 map('n', '<leader>gw', '<cmd>Gitsigns blame (who)<cr>')
 map('n', '<leader>gb', '<cmd>Git blame<cr>')
 map('n', '<leader>gl', '<cmd>Gitsigns blame_line<cr>')
--- map('n', '<leader>gc', '<cmd>Gitsigns toggle_current_line_blame<cr>')
 
 -- Tailwind Tools
 map('n', '<leader>tw', '<cmd>TailwindConcealToggle<cr>')
