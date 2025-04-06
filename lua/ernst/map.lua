@@ -81,6 +81,8 @@ map('n', 'Q', '@@')
 map('n', '<F6>', '@@')
 
 map('n', '<leader>p', ':Inspect<cr>')
+-- Define a command to reload your colorscheme
+vim.keymap.set('n', '<F12>', require('ernst/lib').reload_colorscheme, { desc = 'Reload colorscheme' })
 
 map('n', '[d', vim.diagnostic.goto_prev)
 map('n', ']d', vim.diagnostic.goto_next)

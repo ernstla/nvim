@@ -1,5 +1,15 @@
 M = {}
 
+function M.reload_colorscheme()
+    package.loaded["serious/colors"] = nil
+    package.loaded['serious/base'] = nil
+    package.loaded['serious/languages'] = nil
+    package.loaded['serious/plugins'] = nil
+    package.loaded["serious"] = nil
+    require("serious")
+    vim.cmd.colorscheme('serious')
+end
+
 M.project_files = function()
     local opts = {} -- define here if you want to define something
 

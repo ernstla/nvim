@@ -8,3 +8,4 @@ command('Ags', function(opts) vim.cmd('silent! :botright :grep --case-sensitive 
 command('Jsonify', '%!python3 -m json.tool', {})
 command('Tidy', '!tidy -mi -html -wrap 0 %', {})
 command('LspInfo', 'checkhealth lsp', {})
+command("ReloadColorscheme", function() require('ernst/lib').reload_colorscheme() end, {})
