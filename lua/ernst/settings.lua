@@ -1,7 +1,5 @@
 local g = vim.g
 local o = vim.o
-local opt = vim.opt
-local wo = vim.wo
 local home = vim.fn.getenv('HOME')
 
 -- Global plugin settings
