@@ -27,7 +27,9 @@ local prints = function()
 end
 local line = function()
     return {
-        t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')")
+        t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "),
+        i(0),
+        t("')"),
     }
 end
 
