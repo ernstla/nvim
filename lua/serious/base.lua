@@ -17,7 +17,7 @@ M.gui = {
     DiagnosticSignWarn         = { fg = c.brown5 },
     DiagnosticSignHint         = { fg = c.purple4 },
     DiagnosticSignInfo         = { fg = c.blue6 },
-    DiagnosticVirtualTextError = { fg = c.organge8 },
+    DiagnosticVirtualTextError = { fg = c.orange8 },
     DiagnosticVirtualTextWarn  = { fg = c.sea8 },
     DiagnosticVirtualTextHint  = { fg = c.brown3 },
     DiagnosticVirtualTextInfo  = { fg = c.blue5 },
