@@ -103,9 +103,11 @@ return { {
         require("which-key").add(
             { {
                 mode = { "n" },
-                { '<leader>b',  builtin.buffers,   desc = 'telescope: buffers',   nowait = true, remap = false },
-                { '<leader>tb', builtin.buffers,   desc = 'telescope: buffers',   nowait = true, remap = false },
-                { '<leader>th', builtin.help_tags, desc = 'telescope: help tags', nowait = true, remap = false },
+                { '<leader>b',  builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
+                { '<leader>tb', builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
+                { '<leader>th', builtin.help_tags,            desc = 'telescope: help tags',     nowait = true, remap = false },
+                { '<leader>tq', builtin.quickfix,             desc = 'telescope: quickfix list', nowait = true, remap = false },
+                { '<leader>tl', builtin.lsp_document_symbols, desc = 'telescope: lsp symbols',   nowait = true, remap = false },
                 {
                     '<leader>r',
                     function()
