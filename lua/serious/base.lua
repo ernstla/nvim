@@ -23,6 +23,8 @@ M.gui = {
     DiagnosticVirtualTextInfo  = { fg = c.blue5 },
     DiagnosticSignErrorNumber  = { fg = c.vermil6 },
     DiagnosticUnderlineError   = { fg = c.none, bg = c.red7 },
+    DiagnosticUnderlineWarn    = { fg = c.none, bg = c.brown8 },
+    DiagnosticDeprecated       = { fg = c.none, bg = c.blue9 },
     DiffAdd                    = { fg = c.green1, bg = c.green7 },
     DiffChange                 = { fg = c.green7, bg = c.green1 },
     DiffDelete                 = { fg = c.rose1, bg = c.red5 },
@@ -135,7 +137,7 @@ M.syntax = {
     Structure      = { fg = c.rose9, bg = c.none },
     Tag            = { fg = c.red2, bg = c.none },
     Todo           = { fg = c.salmon7, bg = c.none },
-    Type           = { fg = c.sea3, bg = c.none },
+    Type           = { fg = c.purple3, bg = c.none },
     Typedef        = { fg = c.sea3, bg = c.none },
     Underlined     = { fg = c.green2, bg = c.none, underline = true, sp = c.green2 },
 }

@@ -34,11 +34,13 @@ return {
     ['@punctuation.special.javascript'] = { fg = c.salmon7 },
     ['@variable.builtin.javascript'] = { fg = c.rose4 },
     ['@variable.javascript'] = { fg = c.text },
+    ['@constant.builtin.javascript'] = { fg = c.rose5 },
 
     ['@punctuation.bracket.typescript'] = { fg = c.text },
     ['@punctuation.delimiter.typescript'] = { fg = c.text },
     ['@punctuation.special.typescript'] = { fg = c.salmon7 },
     ['@variable.builtin.typescript'] = { fg = c.rose4 },
+    ['@constant.builtin.typescript'] = { fg = c.rose5 },
 
     ['@keyword.svelte'] = { fg = c.blue4 },
     ['@punctuation.bracket.svelte'] = { fg = c.blue4 },
@@ -51,7 +53,7 @@ return {
     ['@function.method.vue'] = { fg = c.rose4 },
     ['@method.vue'] = { fg = c.sea3 },
     ['@operator.vue'] = { fg = c.orange4 },
-    ['@punctuation.special.vue'] = { fg = c.yellow3 },
+    ['@punctuation.special.vue'] = { fg = c.yellow2 },
     ['@variable.member.vue'] = { fg = c.green2 },
-    ['@variable.vue'] = { fg = c.yellow3 },
+    ['@variable.vue'] = { fg = c.yellow2 },
 }

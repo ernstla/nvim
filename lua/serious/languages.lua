@@ -27,7 +27,7 @@ return {
     phpRegion = { fg = c.grey0 },
     phpRelation = { fg = c.text },
     phpRepeat = { fg = c.blue4 },
-    phpSpecialFunction = { fg = c.yellow3 },
+    phpSpecialFunction = { fg = c.yellow4 },
     phpStatement = { fg = c.blue4 },
     phpStorageClass = { fg = c.blue8 },
     phpStringBacktick = { fg = c.orange4 },
@@ -110,3 +110,4 @@ return {
     sqlPostgresDelim = { fg = c.blue6 },
     sqlPostgresVariable = { fg = c.blue6 },
 }
+

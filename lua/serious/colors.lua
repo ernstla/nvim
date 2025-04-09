@@ -21,6 +21,7 @@ return {
     brown3  = '#8f6f79',
     brown4  = '#634242',
     brown5  = '#bb7722',
+    brown8  = '#663300',
 
     blue0   = '#caf6ff',
     blue2   = '#01a8c6',
@@ -30,7 +31,7 @@ return {
     blue6   = '#95c2e8',
     blue7   = '#697eb3',
     blue8   = '#617fa0',
-    pine    = '#286983',
+    blue9   = '#184963',
 
     sea2    = '#ceecee',
     sea3    = '#9ccfd8',
@@ -81,8 +82,10 @@ return {
     purple5 = '#908caa',
     purple6 = '#a04a79',
     purple7 = '#94536a',
+    purple8 = '#511331',
 
-    yellow3 = '#f5f28e',
+    yellow2 = '#f5f28e',
+    yellow3 = '#fff04e',
     yellow4 = '#ffdd00',
     yellow5 = '#fdca49',
 
@@ -102,3 +105,4 @@ return {
     orange8 = '#eb6b36',
     orange9 = '#f2592a',
 }
+
