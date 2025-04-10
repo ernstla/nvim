@@ -1,5 +1,6 @@
 return { {
     'saghen/blink.cmp',
+    dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     version = '1.*',
     opts = {
         -- All presets have the following mappings:
@@ -11,9 +12,21 @@ return { {
             preset = 'enter',
             ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
             ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
+            ['<c-k>'] = { 'select_prev' },
+            ['<c-j>'] = { 'select_next' },
+            ['<tab>'] = { 'select_and_accept' },
         },
+        fuzzy = {
+            sorts = {
+                'exact',
+                'score',
+                'sort_text',
+            },
+        },
+        snippets = { preset = 'luasnip' },
         sources = {
             default = {
+                'snippets',
                 'lsp',
                 'path',
                 'buffer',
