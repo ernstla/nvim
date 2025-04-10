@@ -16,9 +16,7 @@ return { {
                 api_key = secrets.openai_key,
             },
             deepseek = {
-                name = "deepseek",
                 style = "openai",
-                models = { "deepseek-chat" },
                 api_key = secrets.deepseek_key,
                 url = "https://api.deepseek.com/v1/chat/completions",
                 parameters = {
@@ -27,18 +25,25 @@ return { {
                 }
             }
         },
-
+        system_prompt = {
+            command =
+                "Respond with only the raw code solution (no markdown, no backticks, no explanations) " ..
+                "unless I say otherwise. If unsure, say 'I don't know how to do this'.",
+        },
+        prompts = {
+            ["Translate"] =
+                "Translate the provided text into English while preserving the original format " ..
+                "(e.g., PO/Gettext, HTML, JSON) and maintaining all structural elements like placeholders, " ..
+                "tags, or markup—only modify human-readable content.",
+            ["Comment"] = "Provide a comment that explains what the snippet is doing."
+        },
         cmd_prefix = "Parrot",
         state_dir = secrets.ai_path .. "/persisted",
         chat_dir = secrets.ai_path .. "/chats",
         toggle_target = "split",
         style_popup_border = "rounded",
         chat_confirm_delete = false,
-
-        -- The interactive user input appearing when can be "native" for
-        -- vim.ui.input or "buffer" to query the input within a native nvim buffer
-        -- (see video demonstrations below)
-        user_input_ui = "buffer",
+        user_input_ui = "native", -- "buffer" (opens a buffer) or "native" (command line)
     },
     config = function(spec)
         require("parrot").setup(spec.opts)
@@ -54,19 +59,21 @@ return { {
                     { "<leader>ak", "<cmd>ParrotStop<cr>",           desc = "AI: ParrotChatStop",        nowait = true, remap = false },
                     { "<leader>ag", "<cmd>ParrotChatToggle<cr>",     desc = "AI: Toggle Chat",           nowait = true, remap = false },
                     { "<leader>ax", "<cmd>ParrotContext<cr>",        desc = "AI: Toggle ParrotContext",  nowait = true, remap = false },
-                    { "<leader>ad", "<cmd>ParrotChatDelete<cr>",     desc = "AI: Delete chat",           nowait = true, remap = false },
-                    { "<leader>a?", "<cmd>ParrotStatus<cr>",         desc = "AI: Show provider & model", nowait = true, remap = false },
+                    { "<leader>ai", "<cmd>ParrotStatus<cr>",         desc = "AI: Show provider & model", nowait = true, remap = false },
                     { "<leader>aa", "<cmd>ParrotAppend<cr>",         desc = "AI: Append (after)",        nowait = true, remap = false },
+                    { "<leader>ad", "<cmd>ParrotPrepend<cr>",        desc = "AI: Prepend (davor)",       nowait = true, remap = false },
                 },
                 {
                     mode = { "v" },
-                    { "<leader>at", ":<C-u>'<,'>ParrotChatNew tabnew<cr>", desc = "AI: Visual Chat New tabnew", nowait = true, remap = false },
-                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>", desc = "AI: Visual Chat New vsplit", nowait = true, remap = false },
-                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",  desc = "AI: Visual Chat New split",  nowait = true, remap = false },
-                    { "<leader>aa", ":<C-u>'<,'>ParrotAppend<cr>",         desc = "AI: Visual Append (after)",  nowait = true, remap = false },
-                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",      desc = "AI: Implement selection",    nowait = true, remap = false },
-                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",        desc = "AI: Visual Rewrite",         nowait = true, remap = false },
-                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",      desc = "AI: Visual Chat Paste",      nowait = true, remap = false },
+                    { "<leader>at", ":<C-u>'<,'>ParrotChatNew tabnew<cr>",    desc = "AI: Chat new tab (paste sel)",    nowait = true, remap = false },
+                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>",    desc = "AI: Chat new vsplit (paste sel)", nowait = true, remap = false },
+                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",     desc = "AI: Chat new split (paste sel)",  nowait = true, remap = false },
+                    { "<leader>aa", ":<C-u>'<,'>ParrotAppend<cr>",            desc = "AI: Append and use sel (after)",  nowait = true, remap = false },
+                    { "<leader>ad", ":<C-u>'<,'>ParrotPrepend<cr>",           desc = "AI: Prepend and use sel (davor)", nowait = true, remap = false },
+                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",         desc = "AI: Implement selection",         nowait = true, remap = false },
+                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",           desc = "AI: Rewrite selection",           nowait = true, remap = false },
+                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",         desc = "AI: Paste to chat",               nowait = true, remap = false },
+                    { "<leader>ae", ":<C-u>'<,'>ParrotRewrite Translate<cr>", desc = "AI: Translate to english",        nowait = true, remap = false },
                 }
             }
         )
