@@ -14,7 +14,7 @@ return { {
             ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
             ['<c-k>'] = { 'select_prev' },
             ['<c-j>'] = { 'select_next' },
-            ['<tab>'] = { 'select_and_accept' },
+            ['<tab>'] = { 'select_and_accept', 'fallback' },
         },
         fuzzy = {
             sorts = {
