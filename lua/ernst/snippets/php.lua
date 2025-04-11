@@ -4,7 +4,7 @@ local snippet = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-return {
+local snippets = {
     snippet('strict', {
         t({ '<?php', '', 'declare(strict_types=1);', '', '' }),
         i(0)
@@ -122,48 +122,6 @@ return {
     snippet('ln', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
-    snippet('hans', {
-        t('error_log("~~~~~~~~~~~ HANS ~~~~~~~~~~~~");')
-    }),
-    snippet('franz', {
-        t('error_log("~~~~~~~~~~~ FRANZ ~~~~~~~~~~~");')
-    }),
-    snippet('doldi', {
-        t('error_log("~~~~~~~~~~~ DOLDI ~~~~~~~~~~~");')
-    }),
-    snippet('fritz', {
-        t('error_log("~~~~~~~~~~~ FRITZ ~~~~~~~~~~~");')
-    }),
-    snippet('robert', {
-        t('error_log("~~~~~~~~~~~ ROBERT ~~~~~~~~~~");')
-    }),
-    snippet('roland', {
-        t('error_log("~~~~~~~~~~~ ROLAND ~~~~~~~~~~");')
-    }),
-    snippet('linee', {
-        t('echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\n";')
-    }),
-    snippet('hanse', {
-        t('echo "~~~~~~~~~~~ HANS ~~~~~~~~~~~~\\n";')
-    }),
-    snippet('franze', {
-        t('echo "~~~~~~~~~~~ FRANZ ~~~~~~~~~~~\\n";')
-    }),
-    snippet('doldie', {
-        t('echo "~~~~~~~~~~~ DOLDI ~~~~~~~~~~~\\n";')
-    }),
-    snippet('fritze', {
-        t('echo "~~~~~~~~~~~ FRITZ ~~~~~~~~~~~\\n";')
-    }),
-    snippet('roberte', {
-        t('echo "~~~~~~~~~~~ ROBERT ~~~~~~~~~~\\n";')
-    }),
-    snippet('rolande', {
-        t('echo "~~~~~~~~~~~ ROLAND ~~~~~~~~~~\\n";')
-    }),
-    snippet('/', {
-        t({ '/**', ' * ' }), i(1), t({ '', ' */' }),
-    }),
     snippet(':foreach', {
         t('<?php foreach ('), i(1), t(' as '), i(2), t({ ') : ?>', '' }),
         t('\t'), i(0),
@@ -262,3 +220,16 @@ return {
         t(")"),
     }),
 }
+
+local words = require('ernst/snippets/words')
+local word_snippet = function(word)
+    return snippet(word, {
+        t('error_log("~~~~~~~~~~~' .. string.upper(word) .. ' ~~~~~~~~~~~~");')
+    })
+end
+
+for _, word in ipairs(words) do
+    table.insert(snippets, word_snippet(word))
+end
+
+return snippets

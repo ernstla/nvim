@@ -33,7 +33,7 @@ local line = function()
     }
 end
 
-return {
+local snippets = {
     snippet('pprint', pprint()),
     snippet('logr', pprint()),
     snippet('pp', {
@@ -61,41 +61,17 @@ return {
     }),
     snippet('line', line()),
     snippet('ln', line()),
-
-    snippet('hinna', {
-        t("print('~~~~~~~~~~~ HINNA ~~~~~~~~~~~')")
-    }),
-    snippet('dinna', {
-        t("print('~~~~~~~~~~~ DINNA ~~~~~~~~~~~')")
-    }),
-    snippet('danna', {
-        t("print('~~~~~~~~~~~ DANNA ~~~~~~~~~~~')")
-    }),
-    snippet('daua', {
-        t("print('~~~~~~~~~~~ DAUA ~~~~~~~~~~~~')")
-    }),
-    snippet('hans', {
-        t("print('~~~~~~~~~~~ HANS ~~~~~~~~~~~~')")
-    }),
-    snippet('günter', {
-        t("print('~~~~~~~~~~ GÜNTER ~~~~~~~~~~~')")
-    }),
-    snippet('günther', {
-        t("print('~~~~~~~~~~ GÜNTHER ~~~~~~~~~~')")
-    }),
-    snippet('franz', {
-        t("print('~~~~~~~~~~~ FRANZ ~~~~~~~~~~~')")
-    }),
-    snippet('doldi', {
-        t("print('~~~~~~~~~~~ DOLDI ~~~~~~~~~~~')")
-    }),
-    snippet('fritz', {
-        t("print('~~~~~~~~~~~ FRITZ ~~~~~~~~~~~')")
-    }),
-    snippet('robert', {
-        t("print('~~~~~~~~~~~ ROBERT ~~~~~~~~~~')")
-    }),
-    snippet('roland', {
-        t("print('~~~~~~~~~~~ ROLAND ~~~~~~~~~~')")
-    }),
 }
+
+local words = require('ernst/snippets/words')
+local word_snippet = function(word)
+    return snippet(word, {
+        t("print('~~~~~~~~~~~ " .. string.upper(word) .. " ~~~~~~~~~~')")
+    })
+end
+
+for _, word in ipairs(words) do
+    table.insert(snippets, word_snippet(word))
+end
+
+return snippets

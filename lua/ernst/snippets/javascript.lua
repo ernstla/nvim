@@ -4,7 +4,7 @@ local snippet = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-return {
+local snippets = {
     snippet('log', {
         t('console.log('),
         i(0),
@@ -37,42 +37,6 @@ return {
         t('console.log(new Error().stack);'),
         i(0)
     }),
-    snippet('hinna', {
-        t("console.log('~~~~~~~~~~~ HINNA ~~~~~~~~~~~');")
-    }),
-    snippet('dinna', {
-        t("console.log('~~~~~~~~~~~ DINNA ~~~~~~~~~~~');")
-    }),
-    snippet('danna', {
-        t("console.log('~~~~~~~~~~~ DANNA ~~~~~~~~~~~');")
-    }),
-    snippet('daua', {
-        t("console.log('~~~~~~~~~~~ DAUA ~~~~~~~~~~~~');")
-    }),
-    snippet('hans', {
-        t("console.log('~~~~~~~~~~~ HANS ~~~~~~~~~~~~');")
-    }),
-    snippet('günter', {
-        t("console.log('~~~~~~~~~~ GÜNTER ~~~~~~~~~~~');")
-    }),
-    snippet('günther', {
-        t("console.log('~~~~~~~~~~ GÜNTHER ~~~~~~~~~~');")
-    }),
-    snippet('franz', {
-        t("console.log('~~~~~~~~~~~ FRANZ ~~~~~~~~~~~');")
-    }),
-    snippet('doldi', {
-        t("console.log('~~~~~~~~~~~ DOLDI ~~~~~~~~~~~');")
-    }),
-    snippet('fritz', {
-        t("console.log('~~~~~~~~~~~ FRITZ ~~~~~~~~~~~');")
-    }),
-    snippet('robert', {
-        t("console.log('~~~~~~~~~~~ ROBERT ~~~~~~~~~~');")
-    }),
-    snippet('roland', {
-        t("console.log('~~~~~~~~~~~ ROLAND ~~~~~~~~~~');")
-    }),
     snippet('line', {
         t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
     }),
@@ -80,3 +44,16 @@ return {
         t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
     }),
 }
+
+local words = require('ernst/snippets/words')
+local word_snippet = function(word)
+    return snippet(word, {
+        t("console.log('~~~~~~~~~~~ " .. string.upper(word) .. " ~~~~~~~~~~~');")
+    })
+end
+
+for _, word in ipairs(words) do
+    table.insert(snippets, word_snippet(word))
+end
+
+return snippets
