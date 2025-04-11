@@ -37,6 +37,7 @@ return {
     sea3    = '#9ccfd8',
     sea4    = '#8fbcbb',
     sea5    = '#88c0d0',
+    sea6    = '#68a0b0',
     sea7    = '#586e75',
     sea8    = '#5f727f',
 
@@ -105,4 +106,3 @@ return {
     orange8 = '#eb6b36',
     orange9 = '#f2592a',
 }
-

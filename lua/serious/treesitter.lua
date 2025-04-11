@@ -41,6 +41,7 @@ return {
     ['@punctuation.special.typescript'] = { fg = c.salmon7 },
     ['@variable.builtin.typescript'] = { fg = c.rose4 },
     ['@constant.builtin.typescript'] = { fg = c.rose5 },
+    ['@type.typescript'] = { fg = c.purple3 },
 
     ['@keyword.svelte'] = { fg = c.blue4 },
     ['@punctuation.bracket.svelte'] = { fg = c.blue4 },
@@ -57,3 +58,4 @@ return {
     ['@variable.member.vue'] = { fg = c.green2 },
     ['@variable.vue'] = { fg = c.yellow2 },
 }
+
