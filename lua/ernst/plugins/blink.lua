@@ -14,9 +14,12 @@ return { {
             ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
             ['<c-k>'] = { 'select_prev' },
             ['<c-j>'] = { 'select_next' },
+            ['<up>'] = { 'select_prev' },
+            ['<down>'] = { 'select_next' },
             ['<tab>'] = { 'select_and_accept', 'fallback' },
         },
         fuzzy = {
+            implementation = "prefer_rust_with_warning",
             sorts = {
                 'exact',
                 'score',
@@ -31,8 +34,12 @@ return { {
                 'path',
                 'buffer',
             },
+            -- providers = {
+            --     snippets = {
+            --         score_offset = 100,
+            --     },
+            -- }
         },
-        fuzzy = { implementation = "prefer_rust_with_warning" },
         completion = {
             menu = {
                 border = 'rounded',
