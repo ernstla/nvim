@@ -63,40 +63,43 @@ require("which-key").add(
         mode = { "n" },
         --
         -- Resize window
-        { '<leader>>',  '20<c-w>>',                       desc = 'make window wider',           nowait = true, remap = false },
-        { '<leader><',  '20<c-w><',                       desc = 'make window narrower',        nowait = true, remap = false },
-        { '<leader>=',  '10<c-w>+',                       desc = 'make window taller',          nowait = true, remap = false },
-        { '<leader>-',  '10<c-w>-',                       desc = 'make window lower',           nowait = true, remap = false },
+        { '<leader>>',  '20<c-w>>',                               desc = 'make window wider',           nowait = true,  remap = false },
+        { '<leader><',  '20<c-w><',                               desc = 'make window narrower',        nowait = true,  remap = false },
+        { '<leader>=',  '10<c-w>+',                               desc = 'make window taller',          nowait = true,  remap = false },
+        { '<leader>-',  '10<c-w>-',                               desc = 'make window lower',           nowait = true,  remap = false },
 
         -- Toggle invisibles
-        { '<leader>i',  ':set list!<cr>',                 desc = 'toggle invisibles',           nowait = true, remap = false },
-        { '<leader>e',  vim.diagnostic.open_float,        desc = 'show line diagnostics',       nowait = true, remap = false },
-        { '<leader>q',  vim.diagnostic.setloclist,        desc = 'show diagnostic in loc list', nowait = true, remap = false },
+        { '<leader>i',  ':set list!<cr>',                         desc = 'toggle invisibles',           nowait = true,  remap = false },
+        { '<leader>e',  vim.diagnostic.open_float,                desc = 'show line diagnostics',       nowait = true,  remap = false },
+        { '<leader>q',  vim.diagnostic.setloclist,                desc = 'show diagnostic in loc list', nowait = true,  remap = false },
 
-        { '<leader>gs', '<cmd>Git<cr>',                   desc = 'git status',                  nowait = true, remap = false },
-        { '<leader>gw', '<cmd>Gitsigns blame (who)<cr>',  desc = 'git blame (who)',             nowait = true, remap = false },
-        { '<leader>gb', '<cmd>Git blame<cr>',             desc = 'git blame',                   nowait = true, remap = false },
-        { '<leader>gl', '<cmd>Gitsigns blame_line<cr>',   desc = 'git blame (line)',            nowait = true, remap = false },
+        { '<leader>gs', '<cmd>Git<cr>',                           desc = 'git status',                  nowait = true,  remap = false },
+        { '<leader>gw', '<cmd>Gitsigns blame (who)<cr>',          desc = 'git blame (who)',             nowait = true,  remap = false },
+        { '<leader>gb', '<cmd>Git blame<cr>',                     desc = 'git blame',                   nowait = true,  remap = false },
+        { '<leader>gl', '<cmd>Gitsigns blame_line<cr>',           desc = 'git blame (line)',            nowait = true,  remap = false },
 
         -- Tailwind Tools
-        { '<leader>tw', '<cmd>TailwindConcealToggle<cr>', desc = 'tailwind coceal',             nowait = true, remap = false },
-        { '<leader>tc', '<cmd>TailwindColorToggle<cr>',   desc = 'tailwind show/hide colors',   nowait = true, remap = false },
+        { '<leader>tw', '<cmd>TailwindConcealToggle<cr>',         desc = 'tailwind coceal',             nowait = true,  remap = false },
+        { '<leader>tc', '<cmd>TailwindColorToggle<cr>',           desc = 'tailwind show/hide colors',   nowait = true,  remap = false },
         -- Tabs
-        { '<leader>tt', ':tabnew<cr>',                    desc = 'tab new',                     nowait = true, remap = false },
+        { '<leader>tt', ':tabnew<cr>',                            desc = 'tab new',                     nowait = true,  remap = false },
 
         -- Toggle hlsearch
-        { '<leader>h',  ':set hlsearch!<cr>',             desc = 'toggle search highlighting',  nowait = true, remap = false },
+        { '<leader>h',  ':set hlsearch!<cr>',                     desc = 'toggle search highlighting',  nowait = true,  remap = false },
 
         -- Toggle relativenumber
-        { '<leader>tr', ':set relativenumber!<cr>',       desc = 'toggle relative number',      nowait = true, remap = false },
+        { '<leader>tr', ':set relativenumber!<cr>',               desc = 'toggle relative number',      nowait = true,  remap = false },
 
         -- Toggle wrapping
-        { '<leader>w',  ':set wrap! wrap?<cr>',           desc = 'toggle line wrapping',        nowait = true, remap = false },
+        { '<leader>w',  ':set wrap! wrap?<cr>',                   desc = 'toggle line wrapping',        nowait = true,  remap = false },
 
         -- Reformat paragraph
-        { '<leader>f',  'vipgq',                          desc = 'reformat paragraph',          nowait = true, remap = false },
+        { '<leader>f',  'vipgq',                                  desc = 'reformat paragraph',          nowait = true,  remap = false },
 
         -- Inspect treesitter and highlighter groups
-        { '<leader>p',  ':Inspect<cr>',                   desc = 'show highlighting info',      nowait = true, remap = true },
+        { '<leader>p',  ':Inspect<cr>',                           desc = 'show highlighting info',      nowait = true,  remap = true },
+
+        { 'gD',         "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = 'Goto global declaration',     noremap = true, silent = true },
+        { 'gd',         "<cmd>lua vim.lsp.buf.definition()<CR>",  desc = 'Goto local definition',       noremap = true, silent = true }
     } }
 )
