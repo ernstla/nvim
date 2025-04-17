@@ -57,5 +57,14 @@ return {
     ['@punctuation.special.vue'] = { fg = c.yellow2 },
     ['@variable.member.vue'] = { fg = c.green2 },
     ['@variable.vue'] = { fg = c.yellow2 },
-}
 
+    ['@markup.heading.1.markdown'] = { fg = c.red1 },
+    ['@markup.heading.2.markdown'] = { fg = c.green2 },
+    ['@markup.heading.3.markdown'] = { fg = c.sea5 },
+    ['@markup.heading.4.markdown'] = { fg = c.salmon5 },
+    ['@markup.heading.5.markdown'] = { fg = c.purple2 },
+    ['@markup.list.markdown'] = { fg = c.green2 },
+    ['@markup.raw.block.markdown'] = { fg = c.purple1 },
+    ['@markup.raw.markdown_inline'] = { fg = c.purple1 },
+    ['@label.markdown'] = { fg = c.sea3 },
+}
