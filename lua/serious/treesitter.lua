@@ -28,6 +28,15 @@ return {
     ['@property.scss'] = { fg = c.rose4 },
     ['@punctuation.delimiter.scss'] = { fg = c.text },
 
+    ['@punctuation.bracket.go'] = { fg = c.text },
+    ['@punctuation.delimiter.go'] = { fg = c.text },
+
+    ['@punctuation.bracket.rust'] = { fg = c.text },
+    ['@punctuation.delimiter.rust'] = { fg = c.text },
+
+    ['@punctuation.bracket.nim'] = { fg = c.text },
+    ['@punctuation.delimiter.nim'] = { fg = c.text },
+
     ['@property.javascript'] = { fg = c.text },
     ['@punctuation.bracket.javascript'] = { fg = c.text },
     ['@punctuation.delimiter.javascript'] = { fg = c.text },
