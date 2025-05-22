@@ -23,6 +23,16 @@ return {
             diagnostics = {
                 enable = true,
             },
+            stubs = {
+                'bcmath', 'bz2', 'calendar', 'Core', 'curl', 'date', 'dba', 'dom', 'enchant',
+                'fileinfo', 'filter', 'ftp', 'gd', 'gettext', 'hash', 'iconv', 'imap', 'intl',
+                'json', 'ldap', 'libxml', 'memcached', 'mbstring', 'mcrypt', 'mysql', 'mysqli',
+                'openssl', 'password', 'pcntl', 'pcre', 'PDO', 'pdo_mysql', 'Phar', 'readline',
+                'recode', 'Reflection', 'regex', 'session', 'SimpleXML', 'soap', 'sockets',
+                'sodium', 'SPL', 'standard', 'superglobals', 'sysvsem', 'sysvshm', 'tokenizer',
+                'uuid', 'xml', 'xdebug', 'xmlreader', 'xmlwriter', 'yaml', 'zip', 'zlib',
+                'wordpress', 'woocommerce'
+            },
         }
     }
 }
