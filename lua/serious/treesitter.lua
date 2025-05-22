@@ -11,6 +11,8 @@ return {
     ['@tag.delimiter'] = { fg = c.orange7 },
     ['@string.regexp'] = { fg = c.red1 },
     ['@variable'] = { fg = c.text },
+    ['@punctuation.bracket'] = { fg = c.text },
+    ['@punctuation.delimiter'] = { fg = c.text },
 
     ['@property.lua'] = { fg = c.sea2 },
     ['@punctuation.bracket.lua'] = { fg = c.sea3 },
@@ -26,27 +28,13 @@ return {
     ['@tag.css'] = { fg = c.orange5 },
 
     ['@property.scss'] = { fg = c.rose4 },
-    ['@punctuation.delimiter.scss'] = { fg = c.text },
-
-    ['@punctuation.bracket.go'] = { fg = c.text },
-    ['@punctuation.delimiter.go'] = { fg = c.text },
-
-    ['@punctuation.bracket.rust'] = { fg = c.text },
-    ['@punctuation.delimiter.rust'] = { fg = c.text },
-
-    ['@punctuation.bracket.nim'] = { fg = c.text },
-    ['@punctuation.delimiter.nim'] = { fg = c.text },
 
     ['@property.javascript'] = { fg = c.text },
-    ['@punctuation.bracket.javascript'] = { fg = c.text },
-    ['@punctuation.delimiter.javascript'] = { fg = c.text },
     ['@punctuation.special.javascript'] = { fg = c.salmon7 },
     ['@variable.builtin.javascript'] = { fg = c.rose4 },
     ['@variable.javascript'] = { fg = c.text },
     ['@constant.builtin.javascript'] = { fg = c.rose5 },
 
-    ['@punctuation.bracket.typescript'] = { fg = c.text },
-    ['@punctuation.delimiter.typescript'] = { fg = c.text },
     ['@punctuation.special.typescript'] = { fg = c.salmon7 },
     ['@variable.builtin.typescript'] = { fg = c.rose4 },
     ['@constant.builtin.typescript'] = { fg = c.rose5 },

@@ -224,7 +224,7 @@ local snippets = {
 local words = require('ernst/snippets/words')
 local word_snippet = function(word)
     return snippet(word, {
-        t('error_log("~~~~~~~~~~~' .. string.upper(word) .. ' ~~~~~~~~~~~~");')
+        t('error_log("~~~~~~~~~~~ ' .. string.upper(word) .. ' ~~~~~~~~~~~~");')
     })
 end
 
