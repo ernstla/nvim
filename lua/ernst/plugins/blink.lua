@@ -34,11 +34,11 @@ return { {
                 'path',
                 'buffer',
             },
-            -- providers = {
-            --     snippets = {
-            --         score_offset = 100,
-            --     },
-            -- }
+            providers = {
+                snippets = {
+                    score_offset = 13,
+                },
+            }
         },
         completion = {
             menu = {
