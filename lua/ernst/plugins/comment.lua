@@ -15,11 +15,11 @@ return { {
         },
 
         -- LHS of operator-pending mappings in NORMAL and VISUAL mode
-        opleader = {
-            -- Line-comment keymap
-            line = '<leader>ci', --line = 'gc',
-            block = 'gb',        -- Block-comment keymap
-        },
+        -- opleader = {
+        --     -- Line-comment keymap
+        --     line = '<leader>ci', --line = 'gc',
+        --     block = 'gb',        -- Block-comment keymap
+        -- },
 
         -- LHS of extra mappings
         extra = {
