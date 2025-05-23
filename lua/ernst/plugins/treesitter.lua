@@ -1,11 +1,7 @@
 return { {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    dependencies = {
-        'nvim-treesitter/playground',
-        -- Additional text objects via treesitter
-        -- 'nvim-treesitter/nvim-treesitter-textobjects',
-    },
+    dependencies = { 'nvim-treesitter/playground' },
     opts = {
         -- A list of parser names, or 'all'
         ensure_installed = {
