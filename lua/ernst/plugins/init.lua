@@ -1,8 +1,5 @@
 return {
-    { 'alvarosevilla95/luatab.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
-
     'bronson/vim-visual-star-search',
-    'justinmk/vim-sneak',
     'mattn/emmet-vim',
     'mg979/vim-visual-multi',
     'pangloss/vim-javascript',
