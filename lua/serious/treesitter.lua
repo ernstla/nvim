@@ -61,7 +61,7 @@ return {
     ['@markup.heading.4.markdown'] = { fg = c.salmon5 },
     ['@markup.heading.5.markdown'] = { fg = c.purple2 },
     ['@markup.list.markdown'] = { fg = c.green2 },
-    ['@markup.raw.block.markdown'] = { fg = c.purple1 },
+    ['@markup.raw.block.markdown'] = { fg = c.purple1, bg = c.grey8 },
     ['@markup.raw.markdown_inline'] = { fg = c.purple1 },
     ['@label.markdown'] = { fg = c.sea3 },
 }
