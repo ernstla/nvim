@@ -29,14 +29,24 @@ return { {
         snippets = { preset = 'luasnip' },
         sources = {
             default = {
-                'snippets',
                 'lsp',
                 'path',
                 'buffer',
+                'snippets',
             },
             providers = {
+                lsp = {
+                    score_offset = 4,
+                },
+                path = {
+                    score_offset = 2,
+                },
+                buffer = {
+                    score_offset = 2,
+                },
                 snippets = {
-                    score_offset = 13,
+                    min_keyword_length = 2,
+                    score_offset = 1,
                 },
             }
         },
