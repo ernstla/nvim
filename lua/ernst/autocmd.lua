@@ -42,22 +42,15 @@ autocmd({ 'BufWritePre' }, {
 autocmd({ 'BufWritePre' }, {
     group = Ernst,
     pattern = {
-        '*.vue',
-    },
-    command = 'EslintFixAll'
-})
-
-autocmd({ 'BufWritePre' }, {
-    group = Ernst,
-    pattern = {
-        '*.py',
-        '*.php',
-        '*.html',
-        '*.ts',
-        '*.svelte',
-        '*.js',
         '*.css',
+        '*.html',
+        '*.js',
+        '*.php',
+        '*.py',
         '*.scss',
+        '*.svelte',
+        '*.ts',
+        '*.vue',
     },
     callback = function(args)
         require("conform").format({ bufnr = args.buf })
