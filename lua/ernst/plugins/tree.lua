@@ -7,7 +7,7 @@ return { {
             enable = false,
         },
         git = {
-            enable = false
+            enable = true
         },
         view = {
             adaptive_size = true,
