@@ -34,9 +34,10 @@ o.incsearch = true                                                             -
 o.joinspaces = false
 o.lazyredraw = true
 o.linebreak = true -- Word wrap if wrapping is enabled
+o.listchars = "tab: ,trail:-,nbsp:+,eol:¶,multispace:" -- ¶ ↵ ⏎ ↲  ·
 o.maxmempattern = 5000
-o.modeline = true  -- Respect modeline of the file (the famous "vi:noai:sw = 3 ts=6" on the beginning of the files)
-o.mouse = 'a'      -- allow mouse in console
+o.modeline = true -- Respect modeline of the file (the famous "vi:noai:sw = 3 ts=6" on the beginning of the files)
+o.mouse = 'a' -- allow mouse in console
 o.number = true
 o.numberwidth = 1
 o.omnifunc = 'syntaxcomplete#Complete'
