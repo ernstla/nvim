@@ -38,17 +38,17 @@ local snippets = {
         i(0)
     }),
     snippet('line', {
-        t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
+        t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
     }),
     snippet('ln', {
-        t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
+        t("console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');")
     }),
 }
 
 local words = require('ernst/snippets/words')
 local word_snippet = function(word)
     return snippet(word, {
-        t("console.log('~~~~~~~~~~~ " .. string.upper(word) .. " ~~~~~~~~~~~');")
+        t("console.log('~~~~~~~~~~~~" .. string.upper(word) .. "~~~~~~~~~~~');")
     })
 end
 

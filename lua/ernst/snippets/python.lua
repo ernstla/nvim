@@ -27,7 +27,7 @@ local prints = function()
 end
 local line = function()
     return {
-        t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "),
+        t("print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
         i(0),
         t("')"),
     }
@@ -66,7 +66,7 @@ local snippets = {
 local words = require('ernst/snippets/words')
 local word_snippet = function(word)
     return snippet(word, {
-        t("print('~~~~~~~~~~~ " .. string.upper(word) .. " ~~~~~~~~~~')")
+        t("print('~~~~~~~~~~~~~" .. string.upper(word) .. "~~~~~~~~~~')")
     })
 end
 

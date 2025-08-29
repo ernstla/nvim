@@ -117,10 +117,10 @@ local snippets = {
         t('); ?>'),
     }),
     snippet('line', {
-        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
+        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
     snippet('ln', {
-        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
+        t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
     snippet(':foreach', {
         t('<?php foreach ('), i(1), t(' as '), i(2), t({ ') : ?>', '' }),
@@ -224,7 +224,7 @@ local snippets = {
 local words = require('ernst/snippets/words')
 local word_snippet = function(word)
     return snippet(word, {
-        t('error_log("~~~~~~~~~~~ ' .. string.upper(word) .. ' ~~~~~~~~~~~~");')
+        t('error_log("~~~~~~~~~~~~' .. string.upper(word) .. '~~~~~~~~~~~");')
     })
 end
 
