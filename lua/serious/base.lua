@@ -41,7 +41,7 @@ M.gui = {
     LineNr                     = { fg = c.sea8 },
     LineNrAbove                = { fg = c.grey4, bg = c.none },
     LineNrBelow                = { fg = c.grey4, bg = c.none },
-    MatchParen                 = { bg = c.black, fg = c.red3 },
+    MatchParen                 = { bg = c.grey2, fg = c.none },
     Menu                       = { fg = c.sea3, bg = c.bg },
     ModeMsg                    = { fg = c.text, bg = c.bg },
     MoreMsg                    = { fg = c.text, bg = c.bg },

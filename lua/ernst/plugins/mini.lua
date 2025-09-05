@@ -1,6 +1,6 @@
 return {
     {
-        'echasnovski/mini.splitjoin',
+        'nvim-mini/mini.splitjoin',
         opts = {
             mappings = {
                 toggle = 'gp',
@@ -10,7 +10,7 @@ return {
         },
     },
     {
-        'echasnovski/mini.ai',
+        'nvim-mini/mini.ai',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
         version = '*',
         config = function()
@@ -24,7 +24,7 @@ return {
         end,
     },
     {
-        "echasnovski/mini.diff",
+        "nvim-mini/mini.diff",
         config = function()
             local diff = require("mini.diff")
             diff.setup({

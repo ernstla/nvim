@@ -99,12 +99,14 @@ return { {
         vim.keymap.set('n', '<m-p>', builtin.find_files, {})
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
+        vim.keymap.set('n', '<f10>', builtin.oldfiles, {})
 
         require("which-key").add(
             { {
                 mode = { "n" },
                 { '<leader>b',  builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
                 { '<leader>tb', builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
+                { '<leader>to', builtin.oldfiles,             desc = 'telescope: mru/oldfiles',  nowait = true, remap = false },
                 { '<leader>th', builtin.help_tags,            desc = 'telescope: help tags',     nowait = true, remap = false },
                 { '<leader>tq', builtin.quickfix,             desc = 'telescope: quickfix list', nowait = true, remap = false },
                 { '<leader>tl', builtin.lsp_document_symbols, desc = 'telescope: lsp symbols',   nowait = true, remap = false },
