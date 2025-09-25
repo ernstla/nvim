@@ -48,8 +48,18 @@ return { {
             "<cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<cr>",
             { noremap = true, silent = true, nowait = true }
         )
+        vim.keymap.set(
+            'n',
+            '<c-/>', -- <c-_> means <c-/> -- see :help :map-special-keys
+            "<cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<cr>",
+            { noremap = true, silent = true, nowait = true }
+        )
 
         vim.keymap.set('x', '<c-_>', function()
+            vim.api.nvim_feedkeys(esc, 'nx', false)
+            api.toggle.linewise(vim.fn.visualmode())
+        end)
+        vim.keymap.set('x', '<c-/>', function()
             vim.api.nvim_feedkeys(esc, 'nx', false)
             api.toggle.linewise(vim.fn.visualmode())
         end)
