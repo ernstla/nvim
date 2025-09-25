@@ -1,3 +1,7 @@
+local function escape_pattern(text)
+    return text:gsub("([^%w])", "%%%1")
+end
+
 return { {
     'nvim-telescope/telescope.nvim',
     --branch = '0.1.x',
@@ -86,6 +90,30 @@ return { {
                         }
                     }
                 },
+                mru = {
+                    layout_config = {
+                        horizontal = {
+                            width = 0.8, height = 0.6, mirror = false, prompt_position = 'top', preview_width = 0.6
+                        }
+                    },
+                    mappings = {
+                        i = {
+                            ["<C-x>"] = function()
+                                local action_state = require("telescope.actions.state")
+                                local mru = require("mru")
+
+                                local selection = action_state.get_selected_entry()
+                                if not selection then
+                                    return
+                                end
+
+                                local escaped = escape_pattern(selection.value)
+
+                                mru.remove(escaped)
+                            end,
+                        }
+                    }
+                },
             },
         }
     end,
@@ -99,14 +127,14 @@ return { {
         vim.keymap.set('n', '<m-p>', builtin.find_files, {})
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
-        vim.keymap.set('n', '<f10>', builtin.oldfiles, {})
+        vim.keymap.set('n', '<f10>', ':Telescope mru<CR>', {})
 
         require("which-key").add(
             { {
                 mode = { "n" },
                 { '<leader>b',  builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
                 { '<leader>tb', builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
-                { '<leader>to', builtin.oldfiles,             desc = 'telescope: mru/oldfiles',  nowait = true, remap = false },
+                { '<leader>to', ':Telescope mru<CR>',         desc = 'telescope: mru',           nowait = true, remap = false },
                 { '<leader>th', builtin.help_tags,            desc = 'telescope: help tags',     nowait = true, remap = false },
                 { '<leader>tq', builtin.quickfix,             desc = 'telescope: quickfix list', nowait = true, remap = false },
                 { '<leader>tl', builtin.lsp_document_symbols, desc = 'telescope: lsp symbols',   nowait = true, remap = false },
@@ -122,4 +150,13 @@ return { {
             } }
         )
     end
+}, {
+    'wsdjeg/mru.nvim',
+    opts = {
+        enable_cache = true,
+        mru_cache_file = vim.fn.stdpath('data') .. '/nvim-mru.json',
+        events = { 'BufEnter', 'BufWritePost' }, -- events to update mru file list
+        ignore_path_regexs = { '/.git/', '/data/', '/node_modules/' },
+        enable_logger = false,                   -- require wsdjeg/logger.nvim
+    }
 } }
