@@ -3,10 +3,17 @@ local ls = require("luasnip")
 local snippet = ls.snippet
 local fn = ls.function_node
 local t = ls.text_node
+local i = ls.insert_node
 
 local date = function() return { os.date('%Y-%m-%d') } end
 
 return {
+    snippet('venv', {
+        t({ 'VIRTUAL_ENV_PROMPT="', '' }),
+        t('%{$fg[red]%}('),
+        i(0),
+        t(')%{$reset_color%}"'),
+    }),
     snippet({
         trig = "date",
         namr = "Date",
