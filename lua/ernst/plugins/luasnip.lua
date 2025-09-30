@@ -23,5 +23,18 @@ return { {
                 ls.change_choice(1)
             end
         end, { silent = true })
+
+        vim.api.nvim_create_user_command('LuaSnipList', function()
+            local luasnip = require('luasnip')
+            local ft = vim.bo.filetype
+            local snippets = luasnip.get_snippets(ft)
+
+            local lines = { "Available snippets for " .. ft .. ":" }
+            for _, snip in ipairs(snippets) do
+                table.insert(lines, string.format("  %s - %s", snip.trigger, snip.name or ""))
+            end
+
+            vim.api.nvim_echo({ { table.concat(lines, "\n"), "Normal" } }, true, {})
+        end, {})
     end,
 } }

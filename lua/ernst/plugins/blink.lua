@@ -1,6 +1,5 @@
 return { {
     'saghen/blink.cmp',
-    dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     version = '1.*',
     opts = {
         -- All presets have the following mappings:
@@ -16,7 +15,9 @@ return { {
             ['<c-j>'] = { 'select_next' },
             ['<up>'] = { 'select_prev' },
             ['<down>'] = { 'select_next' },
-            ['<tab>'] = { 'select_and_accept', 'fallback' },
+            ['<cr>'] = { 'select_and_accept', 'fallback' },
+            ['<tab>'] = { 'fallback' }, -- ignore tab to trigger luasnips
+            ['<s-tab>'] = { 'fallback' },
         },
         fuzzy = {
             implementation = "prefer_rust_with_warning",
@@ -26,10 +27,8 @@ return { {
                 'sort_text',
             },
         },
-        snippets = { preset = 'luasnip' },
         sources = {
             default = {
-                'snippets',
                 'lsp',
                 'path',
                 'buffer',
