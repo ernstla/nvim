@@ -39,7 +39,13 @@ map('n', '<leader>ds', ':%s/^\\s*/&&<cr>')
 map('v', '<leader>ds', ':s/^\\s*/&&<cr>')
 
 
-map('t', '<ESC><ESC>', '<C-\\><C-n>')
+-- Terminal mode mappings incl. tmux.nvim navigation
+vim.keymap.set('t', '<c-h>', '<Cmd>lua require("tmux").move_left()<CR>')
+vim.keymap.set('t', '<c-j>', '<Cmd>lua require("tmux").move_bottom()<CR>')
+vim.keymap.set('t', '<c-k>', '<Cmd>lua require("tmux").move_top()<CR>')
+vim.keymap.set('t', '<c-l>', '<Cmd>lua require("tmux").move_right()<CR>')
+map('t', '<leader><esc>', '<c-\\><c-n>')
+map('t', '<c-q>', '<c-\\><c-n>')
 
 -- Center search matches
 map('n', 'n', 'nzz')

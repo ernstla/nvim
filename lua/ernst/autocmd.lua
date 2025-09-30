@@ -143,12 +143,7 @@ autocmd({ 'TermOpen' }, {
     pattern = '*',
     command = 'setlocal nonumber norelativenumber'
 })
-autocmd({ 'TermOpen', 'BufEnter', 'BufWinEnter', 'WinEnter' }, {
-    group = Terminal,
-    pattern = 'term://*',
-    command = 'stopinsert'
-})
-autocmd({ 'BufLeave' }, {
+autocmd({ 'TermOpen', 'BufEnter', 'BufWinEnter', 'WinEnter', 'BufLeave' }, {
     group = Terminal,
     pattern = 'term://*',
     command = 'stopinsert'
