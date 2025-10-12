@@ -2,19 +2,22 @@ return { {
     'williamboman/mason.nvim',
     opts = {},
     ensure_installed = {
-        'eslint-lsp',
         'gopls',
         'intelephense',
-        'json-lsp',
         'lua-language-server',
         'nimlangserver',
+        'rust-analyzer',
+
         'python-lsp-server',
         'ruff',
-        'rust-analyzer',
-        'svelte-language-server',
+
+        'json-lsp',
         'tailwindcss-language-server',
-        'typescript-language-server',
+
+        'svelte-language-server',
         'vue-language-server',
+        'eslint-lsp',
+        'typescript-language-server',
     },
     config = function(spec)
         require('mason').setup(spec.opts)
