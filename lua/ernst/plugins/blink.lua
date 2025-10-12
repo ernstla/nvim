@@ -34,21 +34,17 @@ return { {
                 'buffer',
             },
             providers = {
-                snippets = {
-                    min_keyword_length = 2,
-                    score_offset = 0,
-                },
                 lsp = {
-                    min_keyword_length = 2,
-                    score_offset = -1,
+                    min_keyword_length = 0,
+                    score_offset = 0,
                 },
                 path = {
                     min_keyword_length = 2,
-                    score_offset = -2,
+                    score_offset = 1,
                 },
                 buffer = {
                     min_keyword_length = 2,
-                    score_offset = -3,
+                    score_offset = 2,
                 },
             }
         },
