@@ -85,5 +85,5 @@ o.visualbell = true
 o.wildmenu = true
 o.wildmode = 'full'
 o.winaltkeys = 'no'
-o.winborder = '' -- As long as plugins have their own setting, disable winborder
+o.winborder = 'rounded'
 o.wrap = false
