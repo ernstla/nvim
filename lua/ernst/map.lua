@@ -64,6 +64,8 @@ map('n', '<F12>', require('ernst/lib').reload_colorscheme, { desc = 'Reload colo
 map('n', '[d', vim.diagnostic.goto_prev)
 map('n', ']d', vim.diagnostic.goto_next)
 
+map('i', '<C-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+
 require("which-key").add(
     { {
         mode = { "n" },
