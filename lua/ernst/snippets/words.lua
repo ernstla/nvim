@@ -3,6 +3,7 @@ return {
     ' daua ~~~',
     ' dinna ~~',
     ' hinna ~~',
+    ' dauna ~~',
     ' doldi ~~',
 
     ' hans ~~~',
