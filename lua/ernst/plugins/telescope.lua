@@ -90,30 +90,6 @@ return { {
                         }
                     }
                 },
-                mru = {
-                    layout_config = {
-                        horizontal = {
-                            width = 0.8, height = 0.6, mirror = false, prompt_position = 'top', preview_width = 0.6
-                        }
-                    },
-                    mappings = {
-                        i = {
-                            ["<C-x>"] = function()
-                                local action_state = require("telescope.actions.state")
-                                local mru = require("mru")
-
-                                local selection = action_state.get_selected_entry()
-                                if not selection then
-                                    return
-                                end
-
-                                local escaped = escape_pattern(selection.value)
-
-                                mru.remove(escaped)
-                            end,
-                        }
-                    }
-                },
             },
         }
     end,
@@ -150,13 +126,4 @@ return { {
             } }
         )
     end
-}, {
-    'wsdjeg/mru.nvim',
-    opts = {
-        enable_cache = true,
-        mru_cache_file = vim.fn.stdpath('data') .. '/nvim-mru.json',
-        events = { 'BufEnter', 'BufWritePost' }, -- events to update mru file list
-        ignore_path_regexs = { '/.git/', '/data/', '/node_modules/' },
-        enable_logger = false,                   -- require wsdjeg/logger.nvim
-    }
 } }
