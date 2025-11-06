@@ -5,7 +5,7 @@ return { {
         'gopls',
         'intelephense',
         'lua-language-server',
-        'nimlangserver',
+        'nimlsp',
         'rust-analyzer',
 
         'python-lsp-server',
