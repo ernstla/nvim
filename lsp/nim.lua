@@ -1,5 +1,5 @@
 return {
-    cmd = { 'nimlangserver' },
+    cmd = { 'nimlsp' },
     filetypes = { 'nim' },
     root_markers = {
         '*.nimble',
