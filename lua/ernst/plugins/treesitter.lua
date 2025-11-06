@@ -56,7 +56,7 @@ return { {
         },
 
         indent = {
-            enable = false,
+            enable = true,
         }
     },
     config = function(spec)
