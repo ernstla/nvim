@@ -49,6 +49,7 @@ return { {
             }
         },
         completion = {
+            -- accept = { auto_select = true },
             menu = {
                 border = 'rounded',
                 auto_show = true,
