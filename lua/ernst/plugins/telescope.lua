@@ -56,6 +56,7 @@ return { {
                 buffers = {
                     show_all_buffers = true,
                     sort_lastused = true,
+                    default_selection_index = 1,
                     previewer = false,
                     mappings = {
                         i = {
