@@ -4,6 +4,7 @@ ls.add_snippets(nil, {
     all = require('ernst/snippets/all'),
     html = require('ernst/snippets/html'),
     javascript = require('ernst/snippets/javascript'),
+    json = require('ernst/snippets/json'),
     mako = require('ernst/snippets/mako'),
     odin = require('ernst/snippets/odin'),
     php = require('ernst/snippets/php'),
