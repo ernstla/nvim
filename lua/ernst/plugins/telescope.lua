@@ -103,6 +103,7 @@ return { {
 
         vim.keymap.set('n', '<m-p>', builtin.find_files, {})
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
+        vim.keymap.set('n', '<c-s-p>', builtin.buffers, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
         vim.keymap.set('n', '<f10>', ':Telescope mru<CR>', {})
 
