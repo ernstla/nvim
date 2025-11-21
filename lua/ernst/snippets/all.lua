@@ -14,6 +14,7 @@ return {
         i(0),
         t(')%{$reset_color%}"'),
     }),
+    snippet('ro', { t('€') }),
     snippet({
         trig = "date",
         namr = "Date",
@@ -21,7 +22,6 @@ return {
     }, {
         fn(date, {}),
     }),
-
     snippet('lorem', {
         t('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam ' ..
             'nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, ' ..
