@@ -107,6 +107,15 @@ return { {
                 "Translate the provided text into English while preserving the original format " ..
                 "(e.g., PO/Gettext, HTML, JSON) and maintaining all structural elements like placeholders, " ..
                 "tags, or markup—only modify human-readable content.",
+            ["ImproveEnglish"] =
+                "Please improve the English in the following text: fix grammar, spelling, and punctuation errors, " ..
+                "enhance clarity and flow, use natural native-like phrasing, improve word choice where appropriate, " ..
+                "and keep the original meaning and tone intact.",
+            ["ImproveEnglishForGitCommit"] =
+                "Please improve this git commit message following best practices: use imperative mood (e.g., 'Add feature' not 'Added feature'), " ..
+                "keep the subject line under 50 characters, capitalize the subject line, don't end the subject line with a period, " ..
+                "separate subject from body with a blank line if needed, wrap the body at 72 characters, " ..
+                "explain what and why (not how), and use proper grammar and punctuation.",
             ["Comment"] = "Provide a comment that explains what the snippet is doing."
         },
         cmd_prefix = "Parrot",
@@ -137,15 +146,16 @@ return { {
                 },
                 {
                     mode = { "v" },
-                    { "<leader>at", ":<C-u>'<,'>ParrotChatNew tabnew<cr>",    desc = "AI: Chat new tab (paste sel)",    nowait = true, remap = false },
-                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>",    desc = "AI: Chat new vsplit (paste sel)", nowait = true, remap = false },
-                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",     desc = "AI: Chat new split (paste sel)",  nowait = true, remap = false },
-                    { "<leader>aa", ":<C-u>'<,'>ParrotAppend<cr>",            desc = "AI: Append and use sel (after)",  nowait = true, remap = false },
-                    { "<leader>ad", ":<C-u>'<,'>ParrotPrepend<cr>",           desc = "AI: Prepend and use sel (davor)", nowait = true, remap = false },
-                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",         desc = "AI: Implement selection",         nowait = true, remap = false },
-                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",           desc = "AI: Rewrite selection",           nowait = true, remap = false },
-                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",         desc = "AI: Paste to chat",               nowait = true, remap = false },
-                    { "<leader>ae", ":<C-u>'<,'>ParrotRewrite Translate<cr>", desc = "AI: Translate to english",        nowait = true, remap = false },
+                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>",                     desc = "AI: Chat new vsplit (paste sel)", nowait = true, remap = false },
+                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",                      desc = "AI: Chat new split (paste sel)",  nowait = true, remap = false },
+                    { "<leader>aa", ":<C-u>'<,'>ParrotAppend<cr>",                             desc = "AI: Append and use sel (after)",  nowait = true, remap = false },
+                    { "<leader>ad", ":<C-u>'<,'>ParrotPrepend<cr>",                            desc = "AI: Prepend and use sel (davor)", nowait = true, remap = false },
+                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",                          desc = "AI: Implement selection",         nowait = true, remap = false },
+                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",                            desc = "AI: Rewrite selection",           nowait = true, remap = false },
+                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",                          desc = "AI: Paste to chat",               nowait = true, remap = false },
+                    { "<leader>at", ":<C-u>'<,'>ParrotRewrite Translate<cr>",                  desc = "AI: Translate to English",        nowait = true, remap = false },
+                    { "<leader>ae", ":<C-u>'<,'>ParrotRewrite ImproveEnglish<cr>",             desc = "AI: Improve English",             nowait = true, remap = false },
+                    { "<leader>ac", ":<C-u>'<,'>ParrotRewrite ImproveEnglishForGitCommit<cr>", desc = "AI: Improve git commit message",  nowait = true, remap = false },
                 }
             }
         )
