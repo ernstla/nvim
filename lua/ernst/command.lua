@@ -7,5 +7,6 @@ command('Agi', function(opts) vim.cmd('silent! :botright :grep --ignore-case ' .
 command('Ags', function(opts) vim.cmd('silent! :botright :grep --case-sensitive ' .. opts.args) end, { nargs = '*' })
 command('Jsonify', '%!python3 -m json.tool', {})
 command('Tidy', '!tidy -mi -html -wrap 0 %', {})
-command('LspInfo', 'checkhealth lsp', {})
+command('LspInfo', 'checkhealth vim.lsp', {})
+command('LspAttached', 'lua vim.print(vim.lsp.get_clients({ bufnr = 0 }))', {})
 command("ReloadColorscheme", function() require('ernst/lib').reload_colorscheme() end, {})
