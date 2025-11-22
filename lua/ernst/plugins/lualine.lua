@@ -1,5 +1,23 @@
 local c = require('serious/colors')
 
+local function parrot_status()
+    local status_info = require("parrot.config").get_status_info()
+    local status = ""
+    if status_info.is_chat then
+        status = status_info.prov.chat.name
+    else
+        status = status_info.prov.command.name
+    end
+    local model = status_info.model or ""
+    local short_model
+    if #model > 17 then
+        short_model = string.sub(model, 1, 17) .. "…"
+    else
+        short_model = model
+    end
+    return string.format("%s(%s)", status, short_model)
+end
+
 local theme = {
     normal = {
         a = { fg = c.text, bg = c.rose7 },
@@ -55,7 +73,7 @@ return { {
             lualine_a = { 'mode' },
             lualine_b = { 'branch' },
             lualine_c = { { 'filename', path = 1 } },
-            lualine_x = { 'encoding', 'fileformat', 'filetype' },
+            lualine_x = { parrot_status, 'encoding', 'fileformat', 'filetype' },
             lualine_y = { 'progress', 'location' },
             lualine_z = { 'diagnostics' }
         },
@@ -63,7 +81,7 @@ return { {
             lualine_a = {},
             lualine_b = {},
             lualine_c = { { 'filename', path = 1 } },
-            lualine_x = { 'location' },
+            lualine_x = { parrot_status, 'location' },
             lualine_y = {},
             lualine_z = {}
         },

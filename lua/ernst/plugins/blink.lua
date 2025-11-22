@@ -32,6 +32,7 @@ return { {
                 'lsp',
                 'path',
                 'buffer',
+                'parrot',
             },
             providers = {
                 lsp = {
@@ -45,6 +46,15 @@ return { {
                 buffer = {
                     min_keyword_length = 2,
                     score_offset = 2,
+                },
+                parrot = {
+                    module = "parrot.completion.blink",
+                    name = "parrot",
+                    score_offset = 20,
+                    opts = {
+                        show_hidden_files = false,
+                        max_items = 50,
+                    }
                 },
             }
         },

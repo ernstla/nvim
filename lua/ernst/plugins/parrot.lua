@@ -30,10 +30,13 @@ return { {
                     }
                 end,
                 models = {
+                    'claude-haiku-4-5-20251001',
                     "claude-sonnet-4-20250514",
                     "claude-3-7-sonnet-20250219",
                     "claude-3-5-sonnet-20241022",
                     "claude-3-5-haiku-20241022",
+                    'claude-sonnet-4-5-20250929',
+                    'claude-opus-4-1-20250805',
                 },
                 preprocess_payload = function(payload)
                     for _, message in ipairs(payload.messages) do
@@ -72,10 +75,10 @@ return { {
                 --  a selection of models that parrot can remember across sessions
                 --  NOTE: This will be handled more intelligently in a future version
                 models = {
-                    "gpt-4.1",
+                    "gpt-5.1-codex",
+                    "gpt-5-pro",
+                    "gpt-5-mini",
                     "o4-mini",
-                    "gpt-4.1-mini",
-                    "gpt-4.1-nano",
                 },
             },
             deepseek = {
@@ -121,41 +124,49 @@ return { {
         cmd_prefix = "Parrot",
         state_dir = secrets.ai_path .. "/persisted",
         chat_dir = secrets.ai_path .. "/chats",
-        toggle_target = "split",
+        toggle_target = "",
         style_popup_border = "rounded",
         chat_confirm_delete = false,
-        user_input_ui = "native", -- "buffer" (opens a buffer) or "native" (command line)
+        user_input_ui = "buffer", -- "buffer" (opens a buffer) or "native" (command line)
     },
     config = function(spec)
         require("parrot").setup(spec.opts)
         require("which-key").add(
             {
                 {
-                    { "<leader>at", "<cmd>ParrotChatNew tabnew<cr>", desc = "AI: New Chat tabnew",       nowait = true, remap = false },
-                    { "<leader>av", "<cmd>ParrotChatNew vsplit<cr>", desc = "AI: New Chat vsplit",       nowait = true, remap = false },
-                    { "<leader>as", "<cmd>ParrotChatNew split<cr>",  desc = "AI: New Chat split",        nowait = true, remap = false },
-                    { "<leader>af", "<cmd>ParrotChatFinder<cr>",     desc = "AI: Chat Finder",           nowait = true, remap = false },
-                    { "<leader>ap", "<cmd>ParrotProvider<cr>",       desc = "AI: Change Provider",       nowait = true, remap = false },
-                    { "<leader>am", "<cmd>ParrotModel<cr>",          desc = "AI: Change Model",          nowait = true, remap = false },
-                    { "<leader>ak", "<cmd>ParrotStop<cr>",           desc = "AI: ParrotChatStop",        nowait = true, remap = false },
-                    { "<leader>ag", "<cmd>ParrotChatToggle<cr>",     desc = "AI: Toggle Chat",           nowait = true, remap = false },
-                    { "<leader>ax", "<cmd>ParrotContext<cr>",        desc = "AI: Toggle ParrotContext",  nowait = true, remap = false },
-                    { "<leader>ai", "<cmd>ParrotStatus<cr>",         desc = "AI: Show provider & model", nowait = true, remap = false },
-                    { "<leader>aa", "<cmd>ParrotAppend<cr>",         desc = "AI: Append (after)",        nowait = true, remap = false },
-                    { "<leader>ad", "<cmd>ParrotPrepend<cr>",        desc = "AI: Prepend (davor)",       nowait = true, remap = false },
+                    { "<leader>aa", "<cmd>ParrotChatNew<cr>",          desc = "AI: New Chat (buffer)",                   nowait = true, remap = false },
+                    { "<leader>aj", "<cmd>ParrotChatNew popup<cr>",    desc = "AI: New Chat (popup)",                    nowait = true, remap = false },
+                    { "<leader>at", "<cmd>ParrotChatNew tabnew<cr>",   desc = "AI: New Chat (tabnew)",                   nowait = true, remap = false },
+                    { "<leader>av", "<cmd>ParrotChatNew vsplit<cr>",   desc = "AI: New Chat (vsplit)",                   nowait = true, remap = false },
+                    { "<leader>as", "<cmd>ParrotChatNew split<cr>",    desc = "AI: New Chat (split)",                    nowait = true, remap = false },
+                    { "<leader>af", "<cmd>ParrotChatFinder<cr>",       desc = "AI: Chat Finder",                         nowait = true, remap = false },
+                    { "<leader>ap", "<cmd>ParrotProvider<cr>",         desc = "AI: Change Provider",                     nowait = true, remap = false },
+                    { "<leader>am", "<cmd>ParrotModel<cr>",            desc = "AI: Change Model",                        nowait = true, remap = false },
+                    { "<leader>ak", "<cmd>ParrotStop<cr>",             desc = "AI: ParrotChatStop",                      nowait = true, remap = false },
+                    { "<leader>ag", "<cmd>ParrotChatToggle split<cr>", desc = "AI: Toggle Chat (split)",                 nowait = true, remap = false },
+                    { "<leader>ah", "<cmd>ParrotChatToggle popup<cr>", desc = "AI: Toggle Chat (popup)",                 nowait = true, remap = false },
+                    { "<leader>al", "<cmd>ParrotChatToggle<cr>",       desc = "AI: Toggle Chat (buffer)",                nowait = true, remap = false },
+                    { "<leader>aq", "<cmd>ParrotAsk<cr>",              desc = "AI: Ask a question",                      nowait = true, remap = false },
+                    { "<leader>ac", "<cmd>ParrotContext<cr>",          desc = "AI: Toggle ParrotContext",                nowait = true, remap = false },
+                    { "<leader>ad", "<cmd>ParrotAppend<cr>",           desc = "AI: Append (bevor)",                      nowait = true, remap = false },
+                    { "<leader>ab", "<cmd>ParrotPrepend<cr>",          desc = "AI: Prepend (danach)",                    nowait = true, remap = false },
+                    { "<leader>ay", "<cmd>ParrotRetry<cr>",            desc = "AI: Retry (rewrite, append, or prepend)", nowait = true, remap = false },
+                    { "<leader>ai", "<cmd>ParrotStatus<cr>",           desc = "AI: Show status (provider and model)",    nowait = true, remap = false },
                 },
                 {
                     mode = { "v" },
-                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>",                     desc = "AI: Chat new vsplit (paste sel)", nowait = true, remap = false },
-                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",                      desc = "AI: Chat new split (paste sel)",  nowait = true, remap = false },
-                    { "<leader>aa", ":<C-u>'<,'>ParrotAppend<cr>",                             desc = "AI: Append and use sel (after)",  nowait = true, remap = false },
-                    { "<leader>ad", ":<C-u>'<,'>ParrotPrepend<cr>",                            desc = "AI: Prepend and use sel (davor)", nowait = true, remap = false },
-                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",                          desc = "AI: Implement selection",         nowait = true, remap = false },
-                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",                            desc = "AI: Rewrite selection",           nowait = true, remap = false },
-                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",                          desc = "AI: Paste to chat",               nowait = true, remap = false },
-                    { "<leader>at", ":<C-u>'<,'>ParrotRewrite Translate<cr>",                  desc = "AI: Translate to English",        nowait = true, remap = false },
-                    { "<leader>ae", ":<C-u>'<,'>ParrotRewrite ImproveEnglish<cr>",             desc = "AI: Improve English",             nowait = true, remap = false },
-                    { "<leader>ac", ":<C-u>'<,'>ParrotRewrite ImproveEnglishForGitCommit<cr>", desc = "AI: Improve git commit message",  nowait = true, remap = false },
+                    { "<leader>aa", ":<C-u>'<,'>ParrotChatNew<cr>",                            desc = "AI: New Chat (buffer, paste sel)", nowait = true, remap = false },
+                    { "<leader>aj", ":<C-u>'<,'>ParrotChatNew popup<cr>",                      desc = "AI: New Chat (popup, paste sel)",  nowait = true, remap = false },
+                    { "<leader>av", ":<C-u>'<,'>ParrotChatNew vsplit<cr>",                     desc = "AI: New Chat (vsplit, paste sel)", nowait = true, remap = false },
+                    { "<leader>as", ":<C-u>'<,'>ParrotChatNew split<cr>",                      desc = "AI: New Chat (split, paste sel)",  nowait = true, remap = false },
+                    { "<leader>ab", ":<C-u>'<,'>ParrotPrepend<cr>",                            desc = "AI: Prepend and use sel (bevor)",  nowait = true, remap = false },
+                    { "<leader>ad", ":<C-u>'<,'>ParrotAppend<cr>",                             desc = "AI: Append and use sel (danach)",  nowait = true, remap = false },
+                    { "<leader>ai", ":<C-u>'<,'>ParrotImplement<cr>",                          desc = "AI: Implement selection",          nowait = true, remap = false },
+                    { "<leader>ar", ":<C-u>'<,'>ParrotRewrite<cr>",                            desc = "AI: Rewrite selection",            nowait = true, remap = false },
+                    { "<leader>ap", ":<C-u>'<,'>ParrotChatPaste<cr>",                          desc = "AI: Paste to chat",                nowait = true, remap = false },
+                    { "<leader>at", ":<C-u>'<,'>ParrotRewrite Translate<cr>",                  desc = "AI: Translate to English",         nowait = true, remap = false },
+                    { "<leader>ae", ":<C-u>'<,'>ParrotRewrite ImproveEnglish<cr>",             desc = "AI: Improve English",              nowait = true, remap = false },
+                    { "<leader>ac", ":<C-u>'<,'>ParrotRewrite ImproveEnglishForGitCommit<cr>", desc = "AI: Improve git commit message",   nowait = true, remap = false },
                 }
             }
         )
