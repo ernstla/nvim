@@ -51,4 +51,6 @@ return {
     VM_Cursor                 = { fg = c.white, bg = c.vermil6 },
     VM_Extend                 = { fg = c.white, bg = c.green7 },
     VM_Insert                 = { fg = c.white, bg = c.sea7 },
+
+    FzfLuaBorder              = { fg = c.vermil5, bg = c.none },
 }

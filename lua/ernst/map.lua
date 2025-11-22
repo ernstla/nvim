@@ -41,8 +41,20 @@ map('v', '<leader>ds', ':s/^\\s*/&&<cr>')
 
 -- Terminal mode mappings incl. tmux.nvim navigation
 vim.keymap.set('t', '<c-h>', '<Cmd>lua require("tmux").move_left()<CR>')
-vim.keymap.set('t', '<c-j>', '<Cmd>lua require("tmux").move_bottom()<CR>')
-vim.keymap.set('t', '<c-k>', '<Cmd>lua require("tmux").move_top()<CR>')
+vim.keymap.set('n', '<c-j>', function()
+    if vim.bo.filetype == 'fzf' then
+        return '<c-j>'
+    else
+        return '<Cmd>lua require("tmux").move_bottom()<CR>'
+    end
+end, { expr = true, noremap = true })
+vim.keymap.set('n', '<c-k>', function()
+    if vim.bo.filetype == 'fzf' then
+        return '<c-k>'
+    else
+        return '<Cmd>lua require("tmux").move_top()<CR>'
+    end
+end, { expr = true, noremap = true })
 vim.keymap.set('t', '<c-l>', '<Cmd>lua require("tmux").move_right()<CR>')
 map('t', '<leader><esc>', '<c-\\><c-n>')
 map('t', '<c-q>', '<c-\\><c-n>')
