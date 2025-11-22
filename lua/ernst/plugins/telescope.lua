@@ -13,6 +13,8 @@ return { {
                     i = {
                         ['<c-j>'] = actions.move_selection_next,
                         ['<c-k>'] = actions.move_selection_previous,
+                        ['<c-f>'] = actions.preview_scrolling_down,
+                        ['<c-b>'] = actions.preview_scrolling_up,
                         ['<c-s>'] = actions.select_horizontal,
                         ['<esc>'] = actions.close,
                     },
@@ -28,7 +30,7 @@ return { {
             pickers = {
                 git_files = {
                     hidden = true,
-                    previewer = false,
+                    previewer = true,
                     file_ignore_patterns = {
                         'venv', '__pycache__', '%.xlsx', '%.jpg', '%.jpeg', '%.jfif', '%.png', '%.webp', '%.pdf',
                         '%.odt', '%.ico', '%.JPEG', '%.JPG', '%.mp4', '%.woff', '%.woff2', '%.ttf', '%.otf',
@@ -38,6 +40,7 @@ return { {
                     hidden = true,
                     no_ignore = true,
                     follow = true,
+                    previewer = true,
                     find_command = {
                         'fdfind',
                         '--type', 'f',
@@ -57,7 +60,7 @@ return { {
                     show_all_buffers = true,
                     sort_lastused = true,
                     default_selection_index = 1,
-                    previewer = false,
+                    previewer = true,
                     mappings = {
                         i = {
                             ['<c-x>'] = actions.delete_buffer,
@@ -74,20 +77,6 @@ return { {
                     mappings = {
                         i = {
                             ['<c-q>'] = actions.smart_send_to_qflist,
-                            --['<c-q>'] = actions.smart_add_to_qflist + actions.open_qflist,
-                        }
-                    }
-                },
-                lsp_references = {
-                    layout_config = {
-                        horizontal = {
-                            width = 0.8, height = 0.6, mirror = false, prompt_position = 'top', preview_width = 0.6
-                        }
-                    },
-                    mappings = {
-                        i = {
-                            ['<c-q>'] = actions.smart_send_to_qflist,
-                            --['<c-q>'] = actions.smart_add_to_qflist + actions.open_qflist,
                         }
                     }
                 },
@@ -105,17 +94,46 @@ return { {
         vim.keymap.set('n', '<c-p>', lib.project_files, {})
         vim.keymap.set('n', '<c-s-p>', builtin.buffers, {})
         vim.keymap.set('n', '<f9>', builtin.buffers, {})
-        vim.keymap.set('n', '<f10>', ':Telescope mru<CR>', {})
+
+        vim.api.nvim_create_user_command('Ag', function(opts)
+            builtin.live_grep({ default_text = opts.args })
+        end, { nargs = '*' })
+        vim.api.nvim_create_user_command('Agi', function(opts)
+            builtin.live_grep({ default_text = opts.args, additional_args = function() return { "--ignore-case" } end })
+        end, { nargs = '*' })
+        vim.api.nvim_create_user_command('Ags', function(opts)
+            builtin.live_grep({ default_text = opts.args, additional_args = function() return { "--case-sensitive" } end })
+        end, { nargs = '*' })
+        vim.api.nvim_create_user_command('Agn', function(opts)
+            builtin.live_grep({ default_text = opts.args, additional_args = function() return { "--no-ignore" } end })
+        end, { nargs = '*' })
+        vim.api.nvim_create_user_command('Agni', function(opts)
+            builtin.live_grep({
+                default_text = opts.args,
+                additional_args = function()
+                    return { "--no-ignore",
+                        "--ignore-case" }
+                end
+            })
+        end, { nargs = '*' })
+        vim.api.nvim_create_user_command('Agns', function(opts)
+            builtin.live_grep({
+                default_text = opts.args,
+                additional_args = function()
+                    return { "--no-ignore", "--case-sensitive" }
+                end
+            })
+        end, { nargs = '*' })
 
         require("which-key").add(
             { {
                 mode = { "n" },
-                { '<leader>b',  builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
-                { '<leader>tb', builtin.buffers,              desc = 'telescope: buffers',       nowait = true, remap = false },
-                { '<leader>to', ':Telescope mru<CR>',         desc = 'telescope: mru',           nowait = true, remap = false },
-                { '<leader>th', builtin.help_tags,            desc = 'telescope: help tags',     nowait = true, remap = false },
-                { '<leader>tq', builtin.quickfix,             desc = 'telescope: quickfix list', nowait = true, remap = false },
-                { '<leader>tl', builtin.lsp_document_symbols, desc = 'telescope: lsp symbols',   nowait = true, remap = false },
+                { '<leader>b',  builtin.buffers,         desc = 'telescope: buffers',         nowait = true, remap = false },
+                { '<leader>tb', builtin.buffers,         desc = 'telescope: buffers',         nowait = true, remap = false },
+                { '<leader>th', builtin.help_tags,       desc = 'telescope: help tags',       nowait = true, remap = false },
+                { '<leader>tq', builtin.quickfix,        desc = 'telescope: quickfix list',   nowait = true, remap = false },
+                { '<leader>t:', builtin.commands,        desc = 'telescope: command history', nowait = true, remap = false },
+                { '<leader>t;', builtin.command_history, desc = 'telescope: command history', nowait = true, remap = false },
                 {
                     '<leader>r',
                     function()
