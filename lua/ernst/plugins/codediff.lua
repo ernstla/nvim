@@ -11,8 +11,8 @@ return { {
 
                 -- Character-level: accepts highlight group names or hex colors
                 -- If specified, these override char_brightness calculation
-                char_insert = "#96c963", -- TODO: did not work, check later
-                char_delete = "#f59281",
+                char_insert = "#457812", -- TODO: did not work, check later
+                char_delete = "#950000",
                 -- char_insert = nil, -- Character-level insertions (nil = auto-derive)
                 -- char_delete = nil, -- Character-level deletions (nil = auto-derive)
 
