@@ -101,14 +101,16 @@ require("which-key").add(
         -- Tailwind Tools
         { '<leader>tw', '<cmd>TailwindConcealToggle<cr>',         desc = 'tailwind coceal',             nowait = true,  remap = false },
         { '<leader>tc', '<cmd>TailwindColorToggle<cr>',           desc = 'tailwind show/hide colors',   nowait = true,  remap = false },
+
         -- Tabs
         { '<leader>tt', ':tabnew<cr>',                            desc = 'tab new',                     nowait = true,  remap = false },
+        { '<leader>tr', ':tabclose<cr>',                          desc = 'tab close',                   nowait = true,  remap = false },
 
         -- Toggle hlsearch
         { '<leader>h',  ':set hlsearch!<cr>',                     desc = 'toggle search highlighting',  nowait = true,  remap = false },
 
         -- Toggle relativenumber
-        { '<leader>tr', ':set relativenumber!<cr>',               desc = 'toggle relative number',      nowait = true,  remap = false },
+        -- { '<leader>tr', ':set relativenumber!<cr>',               desc = 'toggle relative number',      nowait = true,  remap = false },
 
         -- Toggle wrapping
         { '<leader>w',  ':set wrap! wrap?<cr>',                   desc = 'toggle line wrapping',        nowait = true,  remap = false },
