@@ -107,6 +107,13 @@ autocmd('TextYankPost', {
     end,
 })
 
+-- Align buffers evenly when the terminal/window is resized
+vim.api.nvim_create_autocmd("VimResized", {
+    callback = function()
+        vim.cmd("wincmd =")
+    end,
+})
+
 -- Quickfix window placement
 autocmd({ 'QuickFixCmdPost' }, { group = Ernst, pattern = '[^l]*', command = 'botright cwindow' })
 autocmd({ 'QuickFixCmdPost' }, { group = Ernst, pattern = 'l* ', command = 'botright lwindow' })
