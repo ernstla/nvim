@@ -1,7 +1,4 @@
---Remap space as leader key
-local map = vim.keymap.set
-
-function map(mode, lhs, rhs, newopts)
+local function map(mode, lhs, rhs, newopts)
     local opts = { noremap = true, silent = true, nowait = true }
     newopts = newopts or {}
     for k, v in pairs(newopts) do opts[k] = v end
@@ -78,6 +75,15 @@ map('n', ']d', vim.diagnostic.goto_next)
 
 map('i', '<C-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 
+local function copy_relative_path()
+    vim.fn.setreg('+', vim.fn.expand('%'))
+    print('Copied: ' .. vim.fn.expand('%'))
+end
+local function copy_absolute_path()
+    vim.fn.setreg('+', vim.fn.expand('%:p'))
+    print('Copied: ' .. vim.fn.expand('%:p'))
+end
+
 require("which-key").add(
     { {
         mode = { "n" },
@@ -122,6 +128,9 @@ require("which-key").add(
         { '<leader>p',  ':Inspect<cr>',                           desc = 'show highlighting info',      nowait = true,  remap = true },
 
         { 'gD',         "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = 'Goto global declaration',     noremap = true, silent = true },
-        { 'gd',         "<cmd>lua vim.lsp.buf.definition()<CR>",  desc = 'Goto local definition',       noremap = true, silent = true }
+        { 'gd',         "<cmd>lua vim.lsp.buf.definition()<CR>",  desc = 'Goto local definition',       noremap = true, silent = true },
+
+        { '<leader>cf', copy_relative_path,                       desc = 'Copy relative file path' },
+        { '<leader>cF', copy_absolute_path,                       desc = 'Copy absolute file path' },
     } }
 )
