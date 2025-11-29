@@ -8,6 +8,8 @@ return {
     cmd = { 'intelephense', '--stdio' },
     filetypes = { 'php' },
     root_markers = { 'composer.json', '.git' },
+    -- Is set also in ~/intelephense/licence.txt
+    -- From 1.17 on ~/.config/intelephense/global/licence.txt
     init_options = {
         licenceKey = secrets.intelephense_key,
     },
