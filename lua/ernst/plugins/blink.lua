@@ -2,22 +2,20 @@ return { {
     'saghen/blink.cmp',
     version = '1.*',
     opts = {
-        -- All presets have the following mappings:
-        -- C-space: Open menu or open docs if already open
-        -- C-n/C-p or Up/Down: Select next/previous item
-        -- C-e: Hide menu
-        -- C-k: Toggle signature help (if signature.enabled = true)
         keymap = {
-            preset = 'enter',
-            ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
-            ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
-            ['<c-k>'] = { 'select_prev' },
-            ['<c-j>'] = { 'select_next' },
-            ['<up>'] = { 'select_prev' },
-            ['<down>'] = { 'select_next' },
-            ['<cr>'] = { 'select_and_accept', 'fallback' },
-            ['<tab>'] = { 'fallback' }, -- ignore tab to trigger luasnips
-            ['<s-tab>'] = { 'fallback' },
+            preset = 'none',
+            ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+            ['<Up>'] = { 'select_prev', 'fallback' },
+            ['<Down>'] = { 'select_next', 'fallback' },
+            ['<C-k>'] = { 'select_prev', 'fallback' },
+            ['<C-j>'] = { 'select_next', 'fallback' },
+            ['<CR>'] = { 'select_and_accept', 'fallback' },
+            ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+            ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+            ['<C-p>'] = { 'scroll_documentation_up', 'fallback_to_mappings' },
+            ['<C-n>'] = { 'scroll_documentation_down', 'fallback_to_mappings' },
+            ['<C-t>'] = { 'show_signature' },
+            ['<C-e>'] = { 'hide', 'fallback' },
         },
         fuzzy = {
             implementation = "prefer_rust_with_warning",
@@ -59,7 +57,10 @@ return { {
             }
         },
         completion = {
-            -- accept = { auto_select = true },
+            list = {
+                preselect = true,
+                auto_insert = false,
+            },
             menu = {
                 border = 'rounded',
                 auto_show = true,
@@ -72,6 +73,20 @@ return { {
         signature = {
             enabled = true,
             window = { border = 'rounded' }
+        },
+        cmdline = {
+            keymap = {
+                preset = 'inherit' ,
+                ['<Tab>'] = { 'show', 'select_next' },
+                ['<S-Tab>'] = { 'select_prev' },
+            },
+            completion = {
+                list = {
+                    preselect = false,
+                    auto_insert = false,
+                },
+                menu = { auto_show = false }
+            },
         },
     },
     opts_extend = { "sources.default" }
