@@ -13,9 +13,7 @@ if vim.fn.has('wsl') == 1 then
         },
         cache_enabled = false,
     }
-end
-
-if vim.fn.executable('pbcopy') == 1 then
+elseif vim.fn.executable('pbcopy') == 1 then
     vim.g.clipboard = {
         name = 'pbcopy',
         copy = {
@@ -28,10 +26,8 @@ if vim.fn.executable('pbcopy') == 1 then
         },
         cache_enabled = false,
     }
-end
-
--- Try to detect and configure clipboard for Linux
-if vim.fn.executable('wl-copy') == 1 and vim.fn.executable('wl-paste') == 1 then
+    -- Try to detect and configure clipboard for Linux
+elseif vim.fn.executable('wl-copy') == 1 and vim.fn.executable('wl-paste') == 1 then
     -- Wayland
     vim.g.clipboard = {
         name = 'wl-clipboard',
