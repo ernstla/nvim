@@ -1,105 +1,111 @@
-if not pcall(require, "ernst/secrets") then
-    return
+local secrets = require("ernst/secrets")
+
+local providers = {}
+
+if secrets.anthropic_key then
+    providers.anthropic = {
+        name = "anthropic",
+        endpoint = "https://api.anthropic.com/v1/messages",
+        model_endpoint = "https://api.anthropic.com/v1/models",
+        api_key = secrets.anthropic_key,
+        params = {
+            chat = { max_tokens = 4096 },
+            command = { max_tokens = 4096 },
+        },
+        topic = {
+            model = "claude-3-5-haiku-latest",
+            params = { max_tokens = 32 },
+        },
+        headers = function(self)
+            return {
+                ["Content-Type"] = "application/json",
+                ["x-api-key"] = self.api_key,
+                ["anthropic-version"] = "2023-06-01",
+            }
+        end,
+        models = {
+            'claude-haiku-4-5-20251001',
+            "claude-sonnet-4-20250514",
+            "claude-3-7-sonnet-20250219",
+            "claude-3-5-sonnet-20241022",
+            "claude-3-5-haiku-20241022",
+            'claude-sonnet-4-5-20250929',
+            'claude-opus-4-1-20250805',
+        },
+        preprocess_payload = function(payload)
+            for _, message in ipairs(payload.messages) do
+                message.content = message.content:gsub("^%s*(.-)%s*$", "%1")
+            end
+            if payload.messages[1] and payload.messages[1].role == "system" then
+                -- remove the first message that serves as the system prompt as anthropic
+                -- expects the system prompt to be part of the API call body and not the messages
+                payload.system = payload.messages[1].content
+                table.remove(payload.messages, 1)
+            end
+            return payload
+        end,
+    }
 end
 
-local secrets = require("ernst/secrets")
+if secrets.openai_key then
+    providers.openai = {
+        name = "openai",
+        endpoint = "https://api.openai.com/v1/chat/completions",
+        -- endpoint to query the available models online
+        model_endpoint = "https://api.openai.com/v1/models",
+        api_key = secrets.openai_key,
+        -- OPTIONAL: Alternative methods to retrieve API key
+        -- Using GPG for decryption:
+        -- api_key = { "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/my_api_key.txt.gpg" },
+        -- Using macOS Keychain:
+        -- api_key = { "/usr/bin/security", "find-generic-password", "-s my-api-key", "-w" },
+        --- default model parameters used for chat and interactive commands
+        params = {
+            chat = { temperature = 1.1, top_p = 1 },
+            command = { temperature = 1.1, top_p = 1 },
+        },
+        -- topic model parameters to summarize chats
+        topic = {
+            model = "gpt-4.1-nano",
+            params = { max_completion_tokens = 64 },
+        },
+        --  a selection of models that parrot can remember across sessions
+        --  NOTE: This will be handled more intelligently in a future version
+        models = {
+            "gpt-5.1-codex",
+            "gpt-5-pro",
+            "gpt-5-mini",
+            "o4-mini",
+        },
+    }
+end
+
+if secrets.deepseek_key then
+    providers.deepseek = {
+        name = 'deepseek',
+        api_key = secrets.deepseek_key,
+        -- model_endpoint = "https://api.deepseek.com/models",
+        endpoint = "https://api.deepseek.com/v1/chat/completions",
+        models = {
+            "deepseek-chat",
+            "deepseek-reasoner",
+        },
+        topic = {
+            model = "deepseek-chat",
+            params = { max_completion_tokens = 64 },
+        },
+        params = {
+            chat = { temperature = 1.1, top_p = 1 },
+            command = { temperature = 1.1, top_p = 1 },
+        },
+    }
+end
 
 return { {
     "frankroeder/parrot.nvim",
     dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
     opts = {
-        providers = {
-            anthropic = {
-                name = "anthropic",
-                endpoint = "https://api.anthropic.com/v1/messages",
-                model_endpoint = "https://api.anthropic.com/v1/models",
-                api_key = secrets.anthropic_key,
-                params = {
-                    chat = { max_tokens = 4096 },
-                    command = { max_tokens = 4096 },
-                },
-                topic = {
-                    model = "claude-3-5-haiku-latest",
-                    params = { max_tokens = 32 },
-                },
-                headers = function(self)
-                    return {
-                        ["Content-Type"] = "application/json",
-                        ["x-api-key"] = self.api_key,
-                        ["anthropic-version"] = "2023-06-01",
-                    }
-                end,
-                models = {
-                    'claude-haiku-4-5-20251001',
-                    "claude-sonnet-4-20250514",
-                    "claude-3-7-sonnet-20250219",
-                    "claude-3-5-sonnet-20241022",
-                    "claude-3-5-haiku-20241022",
-                    'claude-sonnet-4-5-20250929',
-                    'claude-opus-4-1-20250805',
-                },
-                preprocess_payload = function(payload)
-                    for _, message in ipairs(payload.messages) do
-                        message.content = message.content:gsub("^%s*(.-)%s*$", "%1")
-                    end
-                    if payload.messages[1] and payload.messages[1].role == "system" then
-                        -- remove the first message that serves as the system prompt as anthropic
-                        -- expects the system prompt to be part of the API call body and not the messages
-                        payload.system = payload.messages[1].content
-                        table.remove(payload.messages, 1)
-                    end
-                    return payload
-                end,
-            },
-            openai = {
-                name = "openai",
-                endpoint = "https://api.openai.com/v1/chat/completions",
-                -- endpoint to query the available models online
-                model_endpoint = "https://api.openai.com/v1/models",
-                api_key = secrets.openai_key,
-                -- OPTIONAL: Alternative methods to retrieve API key
-                -- Using GPG for decryption:
-                -- api_key = { "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/my_api_key.txt.gpg" },
-                -- Using macOS Keychain:
-                -- api_key = { "/usr/bin/security", "find-generic-password", "-s my-api-key", "-w" },
-                --- default model parameters used for chat and interactive commands
-                params = {
-                    chat = { temperature = 1.1, top_p = 1 },
-                    command = { temperature = 1.1, top_p = 1 },
-                },
-                -- topic model parameters to summarize chats
-                topic = {
-                    model = "gpt-4.1-nano",
-                    params = { max_completion_tokens = 64 },
-                },
-                --  a selection of models that parrot can remember across sessions
-                --  NOTE: This will be handled more intelligently in a future version
-                models = {
-                    "gpt-5.1-codex",
-                    "gpt-5-pro",
-                    "gpt-5-mini",
-                    "o4-mini",
-                },
-            },
-            deepseek = {
-                name = 'deepseek',
-                api_key = secrets.deepseek_key,
-                -- model_endpoint = "https://api.deepseek.com/models",
-                endpoint = "https://api.deepseek.com/v1/chat/completions",
-                models = {
-                    "deepseek-chat",
-                    "deepseek-reasoner",
-                },
-                topic = {
-                    model = "deepseek-chat",
-                    params = { max_completion_tokens = 64 },
-                },
-                params = {
-                    chat = { temperature = 1.1, top_p = 1 },
-                    command = { temperature = 1.1, top_p = 1 },
-                },
-            }
-        },
+        providers = providers,
         system_prompt = {
             command =
                 "Respond with only the raw code solution (no markdown, no backticks, no explanations) " ..
