@@ -77,7 +77,7 @@ return { {
         cmdline = {
             keymap = {
                 preset = 'inherit',
-                ['<Tab>'] = { 'show', 'select_next' },
+                ['<Tab>'] = { 'show_and_insert', 'insert_next' },
                 ['<S-Tab>'] = { 'select_prev' },
             },
             completion = {
