@@ -131,6 +131,7 @@ return { {
                 { '<leader>b',  builtin.buffers,         desc = 'telescope: buffers',         nowait = true, remap = false },
                 { '<leader>tb', builtin.buffers,         desc = 'telescope: buffers',         nowait = true, remap = false },
                 { '<leader>th', builtin.help_tags,       desc = 'telescope: help tags',       nowait = true, remap = false },
+                { '<leader>tk', builtin.keymaps,         desc = 'telescope: keymaps',         nowait = true, remap = false },
                 { '<leader>tq', builtin.quickfix,        desc = 'telescope: quickfix list',   nowait = true, remap = false },
                 { '<leader>t:', builtin.commands,        desc = 'telescope: command history', nowait = true, remap = false },
                 { '<leader>t;', builtin.command_history, desc = 'telescope: command history', nowait = true, remap = false },
