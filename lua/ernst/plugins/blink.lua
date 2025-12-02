@@ -76,14 +76,14 @@ return { {
         },
         cmdline = {
             keymap = {
-                preset = 'inherit' ,
+                preset = 'inherit',
                 ['<Tab>'] = { 'show', 'select_next' },
                 ['<S-Tab>'] = { 'select_prev' },
             },
             completion = {
                 list = {
-                    preselect = false,
-                    auto_insert = false,
+                    preselect = true,
+                    auto_insert = true,
                 },
                 menu = { auto_show = false }
             },
