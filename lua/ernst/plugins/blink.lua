@@ -58,8 +58,10 @@ return { {
         },
         completion = {
             list = {
-                preselect = true,
-                auto_insert = false,
+                selection = {
+                    preselect = true,
+                    auto_insert = false,
+                }
             },
             menu = {
                 border = 'rounded',
@@ -79,12 +81,9 @@ return { {
                 preset = 'inherit',
                 ['<Tab>'] = { 'show_and_insert', 'insert_next' },
                 ['<S-Tab>'] = { 'select_prev' },
+                ['<CR>'] = { 'accept_and_enter', 'fallback' },
             },
             completion = {
-                list = {
-                    preselect = true,
-                    auto_insert = true,
-                },
                 menu = { auto_show = false }
             },
         },
