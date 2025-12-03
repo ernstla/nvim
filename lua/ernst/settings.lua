@@ -10,6 +10,7 @@ g.loaded_netrwPlugin = 1
 g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
 
 o.autoindent = true
+o.autoread = true
 o.backup = false
 o.backupcopy = 'yes'
 o.clipboard = 'unnamedplus'

@@ -15,7 +15,7 @@ return { {
         require("which-key").add(
             {
                 {
-                    { "<leader>o",       mark.add_file,                  desc = "Harpoon: add file",   nowait = true, remap = false },
+                    { "<leader>oo",      mark.add_file,                  desc = "Harpoon: add file",   nowait = true, remap = false },
                     { "<leader><space>", ui.toggle_quick_menu,           desc = "Harpoon: quick menu", nowait = true, remap = false },
                     { "<leader>1",       function() ui.nav_file(1) end,  desc = "Harpoon: file 1",     nowait = true, remap = false },
                     { "<leader>2",       function() ui.nav_file(2) end,  desc = "Harpoon: file 2",     nowait = true, remap = false },
