@@ -53,4 +53,10 @@ return {
     VM_Insert                 = { fg = c.white, bg = c.sea7 },
 
     FzfLuaBorder              = { fg = c.vermil5, bg = c.none },
+
+    SnacksDashboardHeader     = { fg = c.red0, bg = c.none },
+    SnacksDashboardIcon       = { fg = c.vermil4, bg = c.none },
+    SnacksDashboardDesc       = { fg = c.red0, bg = c.none },
+    SnacksDashboardKey        = { fg = c.vermil4, bg = c.none },
+    SnacksDashboardSpecial    = { fg = c.vermil4, bg = c.none },
 }
