@@ -16,7 +16,10 @@ return { {
                         ['<c-f>'] = actions.preview_scrolling_down,
                         ['<c-b>'] = actions.preview_scrolling_up,
                         ['<c-s>'] = actions.select_horizontal,
+                    },
+                    n = {
                         ['<esc>'] = actions.close,
+                        ['q'] = actions.close,
                     },
                 },
                 sorting_strategy = 'ascending',
