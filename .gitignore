@@ -1,4 +1,3 @@
 *.log
 packer_compiled.lua
-sessions/*.vim
-sessions/*.obsession*
+sessions/*
