@@ -2,20 +2,20 @@ return { {
     "NickvanDyke/opencode.nvim",
     config = function()
         vim.g.opencode_opts = {
+            provider = {
+                enabled = "tmux",
+                tmux = {
+                    options = "-h", -- Open in a horizontal split
+                }
+            },
             -- provider = {
-            --     enabled = "tmux",
-            --     tmux = {
-            --         options = "-h", -- Open in a horizontal split
+            --     enabled = "snacks",
+            --     snacks = {
+            --         win = {
+            --             width = 125
+            --         }
             --     }
             -- }
-            provider = {
-                enabled = "snacks",
-                snacks = {
-                    win = {
-                        width = 125
-                    }
-                }
-            }
         }
 
         vim.keymap.set({ "n", "x" }, "<leader>ot", function() require("opencode").toggle() end,
