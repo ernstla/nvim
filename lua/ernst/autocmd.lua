@@ -31,7 +31,6 @@ autocmd({ 'BufWritePre' }, {
         '*.json',
         '*.lua',
         '*.go',
-        '*.nim',
         '*.odin',
         '*.rs',
         '*rc',
@@ -44,6 +43,7 @@ autocmd({ 'BufWritePre' }, {
     pattern = {
         '*.css',
         '*.html',
+        '*.nim',
         '*.js',
         '*.php',
         '*.py',
