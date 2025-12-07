@@ -1,9 +1,9 @@
 return {
-    cmd = { 'nimlsp' },
-    filetypes = { 'nim' },
+    cmd = { 'nimlangserver' },
+    filetypes = { 'nim', 'nims' },
     root_markers = {
         '*.nimble',
         '.git'
     },
-    single_file_support = true,
+    --     single_file_support = true,
 }
