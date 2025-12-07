@@ -1,6 +1,9 @@
-local color = require('serious/colors')
 local function session()
     require('mini.sessions').select()
+end
+local function open_dashboard()
+    vim.cmd('tabnew')
+    require("snacks/dashboard").open()
 end
 
 return { {
@@ -13,7 +16,17 @@ return { {
             function() require("snacks").picker.notifications() end,
             desc = "Notification History",
         },
+        {
+            "<leader>dd",
+            open_dashboard,
+            desc = "Open Dashboard",
+        },
     },
+    config = function(spec)
+        require('snacks').setup(spec.opts)
+
+        vim.api.nvim_create_user_command('Dash', open_dashboard, {})
+    end,
     opts = {
         bigfile = {},
         input = {},
@@ -39,7 +52,7 @@ return { {
                     { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
                     { icon = " ", key = "s", desc = "Restore Session", action = session },
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                    { icon = " ", key = "q", desc = "Quit", action = ":q" },
                     { icon = " ", key = "n", desc = "Close Dashboard", action = ":enew" },
                 },
             },
