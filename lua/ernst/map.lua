@@ -84,6 +84,37 @@ local function copy_absolute_path()
     print('Copied: ' .. vim.fn.expand('%:p'))
 end
 
+local function copy_ai_path(expand_arg)
+    local path = '@' .. vim.fn.expand(expand_arg)
+    local mode = vim.fn.mode()
+    local was_visual = false
+
+    if mode == 'v' or mode == 'V' or mode == '\22' then
+        was_visual = true
+        local start_line = vim.fn.line('v')
+        local end_line = vim.fn.line('.')
+        if start_line > end_line then
+            start_line, end_line = end_line, start_line
+        end
+        path = path .. ' L' .. start_line .. '-L' .. end_line
+    end
+
+    vim.fn.setreg('+', path)
+    print('Copied: ' .. path)
+
+    if was_visual then
+        vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes('<Esc>', true, false, true))
+    end
+end
+
+local function copy_ai_path_relative()
+    copy_ai_path('%')
+end
+
+local function copy_ai_path_absolute()
+    copy_ai_path('%:p')
+end
+
 require("which-key").add(
     { {
         mode = { "n" },
@@ -130,7 +161,13 @@ require("which-key").add(
         { 'gD',         "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = 'Goto global declaration',     noremap = true, silent = true },
         { 'gd',         "<cmd>lua vim.lsp.buf.definition()<CR>",  desc = 'Goto local definition',       noremap = true, silent = true },
 
-        { '<leader>cf', copy_relative_path,                       desc = 'Copy relative file path' },
-        { '<leader>cF', copy_absolute_path,                       desc = 'Copy absolute file path' },
+        { '<leader>cp', copy_relative_path,                       desc = 'Copy relative file path' },
+        { '<leader>cP', copy_absolute_path,                       desc = 'Copy absolute file path' },
+        { '<leader>ga', copy_ai_path_relative,                    desc = 'Copy AI path (relative)' },
+        { '<leader>gA', copy_ai_path_absolute,                    desc = 'Copy AI path (absolute)' },
+    }, {
+        mode = { "v" },
+        { '<leader>ga', copy_ai_path_relative, desc = 'Copy AI path:lines (relative)' },
+        { '<leader>gA', copy_ai_path_absolute, desc = 'Copy AI path:lines (absolute)' },
     } }
 )
