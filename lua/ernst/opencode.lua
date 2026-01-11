@@ -188,11 +188,21 @@ local function opencode_vertical()
     open_or_focus_opencode("-v")
 end
 
+local function opencode_horizontal_new()
+    create_opencode_pane("-h")
+end
+
+local function opencode_vertical_new()
+    create_opencode_pane("-v")
+end
+
 require("which-key").add(
     { {
         mode = { "n" },
-        { '<leader>oc', opencode_horizontal,   desc = 'OpenCode (horizontal split)' },
-        { '<leader>oC', opencode_vertical,     desc = 'OpenCode (vertical split)' },
+        { '<leader>oc', opencode_horizontal,     desc = 'OpenCode (horizontal split)' },
+        { '<leader>oC', opencode_vertical,       desc = 'OpenCode (vertical split)' },
+        { '<leader>Oc', opencode_horizontal_new, desc = 'OpenCode new (horizontal split)' },
+        { '<leader>OC', opencode_vertical_new,   desc = 'OpenCode new (vertical split)' },
         { '<leader>cp', copy_relative_path,    desc = 'Copy relative file path' },
         { '<leader>cP', copy_absolute_path,    desc = 'Copy absolute file path' },
         { '<leader>ga', copy_ai_path_relative, desc = 'Copy AI path (relative)' },
