@@ -119,9 +119,16 @@ local function find_opencode_panes()
     return panes
 end
 
-local function send_ai_path_to_tmux_with(expand_arg, include_lines)
+local function focus_pane(pane_id)
+    vim.fn.system(string.format("tmux select-pane -t %s", pane_id))
+end
+
+local function send_ai_path_to_tmux_with(expand_arg, include_lines, focus_after)
     local function sender(pane_id)
         send_ai_path_to_pane(pane_id, expand_arg, include_lines)
+        if focus_after then
+            focus_pane(pane_id)
+        end
     end
 
     -- Check stored pane first
@@ -166,19 +173,19 @@ local function send_ai_path_to_tmux_with(expand_arg, include_lines)
 end
 
 local function send_ai_path_to_tmux()
-    send_ai_path_to_tmux_with('%', false)
+    send_ai_path_to_tmux_with('%', false, true)
 end
 
 local function send_ai_path_absolute_to_tmux()
-    send_ai_path_to_tmux_with('%:p', false)
+    send_ai_path_to_tmux_with('%:p', false, true)
 end
 
 local function send_ai_path_lines_to_tmux()
-    send_ai_path_to_tmux_with('%', true)
+    send_ai_path_to_tmux_with('%', true, true)
 end
 
 local function send_ai_path_lines_absolute_to_tmux()
-    send_ai_path_to_tmux_with('%:p', true)
+    send_ai_path_to_tmux_with('%:p', true, true)
 end
 
 local function copy_ai_path_relative()
@@ -195,10 +202,6 @@ end
 
 local function copy_ai_path_lines_absolute()
     copy_ai_path('%:p', true)
-end
-
-local function focus_pane(pane_id)
-    vim.fn.system(string.format("tmux select-pane -t %s", pane_id))
 end
 
 local function create_opencode_pane(split_arg)
