@@ -46,19 +46,34 @@ local function copy_ai_path(expand_arg)
     end
 end
 
-local function is_pane_running_opencode(pane_id)
+local function get_current_window_id()
+    local result = vim.fn.system("tmux display-message -p '#{window_id}'")
+    return vim.trim(result)
+end
+
+local function get_pane_window_and_command(pane_id)
     local result = vim.fn.system(
-        string.format("tmux list-panes -F '#{pane_id} #{pane_current_command}' | grep '^%s '", pane_id))
-    return result:match("opencode") ~= nil
+        string.format("tmux display-message -p -t %s '#{window_id}\t#{pane_current_command}'", pane_id))
+    local window_id, cmd = result:match("^(%S+)\t(%S+)")
+    return window_id, cmd
+end
+
+local function is_pane_running_opencode(pane_id)
+    local current_window = get_current_window_id()
+    local pane_window, cmd = get_pane_window_and_command(pane_id)
+    return pane_window == current_window and cmd == "opencode"
 end
 
 local function find_opencode_panes()
+    local window_id = get_current_window_id()
     local result = vim.fn.system(
-        "tmux list-panes -F '#{pane_id}\t#{pane_index}\t#{pane_current_command}\t#{pane_width}x#{pane_height}'")
+        string.format(
+            "tmux list-panes -t %s -F '#{pane_id}\t#{pane_index}\t#{pane_current_command}\t#{pane_width}x#{pane_height}'",
+            window_id))
     local panes = {}
     for line in result:gmatch("[^\n]+") do
         local pane_id, index, cmd, size = line:match("^(%S+)\t(%S+)\t(%S+)\t(%S+)$")
-        if cmd and cmd:match("opencode") then
+        if cmd == "opencode" then
             table.insert(panes, {
                 id = pane_id,
                 index = index,
