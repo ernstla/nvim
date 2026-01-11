@@ -6,7 +6,9 @@ return { {
     'nvim-telescope/telescope.nvim',
     --branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = function(actions)
+    opts = function()
+        local actions = require('telescope.actions')
+
         return {
             defaults = {
                 mappings = {
@@ -16,6 +18,7 @@ return { {
                         ['<c-f>'] = actions.preview_scrolling_down,
                         ['<c-b>'] = actions.preview_scrolling_up,
                         ['<c-s>'] = actions.select_horizontal,
+                        ['<c-p>'] = require('telescope.actions.layout').toggle_preview,
                     },
                     n = {
                         ['<esc>'] = actions.close,
@@ -23,17 +26,33 @@ return { {
                     },
                 },
                 sorting_strategy = 'ascending',
-                layout_strategy = 'horizontal',
+                layout_strategy = 'vertical',
                 layout_config = {
-                    vertical = { width = 0.5, height = 0.8, mirror = true, prompt_position = 'bottom' },
-                    horizontal = { width = 191, height = 0.6, mirror = false, prompt_position = 'top' }
+                    vertical = {
+                        width = function(_, max_columns, _)
+                            local width = max_columns < 150 and 0.9 or 0.5
+                            return math.floor(max_columns * width)
+                        end,
+                        height = 0.8,
+                        mirror = true,
+                        prompt_position = 'top',
+                    },
+                    horizontal = {
+                        width = function(_, max_columns, _)
+                            local width = max_columns < 150 and 0.9 or 0.7
+                            return math.floor(max_columns * width)
+                        end,
+                        height = 0.6,
+                        mirror = false,
+                        prompt_position = 'top',
+                    },
                 },
                 borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
             },
             pickers = {
                 git_files = {
                     hidden = true,
-                    previewer = true,
+                    previewer = false,
                     file_ignore_patterns = {
                         'venv', '__pycache__', '%.xlsx', '%.jpg', '%.jpeg', '%.jfif', '%.png', '%.webp', '%.pdf',
                         '%.odt', '%.ico', '%.JPEG', '%.JPG', '%.mp4', '%.woff', '%.woff2', '%.ttf', '%.otf',
@@ -43,7 +62,7 @@ return { {
                     hidden = true,
                     no_ignore = true,
                     follow = true,
-                    previewer = true,
+                    previewer = false,
                     find_command = {
                         'fdfind',
                         '--type', 'f',
@@ -63,7 +82,7 @@ return { {
                     show_all_buffers = true,
                     sort_lastused = true,
                     default_selection_index = 1,
-                    previewer = true,
+                    previewer = false,
                     mappings = {
                         i = {
                             ['<c-x>'] = actions.delete_buffer,
@@ -71,12 +90,16 @@ return { {
                     },
                     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
                 },
-                grep_string = {
-                    layout_config = {
-                        horizontal = {
-                            width = 0.8, height = 0.6, mirror = false, prompt_position = 'top', preview_width = 0.6
+                live_grep = {
+                    previewer = true,
+                    mappings = {
+                        i = {
+                            ['<c-q>'] = actions.smart_send_to_qflist,
                         }
-                    },
+                    }
+                },
+                grep_string = {
+                    previewer = true,
                     mappings = {
                         i = {
                             ['<c-q>'] = actions.smart_send_to_qflist,
