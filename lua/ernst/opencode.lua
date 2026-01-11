@@ -131,7 +131,11 @@ local function copy_ai_path_absolute()
     copy_ai_path('%:p')
 end
 
-local function opencode_in_tmux_pane(split_arg)
+local function focus_pane(pane_id)
+    vim.fn.system(string.format("tmux select-pane -t %s", pane_id))
+end
+
+local function create_opencode_pane(split_arg)
     local subdir = vim.fn.getcwd()
     local result = vim.fn.system("tmux split-window " .. split_arg .. " -P -F '#{pane_id}'")
     opencode_pane_id = vim.trim(result)
@@ -139,19 +143,56 @@ local function opencode_in_tmux_pane(split_arg)
     vim.fn.system(string.format("tmux send-keys -t %s 'opencode' Enter", opencode_pane_id))
 end
 
+local function open_or_focus_opencode(split_arg)
+    -- Check stored pane first
+    if opencode_pane_id and is_pane_running_opencode(opencode_pane_id) then
+        focus_pane(opencode_pane_id)
+        return
+    end
+
+    local panes = find_opencode_panes()
+
+    if #panes == 0 then
+        create_opencode_pane(split_arg)
+        return
+    end
+
+    if #panes == 1 then
+        opencode_pane_id = panes[1].id
+        focus_pane(opencode_pane_id)
+        return
+    end
+
+    -- Multiple panes: show picker
+    local items = {}
+    local id_map = {}
+    for _, pane in ipairs(panes) do
+        local label = string.format("Pane %s (%s) [%s]", pane.index, pane.id, pane.size)
+        table.insert(items, label)
+        id_map[label] = pane.id
+    end
+
+    vim.ui.select(items, { prompt = "Select opencode pane:" }, function(choice)
+        if choice then
+            opencode_pane_id = id_map[choice]
+            focus_pane(opencode_pane_id)
+        end
+    end)
+end
+
 local function opencode_horizontal()
-    opencode_in_tmux_pane("-h")
+    open_or_focus_opencode("-h")
 end
 
 local function opencode_vertical()
-    opencode_in_tmux_pane("-v")
+    open_or_focus_opencode("-v")
 end
 
 require("which-key").add(
     { {
         mode = { "n" },
-        { '<leader>oc', opencode_horizontal,   desc = 'Start OpenCode (horizontal split)' },
-        { '<leader>oC', opencode_vertical,     desc = 'Start OpenCode (vertical split)' },
+        { '<leader>oc', opencode_horizontal,   desc = 'OpenCode (horizontal split)' },
+        { '<leader>oC', opencode_vertical,     desc = 'OpenCode (vertical split)' },
         { '<leader>cp', copy_relative_path,    desc = 'Copy relative file path' },
         { '<leader>cP', copy_absolute_path,    desc = 'Copy absolute file path' },
         { '<leader>ga', copy_ai_path_relative, desc = 'Copy AI path (relative)' },
