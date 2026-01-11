@@ -42,6 +42,7 @@ return { {
             margin = { top = 1, right = 1, bottom = 2 },
         },
         dashboard = {
+            width = 31,
             preset = {
                 keys = {
                     --{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -59,7 +60,7 @@ return { {
             },
             sections = {
                 { section = "header" },
-                { section = "keys",   gap = 1, padding = 1 },
+                { section = "keys",   gap = 1, padding = { 3, 0 } },
                 { section = "startup" },
             },
         },
