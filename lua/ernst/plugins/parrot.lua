@@ -103,6 +103,7 @@ end
 
 return { {
     "frankroeder/parrot.nvim",
+    enabled = next(providers) ~= nil,
     dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
     opts = {
         providers = providers,
