@@ -27,7 +27,7 @@ elseif vim.fn.executable('pbcopy') == 1 then
         cache_enabled = false,
     }
     -- Try to detect and configure clipboard for Linux
-elseif vim.fn.executable('wl-copy') == 1 and vim.fn.executable('wl-paste') == 1 then
+elseif vim.env.WAYLAND_DISPLAY and vim.fn.executable('wl-copy') == 1 and vim.fn.executable('wl-paste') == 1 then
     -- Wayland
     vim.g.clipboard = {
         name = 'wl-clipboard',
@@ -41,7 +41,7 @@ elseif vim.fn.executable('wl-copy') == 1 and vim.fn.executable('wl-paste') == 1 
         },
         cache_enabled = false,
     }
-elseif vim.fn.executable('xclip') == 1 then
+elseif vim.env.DISPLAY and vim.fn.executable('xclip') == 1 then
     -- X11 with xclip
     vim.g.clipboard = {
         name = 'xclip',
