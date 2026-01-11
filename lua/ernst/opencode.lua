@@ -1,8 +1,3 @@
--- vim.keymap.set({ "n", "x" }, "ga", function() require("opencode").prompt("@this") end,
---     { desc = "Add @this to opencode" })
--- vim.keymap.set({ "n", "x" }, "gb", function() require("opencode").prompt("@buffer") end,
---     { desc = "Add @buffer to opencode" })
-
 local function copy_relative_path()
     vim.fn.setreg('+', vim.fn.expand('%'))
     print('Copied: ' .. vim.fn.expand('%'))
@@ -12,26 +7,53 @@ local function copy_absolute_path()
     print('Copied: ' .. vim.fn.expand('%:p'))
 end
 
-local function copy_ai_path(expand_arg)
+local function get_ai_path(expand_arg)
     local path = '@' .. vim.fn.expand(expand_arg)
     local mode = vim.fn.mode()
-    local was_visual = false
 
     if mode == 'v' or mode == 'V' or mode == '\22' then
-        was_visual = true
         local start_line = vim.fn.line('v')
         local end_line = vim.fn.line('.')
         if start_line > end_line then
             start_line, end_line = end_line, start_line
         end
-        path = path .. ' L' .. start_line .. '-L' .. end_line
+        path = path .. ':L' .. start_line .. '-L' .. end_line
     end
+
+    return path
+end
+
+local function is_visual_mode()
+    local mode = vim.fn.mode()
+    return mode == 'v' or mode == 'V' or mode == '\22'
+end
+
+local function escape_visual_mode()
+    vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes('<Esc>', true, false, true))
+end
+
+local function copy_ai_path(expand_arg)
+    local path = get_ai_path(expand_arg)
+    local was_visual = is_visual_mode()
 
     vim.fn.setreg('+', path)
     print('Copied: ' .. path)
 
     if was_visual then
-        vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes('<Esc>', true, false, true))
+        escape_visual_mode()
+    end
+end
+
+local function send_ai_path_to_tmux()
+    local path = get_ai_path('%')
+    local was_visual = is_visual_mode()
+
+    vim.fn.system("tmux select-pane -R")
+    vim.fn.system(string.format("tmux send-keys '%s '", path))
+    print('Sent: ' .. path)
+
+    if was_visual then
+        escape_visual_mode()
     end
 end
 
@@ -59,9 +81,11 @@ require("which-key").add(
         { '<leader>cP', copy_absolute_path,    desc = 'Copy absolute file path' },
         { '<leader>ga', copy_ai_path_relative, desc = 'Copy AI path (relative)' },
         { '<leader>gA', copy_ai_path_absolute, desc = 'Copy AI path (absolute)' },
+        { 'ga',         send_ai_path_to_tmux,  desc = 'Send AI path to tmux pane' },
     }, {
         mode = { "v" },
         { '<leader>ga', copy_ai_path_relative, desc = 'Copy AI path:lines (relative)' },
         { '<leader>gA', copy_ai_path_absolute, desc = 'Copy AI path:lines (absolute)' },
+        { 'ga',         send_ai_path_to_tmux,  desc = 'Send AI path:lines to tmux pane' },
     } }
 )
