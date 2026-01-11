@@ -39,10 +39,11 @@ return { {
                     },
                     horizontal = {
                         width = function(_, max_columns, _)
-                            local width = max_columns < 150 and 0.9 or 0.7
+                            local width = max_columns < 250 and 0.95 or 0.8
                             return math.floor(max_columns * width)
                         end,
-                        height = 0.6,
+                        preview_width = 0.5,
+                        height = 0.8,
                         mirror = false,
                         prompt_position = 'top',
                     },
@@ -91,6 +92,10 @@ return { {
                     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
                 },
                 live_grep = {
+                    layout_strategy = 'flex',
+                    layout_config = {
+                        flex = { flip_columns = 150 },
+                    },
                     previewer = true,
                     mappings = {
                         i = {
@@ -99,6 +104,10 @@ return { {
                     }
                 },
                 grep_string = {
+                    layout_strategy = 'flex',
+                    layout_config = {
+                        flex = { flip_columns = 150 },
+                    },
                     previewer = true,
                     mappings = {
                         i = {
