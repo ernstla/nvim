@@ -9,17 +9,22 @@ local function copy_absolute_path()
     print('Copied: ' .. vim.fn.expand('%:p'))
 end
 
-local function get_ai_path(expand_arg)
-    return '@' .. vim.fn.expand(expand_arg)
-end
-
 local function is_visual_mode()
     local mode = vim.fn.mode()
     return mode == 'v' or mode == 'V' or mode == '\22'
 end
 
-local function get_ai_path_with_lines(expand_arg)
+local function escape_visual_mode()
+    vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes('<Esc>', true, false, true))
+end
+
+local function format_ai_path(expand_arg, include_lines)
     local path = '@' .. vim.fn.expand(expand_arg)
+
+    if not include_lines then
+        return path
+    end
+
     local start_line
     local end_line
 
@@ -41,32 +46,34 @@ local function get_ai_path_with_lines(expand_arg)
     return path .. ':L' .. start_line .. '-L' .. end_line
 end
 
-local function escape_visual_mode()
-    vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes('<Esc>', true, false, true))
-end
-
-local function copy_ai_path(expand_arg)
-    local path = get_ai_path(expand_arg)
+local function with_visual_cleanup(action)
     local was_visual = is_visual_mode()
-
-    vim.fn.setreg('+', path)
-    print('Copied: ' .. path)
+    action()
 
     if was_visual then
         escape_visual_mode()
     end
 end
 
-local function copy_ai_path_with_lines(expand_arg)
-    local path = get_ai_path_with_lines(expand_arg)
-    local was_visual = is_visual_mode()
+local function apply_ai_path(expand_arg, include_lines, handler)
+    with_visual_cleanup(function()
+        local path = format_ai_path(expand_arg, include_lines)
+        handler(path)
+    end)
+end
 
-    vim.fn.setreg('+', path)
-    print('Copied: ' .. path)
+local function copy_ai_path(expand_arg, include_lines)
+    apply_ai_path(expand_arg, include_lines, function(path)
+        vim.fn.setreg('+', path)
+        print('Copied: ' .. path)
+    end)
+end
 
-    if was_visual then
-        escape_visual_mode()
-    end
+local function send_ai_path_to_pane(pane_id, expand_arg, include_lines)
+    apply_ai_path(expand_arg, include_lines, function(path)
+        vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
+        print('Sent: ' .. path)
+    end)
 end
 
 local function get_current_window_id()
@@ -112,55 +119,11 @@ local function find_opencode_panes()
     return panes
 end
 
-local function send_keys_to_pane(pane_id)
-    local path = get_ai_path('%')
-    local was_visual = is_visual_mode()
-
-    vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
-    print('Sent: ' .. path)
-
-    if was_visual then
-        escape_visual_mode()
+local function send_ai_path_to_tmux_with(expand_arg, include_lines)
+    local function sender(pane_id)
+        send_ai_path_to_pane(pane_id, expand_arg, include_lines)
     end
-end
 
-local function send_keys_to_pane_with_lines(pane_id)
-    local path = get_ai_path_with_lines('%')
-    local was_visual = is_visual_mode()
-
-    vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
-    print('Sent: ' .. path)
-
-    if was_visual then
-        escape_visual_mode()
-    end
-end
-
-local function send_keys_to_pane_absolute(pane_id)
-    local path = get_ai_path('%:p')
-    local was_visual = is_visual_mode()
-
-    vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
-    print('Sent: ' .. path)
-
-    if was_visual then
-        escape_visual_mode()
-    end
-end
-
-local function send_keys_to_pane_with_lines_absolute(pane_id)
-    local path = get_ai_path_with_lines('%:p')
-    local was_visual = is_visual_mode()
-
-    vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
-    print('Sent: ' .. path)
-
-    if was_visual then
-        escape_visual_mode()
-    end
-end
-
-local function send_ai_path_to_tmux_with(sender)
     -- Check stored pane first
     if opencode_pane_id and is_pane_running_opencode(opencode_pane_id) then
         sender(opencode_pane_id)
@@ -203,35 +166,35 @@ local function send_ai_path_to_tmux_with(sender)
 end
 
 local function send_ai_path_to_tmux()
-    send_ai_path_to_tmux_with(send_keys_to_pane)
+    send_ai_path_to_tmux_with('%', false)
 end
 
 local function send_ai_path_absolute_to_tmux()
-    send_ai_path_to_tmux_with(send_keys_to_pane_absolute)
+    send_ai_path_to_tmux_with('%:p', false)
 end
 
 local function send_ai_path_lines_to_tmux()
-    send_ai_path_to_tmux_with(send_keys_to_pane_with_lines)
+    send_ai_path_to_tmux_with('%', true)
 end
 
 local function send_ai_path_lines_absolute_to_tmux()
-    send_ai_path_to_tmux_with(send_keys_to_pane_with_lines_absolute)
+    send_ai_path_to_tmux_with('%:p', true)
 end
 
 local function copy_ai_path_relative()
-    copy_ai_path('%')
+    copy_ai_path('%', false)
 end
 
 local function copy_ai_path_absolute()
-    copy_ai_path('%:p')
+    copy_ai_path('%:p', false)
 end
 
 local function copy_ai_path_lines_relative()
-    copy_ai_path_with_lines('%')
+    copy_ai_path('%', true)
 end
 
 local function copy_ai_path_lines_absolute()
-    copy_ai_path_with_lines('%:p')
+    copy_ai_path('%:p', true)
 end
 
 local function focus_pane(pane_id)
