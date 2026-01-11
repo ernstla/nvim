@@ -26,6 +26,7 @@ return { {
                     },
                 },
                 sorting_strategy = 'ascending',
+                preview = false,
                 layout_strategy = 'vertical',
                 layout_config = {
                     vertical = {
@@ -53,7 +54,6 @@ return { {
             pickers = {
                 git_files = {
                     hidden = true,
-                    previewer = false,
                     file_ignore_patterns = {
                         'venv', '__pycache__', '%.xlsx', '%.jpg', '%.jpeg', '%.jfif', '%.png', '%.webp', '%.pdf',
                         '%.odt', '%.ico', '%.JPEG', '%.JPG', '%.mp4', '%.woff', '%.woff2', '%.ttf', '%.otf',
@@ -63,7 +63,6 @@ return { {
                     hidden = true,
                     no_ignore = true,
                     follow = true,
-                    previewer = false,
                     find_command = {
                         'fdfind',
                         '--type', 'f',
@@ -83,7 +82,6 @@ return { {
                     show_all_buffers = true,
                     sort_lastused = true,
                     default_selection_index = 1,
-                    previewer = false,
                     mappings = {
                         i = {
                             ['<c-x>'] = actions.delete_buffer,
@@ -96,7 +94,7 @@ return { {
                     layout_config = {
                         flex = { flip_columns = 150 },
                     },
-                    previewer = true,
+                    preview = true,
                     mappings = {
                         i = {
                             ['<c-q>'] = actions.smart_send_to_qflist,
@@ -108,7 +106,7 @@ return { {
                     layout_config = {
                         flex = { flip_columns = 150 },
                     },
-                    previewer = true,
+                    preview = true,
                     mappings = {
                         i = {
                             ['<c-q>'] = actions.smart_send_to_qflist,
@@ -170,6 +168,15 @@ return { {
                 { '<leader>tq', builtin.quickfix,        desc = 'telescope: quickfix list',   nowait = true, remap = false },
                 { '<leader>t:', builtin.commands,        desc = 'telescope: command history', nowait = true, remap = false },
                 { '<leader>t;', builtin.command_history, desc = 'telescope: command history', nowait = true, remap = false },
+                {
+                    '<leader>tm',
+                    function()
+                        builtin.oldfiles({ cwd_only = true })
+                    end,
+                    desc = 'telescope: recent files (cwd)',
+                    nowait = true,
+                    remap = false
+                },
                 {
                     '<leader>r',
                     function()
