@@ -51,6 +51,11 @@ local function get_current_window_id()
     return vim.trim(result)
 end
 
+local function get_current_pane_id()
+    local result = vim.fn.system("tmux display-message -p '#{pane_id}'")
+    return vim.trim(result)
+end
+
 local function get_pane_window_and_command(pane_id)
     local result = vim.fn.system(
         string.format("tmux display-message -p -t %s '#{window_id}\t#{pane_current_command}'", pane_id))
@@ -152,9 +157,14 @@ end
 
 local function create_opencode_pane(split_arg)
     local subdir = vim.fn.getcwd()
-    local result = vim.fn.system("tmux split-window " .. split_arg .. " -P -F '#{pane_id}'")
+    local current_pane = get_current_pane_id()
+    local result = vim.fn.system(
+        string.format(
+            "tmux split-window -t %s %s -c %s -P -F '#{pane_id}'",
+            current_pane,
+            split_arg,
+            vim.fn.shellescape(subdir)))
     opencode_pane_id = vim.trim(result)
-    vim.fn.system(string.format("tmux send-keys -t %s 'cd %s", opencode_pane_id, vim.fn.shellescape(subdir)))
     vim.fn.system(string.format("tmux send-keys -t %s 'opencode' Enter", opencode_pane_id))
 end
 
