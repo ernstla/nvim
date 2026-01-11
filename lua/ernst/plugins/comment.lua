@@ -9,9 +9,9 @@ return { {
 
         -- LHS of toggle mappings in NORMAL mode
         toggler = {
-            line = 'gcc',  -- Line-comment toggle keymap
+            line = 'gcc', -- Line-comment toggle keymap
             -- line = '<leader>ci',
-            block = 'gbc', -- Block-comment toggle keymap
+            -- block = 'gbc', -- Block-comment toggle keymap
         },
 
         -- LHS of operator-pending mappings in NORMAL and VISUAL mode
@@ -32,8 +32,8 @@ return { {
         -- NOTE: If given `false` then the plugin won't create any mappings
         mappings = {
             -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-            basic = true,
-            extra = true, -- Extra mapping; `gco`, `gcO`, `gcA`
+            basic = false,
+            extra = false, -- Extra mapping; `gco`, `gcO`, `gcA`
         },
     },
     config = function(spec)
