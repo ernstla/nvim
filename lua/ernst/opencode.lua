@@ -57,6 +57,18 @@ local function copy_ai_path(expand_arg)
     end
 end
 
+local function copy_ai_path_with_lines(expand_arg)
+    local path = get_ai_path_with_lines(expand_arg)
+    local was_visual = is_visual_mode()
+
+    vim.fn.setreg('+', path)
+    print('Copied: ' .. path)
+
+    if was_visual then
+        escape_visual_mode()
+    end
+end
+
 local function get_current_window_id()
     local result = vim.fn.system("tmux display-message -p '#{window_id}'")
     return vim.trim(result)
@@ -114,6 +126,18 @@ end
 
 local function send_keys_to_pane_with_lines(pane_id)
     local path = get_ai_path_with_lines('%')
+    local was_visual = is_visual_mode()
+
+    vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
+    print('Sent: ' .. path)
+
+    if was_visual then
+        escape_visual_mode()
+    end
+end
+
+local function send_keys_to_pane_absolute(pane_id)
+    local path = get_ai_path('%:p')
     local was_visual = is_visual_mode()
 
     vim.fn.system(string.format("tmux send-keys -t %s '%s '", pane_id, path))
@@ -182,6 +206,10 @@ local function send_ai_path_to_tmux()
     send_ai_path_to_tmux_with(send_keys_to_pane)
 end
 
+local function send_ai_path_absolute_to_tmux()
+    send_ai_path_to_tmux_with(send_keys_to_pane_absolute)
+end
+
 local function send_ai_path_lines_to_tmux()
     send_ai_path_to_tmux_with(send_keys_to_pane_with_lines)
 end
@@ -196,6 +224,14 @@ end
 
 local function copy_ai_path_absolute()
     copy_ai_path('%:p')
+end
+
+local function copy_ai_path_lines_relative()
+    copy_ai_path_with_lines('%')
+end
+
+local function copy_ai_path_lines_absolute()
+    copy_ai_path_with_lines('%:p')
 end
 
 local function focus_pane(pane_id)
@@ -275,18 +311,16 @@ require("which-key").add(
         { '<leader>oC', opencode_vertical,       desc = 'OpenCode (vertical split)' },
         { '<leader>Oc', opencode_horizontal_new, desc = 'OpenCode new (horizontal split)' },
         { '<leader>OC', opencode_vertical_new,   desc = 'OpenCode new (vertical split)' },
-        { '<leader>cp', copy_relative_path,    desc = 'Copy relative file path' },
-        { '<leader>cP', copy_absolute_path,    desc = 'Copy absolute file path' },
-        { '<leader>ga', copy_ai_path_relative,      desc = 'Copy AI path (relative)' },
-        { '<leader>gA', copy_ai_path_absolute,      desc = 'Copy AI path (absolute)' },
-        { 'ga',         send_ai_path_to_tmux,                desc = 'Send AI path to tmux pane' },
-        { 'gl',         send_ai_path_lines_to_tmux,          desc = 'Send AI path:lines to tmux pane' },
-        { 'gL',         send_ai_path_lines_absolute_to_tmux, desc = 'Send AI path:lines (absolute) to tmux pane' },
+        { '<leader>cp', copy_relative_path,      desc = 'Copy relative file path' },
+        { '<leader>cP', copy_absolute_path,      desc = 'Copy absolute file path' },
     }, {
-        mode = { "v" },
-        { '<leader>ga', copy_ai_path_relative,               desc = 'Copy AI path (relative)' },
-        { '<leader>gA', copy_ai_path_absolute,               desc = 'Copy AI path (absolute)' },
+        mode = { "n", "v" },
+        { '<leader>ga', copy_ai_path_relative,             desc = 'Copy AI path (relative)' },
+        { '<leader>gA', copy_ai_path_absolute,             desc = 'Copy AI path (absolute)' },
+        { '<leader>gl', copy_ai_path_lines_relative,       desc = 'Copy AI path:lines (relative)' },
+        { '<leader>gL', copy_ai_path_lines_absolute,       desc = 'Copy AI path:lines (absolute)' },
         { 'ga',         send_ai_path_to_tmux,                desc = 'Send AI path to tmux pane' },
+        { 'gA',         send_ai_path_absolute_to_tmux,       desc = 'Send AI path (absolute) to tmux pane' },
         { 'gl',         send_ai_path_lines_to_tmux,          desc = 'Send AI path:lines to tmux pane' },
         { 'gL',         send_ai_path_lines_absolute_to_tmux, desc = 'Send AI path:lines (absolute) to tmux pane' },
     } }
