@@ -8,6 +8,7 @@ return { {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = function()
         local actions = require('telescope.actions')
+        local action_state = require('telescope.actions.state')
 
         return {
             defaults = {
@@ -19,6 +20,15 @@ return { {
                         ['<c-b>'] = actions.preview_scrolling_up,
                         ['<c-s>'] = actions.select_horizontal,
                         ['<c-p>'] = require('telescope.actions.layout').toggle_preview,
+                        ['<esc>'] = function(prompt_bufnr)
+                            if action_state.get_current_line() == '' then
+                                actions.close(prompt_bufnr)
+                                return
+                            end
+
+                            local keys = vim.api.nvim_replace_termcodes('<Esc>', true, false, true)
+                            vim.api.nvim_feedkeys(keys, 'n', true)
+                        end,
                     },
                     n = {
                         ['<esc>'] = actions.close,
