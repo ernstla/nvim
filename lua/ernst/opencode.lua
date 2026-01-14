@@ -116,6 +116,32 @@ local function find_opencode_panes()
             })
         end
     end
+
+    if #panes > 0 then
+        return panes
+    end
+
+    -- Fallback: Check for external "opencode" session
+    local result_ext = vim.fn.system(
+        "tmux list-panes -t opencode -F '#{pane_id}\t#{pane_index}\t#{pane_current_command}\t#{pane_width}x#{pane_height}\t#{pane_current_path}' 2>/dev/null"
+    )
+
+    if vim.v.shell_error ~= 0 then
+        return panes
+    end
+
+    local current_cwd = vim.fn.getcwd()
+    for line in result_ext:gmatch("[^\n]+") do
+        local pane_id, index, cmd, size, path = line:match("^(%S+)\t(%S+)\t(%S+)\t(%S+)\t(.*)$")
+        if cmd == "opencode" and path == current_cwd then
+            table.insert(panes, {
+                id = pane_id,
+                index = index,
+                size = size,
+            })
+        end
+    end
+
     return panes
 end
 
