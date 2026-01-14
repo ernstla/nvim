@@ -24,13 +24,9 @@ if secrets.anthropic_key then
             }
         end,
         models = {
-            'claude-haiku-4-5-20251001',
-            "claude-sonnet-4-20250514",
-            "claude-3-7-sonnet-20250219",
-            "claude-3-5-sonnet-20241022",
-            "claude-3-5-haiku-20241022",
-            'claude-sonnet-4-5-20250929',
-            'claude-opus-4-1-20250805',
+            "claude-opus-4-5-20251101",
+            "claude-haiku-4-5-20251001",
+            "claude-sonnet-4-5-20250929",
         },
         preprocess_payload = function(payload)
             for _, message in ipairs(payload.messages) do
@@ -72,10 +68,9 @@ if secrets.openai_key then
         --  a selection of models that parrot can remember across sessions
         --  NOTE: This will be handled more intelligently in a future version
         models = {
+            "gpt-5.2",
             "gpt-5.1-codex",
-            "gpt-5-pro",
             "gpt-5-mini",
-            "o4-mini",
         },
     }
 end
