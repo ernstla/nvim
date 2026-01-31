@@ -2,7 +2,7 @@ return {
     none    = 'NONE',
     text    = '#f2e9e1',
     bg      = '#000000',
-    comment = '#556270',
+    comment = '#657280',
 
     black   = '#000000',
     white   = '#ffffff',
@@ -57,8 +57,8 @@ return {
     red3    = '#e54231',
     red4    = '#a50000',
     red5    = '#934242',
-    red6    = '#733232',
-    red7    = '#511313',
+    red6    = '#733131',
+    red7    = '#531313',
     red8    = '#311313',
 
     vermil4 = '#e54231',

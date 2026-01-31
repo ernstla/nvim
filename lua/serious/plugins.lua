@@ -21,6 +21,11 @@ return {
     GitSignsDelete            = { fg = c.vermil5 },
     GitSignsChangeDelete      = { fg = c.vermil5 },
 
+    CodeDiffLineDelete        = { fg = c.none, bg = '#310707' },
+    CodeDiffCharDelete        = { fg = c.none, bg = '#531313' },
+    CodeDiffLineInsert        = { fg = c.none, bg = '#182b09' },
+    CodeDiffCharInsert        = { fg = c.none, bg = '#384b29' },
+
     fugitiveHeader            = { fg = c.orange4 },
     fugitiveHeading           = { fg = c.purple4 },
     fugitiveHash              = { fg = c.purple1 },
