@@ -25,38 +25,6 @@ autocmd({ 'BufWritePre' }, {
     end
 })
 
-autocmd({ 'BufWritePre' }, {
-    group = Ernst,
-    pattern = {
-        '*.json',
-        '*.lua',
-        '*.go',
-        '*.odin',
-        '*.rs',
-        '*rc',
-    },
-    command = 'lua vim.lsp.buf.format()'
-})
-
-autocmd({ 'BufWritePre' }, {
-    group = Ernst,
-    pattern = {
-        '*.css',
-        '*.html',
-        '*.nim',
-        '*.js',
-        '*.php',
-        '*.py',
-        '*.scss',
-        '*.svelte',
-        '*.ts',
-        '*.vue',
-    },
-    callback = function(args)
-        require("conform").format({ bufnr = args.buf })
-    end,
-})
-
 autocmd({ 'BufRead', 'BufNewFile' }, {
     group = Ernst,
     pattern = { 'tsconfig.json', },
@@ -154,4 +122,20 @@ autocmd({ 'TermOpen', 'BufEnter', 'BufWinEnter', 'WinEnter', 'BufLeave' }, {
     group = Terminal,
     pattern = 'term://*',
     command = 'stopinsert'
+})
+
+-- Fugitive
+-- Show "LOCAL" or "REMOTE" instead of //2 oder //3 in status line
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "fugitive://*",
+    callback = function()
+        local bufname = vim.api.nvim_buf_get_name(0)
+        if bufname:match("%.git//2") then
+            vim.b.lightline_filename = "LOCAL (our changes //2)"
+            vim.opt_local.winbar = "%#DiffAdd#  LOCAL (our changes / Target)  "
+        elseif bufname:match("%.git//3") then
+            vim.b.lightline_filename = "REMOTE (their changes //3)"
+            vim.opt_local.winbar = "%#DiffDelete#  REMOTE (incoming branch)  "
+        end
+    end,
 })
