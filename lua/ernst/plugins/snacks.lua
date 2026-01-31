@@ -42,6 +42,7 @@ return { {
             margin = { top = 1, right = 1, bottom = 2 },
         },
         dashboard = {
+            enabled = not vim.g.no_dashboard,
             width = 31,
             preset = {
                 keys = {
