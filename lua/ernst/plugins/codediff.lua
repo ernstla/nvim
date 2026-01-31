@@ -61,6 +61,13 @@ return { {
             }, {
                 mode = { "n" },
                 {
+                    '<leader>dh',
+                    '<cmd>CodeDiff history<cr>',
+                    desc = "Git diff history"
+                },
+            }, {
+                mode = { "n" },
+                {
                     '<leader>dc',
                     '<cmd>tabclose<cr>',
                     desc = "Git diff close tab"
