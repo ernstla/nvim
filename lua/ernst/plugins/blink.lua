@@ -5,8 +5,12 @@ return { {
         keymap = {
             preset = 'none',
             ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-            ['<Up>'] = { 'select_prev', 'fallback' },
-            ['<Down>'] = { 'select_next', 'fallback' },
+            ['<Up>'] = {
+                function(cmp) return cmp.select_prev({ on_ghost_text = true }) end,
+            },
+            ['<Down>'] = {
+                function(cmp) return cmp.select_next({ on_ghost_text = true }) end,
+            },
             ['<C-k>'] = { 'select_prev', 'fallback' },
             ['<C-j>'] = { 'select_next', 'fallback' },
             ['<CR>'] = { 'select_and_accept', 'fallback' },
@@ -61,7 +65,11 @@ return { {
                 selection = {
                     preselect = true,
                     auto_insert = false,
-                }
+                },
+                cycle = {
+                    from_top = true,
+                    from_bottom = true,
+                },
             },
             menu = {
                 border = 'rounded',
