@@ -86,6 +86,22 @@ local function get_current_pane_id()
     return vim.trim(result)
 end
 
+local function get_column_count()
+    local window_id = get_current_window_id()
+    local result = vim.fn.system(string.format("tmux list-panes -t %s -F '#{pane_left}'", window_id))
+    local columns = {}
+    local count = 0
+
+    for pane_left in result:gmatch("[^\n]+") do
+        if not columns[pane_left] then
+            columns[pane_left] = true
+            count = count + 1
+        end
+    end
+
+    return count
+end
+
 local function get_pane_window_and_command(pane_id)
     local result = vim.fn.system(
         string.format("tmux display-message -p -t %s '#{window_id}\t#{pane_current_command}'", pane_id))
@@ -282,6 +298,11 @@ end
 
 local function opencode_horizontal()
     open_or_focus_opencode("-h")
+
+    if get_column_count() > 2 then
+        vim.fn.system("tmux resize-pane -t 1 -x 31%")
+        vim.fn.system("tmux resize-pane -t 3 -x 29%")
+    end
 end
 
 local function opencode_vertical()
