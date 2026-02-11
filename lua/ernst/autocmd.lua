@@ -126,7 +126,7 @@ autocmd({ 'TermOpen', 'BufEnter', 'BufWinEnter', 'WinEnter', 'BufLeave' }, {
 
 -- Fugitive
 -- Show "LOCAL" or "REMOTE" instead of //2 oder //3 in status line
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
     pattern = "fugitive://*",
     callback = function()
         local bufname = vim.api.nvim_buf_get_name(0)
@@ -136,6 +136,24 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         elseif bufname:match("%.git//3") then
             vim.b.lightline_filename = "REMOTE (their changes //3)"
             vim.opt_local.winbar = "%#DiffDelete#  REMOTE (incoming branch)  "
+        end
+    end,
+})
+
+-- Re-apply missing blink.cmp keymaps after exiting vim-visual-multi insert mode.
+-- VM may not fully restore buffer-local insert mappings in some buffers.
+autocmd('User', {
+    group = Ernst,
+    pattern = 'visual_multi_exit',
+    callback = function()
+        local bufnr = vim.api.nvim_get_current_buf()
+
+        for _, mode in ipairs({ 'i', 's' }) do
+            for _, mapping in ipairs(vim.api.nvim_buf_get_keymap(bufnr, mode)) do
+                if mapping.desc and vim.startswith(mapping.desc, 'blink.cmp: ') then
+                    pcall(vim.keymap.del, mode, mapping.lhs, { buffer = bufnr })
+                end
+            end
         end
     end,
 })
