@@ -5,15 +5,12 @@ return { {
         keymap = {
             preset = 'none',
             ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-            ['<Up>'] = {
-                function(cmp) return cmp.select_prev({ on_ghost_text = true }) end,
-            },
-            ['<Down>'] = {
-                function(cmp) return cmp.select_next({ on_ghost_text = true }) end,
-            },
+            ['<Up>'] = { 'select_prev', 'fallback' },
+            ['<Down>'] = { 'select_next', 'fallback' },
             ['<C-k>'] = { 'select_prev', 'fallback' },
             ['<C-j>'] = { 'select_next', 'fallback' },
-            ['<CR>'] = { 'select_and_accept', 'fallback' },
+            -- ['<CR>'] = { 'select_and_accept', 'fallback' },
+            ['<CR>'] = { 'accept', 'fallback' },
             ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
             ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
             ['<C-p>'] = { 'scroll_documentation_up', 'fallback_to_mappings' },
@@ -63,7 +60,7 @@ return { {
         completion = {
             list = {
                 selection = {
-                    preselect = true,
+                    preselect = false,
                     auto_insert = false,
                 },
                 cycle = {
@@ -78,6 +75,9 @@ return { {
             documentation = {
                 window = { border = 'rounded' },
                 auto_show = true
+            },
+            ghost_text = {
+                enabled = false,
             },
         },
         signature = {
