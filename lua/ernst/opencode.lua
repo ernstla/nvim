@@ -1,4 +1,6 @@
 local opencode_pane_id = nil
+local opencode_hidden_pane_id = nil
+local opencode_split_direction = "-h"
 
 local function copy_relative_path()
     vim.fn.setreg('+', vim.fn.expand('%'))
@@ -109,6 +111,66 @@ local function get_pane_window_and_command(pane_id)
     return window_id, cmd
 end
 
+local function pane_is_running_opencode(pane_id)
+    local _, cmd = get_pane_window_and_command(pane_id)
+    return cmd == "opencode"
+end
+
+local function normalize_path(path)
+    local trimmed = vim.trim(path or "")
+    if trimmed == "" then
+        return ""
+    end
+
+    local real = vim.loop.fs_realpath(trimmed)
+    local normalized = real or trimmed
+    return normalized:gsub("/+$", "")
+end
+
+local function paths_look_related(path_a, path_b)
+    local a = normalize_path(path_a)
+    local b = normalize_path(path_b)
+
+    if a == "" or b == "" then
+        return false
+    end
+
+    if a == b then
+        return true
+    end
+
+    return a:sub(1, #b + 1) == (b .. "/") or b:sub(1, #a + 1) == (a .. "/")
+end
+
+local function get_pane_position(pane_id)
+    local result = vim.fn.system(string.format("tmux display-message -p -t %s '#{pane_left}\t#{pane_top}'", pane_id))
+    local left, top = result:match("^(%d+)\t(%d+)")
+    if not left or not top then
+        return nil, nil
+    end
+
+    return tonumber(left), tonumber(top)
+end
+
+local function infer_split_direction(reference_pane_id, target_pane_id)
+    local ref_left, ref_top = get_pane_position(reference_pane_id)
+    local target_left, target_top = get_pane_position(target_pane_id)
+
+    if not ref_left or not target_left then
+        return nil
+    end
+
+    if ref_left ~= target_left then
+        return "-h"
+    end
+
+    if ref_top ~= target_top then
+        return "-v"
+    end
+
+    return nil
+end
+
 local function is_pane_running_opencode(pane_id)
     local current_window = get_current_window_id()
     local pane_window, cmd = get_pane_window_and_command(pane_id)
@@ -150,6 +212,54 @@ local function find_opencode_panes()
     for line in result_ext:gmatch("[^\n]+") do
         local pane_id, index, cmd, size, path = line:match("^(%S+)\t(%S+)\t(%S+)\t(%S+)\t(.*)$")
         if cmd == "opencode" and path == current_cwd then
+            table.insert(panes, {
+                id = pane_id,
+                index = index,
+                size = size,
+            })
+        end
+    end
+
+    return panes
+end
+
+local function find_opencode_panes_in_current_window()
+    local window_id = get_current_window_id()
+    local result = vim.fn.system(
+        string.format(
+            "tmux list-panes -t %s -F '#{pane_id}\t#{pane_index}\t#{pane_current_command}\t#{pane_width}x#{pane_height}'",
+            window_id))
+    local panes = {}
+
+    for line in result:gmatch("[^\n]+") do
+        local pane_id, index, cmd, size = line:match("^(%S+)\t(%S+)\t(%S+)\t(%S+)$")
+        if cmd == "opencode" then
+            table.insert(panes, {
+                id = pane_id,
+                index = index,
+                size = size,
+            })
+        end
+    end
+
+    return panes
+end
+
+local function find_opencode_panes_in_external_session()
+    local result_ext = vim.fn.system(
+        "tmux list-panes -t oc -F '#{pane_id}\t#{pane_index}\t#{pane_current_command}\t#{pane_width}x#{pane_height}\t#{pane_current_path}' 2>/dev/null"
+    )
+
+    if vim.v.shell_error ~= 0 then
+        return {}
+    end
+
+    local panes = {}
+    local current_cwd = vim.fn.getcwd()
+
+    for line in result_ext:gmatch("[^\n]+") do
+        local pane_id, index, cmd, size, path = line:match("^(%S+)\t(%S+)\t(%S+)\t(%S+)\t(.*)$")
+        if cmd == "opencode" and paths_look_related(path, current_cwd) then
             table.insert(panes, {
                 id = pane_id,
                 index = index,
@@ -255,14 +365,46 @@ local function create_opencode_pane(split_arg)
             current_pane,
             split_arg,
             vim.fn.shellescape(subdir)))
+    opencode_split_direction = split_arg
     opencode_pane_id = vim.trim(result)
     vim.fn.system(string.format("tmux send-keys -t %s 'opencode' Enter", opencode_pane_id))
+end
+
+local function restore_hidden_opencode_pane(split_arg)
+    local pane_id = nil
+
+    if opencode_hidden_pane_id and pane_is_running_opencode(opencode_hidden_pane_id) then
+        pane_id = opencode_hidden_pane_id
+    end
+
+    if not pane_id then
+        local external_panes = find_opencode_panes_in_external_session()
+        if #external_panes > 0 then
+            pane_id = external_panes[1].id
+        end
+    end
+
+    if not pane_id then
+        return false
+    end
+
+    local current_pane = get_current_pane_id()
+    vim.fn.system(string.format("tmux join-pane %s -s %s -t %s", split_arg, pane_id, current_pane))
+    opencode_pane_id = pane_id
+    opencode_hidden_pane_id = nil
+    opencode_split_direction = split_arg
+
+    return true
 end
 
 local function open_or_focus_opencode(split_arg)
     -- Check stored pane first
     if opencode_pane_id and is_pane_running_opencode(opencode_pane_id) then
         focus_pane(opencode_pane_id)
+        return
+    end
+
+    if restore_hidden_opencode_pane(split_arg) then
         return
     end
 
@@ -297,6 +439,7 @@ local function open_or_focus_opencode(split_arg)
 end
 
 local function opencode_horizontal()
+    opencode_split_direction = "-h"
     open_or_focus_opencode("-h")
 
     if get_column_count() > 2 then
@@ -306,15 +449,49 @@ local function opencode_horizontal()
 end
 
 local function opencode_vertical()
+    opencode_split_direction = "-v"
     open_or_focus_opencode("-v")
 end
 
 local function opencode_horizontal_new()
+    opencode_split_direction = "-h"
     create_opencode_pane("-h")
 end
 
 local function opencode_vertical_new()
+    opencode_split_direction = "-v"
     create_opencode_pane("-v")
+end
+
+local function toggle_opencode_pane()
+    local local_panes = find_opencode_panes_in_current_window()
+
+    if #local_panes > 0 then
+        local pane_id = local_panes[1].id
+        local current_pane = get_current_pane_id()
+        local inferred_split = infer_split_direction(current_pane, pane_id)
+        if inferred_split then
+            opencode_split_direction = inferred_split
+        end
+        vim.fn.system("tmux has-session -t oc 2>/dev/null || tmux new-session -d -s oc")
+        vim.fn.system(string.format("tmux break-pane -d -s %s -t oc:", pane_id))
+        opencode_hidden_pane_id = pane_id
+        opencode_pane_id = nil
+        return
+    end
+
+    if not restore_hidden_opencode_pane(opencode_split_direction) then
+        create_opencode_pane("-h")
+        if get_column_count() > 2 then
+            vim.fn.system("tmux resize-pane -t 1 -x 31%")
+            vim.fn.system("tmux resize-pane -t 3 -x 29%")
+        end
+    end
+
+    if get_column_count() > 2 then
+        vim.fn.system("tmux resize-pane -t 1 -x 31%")
+        vim.fn.system("tmux resize-pane -t 3 -x 29%")
+    end
 end
 
 require("which-key").add(
@@ -322,16 +499,17 @@ require("which-key").add(
         mode = { "n" },
         { '<leader>oc', opencode_horizontal,     desc = 'OpenCode (horizontal split)' },
         { '<leader>oC', opencode_vertical,       desc = 'OpenCode (vertical split)' },
+        { '<leader>ot', toggle_opencode_pane,    desc = 'Toggle OpenCode pane' },
         { '<leader>Oc', opencode_horizontal_new, desc = 'OpenCode new (horizontal split)' },
         { '<leader>OC', opencode_vertical_new,   desc = 'OpenCode new (vertical split)' },
         { '<leader>cp', copy_relative_path,      desc = 'Copy relative file path' },
         { '<leader>cP', copy_absolute_path,      desc = 'Copy absolute file path' },
     }, {
         mode = { "n", "v" },
-        { '<leader>ga', copy_ai_path_relative,             desc = 'Copy AI path (relative)' },
-        { '<leader>gA', copy_ai_path_absolute,             desc = 'Copy AI path (absolute)' },
-        { '<leader>gl', copy_ai_path_lines_relative,       desc = 'Copy AI path:lines (relative)' },
-        { '<leader>gL', copy_ai_path_lines_absolute,       desc = 'Copy AI path:lines (absolute)' },
+        { '<leader>ga', copy_ai_path_relative,               desc = 'Copy AI path (relative)' },
+        { '<leader>gA', copy_ai_path_absolute,               desc = 'Copy AI path (absolute)' },
+        { '<leader>gl', copy_ai_path_lines_relative,         desc = 'Copy AI path:lines (relative)' },
+        { '<leader>gL', copy_ai_path_lines_absolute,         desc = 'Copy AI path:lines (absolute)' },
         { 'ga',         send_ai_path_to_tmux,                desc = 'Send AI path to tmux pane' },
         { 'gA',         send_ai_path_absolute_to_tmux,       desc = 'Send AI path (absolute) to tmux pane' },
         { 'gl',         send_ai_path_lines_to_tmux,          desc = 'Send AI path:lines to tmux pane' },
