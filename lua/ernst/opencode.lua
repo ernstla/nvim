@@ -441,11 +441,6 @@ end
 local function opencode_horizontal()
     opencode_split_direction = "-h"
     open_or_focus_opencode("-h")
-
-    if get_column_count() > 2 then
-        vim.fn.system("tmux resize-pane -t 1 -x 31%")
-        vim.fn.system("tmux resize-pane -t 3 -x 29%")
-    end
 end
 
 local function opencode_vertical()
@@ -482,15 +477,6 @@ local function toggle_opencode_pane()
 
     if not restore_hidden_opencode_pane(opencode_split_direction) then
         create_opencode_pane("-h")
-        if get_column_count() > 2 then
-            vim.fn.system("tmux resize-pane -t 1 -x 31%")
-            vim.fn.system("tmux resize-pane -t 3 -x 29%")
-        end
-    end
-
-    if get_column_count() > 2 then
-        vim.fn.system("tmux resize-pane -t 1 -x 31%")
-        vim.fn.system("tmux resize-pane -t 3 -x 29%")
     end
 end
 
