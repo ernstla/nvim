@@ -2,6 +2,34 @@ local function escape_pattern(text)
     return text:gsub("([^%w])", "%%%1")
 end
 
+local file_ignore_patterns = {
+    '%.JPEG',
+    '%.JPG',
+    '%.doc',
+    '%.docx',
+    '%.ico',
+    '%.jfif',
+    '%.jpeg',
+    '%.jpg',
+    '%.mp3',
+    '%.mp4',
+    '%.odt',
+    '%.otf',
+    '%.pdf',
+    '%.png',
+    '%.ppt',
+    '%.pptx',
+    '%.ttf',
+    '%.wav',
+    '%.webp',
+    '%.woff',
+    '%.woff2',
+    '%.xls',
+    '%.xlsx',
+    '__pycache__',
+    'venv',
+}
+
 return {
     {
         'nvim-telescope/telescope.nvim',
@@ -72,10 +100,7 @@ return {
                 pickers = {
                     git_files = {
                         hidden = true,
-                        file_ignore_patterns = {
-                            'venv', '__pycache__', '%.xlsx', '%.jpg', '%.jpeg', '%.jfif', '%.png', '%.webp', '%.pdf',
-                            '%.odt', '%.ico', '%.JPEG', '%.JPG', '%.mp4', '%.woff', '%.woff2', '%.ttf', '%.otf',
-                        }
+                        file_ignore_patterns = file_ignore_patterns,
                     },
                     find_files = {
                         hidden = true,
@@ -144,6 +169,22 @@ return {
 
             local lga = telescope.extensions.live_grep_args
 
+            -- Custom find_files flavors
+            local function find_files_respecting_ignore()
+                builtin.find_files({
+                    no_ignore = false,
+                    hidden = true,
+                    find_command = {
+                        'fdfind',
+                        '--type', 'f',
+                        '--hidden',
+                        '--color=never',
+                        '--follow',
+                    },
+                    file_ignore_patterns = file_ignore_patterns,
+                })
+            end
+
             -- Hilfsfunktion für Ag-Kommandos
             local function ag_with_args(prompt, extra_args)
                 lga.live_grep_args({
@@ -152,8 +193,8 @@ return {
             end
 
             -- Standard Keymaps
-            vim.keymap.set('n', '<m-p>', builtin.find_files, {})
-            vim.keymap.set('n', '<c-p>', lib.project_files, {})
+            vim.keymap.set('n', '<c-p>', find_files_respecting_ignore, {})
+            -- vim.keymap.set('n', '<c-p>', lib.project_files, {})
             vim.keymap.set('n', '<c-s-p>', builtin.buffers, {})
             vim.keymap.set('n', '<f9>', builtin.buffers, {})
 
@@ -175,6 +216,7 @@ return {
                     mode = { "n" },
                     { '<leader>b',  builtin.buffers,         desc = 'telescope: buffers' },
                     { '<leader>tb', builtin.buffers,         desc = 'telescope: buffers' },
+                    { '<leader>tf', builtin.find_files,      desc = 'telescope: find files (no ignore)' },
                     { '<leader>ta', lga.live_grep_args,      desc = 'telescope: grep (with args)' },
                     { '<leader>tl', builtin.live_grep,       desc = 'telescope: ripgrep (legacy)' },
                     { '<leader>th', builtin.help_tags,       desc = 'telescope: help tags' },
@@ -183,7 +225,7 @@ return {
                     { '<leader>t:', builtin.commands,        desc = 'telescope: commands' },
                     { '<leader>t;', builtin.command_history, desc = 'telescope: command history' },
                     {
-                        '<leader>tm',
+                        '<leader>m',
                         function() builtin.oldfiles({ cwd_only = true }) end,
                         desc = 'telescope: recent files (cwd)'
                     },
