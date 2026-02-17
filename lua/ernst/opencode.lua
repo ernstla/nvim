@@ -356,7 +356,7 @@ local function copy_ai_path_lines_absolute()
     copy_ai_path('%:p', true)
 end
 
-local function create_opencode_pane(split_arg)
+local function create_opencode_pane(split_arg, model)
     local subdir = vim.fn.getcwd()
     local current_pane = get_current_pane_id()
     local result = vim.fn.system(
@@ -367,7 +367,11 @@ local function create_opencode_pane(split_arg)
             vim.fn.shellescape(subdir)))
     opencode_split_direction = split_arg
     opencode_pane_id = vim.trim(result)
-    vim.fn.system(string.format("tmux send-keys -t %s 'opencode' Enter", opencode_pane_id))
+    local cmd = "opencode"
+    if model then
+        cmd = cmd .. " --model " .. model
+    end
+    vim.fn.system(string.format("tmux send-keys -t %s '%s' Enter", opencode_pane_id, cmd))
 end
 
 local function restore_hidden_opencode_pane(split_arg)
@@ -397,7 +401,7 @@ local function restore_hidden_opencode_pane(split_arg)
     return true
 end
 
-local function open_or_focus_opencode(split_arg)
+local function open_or_focus_opencode(split_arg, model)
     -- Check stored pane first
     if opencode_pane_id and is_pane_running_opencode(opencode_pane_id) then
         focus_pane(opencode_pane_id)
@@ -411,7 +415,7 @@ local function open_or_focus_opencode(split_arg)
     local panes = find_opencode_panes()
 
     if #panes == 0 then
-        create_opencode_pane(split_arg)
+        create_opencode_pane(split_arg, model)
         return
     end
 
@@ -438,24 +442,24 @@ local function open_or_focus_opencode(split_arg)
     end)
 end
 
-local function opencode_horizontal()
+local function opencode_horizontal(model)
     opencode_split_direction = "-h"
-    open_or_focus_opencode("-h")
+    open_or_focus_opencode("-h", model)
 end
 
-local function opencode_vertical()
+local function opencode_vertical(model)
     opencode_split_direction = "-v"
-    open_or_focus_opencode("-v")
+    open_or_focus_opencode("-v", model)
 end
 
-local function opencode_horizontal_new()
+local function opencode_horizontal_new(model)
     opencode_split_direction = "-h"
-    create_opencode_pane("-h")
+    create_opencode_pane("-h", model)
 end
 
-local function opencode_vertical_new()
+local function opencode_vertical_new(model)
     opencode_split_direction = "-v"
-    create_opencode_pane("-v")
+    create_opencode_pane("-v", model)
 end
 
 local function toggle_opencode_pane()
@@ -483,15 +487,22 @@ end
 require("which-key").add(
     { {
         mode = { "n" },
-        { '<leader>oc', opencode_horizontal,     desc = 'OpenCode (horizontal split)' },
-        { '<leader>oC', opencode_vertical,       desc = 'OpenCode (vertical split)' },
-        { '<leader>ot', toggle_opencode_pane,    desc = 'Toggle OpenCode pane' },
-        { '<leader>Oc', opencode_horizontal_new, desc = 'OpenCode new (horizontal split)' },
-        { '<leader>OC', opencode_vertical_new,   desc = 'OpenCode new (vertical split)' },
-        { '<leader>cp', copy_relative_path,      desc = 'Copy relative file path' },
-        { '<leader>cP', copy_absolute_path,      desc = 'Copy absolute file path' },
+        -- Control Opencode
+        { '<leader>oc',  opencode_horizontal,                                                  desc = 'OpenCode (horizontal split)' },
+        { '<leader>ooc', function() opencode_horizontal("github-copilot/claude-opus-4.6") end, desc = 'OpenCode Copilot Claude Opus 4.6' },
+        { '<leader>ook', function() opencode_horizontal("opencode/kimi-k2.5") end,             desc = 'OpenCode Black Kimi K2.5' },
+        { '<leader>ooo', function() opencode_horizontal("opencode/claude-opus-4-6") end,       desc = 'OpenCode Black Claude Opus 4.6' },
+        { '<leader>ooz', function() opencode_horizontal("zai-coding-plan/glm-5") end,          desc = 'OpenCode Z.ai GLM-5' },
+        { '<leader>oC',  opencode_vertical,                                                    desc = 'OpenCode (vertical split)' },
+        { '<leader>ot',  toggle_opencode_pane,                                                 desc = 'Toggle OpenCode pane' },
+        { '<leader>Oc',  opencode_horizontal_new,                                              desc = 'OpenCode new (horizontal split)' },
+        { '<leader>OC',  opencode_vertical_new,                                                desc = 'OpenCode new (vertical split)' },
+        -- File Paths
+        { '<leader>cp',  copy_relative_path,                                                   desc = 'Copy relative file path' },
+        { '<leader>cP',  copy_absolute_path,                                                   desc = 'Copy absolute file path' },
     }, {
         mode = { "n", "v" },
+        -- File Paths
         { '<leader>ga', copy_ai_path_relative,               desc = 'Copy AI path (relative)' },
         { '<leader>gA', copy_ai_path_absolute,               desc = 'Copy AI path (absolute)' },
         { '<leader>gl', copy_ai_path_lines_relative,         desc = 'Copy AI path:lines (relative)' },
