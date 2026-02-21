@@ -442,9 +442,17 @@ local function open_or_focus_opencode(split_arg, model)
     end)
 end
 
+local function resize_panes()
+    if get_column_count() > 2 then
+        vim.fn.system("tmux resize-pane -t 1 -x 32%")
+        vim.fn.system("tmux resize-pane -t 3 -x 31%")
+    end
+end
+
 local function opencode_horizontal(model)
     opencode_split_direction = "-h"
     open_or_focus_opencode("-h", model)
+    resize_panes()
 end
 
 local function opencode_vertical(model)
@@ -455,6 +463,7 @@ end
 local function opencode_horizontal_new(model)
     opencode_split_direction = "-h"
     create_opencode_pane("-h", model)
+    resize_panes()
 end
 
 local function opencode_vertical_new(model)
