@@ -123,8 +123,8 @@ return { {
             ["Comment"] = "Provide a comment that explains what the snippet is doing."
         },
         cmd_prefix = "Parrot",
-        state_dir = secrets.ai_path .. "/persisted",
-        chat_dir = secrets.ai_path .. "/chats",
+        state_dir = (secrets.ai_path or "~/config/parrot") .. "/persisted",
+        chat_dir = (secrets.ai_path or "~/config/parrot") .. "/chats",
         toggle_target = "",
         style_popup_border = "rounded",
         chat_confirm_delete = false,
