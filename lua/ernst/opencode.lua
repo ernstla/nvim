@@ -499,8 +499,10 @@ require("which-key").add(
         -- Control Opencode
         { '<leader>oc',  opencode_horizontal,                                                  desc = 'OpenCode (horizontal split)' },
         { '<leader>ooc', function() opencode_horizontal("github-copilot/claude-opus-4.6") end, desc = 'OpenCode Copilot Claude Opus 4.6' },
-        { '<leader>ook', function() opencode_horizontal("opencode/kimi-k2.5") end,             desc = 'OpenCode Black Kimi K2.5' },
-        { '<leader>ooo', function() opencode_horizontal("opencode/claude-opus-4-6") end,       desc = 'OpenCode Black Claude Opus 4.6' },
+        { '<leader>oog', function() opencode_horizontal("opencode/gemini-3.1-pro") end,        desc = 'OpenCode Zen Gemini 3.1 Pro' },
+        { '<leader>ook', function() opencode_horizontal("opencode/kimi-k2.5") end,             desc = 'OpenCode Zen Kimi K2.5' },
+        { '<leader>ooo', function() opencode_horizontal("opencode/claude-opus-4-6") end,       desc = 'OpenCode Zen Claude Opus 4.6' },
+        { '<leader>oos', function() opencode_horizontal("opencode/claude-sonnet-4-6") end,     desc = 'OpenCode Zen Claude Sonnet 4.6' },
         { '<leader>ooz', function() opencode_horizontal("zai-coding-plan/glm-5") end,          desc = 'OpenCode Z.ai GLM-5' },
         { '<leader>oC',  opencode_vertical,                                                    desc = 'OpenCode (vertical split)' },
         { '<leader>ot',  toggle_opencode_pane,                                                 desc = 'Toggle OpenCode pane' },
