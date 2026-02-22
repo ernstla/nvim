@@ -59,7 +59,7 @@ return { {
             enable = true,
         }
     },
-    config = function(spec)
-        require 'nvim-treesitter.configs'.setup(spec.opts)
+    config = function(_, opts)
+        require 'nvim-treesitter.configs'.setup(opts)
     end
 } }

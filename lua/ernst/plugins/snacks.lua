@@ -22,15 +22,15 @@ return { {
             desc = "Open Dashboard",
         },
     },
-    config = function(spec)
-        require('snacks').setup(spec.opts)
+    config = function(_, opts)
+        require('snacks').setup(opts)
 
         vim.api.nvim_create_user_command('Dash', open_dashboard, {})
     end,
     opts = {
         bigfile = {},
         input = {},
-        quickfile = {},
+        quickfile = { exclude = { "html", "php", "python", "javascript" } },
         scope = {},
         scroll = {},
         statuscolumn = {},
