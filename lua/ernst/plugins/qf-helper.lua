@@ -21,8 +21,8 @@ return { {
             track_location = 'cursor',
         },
     },
-    config = function(spec)
-        require('qf_helper').setup(spec.opts)
+    config = function(_, opts)
+        require('qf_helper').setup(opts)
 
         local map = vim.keymap.set
         local opts = { noremap = true, silent = true, nowait = true }

@@ -6,8 +6,8 @@ return { {
             borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
         },
     },
-    config = function(spec)
-        require('harpoon').setup(spec.opts)
+    config = function(_, opts)
+        require('harpoon').setup(opts)
 
         local mark = require("harpoon.mark")
         local ui = require("harpoon.ui")

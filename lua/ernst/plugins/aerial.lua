@@ -28,8 +28,8 @@ return { {
             },
         }
     },
-    config = function(spec)
-        require('aerial').setup(spec.opts)
+    config = function(_, opts)
+        require('aerial').setup(opts)
 
         require("which-key").add({ {
             mode = { "n" },

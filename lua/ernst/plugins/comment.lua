@@ -36,8 +36,8 @@ return { {
             extra = false, -- Extra mapping; `gco`, `gcO`, `gcA`
         },
     },
-    config = function(spec)
-        require('Comment').setup(spec.opts)
+    config = function(_, opts)
+        require('Comment').setup(opts)
 
         local api = require('Comment.api')
         local esc = vim.api.nvim_replace_termcodes('<esc>', true, false, true)

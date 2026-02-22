@@ -7,7 +7,7 @@ return { {
             delete = { text = '⌥' },
             topdelete = { text = '⌥' },
             changedelete = { text = '◦' },
-            untracked = { xt = '┆' },
+            untracked = { text = '┆' },
         },
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
         numhl = false,     -- Toggle with `:Gitsigns toggle_numhl`
@@ -39,8 +39,8 @@ return { {
             col = 1
         }
     },
-    config = function(spec)
-        require('gitsigns').setup(spec.opts)
+    config = function(_, opts)
+        require('gitsigns').setup(opts)
 
         local gs = package.loaded.gitsigns
 

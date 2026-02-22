@@ -18,8 +18,8 @@ return { {
             }
         }
     },
-    config = function(spec)
-        require('spectre').setup(spec.opts)
+    config = function(_, opts)
+        require('spectre').setup(opts)
 
         require("which-key").add(
             { {

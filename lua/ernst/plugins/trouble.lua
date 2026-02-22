@@ -13,8 +13,8 @@ return { {
             },
         },
     },
-    config = function(spec)
-        require('trouble').setup(spec.opts)
+    config = function(_, opts)
+        require('trouble').setup(opts)
 
         require("which-key").add({ {
             mode = { "n" },

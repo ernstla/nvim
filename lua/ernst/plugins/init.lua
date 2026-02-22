@@ -3,7 +3,6 @@ return {
     'mattn/emmet-vim',
     'mg979/vim-visual-multi',
     'pangloss/vim-javascript',
-    'simrat39/symbols-outline.nvim',
 
     'tpope/vim-abolish',
     'tpope/vim-repeat',

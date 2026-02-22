@@ -130,8 +130,8 @@ return { {
         chat_confirm_delete = false,
         user_input_ui = "buffer", -- "buffer" (opens a buffer) or "native" (command line)
     },
-    config = function(spec)
-        require("parrot").setup(spec.opts)
+    config = function(_, opts)
+        require("parrot").setup(opts)
         require("which-key").add(
             {
                 {

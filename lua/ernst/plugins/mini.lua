@@ -69,9 +69,9 @@ return {
             -- Whether to print session path after action
             verbose = { read = false, write = true, delete = true },
         },
-        config = function(spec)
+        config = function(_, opts)
             local miniSessions = require("mini.sessions")
-            miniSessions.setup(spec.opts)
+            miniSessions.setup(opts)
 
             vim.api.nvim_create_user_command("Session", function(opts)
                 if opts.args == "" then

@@ -3,9 +3,9 @@ return { {
     version = 'v2.*',
     build = 'make install_jsregexp',
     opts = {},
-    config = function(spec)
+    config = function(_, opts)
         local ls = require('luasnip')
-        ls.setup(spec.opts)
+        ls.setup(opts)
         require('ernst/snippets')
 
         vim.keymap.set({ 'i' }, '<Tab>', function()

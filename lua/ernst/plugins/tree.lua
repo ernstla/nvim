@@ -41,8 +41,8 @@ return { {
             }
         }
     },
-    config = function(spec)
-        require('nvim-tree').setup(spec.opts)
+    config = function(_, opts)
+        require('nvim-tree').setup(opts)
 
         vim.keymap.set('n', '<f8>', '<cmd>NvimTreeToggle<cr>', { noremap = true, silent = true, nowait = true })
     end
