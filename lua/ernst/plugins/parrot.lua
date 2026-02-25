@@ -24,9 +24,9 @@ if secrets.anthropic_key then
             }
         end,
         models = {
-            "claude-opus-4-5-20251101",
+            "claude-opus-4-6",
             "claude-haiku-4-5-20251001",
-            "claude-sonnet-4-5-20250929",
+            "claude-sonnet-4-6",
         },
         preprocess_payload = function(payload)
             for _, message in ipairs(payload.messages) do
@@ -123,8 +123,8 @@ return { {
             ["Comment"] = "Provide a comment that explains what the snippet is doing."
         },
         cmd_prefix = "Parrot",
-        state_dir = (secrets.ai_path or "~/config/parrot") .. "/persisted",
-        chat_dir = (secrets.ai_path or "~/config/parrot") .. "/chats",
+        state_dir = secrets.ai_path .. "/persisted",
+        chat_dir = secrets.ai_path .. "/chats",
         toggle_target = "",
         style_popup_border = "rounded",
         chat_confirm_delete = false,
