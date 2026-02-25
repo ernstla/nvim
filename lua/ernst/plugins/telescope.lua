@@ -50,7 +50,6 @@ return {
                             ['<c-f>'] = actions.preview_scrolling_down,
                             ['<c-b>'] = actions.preview_scrolling_up,
                             ['<c-s>'] = actions.select_horizontal,
-                            ['<c-p>'] = require('telescope.actions.layout').toggle_preview,
                             ['<esc>'] = function(prompt_bufnr)
                                 if action_state.get_current_line() == '' then
                                     actions.close(prompt_bufnr)
@@ -95,6 +94,7 @@ return {
                 extensions = {
                     live_grep_args = {
                         auto_quoting = true,
+                        preview = true,
                     }
                 },
                 pickers = {
