@@ -1,7 +1,5 @@
 local command = vim.api.nvim_create_user_command
 
-command('Colors', 'CccHighlighterToggle', {})
-command('PickColor', 'CccPick', {})
 command('Jsonify', '%!python3 -m json.tool', {})
 command('Tidy', '!tidy -mi -html -wrap 0 %', {})
 command('LspInfo', 'checkhealth vim.lsp', {})
