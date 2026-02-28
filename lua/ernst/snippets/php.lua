@@ -122,12 +122,7 @@ local snippets = {
     snippet('ln', {
         t('error_log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");')
     }),
-    snippet(':foreach', {
-        t('<?php foreach ('), i(1), t(' as '), i(2), t({ ') : ?>', '' }),
-        t('\t'), i(0),
-        t({ '', '<?php endforeach ?>' }),
-    }),
-    snippet('?foreach', {
+    snippet('foreach:', {
         t('<?php foreach ('), i(1), t(' as '), i(2), t({ ') : ?>', '' }),
         t('\t'), i(0),
         t({ '', '<?php endforeach ?>' }),
@@ -137,12 +132,7 @@ local snippets = {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
-    snippet(':for', {
-        t('<?php for ('), i(1), t({ ') : ?>', '' }),
-        t('\t'), i(0),
-        t({ '', '<?php endfor ?>' }),
-    }),
-    snippet('?for', {
+    snippet('for:', {
         t('<?php for ('), i(1), t({ ') : ?>', '' }),
         t('\t'), i(0),
         t({ '', '<?php endfor ?>' }),
@@ -152,12 +142,7 @@ local snippets = {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
-    snippet(':if', {
-        t('<?php if ('), i(1), t({ ') : ?>', '' }),
-        t('\t'), i(0),
-        t({ '', '<?php endif ?>' }),
-    }),
-    snippet('?if', {
+    snippet('if:', {
         t('<?php if ('), i(1), t({ ') : ?>', '' }),
         t('\t'), i(0),
         t({ '', '<?php endif ?>' }),
@@ -167,14 +152,7 @@ local snippets = {
         t('\t'), i(0),
         t({ '', '}' }),
     }),
-    snippet(':else', {
-        t('<?php if ('), i(1), t({ ') : ?>', '' }),
-        t('\t'), i(2),
-        t({ '', '<?php else: ?>', '' }),
-        t('\t'), i(0),
-        t({ '', '<?php endif ?>' }),
-    }),
-    snippet('?else', {
+    snippet('else:', {
         t('<?php if ('), i(1), t({ ') : ?>', '' }),
         t('\t'), i(2),
         t({ '', '<?php else: ?>', '' }),
