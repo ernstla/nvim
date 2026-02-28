@@ -18,6 +18,15 @@ local function parrot_status()
     return string.format("%s(%s)", status, short_model)
 end
 
+local function agent_harness_status()
+    local ok, agents = pcall(require, 'ernst/agents')
+    if not ok or not agents.current_harness_status then
+        return ''
+    end
+
+    return agents.current_harness_status()
+end
+
 local theme = {
     normal = {
         a = { fg = c.text, bg = c.rose7 },
@@ -73,7 +82,7 @@ return { {
             lualine_a = { 'mode' },
             lualine_b = { 'branch' },
             lualine_c = { { 'filename', path = 1 } },
-            lualine_x = { parrot_status, 'encoding', 'fileformat', 'filetype' },
+            lualine_x = { parrot_status, agent_harness_status, 'encoding', 'fileformat', 'filetype' },
             lualine_y = { 'progress', 'location' },
             lualine_z = { 'diagnostics' }
         },
@@ -81,7 +90,7 @@ return { {
             lualine_a = {},
             lualine_b = {},
             lualine_c = { { 'filename', path = 1 } },
-            lualine_x = { parrot_status, 'location' },
+            lualine_x = { 'location' },
             lualine_y = {},
             lualine_z = {}
         },
