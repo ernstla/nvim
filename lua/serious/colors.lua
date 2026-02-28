@@ -1,7 +1,7 @@
 return {
     none    = 'NONE',
     text    = '#f2e9e1',
-    bg      = '#000000',
+    bg      = 'NONE',
     comment = '#657280',
 
     black   = '#000000',
