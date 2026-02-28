@@ -135,16 +135,16 @@ return { {
         require("which-key").add(
             {
                 {
-                    { "<leader>ai", "<cmd>ParrotChatNew split<cr>",    desc = "AI: New Chat (split)",                 nowait = true, remap = false },
-                    { "<leader>ah", "<cmd>ParrotChatNew popup<cr>",    desc = "AI: New Chat (popup)",                 nowait = true, remap = false },
-                    { "<leader>at", "<cmd>ParrotChatNew tabnew<cr>",   desc = "AI: New Chat (tabnew)",                nowait = true, remap = false },
+                    { "<leader>ai", "<cmd>ParrotChatNew popup<cr>",    desc = "AI: New Chat (popup)",                 nowait = true, remap = false },
+                    { "<leader>aa", "<cmd>ParrotChatNew popup<cr>",    desc = "AI: New Chat (popup)",                 nowait = true, remap = false },
+                    { "<leader>ah", "<cmd>ParrotChatNew split<cr>",    desc = "AI: New Chat (split)",                 nowait = true, remap = false },
                     { "<leader>av", "<cmd>ParrotChatNew vsplit<cr>",   desc = "AI: New Chat (vsplit)",                nowait = true, remap = false },
+                    { "<leader>at", "<cmd>ParrotChatToggle popup<cr>", desc = "AI: Toggle Chat (popup)",              nowait = true, remap = false },
+                    { "<leader>ag", "<cmd>ParrotChatToggle split<cr>", desc = "AI: Toggle Chat (split)",              nowait = true, remap = false },
                     { "<leader>af", "<cmd>ParrotChatFinder<cr>",       desc = "AI: Chat Finder",                      nowait = true, remap = false },
                     { "<leader>ap", "<cmd>ParrotProvider<cr>",         desc = "AI: Change Provider",                  nowait = true, remap = false },
                     { "<leader>am", "<cmd>ParrotModel<cr>",            desc = "AI: Change Model",                     nowait = true, remap = false },
                     { "<leader>ak", "<cmd>ParrotStop<cr>",             desc = "AI: ParrotChatStop",                   nowait = true, remap = false },
-                    { "<leader>ag", "<cmd>ParrotChatToggle split<cr>", desc = "AI: Toggle Chat (split)",              nowait = true, remap = false },
-                    { "<leader>aa", "<cmd>ParrotChatToggle popup<cr>", desc = "AI: Toggle Chat (popup)",              nowait = true, remap = false },
                     { "<leader>aq", "<cmd>ParrotAsk<cr>",              desc = "AI: Ask a question",                   nowait = true, remap = false },
                     { "<leader>ac", "<cmd>ParrotContext<cr>",          desc = "AI: Toggle ParrotContext",             nowait = true, remap = false },
                     { "<leader>ad", "<cmd>ParrotAppend<cr>",           desc = "AI: Append (danach)",                  nowait = true, remap = false },
