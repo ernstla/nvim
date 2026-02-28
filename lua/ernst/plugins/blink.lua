@@ -1,6 +1,7 @@
 return { {
     'saghen/blink.cmp',
     version = '1.*',
+    dependencies = { 'L3MON4D3/LuaSnip' },
     opts = {
         keymap = {
             preset = 'none',
@@ -9,8 +10,15 @@ return { {
             ['<Down>'] = { 'select_next', 'fallback' },
             ['<C-k>'] = { 'select_prev', 'fallback' },
             ['<C-j>'] = { 'select_next', 'fallback' },
-            -- ['<CR>'] = { 'select_and_accept', 'fallback' },
-            ['<CR>'] = { 'accept', 'fallback' },
+            ['<Tab>'] = {
+                function(cmp)
+                    if cmp.snippet_active() then return cmp.accept() end
+                    return cmp.select_and_accept()
+                end,
+                'snippet_forward',
+                'fallback',
+            },
+            ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
             ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
             ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
             ['<C-p>'] = { 'scroll_documentation_up', 'fallback_to_mappings' },
@@ -18,9 +26,24 @@ return { {
             ['<C-t>'] = { 'show_signature' },
             ['<C-e>'] = { 'hide', 'fallback' },
         },
+        snippets = {
+            preset = 'luasnip',
+        },
         fuzzy = {
             implementation = "prefer_rust_with_warning",
             sorts = {
+                function(a, b)
+                    local a_is_snippet = a.source_id == 'snippets'
+                    local b_is_snippet = b.source_id == 'snippets'
+
+                    if a_is_snippet == b_is_snippet then return end
+
+                    local a_is_exact_snippet = a_is_snippet and a.exact
+                    local b_is_exact_snippet = b_is_snippet and b.exact
+                    if a_is_exact_snippet ~= b_is_exact_snippet then return a_is_exact_snippet end
+
+                    return not a_is_snippet
+                end,
                 'exact',
                 'score',
                 'sort_text',
@@ -30,6 +53,7 @@ return { {
             default = {
                 'lsp',
                 'path',
+                'snippets',
                 'buffer',
                 'parrot',
             },
