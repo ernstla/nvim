@@ -24,9 +24,23 @@ local harnesses = {
         external_sessions = { "pi" },
         supports_model = false,
     },
+    claude = {
+        id = "claude",
+        label = "claude code",
+        launch_command = "claude",
+        match_commands = {
+            claude = true,
+        },
+        fallback_commands = {
+            node = true,
+        },
+        match_tokens = { "claude" },
+        external_sessions = { "cc", "claude" },
+        supports_model = false,
+    },
 }
 
-local harness_order = { "opencode", "pi" }
+local harness_order = { "opencode", "pi", "claude" }
 local current_harness_id = "opencode"
 local harness_state = {}
 
@@ -237,7 +251,7 @@ local function pane_matches_harness(pane, harness)
         return command_has_any_token(get_tty_process_args(pane.tty), harness.match_tokens)
     end
 
-    return command_has_any_token(get_tty_process_args(pane.tty), harness.match_tokens)
+    return false
 end
 
 local function pane_is_running_harness(pane_id, harness_id)
