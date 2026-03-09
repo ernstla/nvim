@@ -17,9 +17,6 @@ local harnesses = {
         match_commands = {
             pi = true,
         },
-        fallback_commands = {
-            node = true,
-        },
         match_tokens = { "pi" },
         external_sessions = { "pi" },
         supports_model = false,
@@ -30,9 +27,6 @@ local harnesses = {
         launch_command = "claude",
         match_commands = {
             claude = true,
-        },
-        fallback_commands = {
-            node = true,
         },
         match_tokens = { "claude" },
         external_sessions = { "cc", "claude" },
@@ -247,11 +241,10 @@ local function pane_matches_harness(pane, harness)
         return true
     end
 
-    if harness.fallback_commands and harness.fallback_commands[pane.cmd] then
-        return command_has_any_token(get_tty_process_args(pane.tty), harness.match_tokens)
-    end
-
-    return false
+    -- Check processes on the pane's tty for match tokens.
+    -- Handles sandboxed/wrapped launches (e.g. safehouse/sandbox-exec)
+    -- and indirect process trees (e.g. node running claude).
+    return command_has_any_token(get_tty_process_args(pane.tty), harness.match_tokens)
 end
 
 local function pane_is_running_harness(pane_id, harness_id)

@@ -19,7 +19,7 @@ local ai_path_env = os.getenv("NEOVIM_AI_PATH")
 if ai_path_env then
     M.ai_path = vim.loop.fs_realpath(vim.fn.expand(ai_path_env))
 else
-    M.ai_path = "~/config/parrot"
+    M.ai_path = "~/.config/parrot"
 end
 
 return M
