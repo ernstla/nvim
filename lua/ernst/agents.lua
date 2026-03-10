@@ -1,7 +1,7 @@
 local harnesses = {
     opencode = {
         id = "opencode",
-        label = "opencode",
+        label = "OpenCode",
         launch_command = "opencode",
         match_commands = {
             opencode = true,
@@ -12,7 +12,7 @@ local harnesses = {
     },
     pi = {
         id = "pi",
-        label = "pi",
+        label = "Pi",
         launch_command = "pi",
         match_commands = {
             pi = true,
@@ -23,7 +23,7 @@ local harnesses = {
     },
     claude = {
         id = "claude",
-        label = "claude code",
+        label = "Claude Code",
         launch_command = "claude",
         match_commands = {
             claude = true,
@@ -737,6 +737,7 @@ require("which-key").add(
     { {
         mode = { "n" },
         -- Control Agent Harness
+        { '<F2>',        select_harness,                                                    desc = 'Select agent harness' },
         { '<leader>oc',  agent_horizontal,                                                  desc = 'Agent (horizontal split)' },
         { '<leader>ooc', function() agent_horizontal("github-copilot/claude-opus-4.6") end, desc = 'OpenCode Copilot Claude Opus 4.6' },
         { '<leader>oog', function() agent_horizontal("opencode/gemini-3.1-pro") end,        desc = 'OpenCode Zen Gemini 3.1 Pro' },
@@ -745,7 +746,6 @@ require("which-key").add(
         { '<leader>oos', function() agent_horizontal("opencode/claude-sonnet-4-6") end,     desc = 'OpenCode Zen Claude Sonnet 4.6' },
         { '<leader>ooz', function() agent_horizontal("zai-coding-plan/glm-5") end,          desc = 'OpenCode Z.ai GLM-5' },
         { '<leader>oC',  agent_vertical,                                                    desc = 'Agent (vertical split)' },
-        { '<leader>oh',  select_harness,                                                    desc = 'Select agent harness' },
         { '<leader>ot',  toggle_agent_pane,                                                 desc = 'Toggle agent pane' },
         { '<leader>Oc',  agent_horizontal_new,                                              desc = 'Agent new (horizontal split)' },
         { '<leader>OC',  agent_vertical_new,                                                desc = 'Agent new (vertical split)' },
