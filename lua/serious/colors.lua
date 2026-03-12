@@ -2,7 +2,7 @@ return {
     none    = 'NONE',
     text    = '#f2e9e1',
     bg      = 'NONE',
-    comment = '#657280',
+    comment = '#5f727f',
 
     black   = '#000000',
     white   = '#ffffff',
@@ -40,6 +40,7 @@ return {
     sea6    = '#68a0b0',
     sea7    = '#586e75',
     sea8    = '#5f727f',
+    sea9    = '#2f424f',
 
     green0  = '#ccffaa',
     green1  = '#c1d3b1',
