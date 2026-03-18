@@ -34,8 +34,8 @@ local harnesses = {
     },
 }
 
-local harness_order = { "opencode", "pi", "claude" }
-local current_harness_id = "opencode"
+local harness_order = { "pi", "opencode", "claude" }
+local current_harness_id = "pi"
 local harness_state = {}
 
 for _, harness_id in ipairs(harness_order) do
@@ -81,7 +81,11 @@ local function escape_visual_mode()
 end
 
 local function format_ai_path(expand_arg, include_lines)
-    local path = '@' .. vim.fn.expand(expand_arg)
+    local path = vim.fn.expand(expand_arg)
+
+    if current_harness_id ~= 'pi' then
+        path = '@' .. path
+    end
 
     if not include_lines then
         return path
@@ -652,8 +656,8 @@ end
 
 local function resize_panes()
     if get_column_count() > 2 then
-        vim.fn.system("tmux resize-pane -t 1 -x 32%")
-        vim.fn.system("tmux resize-pane -t 3 -x 31%")
+        vim.fn.system("tmux resize-pane -t 1 -x 33%")
+        vim.fn.system("tmux resize-pane -t 3 -x 33%")
     end
 end
 
