@@ -33,7 +33,6 @@ return { {
         quickfile = { exclude = { "html", "php", "python", "javascript" } },
         scope = {},
         scroll = {},
-        statuscolumn = {},
         terminal = {},
 
         notifier = {
