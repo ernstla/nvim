@@ -40,7 +40,7 @@ return {
     sea6    = '#68a0b0',
     sea7    = '#586e75',
     sea8    = '#5f727f',
-    sea9    = '#2f424f',
+    sea9    = '#1f323f',
 
     green0  = '#ccffaa',
     green1  = '#c1d3b1',
