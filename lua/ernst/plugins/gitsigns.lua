@@ -77,6 +77,24 @@ return { {
                 desc = "git: previous change hunk",
                 expr = true
             },
+            {
+                'gh',
+                "<cmd>Gitsigns stage_hunk<cr>",
+                noremap = true,
+                silent = true,
+                nowait = true,
+                desc = "git: stage hunk under cursor",
+            },
+        }, {
+            mode = { "v" },
+            {
+                'gh',
+                ":<C-u>'<,'>Gitsigns stage_hunk<cr>",
+                noremap = true,
+                silent = true,
+                nowait = true,
+                desc = "git: stage selected lines",
+            },
         } })
     end
 } }
