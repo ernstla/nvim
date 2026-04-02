@@ -1,3 +1,4 @@
-*.log
-packer_compiled.lua
 sessions/*
+*.log
+nvim-pack-lock.json
+
