@@ -2,19 +2,8 @@ local g = vim.g
 local o = vim.o
 local home = vim.fn.getenv('HOME')
 
--- Global plugin settings
-g.user_emmet_leader_key = '<c-e>'
-g.user_emmet_install_global = 1
-g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
-g.loaded_netrwPlugin = 1
-g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
-g.VM_default_mappings = 0       -- avoid VM overriding insert mappings used by blink.cmp
-g.VM_maps = {
-    ['Find Under'] = '<C-n>',
-    ['Find Subword Under'] = '<C-n>',
-    ['Add Cursor Down'] = '<C-Down>',
-    ['Add Cursor Up'] = '<C-Up>',
-}
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 o.autoindent = true
 o.autoread = true
@@ -95,3 +84,17 @@ o.wildmode = 'full'
 o.winaltkeys = 'no'
 o.winborder = 'rounded'
 o.wrap = false
+
+-- Global plugin settings
+g.user_emmet_leader_key = '<c-e>'
+g.user_emmet_install_global = 1
+g.loaded_netrw = 1              -- let nvim-tree hijack directory windows (e. g. `nvim .`)
+g.loaded_netrwPlugin = 1
+g.VM_case_setting = 'sensitive' -- case sensitive multi cursors (vim-visual-multi)
+g.VM_default_mappings = 0       -- avoid VM overriding insert mappings used by blink.cmp
+g.VM_maps = {
+    ['Find Under'] = '<C-n>',
+    ['Find Subword Under'] = '<C-n>',
+    ['Add Cursor Down'] = '<C-Down>',
+    ['Add Cursor Up'] = '<C-Up>',
+}
