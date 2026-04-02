@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/nvim-lualine/lualine.nvim' })
-
 local c = require('serious/colors')
 
 local function parrot_status()

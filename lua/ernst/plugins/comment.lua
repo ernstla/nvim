@@ -1,14 +1,13 @@
-vim.pack.add({ 'https://github.com/numToStr/Comment.nvim' })
 require('Comment').setup({
-    padding = true,      -- Add a space b/w comment and the line
-    sticky = true,       -- Whether the cursor should stay at its position
-    ignore = nil,        -- Lines to be ignored while (un)comment
-    pre_hook = nil,      -- Function to call before (un)comment
-    post_hook = nil,     -- Function to call after (un)comment
+    padding = true,  -- Add a space b/w comment and the line
+    sticky = true,   -- Whether the cursor should stay at its position
+    ignore = nil,    -- Lines to be ignored while (un)comment
+    pre_hook = nil,  -- Function to call before (un)comment
+    post_hook = nil, -- Function to call after (un)comment
 
     -- LHS of toggle mappings in NORMAL mode
     toggler = {
-        line = 'gcc',     -- Line-comment toggle keymap
+        line = 'gcc', -- Line-comment toggle keymap
         -- line = '<leader>ci',
         -- block = 'gbc', -- Block-comment toggle keymap
     },
@@ -22,9 +21,9 @@ require('Comment').setup({
 
     -- LHS of extra mappings
     extra = {
-        above = 'gcO',     -- Add comment on the line above
-        below = 'gco',     -- Add comment on the line below
-        eol = 'gcA',       -- Add comment at the end of line
+        above = 'gcO', -- Add comment on the line above
+        below = 'gco', -- Add comment on the line below
+        eol = 'gcA',   -- Add comment at the end of line
     },
 
     -- Enable keybindings
@@ -32,7 +31,7 @@ require('Comment').setup({
     mappings = {
         -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
         basic = false,
-        extra = false,     -- Extra mapping; `gco`, `gcO`, `gcA`
+        extra = false, -- Extra mapping; `gco`, `gcO`, `gcA`
     },
 })
 
@@ -41,13 +40,13 @@ local esc = vim.api.nvim_replace_termcodes('<esc>', true, false, true)
 
 vim.keymap.set(
     'n',
-    '<c-_>',         -- <c-_> means <c-/> -- see :help :map-special-keys
+    '<c-_>', -- <c-_> means <c-/> -- see :help :map-special-keys
     "<cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<cr>",
     { noremap = true, silent = true, nowait = true }
 )
 vim.keymap.set(
     'n',
-    '<c-/>',         -- <c-_> means <c-/> -- see :help :map-special-keys
+    '<c-/>', -- <c-_> means <c-/> -- see :help :map-special-keys
     "<cmd>lua require('Comment.api').toggle.linewise.current(vim.fn.visualmode())<cr>",
     { noremap = true, silent = true, nowait = true }
 )

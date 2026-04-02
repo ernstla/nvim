@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/folke/trouble.nvim' })
-
 require('trouble').setup({
     mode = "workspace_diagnostics",
     focus = true, -- Focus the window when opened

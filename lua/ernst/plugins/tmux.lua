@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/aserowy/tmux.nvim' })
-
 require('tmux').setup({
     copy_sync = {
         -- enables copy sync. by default, all registers are synchronized.

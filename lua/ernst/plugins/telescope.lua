@@ -1,9 +1,3 @@
-vim.pack.add({
-    'https://github.com/nvim-telescope/telescope-live-grep-args.nvim',
-    'https://github.com/nvim-telescope/telescope-ui-select.nvim',
-    'https://github.com/nvim-telescope/telescope.nvim',
-})
-
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 local themes = require('telescope.themes')

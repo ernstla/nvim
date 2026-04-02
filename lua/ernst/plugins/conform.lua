@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/stevearc/conform.nvim' })
-
 require('conform').setup({
     formatters = {
         -- Only use python formatters if they are present in the virtual env

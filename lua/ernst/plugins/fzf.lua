@@ -11,5 +11,4 @@ require('fzf-lua').setup({
             ["<C-b>"] = "preview-page-up",
         }
     }
-
 })

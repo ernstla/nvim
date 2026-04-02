@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/frankroeder/parrot.nvim' })
-
 local secrets = require("ernst/secrets")
 local providers = {}
 

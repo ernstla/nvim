@@ -1,5 +1,3 @@
-vim.pack.add({ 'https://github.com/stevearc/aerial.nvim' })
-
 require('aerial').setup({
     layout = {
         max_width = 30,
