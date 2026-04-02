@@ -1,0 +1,21 @@
+vim.pack.add({ 'https://github.com/folke/trouble.nvim' })
+
+require('trouble').setup({
+    mode = "workspace_diagnostics",
+    focus = true, -- Focus the window when opened
+    win = { size = 20 },
+    modes = {
+        symbols = {
+            mode = "lsp_document_symbols",
+            focus = true,
+            win = { position = "right", size = 50 },
+        },
+    },
+})
+
+require("which-key").add({ {
+    mode = { "n" },
+    { "<leader>te", "<cmd>Trouble diagnostics toggle<cr>",              desc = "trouble: toogle errors",  nowait = true, remap = false },
+    { "<leader>tE", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "trouble: toogle errors",  nowait = true, remap = false },
+    { "<leader>ts", "<cmd>Trouble symbols toggle<cr>",                  desc = "trouble: toogle symbols", nowait = true, remap = false },
+} })
