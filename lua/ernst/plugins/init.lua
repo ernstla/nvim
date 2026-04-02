@@ -20,14 +20,7 @@ vim.pack.add({
 })
 
 -- Plugin configs where loading order matters
-require('which-key').setup({
-    icons = { mappings = false },
-    delay = 500,
-    keys = {
-        scroll_down = "<c-f>",
-        scroll_up = "<c-b>",
-    },
-})
+require('ernst/plugins/which-key')
 require('ernst/plugins/parrot')
 
 -- Everything else
