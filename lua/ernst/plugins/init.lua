@@ -41,6 +41,10 @@ vim.pack.add({
     'https://github.com/tpope/vim-surround',
     'https://github.com/uga-rosa/ccc.nvim',
     'https://github.com/williamboman/mason.nvim',
+    'https://github.com/nvim-mini/mini.surround',
+    'https://github.com/nvim-mini/mini.splitjoin',
+    'https://github.com/nvim-mini/mini.sessions',
+    'https://github.com/nvim-mini/mini.ai',
 
     { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range('v2.*') },
     { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
@@ -66,6 +70,7 @@ require('ernst/plugins/harpoon')
 require('ernst/plugins/lualine')
 require('ernst/plugins/luatab')
 require('ernst/plugins/mason')
+require('ernst/plugins/mini')
 require('ernst/plugins/nvim-treesitter')
 require('ernst/plugins/nvim-web-devicons')
 require('ernst/plugins/oil')
