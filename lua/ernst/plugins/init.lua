@@ -13,6 +13,7 @@ vim.pack.add({
 
 vim.pack.add({
     'https://github.com/ThePrimeagen/harpoon',
+    'https://github.com/alvarosevilla95/luatab.nvim',
     'https://github.com/aserowy/tmux.nvim',
     'https://github.com/bronson/vim-visual-star-search',
     'https://github.com/chrisgrieser/nvim-early-retirement',
@@ -22,6 +23,7 @@ vim.pack.add({
     'https://github.com/kokusenz/delta.lua',
     'https://github.com/kokusenz/deltaview.nvim',
     'https://github.com/lewis6991/gitsigns.nvim',
+    'https://github.com/luckasRanarison/tailwind-tools.nvim',
     'https://github.com/mattn/emmet-vim',
     'https://github.com/mg979/vim-visual-multi',
     'https://github.com/numToStr/Comment.nvim',
@@ -62,12 +64,14 @@ require('ernst/plugins/fzf')
 require('ernst/plugins/gitsigns')
 require('ernst/plugins/harpoon')
 require('ernst/plugins/lualine')
+require('ernst/plugins/luatab')
 require('ernst/plugins/mason')
 require('ernst/plugins/nvim-treesitter')
 require('ernst/plugins/nvim-web-devicons')
 require('ernst/plugins/oil')
 require('ernst/plugins/qf-helper')
 require('ernst/plugins/spectre')
+require('ernst/plugins/tailwind-tools')
 require('ernst/plugins/telescope')
 require('ernst/plugins/tmux')
 require('ernst/plugins/tree')
