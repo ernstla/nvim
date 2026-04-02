@@ -1,4 +1,4 @@
--- NOTE: installed via aaa-deps.lua
+-- NOTE: installed via main init.lua
 
 require('nvim-treesitter').setup({
     -- A list of parser names, or 'all'
