@@ -1,5 +1,5 @@
 if vim.g.neovide then
-    vim.o.guifont = "FiraCodeErnst Nerd Font:h14"
+    vim.o.guifont = "Fragment Mono:h19"
     vim.g.neovide_show_border = true
     vim.g.neovide_remember_window_size = true
 
