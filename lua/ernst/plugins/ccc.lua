@@ -8,7 +8,7 @@ return { {
 
         local command = vim.api.nvim_create_user_command
         command('Colors', 'CccHighlighterToggle', {})
-        command('Colorpicker', 'CccPick', {})
-        command('ColorConvert', 'CccConvert', {})
+        command('ColorsPicker', 'CccPick', {})
+        command('ColorsConvert', 'CccConvert', {})
     end
 } }
