@@ -33,6 +33,9 @@ vim.pack.add({
     'https://github.com/frankroeder/parrot.nvim',
     'https://github.com/aserowy/tmux.nvim',
     'https://github.com/folke/trouble.nvim',
+    'https://github.com/nvim-tree/nvim-tree.lua',
+    'https://github.com/nvim-pack/nvim-spectre',
+    'https://github.com/stevearc/qf_helper.nvim',
 
     { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range('v2.*') },
     { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
@@ -60,3 +63,6 @@ require('ernst/plugins/oil')
 require('ernst/plugins/telescope')
 require('ernst/plugins/tmux')
 require('ernst/plugins/trouble')
+require('ernst/plugins/spectre')
+require('ernst/plugins/tree')
+require('ernst/plugins/qf-helper')
