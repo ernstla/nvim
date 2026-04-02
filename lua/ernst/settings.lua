@@ -1,3 +1,5 @@
+vim.cmd.colorscheme('serious')
+
 local g = vim.g
 local o = vim.o
 local home = vim.fn.getenv('HOME')
