@@ -4,6 +4,7 @@ vim.pack.add({
     'https://github.com/folke/which-key.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
     'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
+    'https://github.com/ibhagwan/fzf-lua',
 })
 
 require('which-key').setup({
