@@ -1,3 +1,3 @@
-require('ernst/settings')
+require('config.settings')
 require('plugins')
-require("ernst")
+require("config")

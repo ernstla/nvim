@@ -1,8 +1,0 @@
-require('ernst/agents')
-require('ernst/autocmd')
-require('ernst/clipboard')
-require('ernst/command')
-require('ernst/lsp')
-require('ernst/map')
-require('ernst/neovide')
-require('ernst/pack')

@@ -4,7 +4,7 @@ command('Jsonify', '%!python3 -m json.tool', {})
 command('Tidy', '!tidy -mi -html -wrap 0 %', {})
 command('LspInfo', 'checkhealth vim.lsp', {})
 command('LspAttached', 'lua vim.print(vim.lsp.get_clients({ bufnr = 0 }))', {})
-command("ReloadColorscheme", function() require('ernst/lib').reload_colorscheme() end, {})
+command("ReloadColorscheme", function() require('config/lib').reload_colorscheme() end, {})
 
 command('Rg', function(opts) vim.cmd('silent! :botright :grep ' .. opts.args) end, { nargs = '*' })
 command('Rgi', function(opts) vim.cmd('silent! :botright :grep --ignore-case ' .. opts.args) end, { nargs = '*' })

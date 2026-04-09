@@ -1,4 +1,4 @@
-local secrets = require("ernst/secrets")
+local secrets = require("config/secrets")
 local providers = {}
 
 if secrets.anthropic_key then

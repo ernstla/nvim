@@ -1,8 +1,8 @@
-if not pcall(require, 'ernst/secrets') then
+if not pcall(require, 'config/secrets') then
     return
 end
 
-local secrets = require('ernst/secrets')
+local secrets = require('config/secrets')
 
 return {
     cmd = { 'intelephense', '--stdio' },

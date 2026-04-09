@@ -1,7 +1,7 @@
 -- build = 'make install_jsregexp',
 local luasnip = require('luasnip')
 luasnip.setup()
-require('ernst/snippets')
+require('config/snippets')
 
 vim.keymap.set({ 'i', 's' }, '<C-n>', function() luasnip.jump(1) end, { silent = true })
 vim.keymap.set({ 'i', 's' }, '<C-p>', function() luasnip.jump(-1) end, { silent = true })

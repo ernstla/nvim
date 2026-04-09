@@ -19,7 +19,7 @@ local function parrot_status()
 end
 
 local function agent_harness_status()
-    local ok, agents = pcall(require, 'ernst/agents')
+    local ok, agents = pcall(require, 'config/agents')
     if not ok or not agents.current_harness_status then
         return ''
     end

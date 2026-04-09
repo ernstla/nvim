@@ -199,7 +199,7 @@ local snippets = {
     }),
 }
 
-local words = require('ernst/snippets/words')
+local words = require('config/snippets/words')
 local word_snippet = function(word)
     return snippet(word:match("^[%s~]*(.-)[%s~]*$"), {
         t('error_log("~~~~~~~~~~~~' .. string.upper(word) .. '~~~~~~~~~~~");')
