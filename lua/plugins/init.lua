@@ -7,8 +7,6 @@ vim.pack.add({
     gh('nvim-lua/plenary.nvim'),
     gh('MunifTanjim/nui.nvim'),
     gh('ibhagwan/fzf-lua'),
-    gh('nvim-telescope/telescope-live-grep-args.nvim'),
-    gh('nvim-telescope/telescope-ui-select.nvim'),
     gh('nvim-treesitter/nvim-treesitter'),
     gh('nvim-treesitter/nvim-treesitter-textobjects'),
 })
@@ -31,7 +29,6 @@ vim.pack.add({
     gh('numToStr/Comment.nvim'),
     gh('nvim-lualine/lualine.nvim'),
     gh('nvim-pack/nvim-spectre'),
-    gh('nvim-telescope/telescope.nvim'),
     gh('nvim-tree/nvim-tree.lua'),
     gh('pangloss/vim-javascript'),
     gh('stevearc/aerial.nvim'),
@@ -79,7 +76,6 @@ require('plugins/oil')
 require('plugins/qf-helper')
 require('plugins/spectre')
 require('plugins/tailwind-tools')
-require('plugins/telescope')
 require('plugins/tmux')
 require('plugins/tree')
 require('plugins/trouble')
