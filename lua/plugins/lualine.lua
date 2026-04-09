@@ -1,4 +1,4 @@
-local c = require('serious/colors')
+local c = require('theme/colors')
 
 local function parrot_status()
     local status_info = require("parrot.config").get_status_info()

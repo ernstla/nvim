@@ -1,13 +1,13 @@
 M = {}
 
 function M.reload_colorscheme()
-    package.loaded["serious/colors"] = nil
-    package.loaded['serious/base'] = nil
-    package.loaded['serious/languages'] = nil
-    package.loaded['serious/plugins'] = nil
-    package.loaded['serious/treesitter'] = nil
-    package.loaded["serious"] = nil
-    require("serious")
+    package.loaded["theme/colors"] = nil
+    package.loaded['theme/base'] = nil
+    package.loaded['theme/languages'] = nil
+    package.loaded['theme/plugins'] = nil
+    package.loaded['theme/treesitter'] = nil
+    package.loaded["theme"] = nil
+    require("theme")
     vim.cmd.colorscheme('serious')
 end
 

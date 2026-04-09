@@ -1,4 +1,4 @@
-local c = require('serious/colors')
+local c = require('theme/colors')
 
 return {
     phpAssignByRef = { fg = c.text },
@@ -110,4 +110,3 @@ return {
     sqlPostgresDelim = { fg = c.blue6 },
     sqlPostgresVariable = { fg = c.blue6 },
 }
-

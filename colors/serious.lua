@@ -1,1 +1,1 @@
-require('serious').colorscheme()
+require('theme').colorscheme()

@@ -1,7 +1,7 @@
-local base = require('serious/base')
-local languages = require('serious/languages')
-local plugins = require('serious/plugins')
-local treesitter = require('serious/treesitter')
+local base = require('theme/base')
+local languages = require('theme/languages')
+local plugins = require('theme/plugins')
+local treesitter = require('theme/treesitter')
 local M = {}
 
 function M.colorscheme()

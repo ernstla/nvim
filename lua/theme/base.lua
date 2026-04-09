@@ -1,4 +1,4 @@
-local c = require('serious/colors')
+local c = require('theme/colors')
 
 local M = {}
 

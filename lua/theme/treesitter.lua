@@ -1,4 +1,4 @@
-local c = require('serious/colors')
+local c = require('theme/colors')
 
 -- Set lsp semantic tokens to a lower priority than treesitter's
 vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
