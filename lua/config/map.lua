@@ -68,7 +68,7 @@ map('', '<c-i>', '<c-i>zz')
 map('n', 'Q', '@@')
 map('n', '<F6>', '@@')
 
-map('n', '<F12>', require('config/lib').reload_colorscheme, { desc = 'Reload colorscheme' })
+map('n', '<F12>', require('util').reload_colorscheme, { desc = 'Reload colorscheme' })
 
 map('n', '[d', vim.diagnostic.goto_prev)
 map('n', ']d', vim.diagnostic.goto_next)

@@ -156,7 +156,6 @@ telescope.setup({
     },
 })
 local builtin = require('telescope.builtin')
--- local lib = require('ernst.lib')
 
 telescope.load_extension("live_grep_args")
 telescope.load_extension("ui-select")
