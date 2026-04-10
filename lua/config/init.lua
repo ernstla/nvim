@@ -1,6 +1,7 @@
 require('config/agents')
 require('config/autocmd')
 require('config/clipboard')
+require('config/colors')
 require('config/command')
 require('config/lsp')
 require('config/map')

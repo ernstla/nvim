@@ -38,7 +38,6 @@ vim.pack.add({
     gh('tpope/vim-fugitive'),
     gh('tpope/vim-repeat'),
     gh('tpope/vim-surround'),
-    gh('uga-rosa/ccc.nvim'),
     gh('williamboman/mason.nvim'),
     gh('nvim-mini/mini.surround'),
     gh('nvim-mini/mini.splitjoin'),
@@ -57,7 +56,6 @@ require('plugins/luasnip')
 -- Everything else
 require('plugins/aerial')
 require('plugins/blink')
-require('plugins/ccc')
 require('plugins/codediff')
 require('plugins/comment')
 require('plugins/conform')
