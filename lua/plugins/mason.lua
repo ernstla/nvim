@@ -10,6 +10,7 @@ local ensure_installed = {
 
     'json-lsp',
     'tailwindcss-language-server',
+    'css-lsp',
 
     'svelte-language-server',
     'vue-language-server',
