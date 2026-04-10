@@ -1,6 +1,10 @@
 vim.api.nvim_create_user_command('Update', function()
-    vim.pack.update(nil, { offline = true })
+    vim.pack.update()
 end, { desc = 'Check for plugin updates' })
+
+vim.api.nvim_create_user_command('Plugins', function()
+    vim.pack.update(nil, { offline = true })
+end, { desc = 'List all installed plugins' })
 
 vim.api.nvim_create_user_command('Clean', function(opts)
     local plugins = vim.iter(vim.pack.get(nil, { info = false })):filter(
