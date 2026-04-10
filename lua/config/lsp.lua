@@ -17,6 +17,7 @@ vim.diagnostic.config {
 }
 
 vim.lsp.enable({
+    'css',
     'eslint',
     'go',
     'json',
