@@ -1,5 +1,22 @@
 require('conform').setup({
     formatters = {
+        prettier = {
+            prepend_args = function(self, ctx)
+                -- Find prettier config searching upward (may be outside the project)
+                local config_names = {
+                    '.prettierrc', '.prettierrc.json', '.prettierrc.yml', '.prettierrc.yaml',
+                    '.prettierrc.json5', '.prettierrc.js', '.prettierrc.cjs', '.prettierrc.mjs',
+                    '.prettierrc.toml', 'prettier.config.js', 'prettier.config.cjs', 'prettier.config.mjs',
+                }
+                local config = vim.fs.find(config_names, { path = ctx.dirname, upward = true })[1]
+                if config then
+                    return { '--config', config }
+                end
+                return {}
+            end,
+            -- cwd = git root of the actual project, so .gitignore is resolved correctly
+            cwd = require('conform.util').root_file({ '.git' }),
+        },
         -- Only use python formatters if they are present in the virtual env
         ruff_format = {
             command = (os.getenv("VIRTUAL_ENV") or "NOT/AVAILABLE") .. "/bin/ruff"
