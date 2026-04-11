@@ -16,6 +16,16 @@ require('conform').setup({
             end,
             -- cwd = git root of the actual project, so .gitignore is resolved correctly
             cwd = require('conform.util').root_file({ '.git' }),
+            command = function(self, ctx)
+                local root = vim.fs.root(ctx.dirname, '.git')
+                if root then
+                    local local_bin = root .. '/node_modules/.bin/prettier'
+                    if vim.fn.executable(local_bin) == 1 then
+                        return local_bin
+                    end
+                end
+                return 'prettier'
+            end,
         },
         -- Only use python formatters if they are present in the virtual env
         ruff_format = {
