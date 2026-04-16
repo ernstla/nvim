@@ -19,9 +19,16 @@ require('conform').setup({
             command = function(self, ctx)
                 local root = vim.fs.root(ctx.dirname, '.git')
                 if root then
-                    local local_bin = root .. '/node_modules/.bin/prettier'
-                    if vim.fn.executable(local_bin) == 1 then
-                        return local_bin
+                    local bins = {
+                        '/node_modules/.bin/prettier',
+                        '/gui/node_modules/.bin/prettier',
+                        '/ui/node_modules/.bin/prettier',
+                    }
+                    for _, bin in ipairs(bins) do
+                        local path = root .. bin
+                        if vim.fn.executable(path) == 1 then
+                            return path
+                        end
                     end
                 end
                 return 'prettier'
