@@ -11,6 +11,7 @@ o.autoindent = true
 o.autoread = true
 o.backup = false
 o.backupcopy = 'yes'
+o.breakindent = true
 o.clipboard = 'unnamedplus'
 o.completeopt = 'menuone,noselect'
 o.cursorcolumn = false
