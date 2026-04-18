@@ -27,11 +27,11 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "delta.lua": {
-      "rev": "898b2dc31945846df3abf89b47251a6492feb90d",
+      "rev": "d123d2ec79c7b0fc68c3dac9cb78b17b993bd836",
       "src": "https://github.com/kokusenz/delta.lua"
     },
     "deltaview.nvim": {
-      "rev": "a6607058ca4d50619d44ddcf51df1cc35bdfd85b",
+      "rev": "808cd6fbe4c49b71f03979790725fb173aade357",
       "src": "https://github.com/kokusenz/deltaview.nvim"
     },
     "emmet-vim": {
@@ -39,7 +39,7 @@
       "src": "https://github.com/mattn/emmet-vim"
     },
     "fzf-lua": {
-      "rev": "eee072d89ccdc0a4627bf67d0757d2e4981c7292",
+      "rev": "9363b234203610d60a7a6c804160a4e496dacd20",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -51,7 +51,7 @@
       "src": "https://github.com/ThePrimeagen/harpoon"
     },
     "lualine.nvim": {
-      "rev": "f5d2a8570f8b736ddb9bb4be504355bcd6e15ec8",
+      "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "luatab.nvim": {
@@ -67,7 +67,7 @@
       "src": "https://github.com/nvim-mini/mini.ai"
     },
     "mini.sessions": {
-      "rev": "2e419949f6846871b3b87bcd7c418b0d1f0ad68a",
+      "rev": "c96a1d1284b37ba2431092981a9d58f8c71a4fc3",
       "src": "https://github.com/nvim-mini/mini.sessions"
     },
     "mini.splitjoin": {
@@ -91,7 +91,7 @@
       "src": "https://github.com/nvim-pack/nvim-spectre"
     },
     "nvim-tree.lua": {
-      "rev": "509962f21ab7289d8dcd28568af539be39a8c01e",
+      "rev": "d277467fc0d1d0e2bca88165a1de6b526f9f6fe8",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
@@ -127,12 +127,16 @@
       "src": "https://github.com/luckasRanarison/tailwind-tools.nvim"
     },
     "tmux.nvim": {
-      "rev": "2c1c3be0ef287073cef963f2aefa31a15c8b9cd8",
+      "rev": "32ceaf2793582955ef9576809730878c4d2d9426",
       "src": "https://github.com/aserowy/tmux.nvim"
     },
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
       "src": "https://github.com/folke/trouble.nvim"
+    },
+    "vim-caddyfile": {
+      "rev": "6d60d5af0d73f20b88ec388a9d70188d55ed8223",
+      "src": "https://github.com/isobit/vim-caddyfile"
     },
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",

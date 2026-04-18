@@ -20,6 +20,7 @@ vim.pack.add({
     gh('esmuellert/codediff.nvim'),
     gh('folke/trouble.nvim'),
     gh('frankroeder/parrot.nvim'),
+    gh('isobit/vim-caddyfile'),
     gh('kokusenz/delta.lua'),
     gh('kokusenz/deltaview.nvim'),
     gh('lewis6991/gitsigns.nvim'),

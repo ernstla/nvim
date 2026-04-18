@@ -110,7 +110,7 @@ M.syntax = {
     Constant       = { fg = c.sea4, bg = c.none },
     Debug          = { fg = c.grey0, bg = c.none },
     Define         = { fg = c.sea3, bg = c.none },
-    Delimiter      = { fg = c.vermil4, bg = c.none },
+    Delimiter      = { fg = c.sea3, bg = c.none },
     Error          = { fg = c.red2, bg = c.none },
     Exception      = { fg = c.sea4, bg = c.none },
     Float          = { fg = c.purple2, bg = c.none },

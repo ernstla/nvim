@@ -112,4 +112,18 @@ return {
     sqlColonParam = { fg = c.blue6 },
     sqlPostgresDelim = { fg = c.blue6 },
     sqlPostgresVariable = { fg = c.blue6 },
+
+    caddyHost = { fg = c.blue6 },
+    caddyDirective = { fg = c.orange6 },
+    -- caddySubdirective = { fg = c.rose9 },
+    -- caddyImport = { fg = c.sea5 },
+    -- caddySnippetDef = { fg = c.purple3 },
+    -- caddySnippet = { fg = c.blue6 },
+    -- caddyPlaceholder = { fg = c.yellow5 },
+    -- caddyString = { fg = c.orange3 },
+    -- caddyComment = { fg = c.grey2 },
+    -- caddyNamedMatcher = { fg = c.green2 },
+    -- caddyNamedMatcherDef = { fg = c.green2 },
+    caddyFrankenPhpDirective = { fg = c.blue7 },
+    caddyFrankenPhpSubdirective = { fg = c.orange7 },
 }
