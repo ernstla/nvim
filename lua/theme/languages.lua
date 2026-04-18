@@ -56,6 +56,9 @@ return {
     htmlH6 = { fg = c.white },
     htmlSpecialChar = { fg = c.salmon5 },
 
+    htmlHtmxAttr = { fg = c.green3 },
+    htmlHtmxAttrParam = { fg = c.green0 },
+
     pythonBuiltin = { fg = c.purple4 },
     pythonConst = { fg = c.green4 },
     pythonAsync = { fg = c.blue4 },
