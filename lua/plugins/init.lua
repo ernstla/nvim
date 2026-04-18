@@ -29,6 +29,10 @@ vim.pack.add({
     gh('mg979/vim-visual-multi'),
     gh('numToStr/Comment.nvim'),
     gh('nvim-lualine/lualine.nvim'),
+    gh('nvim-mini/mini.ai'),
+    gh('nvim-mini/mini.sessions'),
+    gh('nvim-mini/mini.splitjoin'),
+    gh('nvim-mini/mini.surround'),
     gh('nvim-pack/nvim-spectre'),
     gh('nvim-tree/nvim-tree.lua'),
     gh('pangloss/vim-javascript'),
@@ -39,11 +43,8 @@ vim.pack.add({
     gh('tpope/vim-fugitive'),
     gh('tpope/vim-repeat'),
     gh('tpope/vim-surround'),
+    gh('uga-rosa/ccc.nvim'),
     gh('williamboman/mason.nvim'),
-    gh('nvim-mini/mini.surround'),
-    gh('nvim-mini/mini.splitjoin'),
-    gh('nvim-mini/mini.sessions'),
-    gh('nvim-mini/mini.ai'),
 
     { src = gh('L3MON4D3/LuaSnip'), version = vim.version.range('v2.*') },
     { src = gh('saghen/blink.cmp'), version = vim.version.range('1.*') },
@@ -57,6 +58,7 @@ require('plugins/luasnip')
 -- Everything else
 require('plugins/aerial')
 require('plugins/blink')
+require('plugins/ccc')
 require('plugins/codediff')
 require('plugins/comment')
 require('plugins/conform')

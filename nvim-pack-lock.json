@@ -18,6 +18,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "ccc.nvim": {
+      "rev": "9d1a256e006decc574789dfc7d628ca11644d4c2",
+      "src": "https://github.com/uga-rosa/ccc.nvim"
+    },
     "codediff.nvim": {
       "rev": "832f1ecc5f8b15a44cf7537e31d3266d657775b1",
       "src": "https://github.com/esmuellert/codediff.nvim"
@@ -39,7 +43,7 @@
       "src": "https://github.com/mattn/emmet-vim"
     },
     "fzf-lua": {
-      "rev": "9363b234203610d60a7a6c804160a4e496dacd20",
+      "rev": "7972e2a424a717feb1eaca240973e96e400cb8ea",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
