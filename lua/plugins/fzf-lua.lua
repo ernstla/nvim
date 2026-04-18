@@ -49,12 +49,15 @@ local grep_rg_opts = '--column --line-number --no-heading ' ..
     '--color=always ' ..
     '--colors=match:fg:red --colors=match:style:nobold ' ..
     '--colors=line:fg:green --colors=line:style:nobold ' ..
-    '--colors=column:fg:cyan --colors=column:style:nobold ' ..
+    '--colors=column:fg:yellow --colors=column:style:nobold ' ..
     '--colors=path:fg:white --colors=path:style:nobold ' ..
     '--smart-case --max-columns=4096 -e'
 
 fzf.setup({
     fzf_colors = true,
+    fzf_opts = {
+        ['--no-bold'] = true,
+    },
     winopts = {
         border = 'rounded',
         height = 0.8,
@@ -111,6 +114,7 @@ fzf.setup({
         },
     },
     grep = {
+        no_esc = true,
         rg_opts = grep_rg_opts,
         actions = {
             ['ctrl-q'] = actions.file_sel_to_qf,

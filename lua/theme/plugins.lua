@@ -52,6 +52,7 @@ return {
     FzfLuaPreviewNormal       = { fg = c.text, bg = c.none },
     FzfLuaPreviewBorder       = { fg = c.grey2, bg = c.none },
     FzfLuaCursorLine          = { fg = c.red1, bg = c.grey7 },
+    FzfLuaLivePrompt          = { fg = c.text, bg = c.none },
 
     FzfLuaFzfNormal           = { fg = c.text, bg = c.none },
     FzfLuaFzfBorder           = { fg = c.grey2, bg = c.none },
