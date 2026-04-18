@@ -45,7 +45,13 @@ local fd_bin = vim.fn.executable('fd') == 1 and 'fd' or 'fdfind'
 local files_cmd_respecting = fd_bin .. ' ' .. files_fd_opts
 local files_cmd_no_ignore = fd_bin .. ' ' .. files_fd_opts .. ' --no-ignore'
 
-local grep_rg_opts = '--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e'
+local grep_rg_opts = '--column --line-number --no-heading ' ..
+    '--color=always ' ..
+    '--colors=match:fg:red --colors=match:style:nobold ' ..
+    '--colors=line:fg:green --colors=line:style:nobold ' ..
+    '--colors=column:fg:cyan --colors=column:style:nobold ' ..
+    '--colors=path:fg:white --colors=path:style:nobold ' ..
+    '--smart-case --max-columns=4096 -e'
 
 fzf.setup({
     fzf_colors = true,
