@@ -54,7 +54,6 @@ vim.keymap.set('n', '<c-k>', function()
 end, { expr = true, noremap = true })
 vim.keymap.set('t', '<c-l>', '<Cmd>lua require("tmux").move_right()<CR>')
 map('t', '<leader><esc>', '<c-\\><c-n>')
-map('t', '<c-q>', '<c-\\><c-n>')
 
 -- Center search matches
 map('n', 'n', 'nzz')
