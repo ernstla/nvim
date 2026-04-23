@@ -66,7 +66,7 @@ M.gui = {
     Scrollbar                  = { link = 'PmenuSbar' },
     Search                     = { fg = c.grey6, bg = c.rose9 },
     SignColumn                 = { fg = c.none, bg = c.bg },
-    SpecialKey                 = { fg = c.green3, bg = c.bg },
+    SpecialKey                 = { fg = c.sea3, bg = c.bg },
     SpellBad                   = { fg = c.red2, bg = c.bg },
     SpellCap                   = { fg = c.red2, bg = c.bg },
     SpellLocal                 = { fg = c.orange2, bg = c.bg },
