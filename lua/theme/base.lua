@@ -47,7 +47,7 @@ M.gui = {
     MoreMsg                    = { fg = c.text, bg = c.bg },
     MsgArea                    = { fg = c.none, bg = c.grey8 },
     MsgSeparator               = { fg = c.grey4, bg = c.bg },
-    NonText                    = { fg = c.grey2, bg = c.none }, -- listchars
+    NonText                    = { fg = c.grey2, bg = c.none },
     Normal                     = { fg = c.text, bg = c.bg, },
     NormalFloat                = { bg = c.none },
     NormalNC                   = { fg = c.text, bg = c.none, },
@@ -66,7 +66,7 @@ M.gui = {
     Scrollbar                  = { link = 'PmenuSbar' },
     Search                     = { fg = c.grey6, bg = c.rose9 },
     SignColumn                 = { fg = c.none, bg = c.bg },
-    SpecialKey                 = { fg = c.grey2, bg = c.bg }, -- listchars
+    SpecialKey                 = { fg = c.green3, bg = c.bg },
     SpellBad                   = { fg = c.red2, bg = c.bg },
     SpellCap                   = { fg = c.red2, bg = c.bg },
     SpellLocal                 = { fg = c.orange2, bg = c.bg },
@@ -86,7 +86,7 @@ M.gui = {
     Visual                     = { fg = c.text, bg = c.red5 },
     VisualNOS                  = { fg = c.none, bg = c.blue4 },
     WarningMsg                 = { fg = c.orange2, bg = c.none },
-    Whitespace                 = { fg = c.grey2, bg = c.none, sp = c.grey4 }, --listchars
+    Whitespace                 = { fg = c.grey2, bg = c.none, sp = c.grey4 },
     WildMenu                   = { fg = c.sea3, bg = c.blue4c1 },
     WinBar                     = { fg = c.text, bg = c.bg },
     WinBarNC                   = { fg = c.text, bg = c.bg },

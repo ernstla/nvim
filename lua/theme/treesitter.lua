@@ -14,6 +14,10 @@ return {
     ['@punctuation.bracket'] = { fg = c.text },
     ['@punctuation.delimiter'] = { fg = c.text },
 
+    ['@keyword.vim'] = { fg = c.red0 },               -- built-in commands like :write, :quit, :sort
+    ['@function.macro.vim'] = { fg = c.green2 },      -- custom commands like :Mason, :LspInfo
+    ['@punctuation.delimiter.vim'] = { fg = c.red1 }, -- the colon in cmd line
+
     ['@property.lua'] = { fg = c.sea2 },
     ['@punctuation.bracket.lua'] = { fg = c.sea3 },
     ['@punctuation.delimiter.lua'] = { fg = c.text },
