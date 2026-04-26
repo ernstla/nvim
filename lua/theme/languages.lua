@@ -113,6 +113,10 @@ return {
     sqlPostgresDelim = { fg = c.blue6 },
     sqlPostgresVariable = { fg = c.blue6 },
 
+    sqlQumaPlaceholder = { fg = c.rose2 },
+    sqlQumaPlaceholderText = { fg = c.rose2 },
+    sqlQumaPlaceholderDelim = { fg = c.rose6 },
+
     caddyHost = { fg = c.blue6 },
     caddyDirective = { fg = c.orange6 },
     -- caddySubdirective = { fg = c.rose9 },

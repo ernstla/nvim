@@ -37,6 +37,10 @@ syn include @sqlPhpTop syntax/php.vim
 syn region sqlPhpRegion matchgroup=sqlPhpDelim start="<?php" end="?>" contains=@sqlPhpTop
 syn region sqlPhpRegion matchgroup=sqlPhpDelim start="<?=" end="?>" contains=@sqlPhpTop
 
+" Bracket placeholder tokens like [::text::] (text: [A-Za-z0-9_-]+)
+syn region sqlQumaPlaceholder matchgroup=sqlQumaPlaceholderDelim start="\[::" end="::\]" contains=sqlQumaPlaceholderText oneline
+syn match sqlQumaPlaceholderText /\%(\[::\)\@<=[A-Za-z0-9_-]\+\%(::\]\)\@=/ contained containedin=sqlQumaPlaceholder
+
 syn match sqlTypeConversion "::[a-zA-Z0-9_]\+"
 syn match sqlColonParam ":[a-zA-Z0-9_]\+"
 
