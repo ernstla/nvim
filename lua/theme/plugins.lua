@@ -46,6 +46,53 @@ return {
     VM_Extend                 = { fg = c.white, bg = c.green7 },
     VM_Insert                 = { fg = c.white, bg = c.sea7 },
 
+    CanolaDir                 = { fg = c.blue4, bg = c.none },
+    CanolaDirIcon             = { fg = c.blue3, bg = c.none },
+    CanolaColumn              = { fg = c.red3, bg = c.none },
+    CanolaDirHidden           = { fg = c.grey1, bg = c.none },
+    CanolaHidden              = { fg = c.grey1, bg = c.none },
+    CanolaLink                = { fg = c.sea3, bg = c.none },
+    CanolaLinkTarget          = { fg = c.red0, bg = c.none },
+    CanolaLinkArrow           = { fg = c.yellow1, bg = c.none },
+    CanolaSizeBytes           = { fg = c.rose0, bg = c.none },
+    CanolaSizeKilo            = { fg = c.red0, bg = c.none },
+    CanolaSizeMega            = { fg = c.rose2, bg = c.none },
+    CanolaSizeGiga            = { fg = c.rose1, bg = c.none },
+    CanolaDate                = { fg = c.cyan1, bg = c.none },
+    CanolaEmpty               = { fg = c.rose1, bg = c.none },
+    CanolaExecutable          = { fg = c.rose1, bg = c.none },
+    -- CanolaOwnerSelf                 owner matches current user
+    -- CanolaOwnerOther                owner differs from current user
+    -- CanolaGroupSelf                 group matches current user's group
+    -- CanolaGroupOther                group differs from current user's group
+    -- CanolaLink                      soft links
+    -- CanolaLinkHidden                hidden soft links
+    -- CanolaLinkArrow                 arrow separator (->)
+    -- CanolaLinkArrowHidden           hidden arrow separator
+    -- CanolaLinkPath                  directory prefix of link target
+    -- CanolaLinkPathHidden            hidden directory prefix of target
+    -- CanolaLinkTarget                target of a soft link
+    -- CanolaLinkTargetHidden          target of a hidden soft link
+    -- CanolaOrphanLink                orphaned soft links
+    -- CanolaOrphanLinkHidden          hidden orphaned soft links
+    -- CanolaOrphanLinkTarget          target of an orphaned soft link
+    -- CanolaOrphanLinkTargetHidden    target of hidden orphaned soft link
+    -- CanolaPermUserRead              user read (r)
+    -- CanolaPermUserWrite             user write (w)
+    -- CanolaPermUserExec              user execute (x)
+    -- CanolaPermGroupRead             group read
+    -- CanolaPermGroupWrite            group write
+    -- CanolaPermGroupExec             group execute
+    -- CanolaPermOtherRead             other read
+    -- CanolaPermOtherWrite            other write
+    -- CanolaPermOtherExec             other execute
+    -- CanolaPermNone                  no permission (-)
+    -- CanolaPermSpecial               special bits (setuid/setgid/sticky)
+    -- CanolaExecutable                executable files
+    -- CanolaExecutableHidden          hidden executable files
+    -- CanolaSocket                    socket files
+    -- CanolaSocketHidden              hidden socket files
+
     FzfLuaNormal              = { fg = c.text, bg = c.none },
     FzfLuaBorder              = { fg = c.vermil5, bg = c.none },
     FzfLuaTitle               = { fg = c.red3, bg = c.none },
@@ -61,10 +108,4 @@ return {
     FzfLuaFzfPrompt           = { fg = c.red1, bg = c.none },
     FzfLuaFzfQuery            = { fg = c.text, bg = c.none },
     FzfLuaFzfPointer          = { fg = c.vermil5, bg = c.none },
-
-    SnacksDashboardHeader     = { fg = c.red0, bg = c.none },
-    SnacksDashboardIcon       = { fg = c.vermil4, bg = c.none },
-    SnacksDashboardDesc       = { fg = c.red0, bg = c.none },
-    SnacksDashboardKey        = { fg = c.vermil4, bg = c.none },
-    SnacksDashboardSpecial    = { fg = c.vermil4, bg = c.none },
 }

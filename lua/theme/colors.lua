@@ -23,6 +23,17 @@ return {
     brown5   = '#bb7722',
     brown8   = '#663300',
 
+    cyan0    = '#e0ffff',
+    cyan1    = '#bfffff',
+    cyan2    = '#80ffff',
+    cyan3    = '#40ffff',
+    cyan4    = '#00ffff',
+    cyan5    = '#00dddd',
+    cyan6    = '#00bbbb',
+    cyan7    = '#009999',
+    cyan8    = '#006666',
+    cyan9    = '#003333',
+
     blue0    = '#caf6ff',
     blue2    = '#01a8c6',
     blue3    = '#3e8fb0',

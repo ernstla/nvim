@@ -38,7 +38,6 @@ vim.pack.add({
     gh('pangloss/vim-javascript'),
     gh('stevearc/aerial.nvim'),
     gh('stevearc/conform.nvim'),
-    gh('stevearc/oil.nvim'),
     gh('stevearc/qf_helper.nvim'),
     gh('tpope/vim-fugitive'),
     gh('tpope/vim-repeat'),
@@ -46,8 +45,9 @@ vim.pack.add({
     gh('uga-rosa/ccc.nvim'),
     gh('williamboman/mason.nvim'),
 
-    { src = gh('L3MON4D3/LuaSnip'), version = vim.version.range('v2.*') },
-    { src = gh('saghen/blink.cmp'), version = vim.version.range('1.*') },
+    { src = gh('barrettruth/canola.nvim'), version = 'canola' }, -- replaces oil.nvim
+    { src = gh('L3MON4D3/LuaSnip'),      version = vim.version.range('v2.*') },
+    { src = gh('saghen/blink.cmp'),      version = vim.version.range('1.*') },
 })
 
 -- Plugin configs where loading order matters
@@ -73,7 +73,7 @@ require('plugins/mason')
 require('plugins/mini')
 require('plugins/nvim-treesitter')
 require('plugins/nvim-web-devicons')
-require('plugins/oil')
+require('plugins/canola')
 require('plugins/qf-helper')
 require('plugins/spectre')
 require('plugins/tailwind-tools')
